@@ -1,0 +1,939 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Analisis KBLI 2025 – Potensi Komersialisasi KI BRIN 2026</title>
+
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Helvetica Neue', 'Arial', sans-serif;
+    font-size: 10.5px;
+    color: #1C1917;
+    background: #FAFAF8;
+  }
+
+  /* ── PALETTE ─────────────────────────────────────
+     Ink + warm cream + vivid jewel accents
+     Primary: deep indigo #1E1B4B
+     Accent 1: electric amber #F59E0B
+     Accent 2: coral rose #F43F5E
+     Accent 3: emerald #10B981
+     Accent 4: sky #38BDF8
+  ──────────────────────────────────────────────── */
+
+  /* ── HEADER ── */
+  .page-header {
+    background: #1E1B4B;
+    color: #fff;
+    padding: 26px 36px 22px;
+    position: relative;
+    overflow: hidden;
+  }
+  .page-header::before { display:none; }
+  .page-header::after { display:none; }
+  .page-header h1 {
+    font-family: 'Georgia', 'Times New Roman', serif;
+    font-size: 20px;
+    font-weight: 400;
+    letter-spacing: -0.3px;
+    color: #fff;
+    margin-bottom: 4px;
+    position: relative;
+  }
+  .page-header p { font-size: 10px; color: #A5B4FC; position: relative; }
+  .meta { display: flex; gap: 24px; margin-top: 16px; position: relative; }
+  .meta-item { }
+  .meta-item b { display: block; font-family: 'Courier New', monospace; font-size: 26px; font-weight: 500; color: #F59E0B; line-height: 1; }
+  .meta-item span { font-size: 9px; color: #818CF8; text-transform: uppercase; letter-spacing: 0.06em; }
+
+  /* ── CONTENT ── */
+  .content { padding: 22px 36px; }
+
+  /* ── SECTION TITLES ── */
+  .section-title {
+    font-family: 'Georgia', 'Times New Roman', serif;
+    font-size: 14px;
+    font-weight: 400;
+    color: #1E1B4B;
+    padding-bottom: 5px;
+    border-bottom: 2px solid #F59E0B;
+    margin-bottom: 12px;
+    margin-top: 24px;
+    letter-spacing: -0.2px;
+  }
+
+  .note {
+    font-size: 9px;
+    color: #78716C;
+    font-style: italic;
+    margin-bottom: 12px;
+    line-height: 1.5;
+  }
+
+  /* ── SUMMARY CARDS ── */
+  .summary { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 22px; }
+  .sum-card {
+    background: #fff;
+    border: 1px solid #E7E5E4;
+    border-radius: 8px;
+    padding: 10px 16px;
+    min-width: 110px;
+    border-top: 3px solid #F59E0B;
+  }
+  .sum-card b { display: block; font-family: 'Courier New', monospace; font-size: 24px; font-weight: 500; color: #1E1B4B; line-height: 1.1; }
+  .sum-card span { font-size: 9px; color: #78716C; text-transform: uppercase; letter-spacing: 0.05em; }
+
+  /* ── STACKED BAR CHART ── */
+  .chart-wrap { margin-bottom: 6px; }
+  .chart-row { display: flex; align-items: center; gap: 10px; margin-bottom: 5px; }
+  .chart-sector { font-size: 10px; color: #292524; width: 220px; flex-shrink: 0; line-height: 1.35; }
+  .chart-sector .sub { font-size: 8.5px; color: #A8A29E; font-weight: 300; }
+  .chart-track { flex: 1; height: 20px; display: flex; border-radius: 4px; overflow: hidden; background: #F5F5F4; }
+  .chart-seg { height: 100%; transition: opacity 0.2s; }
+  .chart-total { font-family: 'Courier New', monospace; font-size: 10px; font-weight: 500; color: #44403C; width: 24px; text-align: right; flex-shrink: 0; }
+
+  /* ── TRL LEGEND ── */
+  .trl-legend { display: flex; flex-wrap: wrap; gap: 7px; margin-bottom: 14px; }
+  .trl-leg-item { display: flex; align-items: center; gap: 4px; font-size: 9px; color: #57534E; }
+  .trl-leg-dot { width: 11px; height: 11px; border-radius: 2px; flex-shrink: 0; }
+
+  /* ── TRL COLORS (warm spectrum: red → amber → yellow-green → teal) ── */
+  /* 1 */ .t1 { background: #DC2626; }
+  /* 2 */ .t2 { background: #EA580C; }
+  /* 3 */ .t3 { background: #D97706; }
+  /* 4 */ .t4 { background: #CA8A04; }
+  /* 5 */ .t5 { background: #65A30D; }
+  /* 6 */ .t6 { background: #16A34A; }
+  /* 7 */ .t7 { background: #0D9488; }
+  /* 8 */ .t8 { background: #0369A1; }
+  /* 9 */ .t9 { background: #4F46E5; }
+
+  /* ── SECTOR COLORS ── */
+  /* Used in chart 2 */
+  .s-pertanian  { background: #F59E0B; }
+  .s-pangan     { background: #F43F5E; }
+  .s-kimia      { background: #8B5CF6; }
+  .s-farmasi    { background: #3B82F6; }
+  .s-dagang     { background: #F97316; }
+  .s-alkes      { background: #06B6D4; }
+  .s-klinik     { background: #EC4899; }
+  .s-lingkungan { background: #10B981; }
+  .s-plastik    { background: #84CC16; }
+  .s-tekstil    { background: #A78BFA; }
+  .s-jasa       { background: #94A3B8; }
+  .s-elektronik { background: #22D3EE; }
+  .s-energi     { background: #FBBF24; }
+  .s-tambang    { background: #78716C; }
+
+  /* ── SECTOR DISTRIBUTION BAR ── */
+  .bar-section { margin-bottom: 20px; }
+  .bar-row { display: flex; align-items: center; gap: 10px; margin-bottom: 4px; }
+  .bar-label { font-size: 10px; color: #292524; width: 220px; flex-shrink: 0; line-height: 1.35; }
+  .bar-track2 { flex: 1; height: 16px; background: #F5F5F4; border-radius: 4px; overflow: hidden; }
+  .bar-fill { height: 100%; border-radius: 4px; }
+  .bar-val { font-family: 'Courier New', monospace; font-size: 10px; font-weight: 500; color: #44403C; width: 22px; text-align: right; flex-shrink: 0; }
+
+  /* ── TOP CODES TABLE ── */
+  table.top { width: 100%; border-collapse: collapse; margin-bottom: 14px; }
+  table.top thead tr { background: #1E1B4B; }
+  table.top th { color: #E0E7FF; font-size: 9.5px; font-weight: 600; padding: 6px 8px; text-align: left; letter-spacing: 0.04em; text-transform: uppercase; }
+  table.top td { font-size: 10px; padding: 5px 8px; border-bottom: 1px solid #F5F5F4; vertical-align: top; }
+  table.top tr:nth-child(even) td { background: #FAFAF8; }
+  table.top tr:hover td { background: #FEF9EE; }
+  .code-mono { font-family: 'Courier New', monospace; font-size: 11px; font-weight: 500; }
+  .freq-badge {
+    display: inline-block;
+    background: #1E1B4B;
+    color: #F59E0B;
+    font-family: 'Courier New', monospace;
+    font-size: 9px;
+    font-weight: 500;
+    padding: 2px 7px;
+    border-radius: 20px;
+  }
+
+  /* ── KBLI CHIPS ── */
+  .sector { margin-bottom: 18px; page-break-inside: avoid; }
+  .sector-header { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
+  .sector-dot { width: 10px; height: 10px; border-radius: 2px; flex-shrink: 0; }
+  .sector-name { font-family: 'Georgia', 'Times New Roman', serif; font-size: 12px; font-weight: 400; letter-spacing: -0.1px; }
+  .sector-count { font-size: 9px; color: #A8A29E; margin-left: 4px; }
+  .kbli-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 5px; }
+  .kbli-chip {
+    border: 1px solid #E7E5E4;
+    border-radius: 6px;
+    padding: 6px 9px;
+    background: #fff;
+    border-left: 3px solid currentColor;
+  }
+  .kbli-chip .kode { font-family: 'Courier New', monospace; font-size: 11px; font-weight: 500; }
+  .kbli-chip .nama { font-size: 9.5px; color: #57534E; line-height: 1.35; margin-top: 2px; }
+  .kbli-chip .freq-bar { height: 2px; border-radius: 2px; margin-top: 5px; opacity: 0.5; }
+  .kbli-chip .freq-label { font-family: 'Courier New', monospace; font-size: 8.5px; font-weight: 500; margin-top: 1px; }
+
+  .divider { height: 1px; background: #E7E5E4; margin: 14px 0; }
+  .page-break { page-break-before: always; }
+
+  .legend { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 12px; }
+  .legend-item { display: flex; align-items: center; gap: 4px; font-size: 9.5px; color: #57534E; }
+  .legend-dot { width: 10px; height: 10px; border-radius: 2px; flex-shrink: 0; }
+
+  .footer {
+    text-align: center;
+    font-size: 9px;
+    color: #A8A29E;
+    padding: 14px 36px;
+    border-top: 1px solid #E7E5E4;
+    margin-top: 8px;
+    font-family: 'Courier New', monospace;
+    letter-spacing: 0.03em;
+  }
+
+  /* TRL label colors for chart 2 */
+  .tl1 { color: #DC2626; }
+  .tl2 { color: #EA580C; }
+  .tl3 { color: #D97706; }
+  .tl4 { color: #CA8A04; }
+  .tl5 { color: #65A30D; }
+  .tl6 { color: #16A34A; }
+  .tl7 { color: #0D9488; }
+  .tl8 { color: #0369A1; }
+  .tl9 { color: #4F46E5; }
+
+  /* ── TOOLTIP ── */
+  .tt {
+    display: none;
+    position: fixed;
+    background: #1E1B4B;
+    color: #fff;
+    font-family: 'Courier New', monospace;
+    font-size: 10.5px;
+    padding: 6px 12px;
+    border-radius: 6px;
+    white-space: nowrap;
+    pointer-events: none;
+    z-index: 9999;
+    border-left: 3px solid #F59E0B;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    letter-spacing: 0.02em;
+  }
+
+
+  /* ── SEGMENT INLINE LABEL ── */
+  .chart-seg {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    cursor: pointer;
+  }
+  .seg-lbl {
+    font-family: 'Courier New', monospace;
+    font-size: 8.5px;
+    font-weight: 700;
+    color: rgba(255,255,255,0.92);
+    text-shadow: 0 1px 2px rgba(0,0,0,0.45);
+    pointer-events: none;
+    line-height: 1;
+    user-select: none;
+  }
+
+
+  /* ── CHIP CLICK MODAL ── */
+  .kbli-chip { cursor: pointer; transition: box-shadow 0.15s, transform 0.12s; }
+  .kbli-chip:hover { box-shadow: 0 4px 16px rgba(30,27,75,0.13); transform: translateY(-1px); }
+  .kbli-chip:active { transform: translateY(0); }
+
+  #ki-modal-overlay {
+    display: none;
+    position: fixed; inset: 0;
+    background: rgba(15,12,40,0.55);
+    backdrop-filter: blur(3px);
+    z-index: 10000;
+    align-items: center;
+    justify-content: center;
+  }
+  #ki-modal-overlay.open { display: flex; }
+  #ki-modal {
+    background: #fff;
+    border-radius: 12px;
+    width: min(580px, 92vw);
+    max-height: 80vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 24px 60px rgba(0,0,0,0.3);
+  }
+  #ki-modal-header {
+    background: #1E1B4B;
+    color: #fff;
+    padding: 14px 18px;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  #ki-modal-code {
+    font-family: 'Courier New', monospace;
+    font-size: 18px;
+    font-weight: 700;
+    color: #F59E0B;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+  #ki-modal-title {
+    font-size: 11px;
+    line-height: 1.45;
+    color: #C7D2FE;
+    flex: 1;
+  }
+  #ki-modal-close {
+    background: none; border: none; color: #818CF8;
+    font-size: 18px; cursor: pointer; flex-shrink: 0;
+    padding: 0; line-height: 1;
+  }
+  #ki-modal-close:hover { color: #fff; }
+  #ki-modal-body {
+    overflow-y: auto;
+    padding: 14px 18px;
+    flex: 1;
+  }
+  #ki-modal-count {
+    font-size: 9px;
+    font-family: 'Courier New', monospace;
+    color: #A8A29E;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 10px;
+  }
+  .ki-item {
+    border: 1px solid #F0EDFC;
+    border-left: 3px solid #1E1B4B;
+    border-radius: 6px;
+    padding: 8px 11px;
+    margin-bottom: 7px;
+    background: #FAFAF8;
+  }
+  .ki-item:last-child { margin-bottom: 0; }
+  .ki-item-title {
+    font-size: 10.5px;
+    font-weight: 500;
+    color: #1C1917;
+    line-height: 1.4;
+    margin-bottom: 4px;
+  }
+  .ki-item-meta {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .ki-trl-badge {
+    font-family: 'Courier New', monospace;
+    font-size: 9px;
+    font-weight: 700;
+    padding: 2px 7px;
+    border-radius: 20px;
+    color: #fff;
+    flex-shrink: 0;
+  }
+  .ki-unit {
+    font-size: 9px;
+    color: #78716C;
+    line-height: 1.3;
+  }
+
+</style>
+</head>
+<body>
+
+<!-- ══ HEADER ══════════════════════════════════════════════════════ -->
+<div class="page-header">
+  <h1>Analisis KBLI 2025 — Potensi Komersialisasi KI BRIN</h1>
+  <p>Pemetaan Kekayaan Intelektual BRIN terhadap sektor industri berdasarkan KBLI 2025 &nbsp;·&nbsp; Verifikasi TRL 2026</p>
+  <div class="meta">
+    <div class="meta-item"><b>50</b><span>KI dianalisis</span></div>
+    <div class="meta-item"><b>144</b><span>Total opsi KBLI</span></div>
+    <div class="meta-item"><b>43</b><span>Kode KBLI unik</span></div>
+    <div class="meta-item"><b>15</b><span>Sektor industri</span></div>
+  </div>
+</div>
+
+<div class="content">
+
+<!-- ══ CHART 1: TRL PER SEKTOR ═══════════════════════════════════ -->
+<div class="section-title">Distribusi TRL per Sektor KBLI</div>
+<p class="note">Setiap KI dapat muncul di lebih dari satu sektor. Panjang bar = jumlah KI berpotensi di sektor tersebut, diwarnai berdasarkan TRL (merah–kuning–hijau–biru–ungu: TRL 1 → 9).</p>
+
+<div class="trl-legend">
+  <div class="trl-leg-item"><div class="trl-leg-dot t1"></div>TRL 1 – Prinsip dasar</div>
+  <div class="trl-leg-item"><div class="trl-leg-dot t2"></div>TRL 2 – Konsep teknologi</div>
+  <div class="trl-leg-item"><div class="trl-leg-dot t3"></div>TRL 3 – Bukti konsep</div>
+  <div class="trl-leg-item"><div class="trl-leg-dot t4"></div>TRL 4 – Validasi lab</div>
+  <div class="trl-leg-item"><div class="trl-leg-dot t5"></div>TRL 5 – Validasi lingk. relevan</div>
+  <div class="trl-leg-item"><div class="trl-leg-dot t6"></div>TRL 6 – Demo lingk. relevan</div>
+  <div class="trl-leg-item"><div class="trl-leg-dot t7"></div>TRL 7 – Demo lingk. operasional</div>
+  <div class="trl-leg-item"><div class="trl-leg-dot t8"></div>TRL 8 – Sistem lengkap &amp; kualifikasi</div>
+  <div class="trl-leg-item"><div class="trl-leg-dot t9"></div>TRL 9 – Sistem terbukti operasional</div>
+</div>
+
+<div class="chart-wrap">
+  <div class="chart-row">
+    <div class="chart-sector">Pertanian &amp; Perkebunan</div>
+    <div class="chart-track" style="width:100%">
+      <div class="chart-seg t1" style="width:3.8%" data-tip="TRL 1: 1 KI"><span class="seg-lbl" style="font-size:7px">1</span></div>
+      <div class="chart-seg t3" style="width:3.8%" data-tip="TRL 3: 1 KI"><span class="seg-lbl" style="font-size:7px">1</span></div>
+      <div class="chart-seg t4" style="width:11.5%" data-tip="TRL 4: 3 KI"><span class="seg-lbl">3</span></div>
+      <div class="chart-seg t5" style="width:15.4%" data-tip="TRL 5: 4 KI"><span class="seg-lbl">4</span></div>
+      <div class="chart-seg t6" style="width:26.9%" data-tip="TRL 6: 7 KI"><span class="seg-lbl">7</span></div>
+      <div class="chart-seg t7" style="width:11.5%" data-tip="TRL 7: 3 KI"><span class="seg-lbl">3</span></div>
+      <div class="chart-seg t8" style="width:19.2%" data-tip="TRL 8: 5 KI"><span class="seg-lbl">5</span></div>
+      <div class="chart-seg t9" style="width:7.7%" data-tip="TRL 9: 2 KI"><span class="seg-lbl">2</span></div>
+    </div>
+    <div class="chart-total">26</div>
+  </div>
+  <div class="chart-row">
+    <div class="chart-sector">Perdagangan Besar<br><span style='font-size:8px;font-weight:300;color:#A8A29E'>(berbagai sektor industri)</span></div>
+    <div class="chart-track" style="width:calc(21/26*100%)">
+      <div class="chart-seg t1" style="width:4.8%" data-tip="TRL 1: 1 KI"><span class="seg-lbl" style="font-size:7px">1</span></div>
+      <div class="chart-seg t3" style="width:4.8%" data-tip="TRL 3: 1 KI"><span class="seg-lbl" style="font-size:7px">1</span></div>
+      <div class="chart-seg t4" style="width:9.5%" data-tip="TRL 4: 2 KI"><span class="seg-lbl">2</span></div>
+      <div class="chart-seg t5" style="width:9.5%" data-tip="TRL 5: 2 KI"><span class="seg-lbl">2</span></div>
+      <div class="chart-seg t6" style="width:28.6%" data-tip="TRL 6: 6 KI"><span class="seg-lbl">6</span></div>
+      <div class="chart-seg t7" style="width:14.3%" data-tip="TRL 7: 3 KI"><span class="seg-lbl">3</span></div>
+      <div class="chart-seg t8" style="width:19.0%" data-tip="TRL 8: 4 KI"><span class="seg-lbl">4</span></div>
+      <div class="chart-seg t9" style="width:9.5%" data-tip="TRL 9: 2 KI"><span class="seg-lbl">2</span></div>
+    </div>
+    <div class="chart-total">21</div>
+  </div>
+  <div class="chart-row">
+    <div class="chart-sector">Industri Pangan &amp; Minuman</div>
+    <div class="chart-track" style="width:calc(20/26*100%)">
+      <div class="chart-seg t1" style="width:5.0%" data-tip="TRL 1: 1 KI"><span class="seg-lbl" style="font-size:7px">1</span></div>
+      <div class="chart-seg t3" style="width:10.0%" data-tip="TRL 3: 2 KI"><span class="seg-lbl">2</span></div>
+      <div class="chart-seg t4" style="width:20.0%" data-tip="TRL 4: 4 KI"><span class="seg-lbl">4</span></div>
+      <div class="chart-seg t5" style="width:5.0%" data-tip="TRL 5: 1 KI"><span class="seg-lbl" style="font-size:7px">1</span></div>
+      <div class="chart-seg t6" style="width:20.0%" data-tip="TRL 6: 4 KI"><span class="seg-lbl">4</span></div>
+      <div class="chart-seg t7" style="width:10.0%" data-tip="TRL 7: 2 KI"><span class="seg-lbl">2</span></div>
+      <div class="chart-seg t8" style="width:15.0%" data-tip="TRL 8: 3 KI"><span class="seg-lbl">3</span></div>
+      <div class="chart-seg t9" style="width:15.0%" data-tip="TRL 9: 3 KI"><span class="seg-lbl">3</span></div>
+    </div>
+    <div class="chart-total">20</div>
+  </div>
+  <div class="chart-row">
+    <div class="chart-sector">Industri Farmasi &amp; Biotek</div>
+    <div class="chart-track" style="width:calc(17/26*100%)">
+      <div class="chart-seg t2" style="width:5.9%" data-tip="TRL 2: 1 KI"><span class="seg-lbl" style="font-size:7px">1</span></div>
+      <div class="chart-seg t3" style="width:23.5%" data-tip="TRL 3: 4 KI"><span class="seg-lbl">4</span></div>
+      <div class="chart-seg t4" style="width:29.4%" data-tip="TRL 4: 5 KI"><span class="seg-lbl">5</span></div>
+      <div class="chart-seg t5" style="width:17.6%" data-tip="TRL 5: 3 KI"><span class="seg-lbl">3</span></div>
+      <div class="chart-seg t6" style="width:11.8%" data-tip="TRL 6: 2 KI"><span class="seg-lbl">2</span></div>
+      <div class="chart-seg t7" style="width:5.9%" data-tip="TRL 7: 1 KI"><span class="seg-lbl" style="font-size:7px">1</span></div>
+      <div class="chart-seg t9" style="width:5.9%" data-tip="TRL 9: 1 KI"><span class="seg-lbl" style="font-size:7px">1</span></div>
+    </div>
+    <div class="chart-total">17</div>
+  </div>
+  <div class="chart-row">
+    <div class="chart-sector">Industri Kimia &amp; Biokimia</div>
+    <div class="chart-track" style="width:calc(16/26*100%)">
+      <div class="chart-seg t3" style="width:6.2%" data-tip="TRL 3: 1 KI"><span class="seg-lbl" style="font-size:7px">1</span></div>
+      <div class="chart-seg t4" style="width:25.0%" data-tip="TRL 4: 4 KI"><span class="seg-lbl">4</span></div>
+      <div class="chart-seg t5" style="width:25.0%" data-tip="TRL 5: 4 KI"><span class="seg-lbl">4</span></div>
+      <div class="chart-seg t6" style="width:18.8%" data-tip="TRL 6: 3 KI"><span class="seg-lbl">3</span></div>
+      <div class="chart-seg t7" style="width:12.5%" data-tip="TRL 7: 2 KI"><span class="seg-lbl">2</span></div>
+      <div class="chart-seg t8" style="width:12.5%" data-tip="TRL 8: 2 KI"><span class="seg-lbl">2</span></div>
+    </div>
+    <div class="chart-total">16</div>
+  </div>
+  <div class="chart-row">
+    <div class="chart-sector">Industri Alat Kesehatan</div>
+    <div class="chart-track" style="width:calc(6/26*100%)">
+      <div class="chart-seg t2" style="width:16.7%" data-tip="TRL 2: 1 KI"><span class="seg-lbl">1</span></div>
+      <div class="chart-seg t3" style="width:33.3%" data-tip="TRL 3: 2 KI"><span class="seg-lbl">2</span></div>
+      <div class="chart-seg t4" style="width:33.3%" data-tip="TRL 4: 2 KI"><span class="seg-lbl">2</span></div>
+      <div class="chart-seg t7" style="width:16.7%" data-tip="TRL 7: 1 KI"><span class="seg-lbl">1</span></div>
+    </div>
+    <div class="chart-total">6</div>
+  </div>
+  <div class="chart-row">
+    <div class="chart-sector">Kesehatan &amp; Lab Klinik</div>
+    <div class="chart-track" style="width:calc(6/26*100%)">
+      <div class="chart-seg t2" style="width:16.7%" data-tip="TRL 2: 1 KI"><span class="seg-lbl">1</span></div>
+      <div class="chart-seg t3" style="width:33.3%" data-tip="TRL 3: 2 KI"><span class="seg-lbl">2</span></div>
+      <div class="chart-seg t5" style="width:16.7%" data-tip="TRL 5: 1 KI"><span class="seg-lbl">1</span></div>
+      <div class="chart-seg t6" style="width:16.7%" data-tip="TRL 6: 1 KI"><span class="seg-lbl">1</span></div>
+      <div class="chart-seg t7" style="width:16.7%" data-tip="TRL 7: 1 KI"><span class="seg-lbl">1</span></div>
+    </div>
+    <div class="chart-total">6</div>
+  </div>
+  <div class="chart-row">
+    <div class="chart-sector">Pengelolaan Lingkungan</div>
+    <div class="chart-track" style="width:calc(4/26*100%)">
+      <div class="chart-seg t4" style="width:25.0%" data-tip="TRL 4: 1 KI"><span class="seg-lbl">1</span></div>
+      <div class="chart-seg t5" style="width:50.0%" data-tip="TRL 5: 2 KI"><span class="seg-lbl">2</span></div>
+      <div class="chart-seg t6" style="width:25.0%" data-tip="TRL 6: 1 KI"><span class="seg-lbl">1</span></div>
+    </div>
+    <div class="chart-total">4</div>
+  </div>
+  <div class="chart-row">
+    <div class="chart-sector">Industri Plastik &amp; Kemasan</div>
+    <div class="chart-track" style="width:calc(3/26*100%)">
+      <div class="chart-seg t4" style="width:66.7%" data-tip="TRL 4: 2 KI"><span class="seg-lbl">2</span></div>
+      <div class="chart-seg t9" style="width:33.3%" data-tip="TRL 9: 1 KI"><span class="seg-lbl">1</span></div>
+    </div>
+    <div class="chart-total">3</div>
+  </div>
+  <div class="chart-row">
+    <div class="chart-sector">Jasa Pengujian &amp; Inspeksi</div>
+    <div class="chart-track" style="width:calc(2/26*100%)">
+      <div class="chart-seg t3" style="width:50.0%" data-tip="TRL 3: 1 KI"><span class="seg-lbl">1</span></div>
+      <div class="chart-seg t4" style="width:50.0%" data-tip="TRL 4: 1 KI"><span class="seg-lbl">1</span></div>
+    </div>
+    <div class="chart-total">2</div>
+  </div>
+  <div class="chart-row">
+    <div class="chart-sector">Industri Tekstil &amp; Serat</div>
+    <div class="chart-track" style="width:calc(2/26*100%)">
+      <div class="chart-seg t5" style="width:50.0%" data-tip="TRL 5: 1 KI"><span class="seg-lbl">1</span></div>
+      <div class="chart-seg t8" style="width:50.0%" data-tip="TRL 8: 1 KI"><span class="seg-lbl">1</span></div>
+    </div>
+    <div class="chart-total">2</div>
+  </div>
+  <div class="chart-row">
+    <div class="chart-sector">Pertambangan &amp; Mineral</div>
+    <div class="chart-track" style="width:calc(1/26*100%)">
+      <div class="chart-seg t6" style="width:100.0%" data-tip="TRL 6: 1 KI"><span class="seg-lbl">1</span></div>
+    </div>
+    <div class="chart-total">1</div>
+  </div>
+  <div class="chart-row">
+    <div class="chart-sector">Industri Energi (Biofuel)</div>
+    <div class="chart-track" style="width:calc(1/26*100%)">
+      <div class="chart-seg t4" style="width:100.0%" data-tip="TRL 4: 1 KI"><span class="seg-lbl">1</span></div>
+    </div>
+    <div class="chart-total">1</div>
+  </div>
+  <div class="chart-row">
+    <div class="chart-sector">Industri Elektronik &amp; Instrumen</div>
+    <div class="chart-track" style="width:calc(1/26*100%)">
+      <div class="chart-seg t6" style="width:100.0%" data-tip="TRL 6: 1 KI"><span class="seg-lbl">1</span></div>
+    </div>
+    <div class="chart-total">1</div>
+  </div>
+</div>
+
+<!-- ══ CHART 2: SEKTOR PER TRL ════════════════════════════════════ -->
+<div class="page-break"></div>
+<div class="section-title">Distribusi Sektor per TRL</div>
+<p class="note">Setiap bar mewakili satu level TRL. Panjang total bar = jumlah KI-sektor pada TRL tersebut. Warna menunjukkan kontribusi tiap sektor industri.</p>
+
+<div class="trl-legend" style="margin-bottom:14px;">
+  <div class="trl-leg-item"><div class="trl-leg-dot s-pertanian"></div>Pertanian &amp; Perkebunan</div>
+  <div class="trl-leg-item"><div class="trl-leg-dot s-pangan"></div>Industri Pangan &amp; Minuman</div>
+  <div class="trl-leg-item"><div class="trl-leg-dot s-kimia"></div>Industri Kimia &amp; Biokimia</div>
+  <div class="trl-leg-item"><div class="trl-leg-dot s-farmasi"></div>Industri Farmasi &amp; Biotek</div>
+  <div class="trl-leg-item"><div class="trl-leg-dot s-dagang"></div>Perdagangan Besar <span style="font-size:8px;color:#A8A29E">(berbagai sektor industri)</span></div>
+  <div class="trl-leg-item"><div class="trl-leg-dot s-alkes"></div>Industri Alat Kesehatan</div>
+  <div class="trl-leg-item"><div class="trl-leg-dot s-klinik"></div>Kesehatan &amp; Lab Klinik</div>
+  <div class="trl-leg-item"><div class="trl-leg-dot s-lingkungan"></div>Pengelolaan Lingkungan</div>
+  <div class="trl-leg-item"><div class="trl-leg-dot s-plastik"></div>Industri Plastik &amp; Kemasan</div>
+  <div class="trl-leg-item"><div class="trl-leg-dot s-tekstil"></div>Industri Tekstil &amp; Serat</div>
+  <div class="trl-leg-item"><div class="trl-leg-dot s-jasa"></div>Jasa Pengujian &amp; Inspeksi</div>
+  <div class="trl-leg-item"><div class="trl-leg-dot s-elektronik"></div>Industri Elektronik &amp; Instrumen</div>
+  <div class="trl-leg-item"><div class="trl-leg-dot s-energi"></div>Industri Energi (Biofuel)</div>
+  <div class="trl-leg-item"><div class="trl-leg-dot s-tambang"></div>Pertambangan &amp; Mineral</div>
+</div>
+
+<div class="chart-wrap">
+  <div class="chart-row">
+    <div class="chart-sector"><span class="tl1" style="font-family:'Courier New',monospace;font-weight:500">TRL 1</span> <span class="sub">Prinsip dasar</span></div>
+    <div class="chart-track" style="width:calc(3/26*100%)">
+      <div class="chart-seg s-pertanian" style="width:33.3%" data-tip="Pertanian & Perkebunan: 1 KI"><span class="seg-lbl">1</span></div>
+      <div class="chart-seg s-pangan" style="width:33.3%" data-tip="Industri Pangan & Minuman: 1 KI"><span class="seg-lbl">1</span></div>
+      <div class="chart-seg s-dagang" style="width:33.3%" data-tip="Perdagangan Besar (berbagai sektor industri): 1 KI"><span class="seg-lbl">1</span></div>
+    </div>
+    <div class="chart-total">3</div>
+  </div>
+  <div class="chart-row">
+    <div class="chart-sector"><span class="tl2" style="font-family:'Courier New',monospace;font-weight:500">TRL 2</span> <span class="sub">Konsep teknologi</span></div>
+    <div class="chart-track" style="width:calc(3/26*100%)">
+      <div class="chart-seg s-alkes" style="width:33.3%" data-tip="Industri Alat Kesehatan: 1 KI"><span class="seg-lbl">1</span></div>
+      <div class="chart-seg s-farmasi" style="width:33.3%" data-tip="Industri Farmasi & Biotek: 1 KI"><span class="seg-lbl">1</span></div>
+      <div class="chart-seg s-klinik" style="width:33.3%" data-tip="Kesehatan & Lab Klinik: 1 KI"><span class="seg-lbl">1</span></div>
+    </div>
+    <div class="chart-total">3</div>
+  </div>
+  <div class="chart-row">
+    <div class="chart-sector"><span class="tl3" style="font-family:'Courier New',monospace;font-weight:500">TRL 3</span> <span class="sub">Bukti konsep</span></div>
+    <div class="chart-track" style="width:calc(14/26*100%)">
+      <div class="chart-seg s-farmasi" style="width:28.6%" data-tip="Industri Farmasi & Biotek: 4 KI"><span class="seg-lbl">4</span></div>
+      <div class="chart-seg s-pangan" style="width:14.3%" data-tip="Industri Pangan & Minuman: 2 KI"><span class="seg-lbl">2</span></div>
+      <div class="chart-seg s-alkes" style="width:14.3%" data-tip="Industri Alat Kesehatan: 2 KI"><span class="seg-lbl">2</span></div>
+      <div class="chart-seg s-klinik" style="width:14.3%" data-tip="Kesehatan & Lab Klinik: 2 KI"><span class="seg-lbl">2</span></div>
+      <div class="chart-seg s-jasa" style="width:7.1%" data-tip="Jasa Pengujian & Inspeksi: 1 KI"><span class="seg-lbl">1</span></div>
+      <div class="chart-seg s-kimia" style="width:7.1%" data-tip="Industri Kimia & Biokimia: 1 KI"><span class="seg-lbl">1</span></div>
+      <div class="chart-seg s-pertanian" style="width:7.1%" data-tip="Pertanian & Perkebunan: 1 KI"><span class="seg-lbl">1</span></div>
+      <div class="chart-seg s-dagang" style="width:7.1%" data-tip="Perdagangan Besar (berbagai sektor industri): 1 KI"><span class="seg-lbl">1</span></div>
+    </div>
+    <div class="chart-total">14</div>
+  </div>
+  <div class="chart-row">
+    <div class="chart-sector"><span class="tl4" style="font-family:'Courier New',monospace;font-weight:500">TRL 4</span> <span class="sub">Validasi laboratorium</span></div>
+    <div class="chart-track" style="width:calc(25/26*100%)">
+      <div class="chart-seg s-farmasi" style="width:20.0%" data-tip="Industri Farmasi & Biotek: 5 KI"><span class="seg-lbl">5</span></div>
+      <div class="chart-seg s-pangan" style="width:16.0%" data-tip="Industri Pangan & Minuman: 4 KI"><span class="seg-lbl">4</span></div>
+      <div class="chart-seg s-kimia" style="width:16.0%" data-tip="Industri Kimia & Biokimia: 4 KI"><span class="seg-lbl">4</span></div>
+      <div class="chart-seg s-pertanian" style="width:12.0%" data-tip="Pertanian & Perkebunan: 3 KI"><span class="seg-lbl">3</span></div>
+      <div class="chart-seg s-plastik" style="width:8.0%" data-tip="Industri Plastik & Kemasan: 2 KI"><span class="seg-lbl">2</span></div>
+      <div class="chart-seg s-dagang" style="width:8.0%" data-tip="Perdagangan Besar (berbagai sektor industri): 2 KI"><span class="seg-lbl">2</span></div>
+      <div class="chart-seg s-alkes" style="width:8.0%" data-tip="Industri Alat Kesehatan: 2 KI"><span class="seg-lbl">2</span></div>
+      <div class="chart-seg s-lingkungan" style="width:4.0%" data-tip="Pengelolaan Lingkungan: 1 KI"><span class="seg-lbl" style="font-size:7px">1</span></div>
+      <div class="chart-seg s-jasa" style="width:4.0%" data-tip="Jasa Pengujian & Inspeksi: 1 KI"><span class="seg-lbl" style="font-size:7px">1</span></div>
+      <div class="chart-seg s-energi" style="width:4.0%" data-tip="Industri Energi (Biofuel): 1 KI"><span class="seg-lbl" style="font-size:7px">1</span></div>
+    </div>
+    <div class="chart-total">25</div>
+  </div>
+  <div class="chart-row">
+    <div class="chart-sector"><span class="tl5" style="font-family:'Courier New',monospace;font-weight:500">TRL 5</span> <span class="sub">Validasi lingk. relevan</span></div>
+    <div class="chart-track" style="width:calc(18/26*100%)">
+      <div class="chart-seg s-pertanian" style="width:22.2%" data-tip="Pertanian & Perkebunan: 4 KI"><span class="seg-lbl">4</span></div>
+      <div class="chart-seg s-kimia" style="width:22.2%" data-tip="Industri Kimia & Biokimia: 4 KI"><span class="seg-lbl">4</span></div>
+      <div class="chart-seg s-farmasi" style="width:16.7%" data-tip="Industri Farmasi & Biotek: 3 KI"><span class="seg-lbl">3</span></div>
+      <div class="chart-seg s-dagang" style="width:11.1%" data-tip="Perdagangan Besar (berbagai sektor industri): 2 KI"><span class="seg-lbl">2</span></div>
+      <div class="chart-seg s-lingkungan" style="width:11.1%" data-tip="Pengelolaan Lingkungan: 2 KI"><span class="seg-lbl">2</span></div>
+      <div class="chart-seg s-pangan" style="width:5.6%" data-tip="Industri Pangan & Minuman: 1 KI"><span class="seg-lbl" style="font-size:7px">1</span></div>
+      <div class="chart-seg s-klinik" style="width:5.6%" data-tip="Kesehatan & Lab Klinik: 1 KI"><span class="seg-lbl" style="font-size:7px">1</span></div>
+      <div class="chart-seg s-tekstil" style="width:5.6%" data-tip="Industri Tekstil & Serat: 1 KI"><span class="seg-lbl" style="font-size:7px">1</span></div>
+    </div>
+    <div class="chart-total">18</div>
+  </div>
+  <div class="chart-row">
+    <div class="chart-sector"><span class="tl6" style="font-family:'Courier New',monospace;font-weight:500">TRL 6</span> <span class="sub">Demo lingk. relevan</span></div>
+    <div class="chart-track" style="width:100%">
+      <div class="chart-seg s-pertanian" style="width:26.9%" data-tip="Pertanian & Perkebunan: 7 KI"><span class="seg-lbl">7</span></div>
+      <div class="chart-seg s-dagang" style="width:23.1%" data-tip="Perdagangan Besar (berbagai sektor industri): 6 KI"><span class="seg-lbl">6</span></div>
+      <div class="chart-seg s-pangan" style="width:15.4%" data-tip="Industri Pangan & Minuman: 4 KI"><span class="seg-lbl">4</span></div>
+      <div class="chart-seg s-kimia" style="width:11.5%" data-tip="Industri Kimia & Biokimia: 3 KI"><span class="seg-lbl">3</span></div>
+      <div class="chart-seg s-farmasi" style="width:7.7%" data-tip="Industri Farmasi & Biotek: 2 KI"><span class="seg-lbl">2</span></div>
+      <div class="chart-seg s-tambang" style="width:3.8%" data-tip="Pertambangan & Mineral: 1 KI"><span class="seg-lbl" style="font-size:7px">1</span></div>
+      <div class="chart-seg s-klinik" style="width:3.8%" data-tip="Kesehatan & Lab Klinik: 1 KI"><span class="seg-lbl" style="font-size:7px">1</span></div>
+      <div class="chart-seg s-elektronik" style="width:3.8%" data-tip="Industri Elektronik & Instrumen: 1 KI"><span class="seg-lbl" style="font-size:7px">1</span></div>
+      <div class="chart-seg s-lingkungan" style="width:3.8%" data-tip="Pengelolaan Lingkungan: 1 KI"><span class="seg-lbl" style="font-size:7px">1</span></div>
+    </div>
+    <div class="chart-total">26</div>
+  </div>
+  <div class="chart-row">
+    <div class="chart-sector"><span class="tl7" style="font-family:'Courier New',monospace;font-weight:500">TRL 7</span> <span class="sub">Demo lingk. operasional</span></div>
+    <div class="chart-track" style="width:calc(13/26*100%)">
+      <div class="chart-seg s-dagang" style="width:23.1%" data-tip="Perdagangan Besar (berbagai sektor industri): 3 KI"><span class="seg-lbl">3</span></div>
+      <div class="chart-seg s-pertanian" style="width:23.1%" data-tip="Pertanian & Perkebunan: 3 KI"><span class="seg-lbl">3</span></div>
+      <div class="chart-seg s-kimia" style="width:15.4%" data-tip="Industri Kimia & Biokimia: 2 KI"><span class="seg-lbl">2</span></div>
+      <div class="chart-seg s-pangan" style="width:15.4%" data-tip="Industri Pangan & Minuman: 2 KI"><span class="seg-lbl">2</span></div>
+      <div class="chart-seg s-alkes" style="width:7.7%" data-tip="Industri Alat Kesehatan: 1 KI"><span class="seg-lbl">1</span></div>
+      <div class="chart-seg s-farmasi" style="width:7.7%" data-tip="Industri Farmasi & Biotek: 1 KI"><span class="seg-lbl">1</span></div>
+      <div class="chart-seg s-klinik" style="width:7.7%" data-tip="Kesehatan & Lab Klinik: 1 KI"><span class="seg-lbl">1</span></div>
+    </div>
+    <div class="chart-total">13</div>
+  </div>
+  <div class="chart-row">
+    <div class="chart-sector"><span class="tl8" style="font-family:'Courier New',monospace;font-weight:500">TRL 8</span> <span class="sub">Sistem lengkap &amp; kualifikasi</span></div>
+    <div class="chart-track" style="width:calc(15/26*100%)">
+      <div class="chart-seg s-pertanian" style="width:33.3%" data-tip="Pertanian & Perkebunan: 5 KI"><span class="seg-lbl">5</span></div>
+      <div class="chart-seg s-dagang" style="width:26.7%" data-tip="Perdagangan Besar (berbagai sektor industri): 4 KI"><span class="seg-lbl">4</span></div>
+      <div class="chart-seg s-pangan" style="width:20.0%" data-tip="Industri Pangan & Minuman: 3 KI"><span class="seg-lbl">3</span></div>
+      <div class="chart-seg s-kimia" style="width:13.3%" data-tip="Industri Kimia & Biokimia: 2 KI"><span class="seg-lbl">2</span></div>
+      <div class="chart-seg s-tekstil" style="width:6.7%" data-tip="Industri Tekstil & Serat: 1 KI"><span class="seg-lbl" style="font-size:7px">1</span></div>
+    </div>
+    <div class="chart-total">15</div>
+  </div>
+  <div class="chart-row">
+    <div class="chart-sector"><span class="tl9" style="font-family:'Courier New',monospace;font-weight:500">TRL 9</span> <span class="sub">Sistem terbukti operasional</span></div>
+    <div class="chart-track" style="width:calc(9/26*100%)">
+      <div class="chart-seg s-pangan" style="width:33.3%" data-tip="Industri Pangan & Minuman: 3 KI"><span class="seg-lbl">3</span></div>
+      <div class="chart-seg s-pertanian" style="width:22.2%" data-tip="Pertanian & Perkebunan: 2 KI"><span class="seg-lbl">2</span></div>
+      <div class="chart-seg s-dagang" style="width:22.2%" data-tip="Perdagangan Besar (berbagai sektor industri): 2 KI"><span class="seg-lbl">2</span></div>
+      <div class="chart-seg s-farmasi" style="width:11.1%" data-tip="Industri Farmasi & Biotek: 1 KI"><span class="seg-lbl">1</span></div>
+      <div class="chart-seg s-plastik" style="width:11.1%" data-tip="Industri Plastik & Kemasan: 1 KI"><span class="seg-lbl">1</span></div>
+    </div>
+    <div class="chart-total">9</div>
+  </div>
+</div>
+
+<!-- ══ CHART 3: DISTRIBUSI SEKTOR ════════════════════════════════ -->
+<div class="page-break"></div>
+<div class="section-title">Distribusi per Sektor Industri</div>
+
+<div class="legend">
+  <div class="legend-item"><div class="legend-dot s-pertanian"></div>Pertanian &amp; hulu</div>
+  <div class="legend-item"><div class="legend-dot s-pangan"></div>Pangan &amp; manufaktur</div>
+  <div class="legend-item"><div class="legend-dot s-farmasi"></div>Farmasi &amp; kesehatan</div>
+  <div class="legend-item"><div class="legend-dot s-dagang"></div>Distribusi &amp; perdagangan</div>
+  <div class="legend-item"><div class="legend-dot s-kimia"></div>Kimia &amp; biokimia</div>
+</div>
+
+<div class="bar-section">
+  <div class="bar-row"><div class="bar-label">Pertanian &amp; Perkebunan</div><div class="bar-track2"><div class="bar-fill s-pertanian" style="width:100%"></div></div><div class="bar-val">31</div></div>
+  <div class="bar-row"><div class="bar-label">Industri Pangan &amp; Minuman</div><div class="bar-track2"><div class="bar-fill s-pangan" style="width:90%"></div></div><div class="bar-val">28</div></div>
+  <div class="bar-row"><div class="bar-label">Perdagangan Besar <span style="font-size:8.5px;color:#A8A29E">(berbagai sektor industri)</span></div><div class="bar-track2"><div class="bar-fill s-dagang" style="width:68%"></div></div><div class="bar-val">21</div></div>
+  <div class="bar-row"><div class="bar-label">Industri Farmasi &amp; Biotek</div><div class="bar-track2"><div class="bar-fill s-farmasi" style="width:61%"></div></div><div class="bar-val">19</div></div>
+  <div class="bar-row"><div class="bar-label">Industri Kimia &amp; Biokimia</div><div class="bar-track2"><div class="bar-fill s-kimia" style="width:58%"></div></div><div class="bar-val">18</div></div>
+  <div class="bar-row"><div class="bar-label">Industri Alat Kesehatan</div><div class="bar-track2"><div class="bar-fill s-alkes" style="width:19%"></div></div><div class="bar-val">6</div></div>
+  <div class="bar-row"><div class="bar-label">Kesehatan &amp; Lab Klinik</div><div class="bar-track2"><div class="bar-fill s-klinik" style="width:19%"></div></div><div class="bar-val">6</div></div>
+  <div class="bar-row"><div class="bar-label">Pengelolaan Lingkungan</div><div class="bar-track2"><div class="bar-fill s-lingkungan" style="width:13%"></div></div><div class="bar-val">4</div></div>
+  <div class="bar-row"><div class="bar-label">Industri Plastik &amp; Kemasan</div><div class="bar-track2"><div class="bar-fill s-plastik" style="width:13%"></div></div><div class="bar-val">4</div></div>
+  <div class="bar-row"><div class="bar-label">Industri Tekstil &amp; Serat</div><div class="bar-track2"><div class="bar-fill s-tekstil" style="width:6%"></div></div><div class="bar-val">2</div></div>
+  <div class="bar-row"><div class="bar-label">Jasa Pengujian &amp; Inspeksi</div><div class="bar-track2"><div class="bar-fill s-jasa" style="width:6%"></div></div><div class="bar-val">2</div></div>
+  <div class="bar-row"><div class="bar-label">Industri Elektronik &amp; Instrumen</div><div class="bar-track2"><div class="bar-fill s-elektronik" style="width:3%"></div></div><div class="bar-val">1</div></div>
+  <div class="bar-row"><div class="bar-label">Industri Energi (Biofuel)</div><div class="bar-track2"><div class="bar-fill s-energi" style="width:3%"></div></div><div class="bar-val">1</div></div>
+  <div class="bar-row"><div class="bar-label">Pertambangan &amp; Mineral</div><div class="bar-track2"><div class="bar-fill s-tambang" style="width:3%"></div></div><div class="bar-val">1</div></div>
+</div>
+
+<!-- ══ TOP 15 TABLE ═══════════════════════════════════════════════ -->
+<div class="section-title">Top 15 Kode KBLI Terbanyak</div>
+<table class="top">
+  <thead><tr><th>Kode</th><th>Nama Subgolongan</th><th>Sektor</th><th>Frek.</th></tr></thead>
+  <tbody>
+    <tr><td class="code-mono" style="color:#F43F5E">10801</td><td>Industri makanan kesehatan &amp; nutrasetikal</td><td>Pangan &amp; Minuman</td><td><span class="freq-badge">15×</span></td></tr>
+    <tr><td class="code-mono" style="color:#8B5CF6">20214</td><td>Industri pupuk, biopestisida &amp; biostimulant</td><td>Kimia &amp; Biokimia</td><td><span class="freq-badge">13×</span></td></tr>
+    <tr><td class="code-mono" style="color:#3B82F6">21012</td><td>Industri bahan kimia diagnostik &amp; reagensia riset</td><td>Farmasi &amp; Biotek</td><td><span class="freq-badge">12×</span></td></tr>
+    <tr><td class="code-mono" style="color:#F97316">46612</td><td>Perdagangan besar pupuk &amp; produk agrokimia</td><td>Perdagangan Besar</td><td><span class="freq-badge">8×</span></td></tr>
+    <tr><td class="code-mono" style="color:#F97316">46319</td><td>Perdagangan besar produk makanan &amp; minuman</td><td>Perdagangan Besar</td><td><span class="freq-badge">7×</span></td></tr>
+    <tr><td class="code-mono" style="color:#3B82F6">21091</td><td>Industri farmasi – vaksin, OHT &amp; drug discovery</td><td>Farmasi &amp; Biotek</td><td><span class="freq-badge">6×</span></td></tr>
+    <tr><td class="code-mono" style="color:#F59E0B">01402</td><td>Pembibitan tanaman</td><td>Pertanian &amp; Perkebunan</td><td><span class="freq-badge">6×</span></td></tr>
+    <tr><td class="code-mono" style="color:#06B6D4">32501</td><td>Industri peralatan kedokteran &amp; diagnostik IVD</td><td>Alat Kesehatan</td><td><span class="freq-badge">6×</span></td></tr>
+    <tr><td class="code-mono" style="color:#F59E0B">01111</td><td>Pertanian tanaman kedelai / padi-padian</td><td>Pertanian &amp; Perkebunan</td><td><span class="freq-badge">5×</span></td></tr>
+    <tr><td class="code-mono" style="color:#F59E0B">01610</td><td>Jasa penunjang pertanian &amp; smart farming</td><td>Pertanian &amp; Perkebunan</td><td><span class="freq-badge">4×</span></td></tr>
+    <tr><td class="code-mono" style="color:#F97316">46211</td><td>Perdagangan besar benih &amp; komoditas pertanian</td><td>Perdagangan Besar</td><td><span class="freq-badge">4×</span></td></tr>
+    <tr><td class="code-mono" style="color:#EC4899">86901</td><td>Aktivitas laboratorium klinik komersial</td><td>Kesehatan &amp; Lab Klinik</td><td><span class="freq-badge">4×</span></td></tr>
+    <tr><td class="code-mono" style="color:#F59E0B">01131</td><td>Pertanian tebu</td><td>Pertanian &amp; Perkebunan</td><td><span class="freq-badge">3×</span></td></tr>
+    <tr><td class="code-mono" style="color:#F59E0B">01403</td><td>Jasa peternakan &amp; inseminasi buatan</td><td>Pertanian &amp; Perkebunan</td><td><span class="freq-badge">3×</span></td></tr>
+    <tr><td class="code-mono" style="color:#F59E0B">01112</td><td>Pertanian tanaman jagung</td><td>Pertanian &amp; Perkebunan</td><td><span class="freq-badge">3×</span></td></tr>
+  </tbody>
+</table>
+
+<!-- ══ 43 KBLI UNIK ════════════════════════════════════════════════ -->
+<div class="page-break"></div>
+<div class="section-title">43 Kode KBLI Unik — Detail per Sektor</div>
+
+<div class="sector">
+  <div class="sector-header"><div class="sector-dot s-pertanian"></div><span class="sector-name" style="color:#D97706">Pertanian &amp; Perkebunan</span><span class="sector-count">11 kode · 31 opsi</span></div>
+  <div class="kbli-grid">
+    <div class="kbli-chip" style="color:#D97706;border-left-color:#F59E0B" data-code="01111" data-name="Pertanian tanaman kedelai / padi-padian"><div class="kode">01111</div><div class="nama">Pertanian tanaman kedelai / padi-padian</div><div class="freq-bar" style="width:33%;background:#F59E0B"></div><div class="freq-label" style="color:#D97706">5×</div></div>
+    <div class="kbli-chip" style="color:#D97706;border-left-color:#F59E0B" data-code="01112" data-name="Pertanian tanaman jagung"><div class="kode">01112</div><div class="nama">Pertanian tanaman jagung</div><div class="freq-bar" style="width:20%;background:#F59E0B"></div><div class="freq-label" style="color:#D97706">3×</div></div>
+    <div class="kbli-chip" style="color:#D97706;border-left-color:#F59E0B" data-code="01129" data-name="Pertanian tanaman kacang-kacangan"><div class="kode">01129</div><div class="nama">Pertanian tanaman kacang-kacangan</div><div class="freq-bar" style="width:7%;background:#F59E0B"></div><div class="freq-label" style="color:#D97706">1×</div></div>
+    <div class="kbli-chip" style="color:#D97706;border-left-color:#F59E0B" data-code="01131" data-name="Pertanian tebu"><div class="kode">01131</div><div class="nama">Pertanian tebu</div><div class="freq-bar" style="width:20%;background:#F59E0B"></div><div class="freq-label" style="color:#D97706">3×</div></div>
+    <div class="kbli-chip" style="color:#D97706;border-left-color:#F59E0B" data-code="01133" data-name="Pertanian sayuran &amp; umbi – bawang merah"><div class="kode">01133</div><div class="nama">Pertanian sayuran &amp; umbi – bawang merah</div><div class="freq-bar" style="width:13%;background:#F59E0B"></div><div class="freq-label" style="color:#D97706">2×</div></div>
+    <div class="kbli-chip" style="color:#D97706;border-left-color:#F59E0B" data-code="01299" data-name="Pertanian tanaman rempah / lahan salinitas"><div class="kode">01299</div><div class="nama">Pertanian tanaman rempah / lahan salinitas</div><div class="freq-bar" style="width:13%;background:#F59E0B"></div><div class="freq-label" style="color:#D97706">2×</div></div>
+    <div class="kbli-chip" style="color:#D97706;border-left-color:#F59E0B" data-code="01301" data-name="Kehutanan – pemuliaan pohon tahan patogen"><div class="kode">01301</div><div class="nama">Kehutanan – pemuliaan pohon tahan patogen</div><div class="freq-bar" style="width:7%;background:#F59E0B"></div><div class="freq-label" style="color:#D97706">1×</div></div>
+    <div class="kbli-chip" style="color:#D97706;border-left-color:#F59E0B" data-code="01302" data-name="Budidaya ulat sutra"><div class="kode">01302</div><div class="nama">Budidaya ulat sutra</div><div class="freq-bar" style="width:7%;background:#F59E0B"></div><div class="freq-label" style="color:#D97706">1×</div></div>
+    <div class="kbli-chip" style="color:#D97706;border-left-color:#F59E0B" data-code="01402" data-name="Pembibitan tanaman"><div class="kode">01402</div><div class="nama">Pembibitan tanaman</div><div class="freq-bar" style="width:40%;background:#F59E0B"></div><div class="freq-label" style="color:#D97706">6×</div></div>
+    <div class="kbli-chip" style="color:#D97706;border-left-color:#F59E0B" data-code="01403" data-name="Jasa peternakan &amp; inseminasi buatan"><div class="kode">01403</div><div class="nama">Jasa peternakan &amp; inseminasi buatan</div><div class="freq-bar" style="width:20%;background:#F59E0B"></div><div class="freq-label" style="color:#D97706">3×</div></div>
+    <div class="kbli-chip" style="color:#D97706;border-left-color:#F59E0B" data-code="01610" data-name="Jasa penunjang pertanian &amp; smart farming"><div class="kode">01610</div><div class="nama">Jasa penunjang pertanian &amp; smart farming</div><div class="freq-bar" style="width:27%;background:#F59E0B"></div><div class="freq-label" style="color:#D97706">4×</div></div>
+  </div>
+</div>
+<div class="divider"></div>
+
+<div class="sector">
+  <div class="sector-header"><div class="sector-dot s-pangan"></div><span class="sector-name" style="color:#E11D48">Industri Pangan &amp; Minuman</span><span class="sector-count">7 kode · 28 opsi</span></div>
+  <div class="kbli-grid">
+    <div class="kbli-chip" style="color:#E11D48;border-left-color:#F43F5E" data-code="10611" data-name="Industri penggilingan &amp; pengolahan serealia"><div class="kode">10611</div><div class="nama">Industri penggilingan &amp; pengolahan serealia</div><div class="freq-bar" style="width:13%;background:#F43F5E"></div><div class="freq-label" style="color:#E11D48">2×</div></div>
+    <div class="kbli-chip" style="color:#E11D48;border-left-color:#F43F5E" data-code="10631" data-name="Industri tepung &amp; pati (MOCAF)"><div class="kode">10631</div><div class="nama">Industri tepung &amp; pati (MOCAF)</div><div class="freq-bar" style="width:7%;background:#F43F5E"></div><div class="freq-label" style="color:#E11D48">1×</div></div>
+    <div class="kbli-chip" style="color:#E11D48;border-left-color:#F43F5E" data-code="10720" data-name="Industri roti, kue &amp; biskuit fungsional"><div class="kode">10720</div><div class="nama">Industri roti, kue &amp; biskuit fungsional</div><div class="freq-bar" style="width:13%;background:#F43F5E"></div><div class="freq-label" style="color:#E11D48">2×</div></div>
+    <div class="kbli-chip" style="color:#E11D48;border-left-color:#F43F5E" data-code="10753" data-name="Industri minuman teh, herbal &amp; fermentasi"><div class="kode">10753</div><div class="nama">Industri minuman teh, herbal &amp; fermentasi</div><div class="freq-bar" style="width:20%;background:#F43F5E"></div><div class="freq-label" style="color:#E11D48">3×</div></div>
+    <div class="kbli-chip" style="color:#E11D48;border-left-color:#F43F5E" data-code="10792" data-name="Industri pengolahan fermentasi/garam/jamur"><div class="kode">10792</div><div class="nama">Industri pengolahan fermentasi/garam/jamur</div><div class="freq-bar" style="width:20%;background:#F43F5E"></div><div class="freq-label" style="color:#E11D48">3×</div></div>
+    <div class="kbli-chip" style="color:#E11D48;border-left-color:#F43F5E" data-code="10794" data-name="Industri bumbu, saus &amp; sambal"><div class="kode">10794</div><div class="nama">Industri bumbu, saus &amp; sambal</div><div class="freq-bar" style="width:13%;background:#F43F5E"></div><div class="freq-label" style="color:#E11D48">2×</div></div>
+    <div class="kbli-chip" style="color:#E11D48;border-left-color:#F43F5E" data-code="10801" data-name="Industri makanan kesehatan &amp; nutrasetikal"><div class="kode">10801</div><div class="nama">Industri makanan kesehatan &amp; nutrasetikal</div><div class="freq-bar" style="width:100%;background:#F43F5E"></div><div class="freq-label" style="color:#E11D48">15×</div></div>
+  </div>
+</div>
+<div class="divider"></div>
+
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+  <div class="sector">
+    <div class="sector-header"><div class="sector-dot s-kimia"></div><span class="sector-name" style="color:#7C3AED">Industri Kimia &amp; Biokimia</span><span class="sector-count">4 kode · 18 opsi</span></div>
+    <div class="kbli-grid" style="grid-template-columns:1fr;">
+      <div class="kbli-chip" style="color:#7C3AED;border-left-color:#8B5CF6" data-code="20113" data-name="Industri zat warna &amp; pigmen natural"><div class="kode">20113</div><div class="nama">Industri zat warna &amp; pigmen natural</div><div class="freq-bar" style="width:13%;background:#8B5CF6"></div><div class="freq-label" style="color:#7C3AED">2×</div></div>
+      <div class="kbli-chip" style="color:#7C3AED;border-left-color:#8B5CF6" data-code="20214" data-name="Industri pupuk, biopestisida &amp; biostimulant"><div class="kode">20214</div><div class="nama">Industri pupuk, biopestisida &amp; biostimulant</div><div class="freq-bar" style="width:87%;background:#8B5CF6"></div><div class="freq-label" style="color:#7C3AED">13×</div></div>
+      <div class="kbli-chip" style="color:#7C3AED;border-left-color:#8B5CF6" data-code="20232" data-name="Industri kosmetik &amp; perawatan tubuh"><div class="kode">20232</div><div class="nama">Industri kosmetik &amp; perawatan tubuh</div><div class="freq-bar" style="width:7%;background:#8B5CF6"></div><div class="freq-label" style="color:#7C3AED">1×</div></div>
+      <div class="kbli-chip" style="color:#7C3AED;border-left-color:#8B5CF6" data-code="20293" data-name="Industri enzim industri &amp; bahan kimia lainnya"><div class="kode">20293</div><div class="nama">Industri enzim industri &amp; bahan kimia lainnya</div><div class="freq-bar" style="width:13%;background:#8B5CF6"></div><div class="freq-label" style="color:#7C3AED">2×</div></div>
+    </div>
+  </div>
+  <div class="sector">
+    <div class="sector-header"><div class="sector-dot s-farmasi"></div><span class="sector-name" style="color:#1D4ED8">Industri Farmasi &amp; Biotek</span><span class="sector-count">3 kode · 19 opsi</span></div>
+    <div class="kbli-grid" style="grid-template-columns:1fr;">
+      <div class="kbli-chip" style="color:#1D4ED8;border-left-color:#3B82F6" data-code="21012" data-name="Industri bahan kimia diagnostik &amp; reagensia riset"><div class="kode">21012</div><div class="nama">Industri bahan kimia diagnostik &amp; reagensia riset</div><div class="freq-bar" style="width:80%;background:#3B82F6"></div><div class="freq-label" style="color:#1D4ED8">12×</div></div>
+      <div class="kbli-chip" style="color:#1D4ED8;border-left-color:#3B82F6" data-code="21022" data-name="Industri produk biologi pertanian/pangan"><div class="kode">21022</div><div class="nama">Industri produk biologi pertanian/pangan</div><div class="freq-bar" style="width:7%;background:#3B82F6"></div><div class="freq-label" style="color:#1D4ED8">1×</div></div>
+      <div class="kbli-chip" style="color:#1D4ED8;border-left-color:#3B82F6" data-code="21091" data-name="Industri farmasi – vaksin, OHT &amp; drug discovery"><div class="kode">21091</div><div class="nama">Industri farmasi – vaksin, OHT &amp; drug discovery</div><div class="freq-bar" style="width:40%;background:#3B82F6"></div><div class="freq-label" style="color:#1D4ED8">6×</div></div>
+    </div>
+  </div>
+</div>
+<div class="divider"></div>
+
+<div class="sector">
+  <div class="sector-header"><div class="sector-dot s-dagang"></div><span class="sector-name" style="color:#C2410C">Perdagangan Besar</span><span class="sector-count">5 kode · 21 opsi</span></div>
+  <div class="kbli-grid">
+    <div class="kbli-chip" style="color:#C2410C;border-left-color:#F97316" data-code="46211" data-name="Dagang besar benih &amp; komoditas pertanian"><div class="kode">46211</div><div class="nama">Dagang besar benih &amp; komoditas pertanian</div><div class="freq-bar" style="width:27%;background:#F97316"></div><div class="freq-label" style="color:#C2410C">4×</div></div>
+    <div class="kbli-chip" style="color:#C2410C;border-left-color:#F97316" data-code="46319" data-name="Dagang besar produk makanan &amp; minuman"><div class="kode">46319</div><div class="nama">Dagang besar produk makanan &amp; minuman</div><div class="freq-bar" style="width:47%;background:#F97316"></div><div class="freq-label" style="color:#C2410C">7×</div></div>
+    <div class="kbli-chip" style="color:#C2410C;border-left-color:#F97316" data-code="46521" data-name="Dagang besar alat elektronik &amp; agritech"><div class="kode">46521</div><div class="nama">Dagang besar alat elektronik &amp; agritech</div><div class="freq-bar" style="width:7%;background:#F97316"></div><div class="freq-label" style="color:#C2410C">1×</div></div>
+    <div class="kbli-chip" style="color:#C2410C;border-left-color:#F97316" data-code="46612" data-name="Dagang besar pupuk &amp; produk agrokimia"><div class="kode">46612</div><div class="nama">Dagang besar pupuk &amp; produk agrokimia</div><div class="freq-bar" style="width:53%;background:#F97316"></div><div class="freq-label" style="color:#C2410C">8×</div></div>
+    <div class="kbli-chip" style="color:#C2410C;border-left-color:#F97316" data-code="46906" data-name="Dagang besar makanan hewan (pet food)"><div class="kode">46906</div><div class="nama">Dagang besar makanan hewan (pet food)</div><div class="freq-bar" style="width:7%;background:#F97316"></div><div class="freq-label" style="color:#C2410C">1×</div></div>
+  </div>
+</div>
+<div class="divider"></div>
+
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+  <div class="sector">
+    <div class="sector-header"><div class="sector-dot s-alkes"></div><span class="sector-name" style="color:#0E7490">Industri Alat Kesehatan</span><span class="sector-count">1 kode · 6 opsi</span></div>
+    <div class="kbli-grid" style="grid-template-columns:1fr;">
+      <div class="kbli-chip" style="color:#0E7490;border-left-color:#06B6D4" data-code="32501" data-name="Industri peralatan kedokteran &amp; diagnostik IVD"><div class="kode">32501</div><div class="nama">Industri peralatan kedokteran &amp; diagnostik IVD</div><div class="freq-bar" style="width:40%;background:#06B6D4"></div><div class="freq-label" style="color:#0E7490">6×</div></div>
+    </div>
+  </div>
+  <div class="sector">
+    <div class="sector-header"><div class="sector-dot s-klinik"></div><span class="sector-name" style="color:#BE185D">Kesehatan &amp; Lab Klinik</span><span class="sector-count">3 kode · 6 opsi</span></div>
+    <div class="kbli-grid" style="grid-template-columns:1fr;">
+      <div class="kbli-chip" style="color:#BE185D;border-left-color:#EC4899" data-code="86101" data-name="Aktivitas fasilitas kesehatan – imunisasi"><div class="kode">86101</div><div class="nama">Aktivitas fasilitas kesehatan – imunisasi</div><div class="freq-bar" style="width:7%;background:#EC4899"></div><div class="freq-label" style="color:#BE185D">1×</div></div>
+      <div class="kbli-chip" style="color:#BE185D;border-left-color:#EC4899" data-code="86901" data-name="Aktivitas laboratorium klinik komersial"><div class="kode">86901</div><div class="nama">Aktivitas laboratorium klinik komersial</div><div class="freq-bar" style="width:27%;background:#EC4899"></div><div class="freq-label" style="color:#BE185D">4×</div></div>
+      <div class="kbli-chip" style="color:#BE185D;border-left-color:#EC4899" data-code="86909" data-name="Aktivitas kesehatan lainnya – reproduksi hewan"><div class="kode">86909</div><div class="nama">Aktivitas kesehatan lainnya – reproduksi hewan</div><div class="freq-bar" style="width:7%;background:#EC4899"></div><div class="freq-label" style="color:#BE185D">1×</div></div>
+    </div>
+  </div>
+</div>
+<div class="divider"></div>
+
+<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px;">
+  <div class="sector">
+    <div class="sector-header"><div class="sector-dot s-lingkungan"></div><span class="sector-name" style="color:#047857;font-size:11px">Pengelolaan Lingkungan</span></div>
+    <div class="kbli-grid" style="grid-template-columns:1fr;">
+      <div class="kbli-chip" style="color:#047857;border-left-color:#10B981" data-code="38210" data-name="Pengelolaan sampah organik &amp; komposting"><div class="kode">38210</div><div class="nama">Pengelolaan sampah organik &amp; komposting</div><div class="freq-bar" style="width:20%;background:#10B981"></div><div class="freq-label" style="color:#047857">3×</div></div>
+      <div class="kbli-chip" style="color:#047857;border-left-color:#10B981" data-code="38300" data-name="Material ramah lingkungan &amp; daur ulang"><div class="kode">38300</div><div class="nama">Material ramah lingkungan &amp; daur ulang</div><div class="freq-bar" style="width:7%;background:#10B981"></div><div class="freq-label" style="color:#047857">1×</div></div>
+    </div>
+  </div>
+  <div class="sector">
+    <div class="sector-header"><div class="sector-dot s-plastik"></div><span class="sector-name" style="color:#4D7C0F;font-size:11px">Plastik &amp; Kemasan</span></div>
+    <div class="kbli-grid" style="grid-template-columns:1fr;">
+      <div class="kbli-chip" style="color:#4D7C0F;border-left-color:#84CC16" data-code="17021" data-name="Industri kemasan pangan"><div class="kode">17021</div><div class="nama">Industri kemasan pangan</div><div class="freq-bar" style="width:13%;background:#84CC16"></div><div class="freq-label" style="color:#4D7C0F">2×</div></div>
+      <div class="kbli-chip" style="color:#4D7C0F;border-left-color:#84CC16" data-code="22291" data-name="Industri produk plastik – bioplastik"><div class="kode">22291</div><div class="nama">Industri produk plastik – bioplastik</div><div class="freq-bar" style="width:13%;background:#84CC16"></div><div class="freq-label" style="color:#4D7C0F">2×</div></div>
+    </div>
+  </div>
+  <div class="sector">
+    <div class="sector-header"><div class="sector-dot s-tekstil"></div><span class="sector-name" style="color:#6D28D9;font-size:11px">Tekstil &amp; Serat</span></div>
+    <div class="kbli-grid" style="grid-template-columns:1fr;">
+      <div class="kbli-chip" style="color:#6D28D9;border-left-color:#A78BFA" data-code="13111" data-name="Industri persiapan serat (sutra, rami)"><div class="kode">13111</div><div class="nama">Industri persiapan serat (sutra, rami)</div><div class="freq-bar" style="width:13%;background:#A78BFA"></div><div class="freq-label" style="color:#6D28D9">2×</div></div>
+    </div>
+  </div>
+  <div class="sector">
+    <div class="sector-header"><div class="sector-dot s-jasa"></div><span class="sector-name" style="color:#475569;font-size:11px">Jasa Pengujian</span></div>
+    <div class="kbli-grid" style="grid-template-columns:1fr;">
+      <div class="kbli-chip" style="color:#475569;border-left-color:#94A3B8" data-code="71201" data-name="Jasa pengujian &amp; analisis teknis"><div class="kode">71201</div><div class="nama">Jasa pengujian &amp; analisis teknis</div><div class="freq-bar" style="width:13%;background:#94A3B8"></div><div class="freq-label" style="color:#475569">2×</div></div>
+    </div>
+  </div>
+  <div class="sector">
+    <div class="sector-header"><div class="sector-dot s-elektronik"></div><span class="sector-name" style="color:#0369A1;font-size:11px">Elektronik &amp; IoT</span></div>
+    <div class="kbli-grid" style="grid-template-columns:1fr;">
+      <div class="kbli-chip" style="color:#0369A1;border-left-color:#22D3EE" data-code="26513" data-name="Industri instrumen &amp; IoT pertanian"><div class="kode">26513</div><div class="nama">Industri instrumen &amp; IoT pertanian</div><div class="freq-bar" style="width:7%;background:#22D3EE"></div><div class="freq-label" style="color:#0369A1">1×</div></div>
+    </div>
+  </div>
+  <div class="sector">
+    <div class="sector-header"><div class="sector-dot s-energi"></div><span class="sector-name" style="color:#B45309;font-size:11px">Energi (Biofuel)</span></div>
+    <div class="kbli-grid" style="grid-template-columns:1fr;">
+      <div class="kbli-chip" style="color:#B45309;border-left-color:#FBBF24" data-code="19209" data-name="Industri bahan bakar nabati – bioetanol"><div class="kode">19209</div><div class="nama">Industri bahan bakar nabati – bioetanol</div><div class="freq-bar" style="width:7%;background:#FBBF24"></div><div class="freq-label" style="color:#B45309">1×</div></div>
+    </div>
+  </div>
+  <div class="sector">
+    <div class="sector-header"><div class="sector-dot s-tambang"></div><span class="sector-name" style="color:#57534E;font-size:11px">Pertambangan</span></div>
+    <div class="kbli-grid" style="grid-template-columns:1fr;">
+      <div class="kbli-chip" style="color:#57534E;border-left-color:#78716C" data-code="08931" data-name="Industri penggaraman mineral"><div class="kode">08931</div><div class="nama">Industri penggaraman mineral</div><div class="freq-bar" style="width:7%;background:#78716C"></div><div class="freq-label" style="color:#57534E">1×</div></div>
+    </div>
+  </div>
+</div>
+
+</div><!-- /content -->
+
+<div class="footer">
+  KBLI 2025 · Potensi Komersialisasi KI BRIN &nbsp;·&nbsp;
+  Sumber: 2026_VerifikasiTRL_KIBRIN_Responses_KBLI2025_Industri.xlsx &nbsp;·&nbsp;
+  50 KI · 43 kode KBLI · 15 sektor · TRL 1–9
+</div>
+
+
+<div class="tt" id="tt"></div>
+<script>
+(function(){
+  var tt = document.getElementById('tt');
+  document.querySelectorAll('.chart-seg[data-tip]').forEach(function(el){
+    el.addEventListener('mouseenter', function(){
+      tt.textContent = el.getAttribute('data-tip');
+      tt.style.display = 'block';
+    });
+    el.addEventListener('mousemove', function(e){
+      var x = e.clientX + 16, y = e.clientY - 36;
+      if(x + tt.offsetWidth > window.innerWidth - 8) x = e.clientX - tt.offsetWidth - 8;
+      if(y < 4) y = e.clientY + 16;
+      tt.style.left = x + 'px';
+      tt.style.top  = y + 'px';
+    });
+    el.addEventListener('mouseleave', function(){ tt.style.display = 'none'; });
+  });
+})();
+</script>
+
+
+<div id="ki-modal-overlay">
+  <div id="ki-modal">
+    <div id="ki-modal-header">
+      <div id="ki-modal-code"></div>
+      <div id="ki-modal-title"></div>
+      <button id="ki-modal-close" onclick="closeModal()">&#x2715;</button>
+    </div>
+    <div id="ki-modal-body">
+      <div id="ki-modal-count"></div>
+      <div id="ki-modal-list"></div>
+    </div>
+  </div>
+</div>
+
+
+<script>
+const KD={'01111':[{t:'KOMPOSISI PUPUK HAYATI UNTUK MENINGKATKAN PRODUKTIVITAS PADI DI LAHAN SAWAH TERPAPAR KERING DAN PROSES PEMBUATANNYA',u:'Kelris Mikroba untuk Energi Terbarukan, PR Mikrobiologi Terapan, OR Hayati dan Lingkungan',r:5},{t:'Varietas unggul kedelai BRINUSA',u:'Kelompok Riset Perakitan Varietas Unggul Aneka Kacang - Pusat Riset Tanaman Pangan - Organ',r:8},{t:'Varietas unggul kedelai BRINARA',u:'Kelompok Riset Perakitan Varietas Unggul Aneka Kacang - Pusat Riset Tanaman Pangan - Organ',r:8},{t:'Biofertizinc (Pupuk hayati peningkat kandungan Zn untuk padi/serealia)',u:'Pengelolaan Lahan Pupuk & Pembenah Tanah - PR Tanaman Pangan - ORPP',r:7}],'01112':[{t:'AGEN  PEMACU  PERTUMBUHAN  TANAMAN  JAGUNG  BERBASIS  FILTRAT  KULTUR Trichoderma asperellum AC.3, PROSES PEMBUATAN, DAN PENGGUNAA',u:'Pengelolaan Hama dan Penyakit tanaman Jagung dan serealia potensial lainnya - Pusat Riset',r:3},{t:'Kaset Ekspresi Gen Penyandi Kitinase dari Sorgum (Sorghum bicolor (L.) Moench) Indonesia Aksesi Kempul',u:'Kelompok Riset Rekayasa Tanaman untuk Lingkungan Ekstrim - Pusat Riset Rekayasa Genetika',r:4},{t:'Kaset Ekspresi untuk Pustaka Plasmid Rekombinan yang Mengekspresikan Gen Penyandi Kitinase dari Sorgum Manis (Sorghum bicolor L. M',u:'Kelompok Riset Rekayasa Tanaman untuk Lingkungan Ekstrim - Pusat Riset Rekayasa Genetika',r:4}],'01129':[{t:'Kacang Hijau Varietas Muri',u:'Kelris 22 TERAPPAN PRTP ORPP BRIN',r:9}],'01131':[{t:'METODE OPTIMASI PROTOKOL REGENERASI KALUS SOMATIK EMBRYOGENIK TEBU (Saccharum officinarum L.) DENGAN KOMBINASI SUMBER KARBON DAN H',u:'Pusat Riset Botani Terapan',r:5},{t:'METODE OPTIMASI PROTOKOL REGENERASI KALUS  SOMATIK EMBRIOGENIK TEBU (Saccharum officinarum L.)  DENGAN KOMBINASI SUMBER KARBON DAN',u:'Manipulasi Selular Cekaman Abiotik - PR Botani Terapan, OR Hayati dan Lingkungan',r:6}],'01133':[{t:'Formulasi Pupuk Organik Hayati Cair berbasis Rizobakteri Multifungsi Untuk Meningkatkan Kesehatan Tanah dan Produktivitas Tanaman',u:'Pusat Riset Mikrobiologi Terapan',r:5},{t:'Formulasi Biostimulan Berbasis Konsorsium Bakteri Pemacu Tumbuh Untuk Efisiensi Hara  Tanaman Bawang Merah Dan Proses Pembuatannya',u:'Mikrobioma Holobion Tanaman/Peningkat Holobion Tanaman',r:6}],'01299':[{t:'Formulasi  Tepung Biostimulan Berbahan Aktif Bakteri Halotoleran Asal Pesisir  Pantai Utara Jawa Nitratireductor aquibiodomus (Pen',u:'Peningkat Holobion Tanaman-Pusat Riset Mikrobiologi Terapan-ORHL',r:7},{t:'METODE PERBANYAKAN TANAMAN ANDALIMAN (Zanthoxylum acanthopodium)',u:'Makropropagasi / ULTRASTRUKTUR - PR Botani Terapan -ORHL',r:7}],'01301':[{t:'Kaset Ekspresi untuk Pustaka Plasmid Rekombinan yang Mengekspresikan Gen Penyandi Protein Reseptor PcLYM2-1 dari Tanaman Populus x',u:'Rekayasa Tanaman untuk Lingkungan Ekstrim - Pusat Riset Rekayasa Genetika',r:4}],'01302':[{t:'Metode Hibernasi Buatan Telur Ulat Sutra Bombyx mori L.',u:'Domestikasi dan Pemuliaan Hewan Tropis - Pusat Riset Zoologi Terapan - OR Hayati dan Lingk',r:8}],'01402':[{t:'METODE OPTIMASI PROTOKOL REGENERASI KALUS SOMATIK EMBRYOGENIK TEBU (Saccharum officinarum L.) DENGAN KOMBINASI SUMBER KARBON DAN H',u:'Pusat Riset Botani Terapan',r:5},{t:'Metode Hibernasi Buatan Telur Ulat Sutra Bombyx mori L.',u:'Domestikasi dan Pemuliaan Hewan Tropis - Pusat Riset Zoologi Terapan - OR Hayati dan Lingk',r:8},{t:'FORMULASI BIO-SEED COATING MENGGUNAKAN JAMUR Trichoderma asperellum SEBAGAI PELAPIS BENIH CABAI MERAH (Capsicum annum L) DAN PROSE',u:'Interaksi Serangga dan Agen Hayati - Pusat Riset Zoologi Terapan - Organisasi Riset Hayati',r:6},{t:'METODE PERBANYAKAN TANAMAN ANDALIMAN (Zanthoxylum acanthopodium)',u:'Makropropagasi / ULTRASTRUKTUR - PR Botani Terapan -ORHL',r:7},{t:'METODE OPTIMASI PROTOKOL REGENERASI KALUS  SOMATIK EMBRIOGENIK TEBU (Saccharum officinarum L.)  DENGAN KOMBINASI SUMBER KARBON DAN',u:'Manipulasi Selular Cekaman Abiotik - PR Botani Terapan, OR Hayati dan Lingkungan',r:6}],'01403':[{t:'Metode Pembutan Nano Liposom dari Fosfolipid Kedelai dan Formulasi  Medium  Pengencer  Nano  Liposom  Sebagai  Kriopreservasi   Sp',u:'Kelompok Riset Repronomik - Pusat Riset Zoologi Terapan - Organisasi Riset Hayati dan Ling',r:6},{t:'Komposisi Medium Pertumbuhan Bakteri Asam Laktat Untuk Probiotik Ternak Ruminansia',u:'Pusat Riset Zoologi Terapan',r:9},{t:'Formulasi dan Proses Pembuatan Kukis (Cookuker) untuk Burung Kakatua Koki (Cacatua galerita)',u:'Fisiologi Biokimia dan Perilaku Hewan - Pusat Riset Zoologi Terapan - Organisasi Riset Hay',r:1}],'01610':[{t:'FORMULASI DAN PROSES PEMBUATAN BIOAKTIVATOR UNTUK FERMENTASI LIMBAH ORGANIK PADAT (FLOP)',u:'Mikrobioma Nutisi Tanaman - Pusat Riset Mikrobiologi Terapan - Organisasi Riset Hayati dan',r:5},{t:'Pupuk Organik Hayati Cair Dan Proses Pembuatannya',u:'Mikrobioma Nutrisi Tanaman - Pusat Riset Mikrobiologi Terapan - ORHL',r:8},{t:'Alat Sensor dan Monitoring Serangga',u:'Interaksi Serangga-Agen Hayati, Pusat Riset Zoologi Terapan',r:6},{t:'PROSES PEMBUATAN BIOAGEN FOTOSINTESIS DENGAN BAHAN AKTIF KONSORSIUM BAKTERI DAN PRODUK YANG DIHASILKANNYA',u:'Kelompok Riset Metabolit Mikroba Tanaman - Pusat Riset Mikrobiologi Terapan - Organisasi R',r:6}],'08931':[{t:'MEDIUM LOKAL UNTUK ARKEA HALOFILIK BERBASIS  HIDROLISAT PROTEIN IKAN DAN GARAM KROSOK SERTA  METODA APLIKASINYA UNTUK OPTIMALISASI',u:'PR Mikrobiologi Terapan, OR HL, BRIN',r:6}],'10611':[{t:'Metode Analisis Kandungan GABA (Gamma-Aminobutyric Acid) Pada Beras Berpigmen',u:'Pemetaan Genetik dan Seleksi Berbasis Molekuler - PR Botani Terapan - OR Hayati dan Lingku',r:3},{t:'Produk Hidrolisat Sorgum Merah Sebagai Pangan Fungsional',u:'Pemanfaatan sarang burung walet untuk pangan - Pusat Riset Teknologi dan Proses Pangan - O',r:3}],'10631':[{t:'Tepung ubi kayu termodifikasi dan proses yang dihasilkannya',u:'Pusat Riset Rekayasa Genetika',r:7}],'10720':[{t:'Formulasi Kukis Sorgum Dengan Campuran Ekstrak Kulit Manggis Dan Produk Yang Dihasilkannya',u:'Fitonutrien dan nutrasetikal pangan-PRTPP-ORPP',r:4},{t:'Tepung ubi kayu termodifikasi dan proses yang dihasilkannya',u:'Pusat Riset Rekayasa Genetika',r:7}],'10753':[{t:'Formula Teh Celup Ganoderma Terfermentasi dan Proses Pembuatannya',u:'Pusat Riset Teknologi dan Proses Pangan - OR Pertanian dan Pangan',r:6},{t:'Komposisi Teh Celup Buah Kayu Ules (Helicteres Isora L.), Jahe (Zingiber Officinale), Dan Daun Stevia (Stevia Rebaundiana)',u:'Kelompok Riset Pemuliaan Sumber Daya Penghasil Biodiesel, Pusat Riset Botani Terapan, ORHL',r:6},{t:'Formula dan Produk Minuman Fermentasi Sari Kacang Merah Dengan Penambahan ektrak Jahe sebagai Sumber antioksidan',u:'Teknologi Makanan dan Minuman Fungsional, Pusat Riset Teknologi  dan Proses Pangan , Organ',r:4}],'10792':[{t:'MEDIUM LOKAL UNTUK ARKEA HALOFILIK BERBASIS  HIDROLISAT PROTEIN IKAN DAN GARAM KROSOK SERTA  METODA APLIKASINYA UNTUK OPTIMALISASI',u:'PR Mikrobiologi Terapan, OR HL, BRIN',r:6},{t:'SEDIAAN PEWARNA NATURAL BERBASIS FIKOERITRIN DARI RUMPUT LAUT MERAH (Halymenia durvillei) BESERTA FORMULASI PRODUKNYA UNTUK BIBIR',u:'MCE-PRMT-ORHL',r:8},{t:'SEDIAAN EKTRAK JAMUR SHIITAKE DALAM BENTUK MIKROENKAPSULASI DAN PROSES PEMBUATANNYA',u:'Fitonutrien dan Nutrasetikal Pangan - PRTPP - ORPP',r:5}],'10794':[{t:'Proses pembuatan sambal tabur kaya protein',u:'Kelris Pengemasan Steril Komersial - Pusat Riset Teknologi dan Proses Pangan - Organisasi',r:6},{t:'METODE PERBANYAKAN TANAMAN ANDALIMAN (Zanthoxylum acanthopodium)',u:'Makropropagasi / ULTRASTRUKTUR - PR Botani Terapan -ORHL',r:7}],'10801':[{t:'Komposisi Pelapis Dan Metode Pelapisan Bioplastik Berbasis Pati Untuk Aplikasi Kemasan Aktif  Pangan Serta Produk Yang Dihasilkann',u:'Keamanan Pangan - Pusat Riset Teknologi dan Proses Pangan - Organisasi Riset Pertanian dan',r:4},{t:'Formulasi Kukis Sorgum Dengan Campuran Ekstrak Kulit Manggis Dan Produk Yang Dihasilkannya',u:'Fitonutrien dan nutrasetikal pangan-PRTPP-ORPP',r:4},{t:'Formula Teh Celup Ganoderma Terfermentasi dan Proses Pembuatannya',u:'Pusat Riset Teknologi dan Proses Pangan - OR Pertanian dan Pangan',r:6},{t:'SEDIAAN EKTRAK JAMUR SHIITAKE DALAM BENTUK MIKROENKAPSULASI DAN PROSES PEMBUATANNYA',u:'Fitonutrien dan Nutrasetikal Pangan - PRTPP - ORPP',r:5},{t:'Komposisi Medium Pertumbuhan Bakteri Asam Laktat Untuk Probiotik Ternak Ruminansia',u:'Pusat Riset Zoologi Terapan',r:9},{t:'Metode pengemasan bahan makanan heterogen dalam satu wadah',u:'Kelris Pengemasan Steril Komersial - Pusat Riset Teknologi dan Proses Pangan - Organisasi',r:9},{t:'Proses pembuatan sambal tabur kaya protein',u:'Kelris Pengemasan Steril Komersial - Pusat Riset Teknologi dan Proses Pangan - Organisasi',r:6},{t:'Komposisi Teh Celup Buah Kayu Ules (Helicteres Isora L.), Jahe (Zingiber Officinale), Dan Daun Stevia (Stevia Rebaundiana)',u:'Kelompok Riset Pemuliaan Sumber Daya Penghasil Biodiesel, Pusat Riset Botani Terapan, ORHL',r:6},{t:'Formulasi dan Proses Pembuatan Kukis (Cookuker) untuk Burung Kakatua Koki (Cacatua galerita)',u:'Fisiologi Biokimia dan Perilaku Hewan - Pusat Riset Zoologi Terapan - Organisasi Riset Hay',r:1},{t:'Kacang Hijau Varietas Muri',u:'Kelris 22 TERAPPAN PRTP ORPP BRIN',r:9},{t:'Produk Hidrolisat Sorgum Merah Sebagai Pangan Fungsional',u:'Pemanfaatan sarang burung walet untuk pangan - Pusat Riset Teknologi dan Proses Pangan - O',r:3},{t:'EDIBLE COATING BERBASIS EKSTRAK DAUN SIRIH CINA (Peperomia pellucida) DAN APLIKASINYA',u:'Fitonutrien dan Nutrasetikal Pangan - Pusat Riset Teknologi dan Proses Pangan - Organisasi',r:4},{t:'Varietas unggul kedelai BRINUSA',u:'Kelompok Riset Perakitan Varietas Unggul Aneka Kacang - Pusat Riset Tanaman Pangan - Organ',r:8},{t:'Varietas unggul kedelai BRINARA',u:'Kelompok Riset Perakitan Varietas Unggul Aneka Kacang - Pusat Riset Tanaman Pangan - Organ',r:8},{t:'Formula dan Produk Minuman Fermentasi Sari Kacang Merah Dengan Penambahan ektrak Jahe sebagai Sumber antioksidan',u:'Teknologi Makanan dan Minuman Fungsional, Pusat Riset Teknologi  dan Proses Pangan , Organ',r:4}],'13111':[{t:'Metode Hibernasi Buatan Telur Ulat Sutra Bombyx mori L.',u:'Domestikasi dan Pemuliaan Hewan Tropis - Pusat Riset Zoologi Terapan - OR Hayati dan Lingk',r:8},{t:'Komposisi dan Proses Penghilangan Gum Serat Rami Menggunakan Gas Ozon, Xilanase dan Pektinase',u:'Bioproses Enzim- Pusat Riset Mikrobiologi Terapan- ORHL',r:5}],'17021':[{t:'Komposisi Pelapis Dan Metode Pelapisan Bioplastik Berbasis Pati Untuk Aplikasi Kemasan Aktif  Pangan Serta Produk Yang Dihasilkann',u:'Keamanan Pangan - Pusat Riset Teknologi dan Proses Pangan - Organisasi Riset Pertanian dan',r:4},{t:'Metode pengemasan bahan makanan heterogen dalam satu wadah',u:'Kelris Pengemasan Steril Komersial - Pusat Riset Teknologi dan Proses Pangan - Organisasi',r:9}],'19209':[{t:'Produksi Dan Imobilisasi Enzim Selulase Dari Pseudozyma rugulosa Inacc Y335 Sebagai Produk Biokatalis Untuk Sintesis Bioetanol',u:'Bioenergi dan Biokonversi Biomassa-Mikrobiologi Terapan-ORHL',r:4}],'20113':[{t:'SEDIAAN PEWARNA NATURAL BERBASIS FIKOERITRIN DARI RUMPUT LAUT MERAH (Halymenia durvillei) BESERTA FORMULASI PRODUKNYA UNTUK BIBIR',u:'MCE-PRMT-ORHL',r:8},{t:'EDIBLE COATING BERBASIS EKSTRAK DAUN SIRIH CINA (Peperomia pellucida) DAN APLIKASINYA',u:'Fitonutrien dan Nutrasetikal Pangan - Pusat Riset Teknologi dan Proses Pangan - Organisasi',r:4}],'20214':[{t:'Formulasi  Tepung Biostimulan Berbahan Aktif Bakteri Halotoleran Asal Pesisir  Pantai Utara Jawa Nitratireductor aquibiodomus (Pen',u:'Peningkat Holobion Tanaman-Pusat Riset Mikrobiologi Terapan-ORHL',r:7},{t:'Produksi Dan Imobilisasi Enzim Selulase Dari Pseudozyma rugulosa Inacc Y335 Sebagai Produk Biokatalis Untuk Sintesis Bioetanol',u:'Bioenergi dan Biokonversi Biomassa-Mikrobiologi Terapan-ORHL',r:4},{t:'KOMPOSISI PUPUK HAYATI UNTUK MENINGKATKAN PRODUKTIVITAS PADI DI LAHAN SAWAH TERPAPAR KERING DAN PROSES PEMBUATANNYA',u:'Kelris Mikroba untuk Energi Terbarukan, PR Mikrobiologi Terapan, OR Hayati dan Lingkungan',r:5},{t:'FORMULASI BIO-SEED COATING MENGGUNAKAN JAMUR Trichoderma asperellum SEBAGAI PELAPIS BENIH CABAI MERAH (Capsicum annum L) DAN PROSE',u:'Interaksi Serangga dan Agen Hayati - Pusat Riset Zoologi Terapan - Organisasi Riset Hayati',r:6},{t:'FORMULASI DAN PROSES PEMBUATAN BIOAKTIVATOR UNTUK FERMENTASI LIMBAH ORGANIK PADAT (FLOP)',u:'Mikrobioma Nutisi Tanaman - Pusat Riset Mikrobiologi Terapan - Organisasi Riset Hayati dan',r:5},{t:'Pupuk Organik Hayati Cair Dan Proses Pembuatannya',u:'Mikrobioma Nutrisi Tanaman - Pusat Riset Mikrobiologi Terapan - ORHL',r:8},{t:'Formulasi Pupuk Organik Hayati Cair berbasis Rizobakteri Multifungsi Untuk Meningkatkan Kesehatan Tanah dan Produktivitas Tanaman',u:'Pusat Riset Mikrobiologi Terapan',r:5},{t:'AGEN  PEMACU  PERTUMBUHAN  TANAMAN  JAGUNG  BERBASIS  FILTRAT  KULTUR Trichoderma asperellum AC.3, PROSES PEMBUATAN, DAN PENGGUNAA',u:'Pengelolaan Hama dan Penyakit tanaman Jagung dan serealia potensial lainnya - Pusat Riset',r:3},{t:'Formulasi Biostimulan Berbasis Konsorsium Bakteri Pemacu Tumbuh Untuk Efisiensi Hara  Tanaman Bawang Merah Dan Proses Pembuatannya',u:'Mikrobioma Holobion Tanaman/Peningkat Holobion Tanaman',r:6},{t:'PROSES PEMBUATAN BIOAGEN FOTOSINTESIS DENGAN BAHAN AKTIF KONSORSIUM BAKTERI DAN PRODUK YANG DIHASILKANNYA',u:'Kelompok Riset Metabolit Mikroba Tanaman - Pusat Riset Mikrobiologi Terapan - Organisasi R',r:6},{t:'Kaset Ekspresi Gen Penyandi Kitinase dari Sorgum (Sorghum bicolor (L.) Moench) Indonesia Aksesi Kempul',u:'Kelompok Riset Rekayasa Tanaman untuk Lingkungan Ekstrim - Pusat Riset Rekayasa Genetika',r:4},{t:'Kaset Ekspresi untuk Pustaka Plasmid Rekombinan yang Mengekspresikan Gen Penyandi Kitinase dari Sorgum Manis (Sorghum bicolor L. M',u:'Kelompok Riset Rekayasa Tanaman untuk Lingkungan Ekstrim - Pusat Riset Rekayasa Genetika',r:4},{t:'Biofertizinc (Pupuk hayati peningkat kandungan Zn untuk padi/serealia)',u:'Pengelolaan Lahan Pupuk & Pembenah Tanah - PR Tanaman Pangan - ORPP',r:7}],'20232':[{t:'SEDIAAN PEWARNA NATURAL BERBASIS FIKOERITRIN DARI RUMPUT LAUT MERAH (Halymenia durvillei) BESERTA FORMULASI PRODUKNYA UNTUK BIBIR',u:'MCE-PRMT-ORHL',r:8}],'20293':[{t:'Produksi Dan Imobilisasi Enzim Selulase Dari Pseudozyma rugulosa Inacc Y335 Sebagai Produk Biokatalis Untuk Sintesis Bioetanol',u:'Bioenergi dan Biokonversi Biomassa-Mikrobiologi Terapan-ORHL',r:4},{t:'Komposisi dan Proses Penghilangan Gum Serat Rami Menggunakan Gas Ozon, Xilanase dan Pektinase',u:'Bioproses Enzim- Pusat Riset Mikrobiologi Terapan- ORHL',r:5}],'21012':[{t:'Metode Analisis Kandungan GABA (Gamma-Aminobutyric Acid) Pada Beras Berpigmen',u:'Pemetaan Genetik dan Seleksi Berbasis Molekuler - PR Botani Terapan - OR Hayati dan Lingku',r:3},{t:'Kit Untuk Mendeteksi 25 Tipe Human Papiloma Virus (HPV)  Secara Tidak Invasif',u:'Pusat Riset Biomedis',r:7},{t:'KIT UNTUK MENGANALISIS GENOM UTUH HUMAN PAPILLOMAVIRUS (HPV) TIPE 16',u:'Pusat Riset Biomedis',r:3},{t:'METODE PENYIMPANAN SAMPEL URIN MENGGUNAKAN KERTAS SARING',u:'Pusat Riset Biomedis',r:3},{t:'KIT DETEKSI DAN IDENTIFIKASI DNA BABI DAN SAPI PADA SATU TABUNG TUNGGAL BERBASIS SYBR GREEN I qPCR',u:'Kelompok Riset Rekayasa Biomolekul untuk Aplikasi Deteksi-PR Rekayasa Genetika-OR Hayati d',r:4},{t:'Kit Deteksi Mutasi Δ69-Δ70 Virus Sars-Cov 2 Berbasis Sybr Green I qQPCR',u:'Kelompok Riset Rekayasa Biomolekul Untuk Aplikasi Deteksi - PR Rekayasa Genetika- OR Hayat',r:2},{t:'Metode Pembutan Nano Liposom dari Fosfolipid Kedelai dan Formulasi  Medium  Pengencer  Nano  Liposom  Sebagai  Kriopreservasi   Sp',u:'Kelompok Riset Repronomik - Pusat Riset Zoologi Terapan - Organisasi Riset Hayati dan Ling',r:6},{t:'METODE PEROLEHAN KLON TUNGGAL SEL KANKER PAYUDARA TRIPEL NEGATIF YANG MENGEKSPRESIKAN PROTEIN FLUORESENS mCHERRY DENGAN PENANDA EK',u:'Kelompok Riset Rekayasa Sel Mamalia',r:5},{t:'Proses Pembuatan Partikel Mirip Virus L1 Virus Human Papilloma Tipe 52 Sebagai Bahan Baku Vaksin Profilaktik Menggunakan Inang Han',u:'Protein Rekombinan Virus-Pusat Riset Rekayasa Genetika-Organisasi Riset Hayati dan Lingkun',r:5},{t:'Kaset Ekspresi untuk Pustaka Plasmid Rekombinan yang Mengekspresikan Gen Penyandi Protein Reseptor PcLYM2-1 dari Tanaman Populus x',u:'Rekayasa Tanaman untuk Lingkungan Ekstrim - Pusat Riset Rekayasa Genetika',r:4},{t:'Kaset Ekspresi Gen Penyandi Kitinase dari Sorgum (Sorghum bicolor (L.) Moench) Indonesia Aksesi Kempul',u:'Kelompok Riset Rekayasa Tanaman untuk Lingkungan Ekstrim - Pusat Riset Rekayasa Genetika',r:4},{t:'Kaset Ekspresi untuk Pustaka Plasmid Rekombinan yang Mengekspresikan Gen Penyandi Kitinase dari Sorgum Manis (Sorghum bicolor L. M',u:'Kelompok Riset Rekayasa Tanaman untuk Lingkungan Ekstrim - Pusat Riset Rekayasa Genetika',r:4}],'21022':[{t:'MEDIUM LOKAL UNTUK ARKEA HALOFILIK BERBASIS  HIDROLISAT PROTEIN IKAN DAN GARAM KROSOK SERTA  METODA APLIKASINYA UNTUK OPTIMALISASI',u:'PR Mikrobiologi Terapan, OR HL, BRIN',r:6}],'21091':[{t:'SEDIAAN EKTRAK JAMUR SHIITAKE DALAM BENTUK MIKROENKAPSULASI DAN PROSES PEMBUATANNYA',u:'Fitonutrien dan Nutrasetikal Pangan - PRTPP - ORPP',r:5},{t:'Komposisi Medium Pertumbuhan Bakteri Asam Laktat Untuk Probiotik Ternak Ruminansia',u:'Pusat Riset Zoologi Terapan',r:9},{t:'METODE PEROLEHAN KLON TUNGGAL SEL KANKER PAYUDARA TRIPEL NEGATIF YANG MENGEKSPRESIKAN PROTEIN FLUORESENS mCHERRY DENGAN PENANDA EK',u:'Kelompok Riset Rekayasa Sel Mamalia',r:5},{t:'Proses Pembuatan Partikel Mirip Virus L1 Virus Human Papilloma Tipe 52 Sebagai Bahan Baku Vaksin Profilaktik Menggunakan Inang Han',u:'Protein Rekombinan Virus-Pusat Riset Rekayasa Genetika-Organisasi Riset Hayati dan Lingkun',r:5},{t:'Produk Hidrolisat Sorgum Merah Sebagai Pangan Fungsional',u:'Pemanfaatan sarang burung walet untuk pangan - Pusat Riset Teknologi dan Proses Pangan - O',r:3},{t:'Kit Bioassay Untuk Uji In Vitro Inhibisi Protease Sarscov2 Sebagai Alat Skrining Obat Anti Covid19',u:'Rekayasa bakteri dan enzim',r:4}],'22291':[{t:'Komposisi Pelapis Dan Metode Pelapisan Bioplastik Berbasis Pati Untuk Aplikasi Kemasan Aktif  Pangan Serta Produk Yang Dihasilkann',u:'Keamanan Pangan - Pusat Riset Teknologi dan Proses Pangan - Organisasi Riset Pertanian dan',r:4},{t:'EDIBLE COATING BERBASIS EKSTRAK DAUN SIRIH CINA (Peperomia pellucida) DAN APLIKASINYA',u:'Fitonutrien dan Nutrasetikal Pangan - Pusat Riset Teknologi dan Proses Pangan - Organisasi',r:4}],'26513':[{t:'Alat Sensor dan Monitoring Serangga',u:'Interaksi Serangga-Agen Hayati, Pusat Riset Zoologi Terapan',r:6}],'32501':[{t:'Kit Untuk Mendeteksi 25 Tipe Human Papiloma Virus (HPV)  Secara Tidak Invasif',u:'Pusat Riset Biomedis',r:7},{t:'KIT UNTUK MENGANALISIS GENOM UTUH HUMAN PAPILLOMAVIRUS (HPV) TIPE 16',u:'Pusat Riset Biomedis',r:3},{t:'METODE PENYIMPANAN SAMPEL URIN MENGGUNAKAN KERTAS SARING',u:'Pusat Riset Biomedis',r:3},{t:'KIT DETEKSI DAN IDENTIFIKASI DNA BABI DAN SAPI PADA SATU TABUNG TUNGGAL BERBASIS SYBR GREEN I qPCR',u:'Kelompok Riset Rekayasa Biomolekul untuk Aplikasi Deteksi-PR Rekayasa Genetika-OR Hayati d',r:4},{t:'Kit Deteksi Mutasi Δ69-Δ70 Virus Sars-Cov 2 Berbasis Sybr Green I qQPCR',u:'Kelompok Riset Rekayasa Biomolekul Untuk Aplikasi Deteksi - PR Rekayasa Genetika- OR Hayat',r:2},{t:'Kit Bioassay Untuk Uji In Vitro Inhibisi Protease Sarscov2 Sebagai Alat Skrining Obat Anti Covid19',u:'Rekayasa bakteri dan enzim',r:4}],'38210':[{t:'FORMULASI DAN PROSES PEMBUATAN BIOAKTIVATOR UNTUK FERMENTASI LIMBAH ORGANIK PADAT (FLOP)',u:'Mikrobioma Nutisi Tanaman - Pusat Riset Mikrobiologi Terapan - Organisasi Riset Hayati dan',r:5},{t:'Komposisi dan Proses Penghilangan Gum Serat Rami Menggunakan Gas Ozon, Xilanase dan Pektinase',u:'Bioproses Enzim- Pusat Riset Mikrobiologi Terapan- ORHL',r:5},{t:'PROSES PEMBUATAN BIOAGEN FOTOSINTESIS DENGAN BAHAN AKTIF KONSORSIUM BAKTERI DAN PRODUK YANG DIHASILKANNYA',u:'Kelompok Riset Metabolit Mikroba Tanaman - Pusat Riset Mikrobiologi Terapan - Organisasi R',r:6}],'38300':[{t:'Komposisi Pelapis Dan Metode Pelapisan Bioplastik Berbasis Pati Untuk Aplikasi Kemasan Aktif  Pangan Serta Produk Yang Dihasilkann',u:'Keamanan Pangan - Pusat Riset Teknologi dan Proses Pangan - Organisasi Riset Pertanian dan',r:4}],'46211':[{t:'Kacang Hijau Varietas Muri',u:'Kelris 22 TERAPPAN PRTP ORPP BRIN',r:9},{t:'Varietas unggul kedelai BRINUSA',u:'Kelompok Riset Perakitan Varietas Unggul Aneka Kacang - Pusat Riset Tanaman Pangan - Organ',r:8},{t:'Varietas unggul kedelai BRINARA',u:'Kelompok Riset Perakitan Varietas Unggul Aneka Kacang - Pusat Riset Tanaman Pangan - Organ',r:8}],'46319':[{t:'Formulasi Kukis Sorgum Dengan Campuran Ekstrak Kulit Manggis Dan Produk Yang Dihasilkannya',u:'Fitonutrien dan nutrasetikal pangan-PRTPP-ORPP',r:4},{t:'Formula Teh Celup Ganoderma Terfermentasi dan Proses Pembuatannya',u:'Pusat Riset Teknologi dan Proses Pangan - OR Pertanian dan Pangan',r:6},{t:'Metode pengemasan bahan makanan heterogen dalam satu wadah',u:'Kelris Pengemasan Steril Komersial - Pusat Riset Teknologi dan Proses Pangan - Organisasi',r:9},{t:'Proses pembuatan sambal tabur kaya protein',u:'Kelris Pengemasan Steril Komersial - Pusat Riset Teknologi dan Proses Pangan - Organisasi',r:6},{t:'Komposisi Teh Celup Buah Kayu Ules (Helicteres Isora L.), Jahe (Zingiber Officinale), Dan Daun Stevia (Stevia Rebaundiana)',u:'Kelompok Riset Pemuliaan Sumber Daya Penghasil Biodiesel, Pusat Riset Botani Terapan, ORHL',r:6},{t:'Formula dan Produk Minuman Fermentasi Sari Kacang Merah Dengan Penambahan ektrak Jahe sebagai Sumber antioksidan',u:'Teknologi Makanan dan Minuman Fungsional, Pusat Riset Teknologi  dan Proses Pangan , Organ',r:4},{t:'Tepung ubi kayu termodifikasi dan proses yang dihasilkannya',u:'Pusat Riset Rekayasa Genetika',r:7}],'46521':[{t:'Alat Sensor dan Monitoring Serangga',u:'Interaksi Serangga-Agen Hayati, Pusat Riset Zoologi Terapan',r:6}],'46612':[{t:'Formulasi  Tepung Biostimulan Berbahan Aktif Bakteri Halotoleran Asal Pesisir  Pantai Utara Jawa Nitratireductor aquibiodomus (Pen',u:'Peningkat Holobion Tanaman-Pusat Riset Mikrobiologi Terapan-ORHL',r:7},{t:'KOMPOSISI PUPUK HAYATI UNTUK MENINGKATKAN PRODUKTIVITAS PADI DI LAHAN SAWAH TERPAPAR KERING DAN PROSES PEMBUATANNYA',u:'Kelris Mikroba untuk Energi Terbarukan, PR Mikrobiologi Terapan, OR Hayati dan Lingkungan',r:5},{t:'FORMULASI BIO-SEED COATING MENGGUNAKAN JAMUR Trichoderma asperellum SEBAGAI PELAPIS BENIH CABAI MERAH (Capsicum annum L) DAN PROSE',u:'Interaksi Serangga dan Agen Hayati - Pusat Riset Zoologi Terapan - Organisasi Riset Hayati',r:6},{t:'Pupuk Organik Hayati Cair Dan Proses Pembuatannya',u:'Mikrobioma Nutrisi Tanaman - Pusat Riset Mikrobiologi Terapan - ORHL',r:8},{t:'Formulasi Pupuk Organik Hayati Cair berbasis Rizobakteri Multifungsi Untuk Meningkatkan Kesehatan Tanah dan Produktivitas Tanaman',u:'Pusat Riset Mikrobiologi Terapan',r:5},{t:'AGEN  PEMACU  PERTUMBUHAN  TANAMAN  JAGUNG  BERBASIS  FILTRAT  KULTUR Trichoderma asperellum AC.3, PROSES PEMBUATAN, DAN PENGGUNAA',u:'Pengelolaan Hama dan Penyakit tanaman Jagung dan serealia potensial lainnya - Pusat Riset',r:3},{t:'Formulasi Biostimulan Berbasis Konsorsium Bakteri Pemacu Tumbuh Untuk Efisiensi Hara  Tanaman Bawang Merah Dan Proses Pembuatannya',u:'Mikrobioma Holobion Tanaman/Peningkat Holobion Tanaman',r:6},{t:'Biofertizinc (Pupuk hayati peningkat kandungan Zn untuk padi/serealia)',u:'Pengelolaan Lahan Pupuk & Pembenah Tanah - PR Tanaman Pangan - ORPP',r:7}],'46906':[{t:'Formulasi dan Proses Pembuatan Kukis (Cookuker) untuk Burung Kakatua Koki (Cacatua galerita)',u:'Fisiologi Biokimia dan Perilaku Hewan - Pusat Riset Zoologi Terapan - Organisasi Riset Hay',r:1}],'71201':[{t:'Metode Analisis Kandungan GABA (Gamma-Aminobutyric Acid) Pada Beras Berpigmen',u:'Pemetaan Genetik dan Seleksi Berbasis Molekuler - PR Botani Terapan - OR Hayati dan Lingku',r:3},{t:'KIT DETEKSI DAN IDENTIFIKASI DNA BABI DAN SAPI PADA SATU TABUNG TUNGGAL BERBASIS SYBR GREEN I qPCR',u:'Kelompok Riset Rekayasa Biomolekul untuk Aplikasi Deteksi-PR Rekayasa Genetika-OR Hayati d',r:4}],'86101':[{t:'Proses Pembuatan Partikel Mirip Virus L1 Virus Human Papilloma Tipe 52 Sebagai Bahan Baku Vaksin Profilaktik Menggunakan Inang Han',u:'Protein Rekombinan Virus-Pusat Riset Rekayasa Genetika-Organisasi Riset Hayati dan Lingkun',r:5}],'86901':[{t:'Kit Untuk Mendeteksi 25 Tipe Human Papiloma Virus (HPV)  Secara Tidak Invasif',u:'Pusat Riset Biomedis',r:7},{t:'KIT UNTUK MENGANALISIS GENOM UTUH HUMAN PAPILLOMAVIRUS (HPV) TIPE 16',u:'Pusat Riset Biomedis',r:3},{t:'METODE PENYIMPANAN SAMPEL URIN MENGGUNAKAN KERTAS SARING',u:'Pusat Riset Biomedis',r:3},{t:'Kit Deteksi Mutasi Δ69-Δ70 Virus Sars-Cov 2 Berbasis Sybr Green I qQPCR',u:'Kelompok Riset Rekayasa Biomolekul Untuk Aplikasi Deteksi - PR Rekayasa Genetika- OR Hayat',r:2}],'86909':[{t:'Metode Pembutan Nano Liposom dari Fosfolipid Kedelai dan Formulasi  Medium  Pengencer  Nano  Liposom  Sebagai  Kriopreservasi   Sp',u:'Kelompok Riset Repronomik - Pusat Riset Zoologi Terapan - Organisasi Riset Hayati dan Ling',r:6}]};
+const TRL_C={1:'#DC2626',2:'#EA580C',3:'#D97706',4:'#CA8A04',5:'#65A30D',6:'#16A34A',7:'#0D9488',8:'#0369A1',9:'#4F46E5',0:'#A8A29E'};
+
+function openModal(code, name) {
+  const items = KD[code] || [];
+  document.getElementById('ki-modal-code').textContent = code;
+  document.getElementById('ki-modal-title').textContent = name;
+  document.getElementById('ki-modal-count').textContent = items.length + ' KI berpotensi di sektor ini';
+  const list = document.getElementById('ki-modal-list');
+  list.innerHTML = items.map(ki => {
+    const c = TRL_C[ki.r] || TRL_C[0];
+    return '<div class="ki-item">' +
+      '<div class="ki-item-title">' + ki.t + '</div>' +
+      '<div class="ki-item-meta">' +
+        '<span class="ki-trl-badge" style="background:' + c + '">TRL ' + ki.r + '</span>' +
+        '<span class="ki-unit">' + ki.u + '</span>' +
+      '</div>' +
+    '</div>';
+  }).join('');
+  document.getElementById('ki-modal-overlay').classList.add('open');
+}
+
+function closeModal() {
+  document.getElementById('ki-modal-overlay').classList.remove('open');
+}
+
+document.getElementById('ki-modal-overlay').addEventListener('click', function(e) {
+  if(e.target === this) closeModal();
+});
+
+document.addEventListener('keydown', function(e) {
+  if(e.key === 'Escape') closeModal();
+});
+
+// Wire up all .kbli-chip elements
+document.querySelectorAll('.kbli-chip[data-code]').forEach(function(chip) {
+  chip.addEventListener('click', function() {
+    openModal(this.dataset.code, this.dataset.name);
+  });
+});
+</script>
+
+</body>
+</html>
