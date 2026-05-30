@@ -1054,179 +1054,152 @@ document.querySelectorAll('.chart-seg[data-tip]').forEach(function(el){
 </script>
 
 </body>
-</html>
 <!-- ══ FILTER SYSTEM ══════════════════════════════════════════ -->
 <style>
-.chart-seg { transition: opacity .18s, filter .18s; }
-.chart-row { transition: opacity .2s; }
-.chart-row.f-dim  { opacity: .1; pointer-events: none; }
-.chart-seg.f-dim  { opacity: .08; filter: grayscale(1); }
-.chart-seg.f-on   { outline: 2px solid rgba(255,255,255,.85); outline-offset: -1px; z-index: 1; position: relative; }
-#f-reset {
-  display: none; position: fixed; top: 14px; right: 14px; z-index: 9999;
-  background: #1E1B4B; color: #F59E0B; border: none; border-radius: 20px;
-  padding: 7px 18px; font-size: 11px; font-family: 'Courier New',monospace;
-  font-weight: 700; cursor: pointer; letter-spacing: .04em;
-  box-shadow: 0 4px 16px rgba(0,0,0,.35);
-}
-#f-reset:hover { background: #2D2A60; }
-#f-label {
-  display: none; position: fixed; top: 14px; right: 140px; z-index: 9999;
-  background: rgba(245,158,11,.13); color: #92400E;
-  border: 1px solid #F59E0B; border-radius: 20px;
-  padding: 6px 14px; font-size: 11px; font-family: 'Courier New',monospace;
-  max-width: 280px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
-}
+.chart-seg{transition:opacity .18s,filter .18s}
+.chart-row{transition:opacity .2s}
+.chart-row.f-dim{opacity:.1;pointer-events:none}
+.chart-seg.f-dim{opacity:.08;filter:grayscale(1)}
+.chart-seg.f-on{outline:2px solid rgba(255,255,255,.85);outline-offset:-1px;position:relative;z-index:1}
+#f-reset{display:none;position:fixed;top:14px;right:14px;z-index:9999;
+  background:#1E1B4B;color:#F59E0B;border:none;border-radius:20px;
+  padding:7px 18px;font-size:11px;font-family:'Courier New',monospace;
+  font-weight:700;cursor:pointer;box-shadow:0 4px 16px rgba(0,0,0,.35)}
+#f-reset:hover{background:#2D2A60}
+#f-label{display:none;position:fixed;top:14px;right:140px;z-index:9999;
+  background:rgba(245,158,11,.13);color:#92400E;border:1px solid #F59E0B;
+  border-radius:20px;padding:6px 14px;font-size:11px;font-family:'Courier New',monospace;
+  max-width:280px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 </style>
-
 <div id="f-reset" onclick="fReset()">&#x2715; Reset Filter</div>
 <div id="f-label"></div>
-
 <script>
 (function(){
-  var active = null; // {type:'trl'|'sector', val:string}
+var active=null;
+var TN={'t1':'Prinsip dasar','t2':'Konsep teknologi','t3':'Bukti konsep',
+        't4':'Validasi laboratorium','t5':'Validasi lingk. relevan',
+        't6':'Demo lingk. relevan','t7':'Demo lingk. operasional',
+        't8':'Sistem lengkap & kualifikasi','t9':'Sistem terbukti operasional'};
 
-  var TRL_NAME = {
-    't1':'Prinsip dasar','t2':'Konsep teknologi','t3':'Bukti konsep',
-    't4':'Validasi laboratorium','t5':'Validasi lingk. relevan',
-    't6':'Demo lingk. relevan','t7':'Demo lingk. operasional',
-    't8':'Sistem lengkap & kualifikasi','t9':'Sistem terbukti operasional'
-  };
+function setUI(txt){
+  document.getElementById('f-label').textContent=txt;
+  document.getElementById('f-label').style.display='block';
+  document.getElementById('f-reset').style.display='block';
+}
 
-  function setLabel(txt) {
-    var el = document.getElementById('f-label');
-    el.textContent = txt; el.style.display = 'block';
-    document.getElementById('f-reset').style.display = 'block';
-  }
+window.fReset=function(){
+  active=null;
+  document.getElementById('f-reset').style.display='none';
+  document.getElementById('f-label').style.display='none';
+  ['cw1','cw2'].forEach(function(id){
+    var cw=document.getElementById(id);if(!cw)return;
+    cw.querySelectorAll('.chart-row').forEach(function(r){r.classList.remove('f-dim')});
+    cw.querySelectorAll('.chart-seg').forEach(function(s){s.classList.remove('f-dim','f-on')});
+  });
+};
 
-  function fReset() {
-    active = null;
-    document.getElementById('f-reset').style.display = 'none';
-    document.getElementById('f-label').style.display  = 'none';
-    ['cw1','cw2'].forEach(function(id) {
-      var cw = document.getElementById(id); if (!cw) return;
-      cw.querySelectorAll('.chart-row').forEach(function(r){ r.classList.remove('f-dim'); });
-      cw.querySelectorAll('.chart-seg').forEach(function(s){ s.classList.remove('f-dim','f-on'); });
+function byTrl(tc){
+  if(active&&active.t==='trl'&&active.v===tc){window.fReset();return;}
+  active={t:'trl',v:tc};
+  var n=tc.replace('t','');
+  setUI('TRL '+n+' \u2014 '+TN[tc]);
+  // cw1: dim rows without this TRL seg; highlight matching segs only
+  var cw1=document.getElementById('cw1');
+  if(cw1)cw1.querySelectorAll('.chart-row').forEach(function(row){
+    var has=row.querySelector('.chart-seg.'+tc);
+    row.classList.toggle('f-dim',!has);
+    row.querySelectorAll('.chart-seg').forEach(function(s){
+      var m=s.classList.contains(tc);
+      s.classList.toggle('f-dim',!m);
+      s.classList.toggle('f-on',m);
+    });
+  });
+  // cw2: show only the row whose first span has class 'tl'+n
+  var cw2=document.getElementById('cw2');
+  var tlc='tl'+n;
+  if(cw2)cw2.querySelectorAll('.chart-row').forEach(function(row){
+    var sp=row.querySelector('.chart-sector span');
+    var m=sp&&sp.classList.contains(tlc);
+    row.classList.toggle('f-dim',!m);
+    if(m)row.querySelectorAll('.chart-seg').forEach(function(s){s.classList.remove('f-dim','f-on')});
+  });
+}
+
+function bySector(name){
+  if(active&&active.t==='sector'&&active.v===name){window.fReset();return;}
+  active={t:'sector',v:name};
+  setUI('Sektor: '+name);
+  // cw1: show only the row whose chart-sector textContent matches
+  var cw1=document.getElementById('cw1');
+  if(cw1)cw1.querySelectorAll('.chart-row').forEach(function(row){
+    var el=row.querySelector('.chart-sector');
+    var m=el&&el.textContent.trim()===name;
+    row.classList.toggle('f-dim',!m);
+    if(m)row.querySelectorAll('.chart-seg').forEach(function(s){s.classList.remove('f-dim','f-on')});
+  });
+  // cw2: highlight seg matching sector, dim others; dim rows with no match
+  var cw2=document.getElementById('cw2');
+  if(cw2)cw2.querySelectorAll('.chart-row').forEach(function(row){
+    var hit=null;
+    row.querySelectorAll('.chart-seg[data-tip]').forEach(function(s){
+      if(s.getAttribute('data-tip').indexOf(name+':')===0)hit=s;
+    });
+    row.classList.toggle('f-dim',!hit);
+    if(hit)row.querySelectorAll('.chart-seg').forEach(function(s){
+      s.classList.toggle('f-dim',s!==hit);
+      s.classList.toggle('f-on',s===hit);
+    });
+  });
+}
+
+document.addEventListener('DOMContentLoaded',function(){
+  var cw1=document.getElementById('cw1');
+  if(cw1){
+    // Seg click → filter by TRL
+    cw1.querySelectorAll('.chart-seg').forEach(function(s){
+      s.style.cursor='pointer';
+      s.addEventListener('click',function(e){
+        e.stopPropagation();
+        var tc=null;
+        s.classList.forEach(function(c){if(/^t[1-9]$/.test(c))tc=c;});
+        if(tc)byTrl(tc);
+      });
+    });
+    // Sector label click → filter by sector
+    cw1.querySelectorAll('.chart-sector').forEach(function(el){
+      el.style.cursor='pointer';
+      el.addEventListener('click',function(e){
+        e.stopPropagation();
+        bySector(el.textContent.trim());
+      });
     });
   }
-  window.fReset = fReset;
-
-  function filterByTrl(trlCls) {
-    if (active && active.type==='trl' && active.val===trlCls) { fReset(); return; }
-    active = {type:'trl', val:trlCls};
-    var num = trlCls.replace('t','');
-    setLabel('TRL ' + num + ' \u2014 ' + TRL_NAME[trlCls]);
-
-    // cw1: dim rows that have no seg with this TRL class; highlight matching segs
-    var cw1 = document.getElementById('cw1'); if (cw1) {
-      cw1.querySelectorAll('.chart-row').forEach(function(row) {
-        var hasSeg = row.querySelector('.chart-seg.' + trlCls);
-        row.classList.toggle('f-dim', !hasSeg);
-        row.querySelectorAll('.chart-seg').forEach(function(s) {
-          var match = s.classList.contains(trlCls);
-          s.classList.toggle('f-dim', !match);
-          s.classList.toggle('f-on',  match);
-        });
+  var cw2=document.getElementById('cw2');
+  if(cw2){
+    // Seg click → filter by sector
+    cw2.querySelectorAll('.chart-seg').forEach(function(s){
+      s.style.cursor='pointer';
+      s.addEventListener('click',function(e){
+        e.stopPropagation();
+        var tip=s.getAttribute('data-tip')||'';
+        var nm=tip.split(':')[0].trim();
+        if(nm)bySector(nm);
       });
-    }
-
-    // cw2: show only the row whose TRL span class = 'tl'+num
-    var cw2 = document.getElementById('cw2'); if (cw2) {
-      var tlCls = 'tl' + num;
-      cw2.querySelectorAll('.chart-row').forEach(function(row) {
-        var span = row.querySelector('.chart-sector span:first-child');
-        var match = span && span.classList.contains(tlCls);
-        row.classList.toggle('f-dim', !match);
-        if (match) row.querySelectorAll('.chart-seg').forEach(function(s){
-          s.classList.remove('f-dim','f-on');
-        });
+    });
+    // TRL label click → filter by TRL
+    cw2.querySelectorAll('.chart-sector').forEach(function(el){
+      el.style.cursor='pointer';
+      el.addEventListener('click',function(e){
+        e.stopPropagation();
+        var sp=el.querySelector('span');
+        if(!sp)return;
+        var tc=sp.className.split(' ')[0].replace('tl','t');
+        if(/^t[1-9]$/.test(tc))byTrl(tc);
       });
-    }
+    });
   }
-
-  function filterBySector(sectorName) {
-    if (active && active.type==='sector' && active.val===sectorName) { fReset(); return; }
-    active = {type:'sector', val:sectorName};
-    setLabel('Sektor: ' + sectorName);
-
-    // cw1: show only the row whose sector label matches
-    var cw1 = document.getElementById('cw1'); if (cw1) {
-      cw1.querySelectorAll('.chart-row').forEach(function(row) {
-        var secEl = row.querySelector('.chart-sector');
-        var match = secEl && secEl.textContent.trim() === sectorName;
-        row.classList.toggle('f-dim', !match);
-        if (match) row.querySelectorAll('.chart-seg').forEach(function(s){
-          s.classList.remove('f-dim','f-on');
-        });
-      });
-    }
-
-    // cw2: dim rows that don't have a seg for this sector; highlight matching seg
-    var cw2 = document.getElementById('cw2'); if (cw2) {
-      cw2.querySelectorAll('.chart-row').forEach(function(row) {
-        var matchSeg = null;
-        row.querySelectorAll('.chart-seg[data-tip]').forEach(function(s){
-          if (s.getAttribute('data-tip').indexOf(sectorName + ':') === 0) matchSeg = s;
-        });
-        row.classList.toggle('f-dim', !matchSeg);
-        if (matchSeg) {
-          row.querySelectorAll('.chart-seg').forEach(function(s){
-            s.classList.toggle('f-dim', s !== matchSeg);
-            s.classList.toggle('f-on',  s === matchSeg);
-          });
-        }
-      });
-    }
-  }
-
-  // Wire after DOM ready
-  document.addEventListener('DOMContentLoaded', function() {
-    // cw1 segments → filter by TRL
-    var cw1 = document.getElementById('cw1');
-    if (cw1) {
-      cw1.querySelectorAll('.chart-seg').forEach(function(seg) {
-        seg.style.cursor = 'pointer';
-        seg.addEventListener('click', function(e) {
-          e.stopPropagation();
-          var trlCls = null;
-          seg.classList.forEach(function(c){ if (/^t[1-9]$/.test(c)) trlCls = c; });
-          if (trlCls) filterByTrl(trlCls);
-        });
-      });
-      // cw1 sector labels → filter by sector
-      cw1.querySelectorAll('.chart-sector').forEach(function(el) {
-        el.style.cursor = 'pointer';
-        el.addEventListener('click', function(e) {
-          e.stopPropagation();
-          filterBySector(el.textContent.trim());
-        });
-      });
-    }
-
-    // cw2 segments → filter by sector
-    var cw2 = document.getElementById('cw2');
-    if (cw2) {
-      cw2.querySelectorAll('.chart-seg').forEach(function(seg) {
-        seg.style.cursor = 'pointer';
-        seg.addEventListener('click', function(e) {
-          e.stopPropagation();
-          var tip = seg.getAttribute('data-tip') || '';
-          var name = tip.split(':')[0].trim();
-          if (name) filterBySector(name);
-        });
-      });
-      // cw2 TRL labels → filter by TRL
-      cw2.querySelectorAll('.chart-sector').forEach(function(el) {
-        el.style.cursor = 'pointer';
-        el.addEventListener('click', function(e) {
-          e.stopPropagation();
-          var span = el.querySelector('span:first-child');
-          if (!span) return;
-          var trlCls = span.className.replace('tl','t');
-          if (/^t[1-9]$/.test(trlCls)) filterByTrl(trlCls);
-        });
-      });
-    }
-  });
+});
 })();
 </script>
+</body>
+</html>
