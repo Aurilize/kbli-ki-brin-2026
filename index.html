@@ -79,7 +79,7 @@
   .card-footer{display:flex;align-items:center;gap:8px}
   .card-bar-track{flex:1;height:4px;background:#F5F5F4;border-radius:2px;overflow:hidden}
   .card-bar-fill{height:100%;border-radius:2px;opacity:.7}
-  .card-freq{font-family:'Courier New',monospace;font-size:11px;font-weight:700;color:var(--card-color);flex-shrink:0}
+  .card-freq{font-family:'Courier New',monospace;font-size:11px;font-weight:700;color:var(--card-color);flex-shrink:0;padding:2px 8px;background:color-mix(in srgb,var(--card-color) 12%,transparent);border-radius:20px}
   .card-ki{font-size:10px;color:#A8A29E;flex-shrink:0;padding:1px 7px;background:#F5F5F4;border-radius:20px}
 
   /* ── MODAL ── */
@@ -492,29 +492,20 @@
 <p class="note">Klik card untuk melihat daftar KI yang berpotensi di kode KBLI tersebut beserta TRL dan justifikasinya.</p>
 
 
+
 <div class="sector-block">
   <div class="sector-header">
     <div class="sector-dot" style="background:#F59E0B"></div>
     <span class="sector-name" style="color:#92400E">Pertanian & Perkebunan</span>
-    <span class="sector-meta">13 kode · 27 opsi</span>
+    <span class="sector-meta">13 kode</span>
   </div>
   <div class="cards-grid">
     <div class="kbli-card" data-code="01309" data-name="Pembiakan Tanaman Lainnya" style="--card-color:#F59E0B;--card-tc:#92400E">
       <div class="card-code">01309</div>
       <div class="card-name">Pembiakan Tanaman Lainnya</div>
       <div class="card-footer">
-        <div class="card-bar-track"><div class="card-bar-fill" style="width:36%;background:#F59E0B"></div></div>
-        <span class="card-freq">4x</span>
-        <span class="card-ki">3 KI</span>
-      </div>
-    </div>
-    <div class="kbli-card" data-code="01140" data-name="Perkebunan Tebu" style="--card-color:#F59E0B;--card-tc:#92400E">
-      <div class="card-code">01140</div>
-      <div class="card-name">Perkebunan Tebu</div>
-      <div class="card-footer">
         <div class="card-bar-track"><div class="card-bar-fill" style="width:27%;background:#F59E0B"></div></div>
-        <span class="card-freq">3x</span>
-        <span class="card-ki">2 KI</span>
+        <span class="card-freq">3 KI</span>
       </div>
     </div>
     <div class="kbli-card" data-code="01610" data-name="Jasa Penunjang Pertanian" style="--card-color:#F59E0B;--card-tc:#92400E">
@@ -522,8 +513,7 @@
       <div class="card-name">Jasa Penunjang Pertanian</div>
       <div class="card-footer">
         <div class="card-bar-track"><div class="card-bar-fill" style="width:27%;background:#F59E0B"></div></div>
-        <span class="card-freq">3x</span>
-        <span class="card-ki">3 KI</span>
+        <span class="card-freq">3 KI</span>
       </div>
     </div>
     <div class="kbli-card" data-code="01133" data-name="Pertanian Hortikultura Sayuran Buah" style="--card-color:#F59E0B;--card-tc:#92400E">
@@ -531,17 +521,15 @@
       <div class="card-name">Pertanian Hortikultura Sayuran Buah</div>
       <div class="card-footer">
         <div class="card-bar-track"><div class="card-bar-fill" style="width:27%;background:#F59E0B"></div></div>
-        <span class="card-freq">3x</span>
-        <span class="card-ki">3 KI</span>
+        <span class="card-freq">3 KI</span>
       </div>
     </div>
-    <div class="kbli-card" data-code="01113" data-name="Pertanian Kedelai" style="--card-color:#F59E0B;--card-tc:#92400E">
-      <div class="card-code">01113</div>
-      <div class="card-name">Pertanian Kedelai</div>
+    <div class="kbli-card" data-code="01140" data-name="Perkebunan Tebu" style="--card-color:#F59E0B;--card-tc:#92400E">
+      <div class="card-code">01140</div>
+      <div class="card-name">Perkebunan Tebu</div>
       <div class="card-footer">
-        <div class="card-bar-track"><div class="card-bar-fill" style="width:27%;background:#F59E0B"></div></div>
-        <span class="card-freq">3x</span>
-        <span class="card-ki">2 KI</span>
+        <div class="card-bar-track"><div class="card-bar-fill" style="width:18%;background:#F59E0B"></div></div>
+        <span class="card-freq">2 KI</span>
       </div>
     </div>
     <div class="kbli-card" data-code="01121" data-name="Pertanian Padi Hibrida" style="--card-color:#F59E0B;--card-tc:#92400E">
@@ -549,8 +537,7 @@
       <div class="card-name">Pertanian Padi Hibrida</div>
       <div class="card-footer">
         <div class="card-bar-track"><div class="card-bar-fill" style="width:18%;background:#F59E0B"></div></div>
-        <span class="card-freq">2x</span>
-        <span class="card-ki">2 KI</span>
+        <span class="card-freq">2 KI</span>
       </div>
     </div>
     <div class="kbli-card" data-code="01122" data-name="Pertanian Padi Inbrida" style="--card-color:#F59E0B;--card-tc:#92400E">
@@ -558,8 +545,7 @@
       <div class="card-name">Pertanian Padi Inbrida</div>
       <div class="card-footer">
         <div class="card-bar-track"><div class="card-bar-fill" style="width:18%;background:#F59E0B"></div></div>
-        <span class="card-freq">2x</span>
-        <span class="card-ki">2 KI</span>
+        <span class="card-freq">2 KI</span>
       </div>
     </div>
     <div class="kbli-card" data-code="01620" data-name="Jasa Penunjang Peternakan" style="--card-color:#F59E0B;--card-tc:#92400E">
@@ -567,8 +553,15 @@
       <div class="card-name">Jasa Penunjang Peternakan</div>
       <div class="card-footer">
         <div class="card-bar-track"><div class="card-bar-fill" style="width:18%;background:#F59E0B"></div></div>
-        <span class="card-freq">2x</span>
-        <span class="card-ki">2 KI</span>
+        <span class="card-freq">2 KI</span>
+      </div>
+    </div>
+    <div class="kbli-card" data-code="01113" data-name="Pertanian Kedelai" style="--card-color:#F59E0B;--card-tc:#92400E">
+      <div class="card-code">01113</div>
+      <div class="card-name">Pertanian Kedelai</div>
+      <div class="card-footer">
+        <div class="card-bar-track"><div class="card-bar-fill" style="width:18%;background:#F59E0B"></div></div>
+        <span class="card-freq">2 KI</span>
       </div>
     </div>
     <div class="kbli-card" data-code="01492" data-name="Budi Daya dan Pembibitan Ulat Sutra" style="--card-color:#F59E0B;--card-tc:#92400E">
@@ -576,8 +569,7 @@
       <div class="card-name">Budi Daya dan Pembibitan Ulat Sutra</div>
       <div class="card-footer">
         <div class="card-bar-track"><div class="card-bar-fill" style="width:9%;background:#F59E0B"></div></div>
-        <span class="card-freq">1x</span>
-        <span class="card-ki">1 KI</span>
+        <span class="card-freq">1 KI</span>
       </div>
     </div>
     <div class="kbli-card" data-code="01289" data-name="Pertanian Tanaman Rempah-rempah dan Aromatik/Penyegar Lainnya" style="--card-color:#F59E0B;--card-tc:#92400E">
@@ -585,8 +577,7 @@
       <div class="card-name">Pertanian Tanaman Rempah-rempah dan Aromatik/Penyegar Lainnya</div>
       <div class="card-footer">
         <div class="card-bar-track"><div class="card-bar-fill" style="width:9%;background:#F59E0B"></div></div>
-        <span class="card-freq">1x</span>
-        <span class="card-ki">1 KI</span>
+        <span class="card-freq">1 KI</span>
       </div>
     </div>
     <div class="kbli-card" data-code="01115" data-name="Pertanian Kacang Hijau" style="--card-color:#F59E0B;--card-tc:#92400E">
@@ -594,8 +585,7 @@
       <div class="card-name">Pertanian Kacang Hijau</div>
       <div class="card-footer">
         <div class="card-bar-track"><div class="card-bar-fill" style="width:9%;background:#F59E0B"></div></div>
-        <span class="card-freq">1x</span>
-        <span class="card-ki">1 KI</span>
+        <span class="card-freq">1 KI</span>
       </div>
     </div>
     <div class="kbli-card" data-code="01111" data-name="Pertanian Jagung" style="--card-color:#F59E0B;--card-tc:#92400E">
@@ -603,8 +593,7 @@
       <div class="card-name">Pertanian Jagung</div>
       <div class="card-footer">
         <div class="card-bar-track"><div class="card-bar-fill" style="width:9%;background:#F59E0B"></div></div>
-        <span class="card-freq">1x</span>
-        <span class="card-ki">1 KI</span>
+        <span class="card-freq">1 KI</span>
       </div>
     </div>
     <div class="kbli-card" data-code="01112" data-name="Pertanian Serealia Selain Padi dan Jagung" style="--card-color:#F59E0B;--card-tc:#92400E">
@@ -612,8 +601,7 @@
       <div class="card-name">Pertanian Serealia Selain Padi dan Jagung</div>
       <div class="card-footer">
         <div class="card-bar-track"><div class="card-bar-fill" style="width:9%;background:#F59E0B"></div></div>
-        <span class="card-freq">1x</span>
-        <span class="card-ki">1 KI</span>
+        <span class="card-freq">1 KI</span>
       </div>
     </div>
   </div>
@@ -623,7 +611,7 @@
   <div class="sector-header">
     <div class="sector-dot" style="background:#F43F5E"></div>
     <span class="sector-name" style="color:#881337">Industri Pangan & Minuman</span>
-    <span class="sector-meta">10 kode · 22 opsi</span>
+    <span class="sector-meta">10 kode</span>
   </div>
   <div class="cards-grid">
     <div class="kbli-card" data-code="10799" data-name="Industri Produk Makanan Lainnya YTDL" style="--card-color:#F43F5E;--card-tc:#881337">
@@ -631,17 +619,7 @@
       <div class="card-name">Industri Produk Makanan Lainnya YTDL</div>
       <div class="card-footer">
         <div class="card-bar-track"><div class="card-bar-fill" style="width:91%;background:#F43F5E"></div></div>
-        <span class="card-freq">10x</span>
-        <span class="card-ki">10 KI</span>
-      </div>
-    </div>
-    <div class="kbli-card" data-code="10781" data-name="Industri Produk Makanan dari Kedelai dan Sejenisnya" style="--card-color:#F43F5E;--card-tc:#881337">
-      <div class="card-code">10781</div>
-      <div class="card-name">Industri Produk Makanan dari Kedelai dan Sejenisnya</div>
-      <div class="card-footer">
-        <div class="card-bar-track"><div class="card-bar-fill" style="width:27%;background:#F43F5E"></div></div>
-        <span class="card-freq">3x</span>
-        <span class="card-ki">2 KI</span>
+        <span class="card-freq">10 KI</span>
       </div>
     </div>
     <div class="kbli-card" data-code="10794" data-name="Industri Bumbu Masak dan Penyedap Masakan" style="--card-color:#F43F5E;--card-tc:#881337">
@@ -649,8 +627,15 @@
       <div class="card-name">Industri Bumbu Masak dan Penyedap Masakan</div>
       <div class="card-footer">
         <div class="card-bar-track"><div class="card-bar-fill" style="width:18%;background:#F43F5E"></div></div>
-        <span class="card-freq">2x</span>
-        <span class="card-ki">2 KI</span>
+        <span class="card-freq">2 KI</span>
+      </div>
+    </div>
+    <div class="kbli-card" data-code="10781" data-name="Industri Produk Makanan dari Kedelai dan Sejenisnya" style="--card-color:#F43F5E;--card-tc:#881337">
+      <div class="card-code">10781</div>
+      <div class="card-name">Industri Produk Makanan dari Kedelai dan Sejenisnya</div>
+      <div class="card-footer">
+        <div class="card-bar-track"><div class="card-bar-fill" style="width:18%;background:#F43F5E"></div></div>
+        <span class="card-freq">2 KI</span>
       </div>
     </div>
     <div class="kbli-card" data-code="10611" data-name="Industri Penggilingan Padi dan Penyosohan Beras" style="--card-color:#F43F5E;--card-tc:#881337">
@@ -658,8 +643,7 @@
       <div class="card-name">Industri Penggilingan Padi dan Penyosohan Beras</div>
       <div class="card-footer">
         <div class="card-bar-track"><div class="card-bar-fill" style="width:9%;background:#F43F5E"></div></div>
-        <span class="card-freq">1x</span>
-        <span class="card-ki">1 KI</span>
+        <span class="card-freq">1 KI</span>
       </div>
     </div>
     <div class="kbli-card" data-code="10773" data-name="Industri Biskuit dan Sejenisnya" style="--card-color:#F43F5E;--card-tc:#881337">
@@ -667,8 +651,7 @@
       <div class="card-name">Industri Biskuit dan Sejenisnya</div>
       <div class="card-footer">
         <div class="card-bar-track"><div class="card-bar-fill" style="width:9%;background:#F43F5E"></div></div>
-        <span class="card-freq">1x</span>
-        <span class="card-ki">1 KI</span>
+        <span class="card-freq">1 KI</span>
       </div>
     </div>
     <div class="kbli-card" data-code="10801" data-name="Industri Produk Makanan untuk Hewan Kesayangan" style="--card-color:#F43F5E;--card-tc:#881337">
@@ -676,8 +659,7 @@
       <div class="card-name">Industri Produk Makanan untuk Hewan Kesayangan</div>
       <div class="card-footer">
         <div class="card-bar-track"><div class="card-bar-fill" style="width:9%;background:#F43F5E"></div></div>
-        <span class="card-freq">1x</span>
-        <span class="card-ki">1 KI</span>
+        <span class="card-freq">1 KI</span>
       </div>
     </div>
     <div class="kbli-card" data-code="10760" data-name="Industri Pengolahan Biji-bijian dan Kacang-kacangan" style="--card-color:#F43F5E;--card-tc:#881337">
@@ -685,8 +667,7 @@
       <div class="card-name">Industri Pengolahan Biji-bijian dan Kacang-kacangan</div>
       <div class="card-footer">
         <div class="card-bar-track"><div class="card-bar-fill" style="width:9%;background:#F43F5E"></div></div>
-        <span class="card-freq">1x</span>
-        <span class="card-ki">1 KI</span>
+        <span class="card-freq">1 KI</span>
       </div>
     </div>
     <div class="kbli-card" data-code="10613" data-name="Industri Penggilingan Aneka Serealia Selain Padi dan Jagung" style="--card-color:#F43F5E;--card-tc:#881337">
@@ -694,8 +675,7 @@
       <div class="card-name">Industri Penggilingan Aneka Serealia Selain Padi dan Jagung</div>
       <div class="card-footer">
         <div class="card-bar-track"><div class="card-bar-fill" style="width:9%;background:#F43F5E"></div></div>
-        <span class="card-freq">1x</span>
-        <span class="card-ki">1 KI</span>
+        <span class="card-freq">1 KI</span>
       </div>
     </div>
     <div class="kbli-card" data-code="10621" data-name="Industri Pati Ubi Kayu" style="--card-color:#F43F5E;--card-tc:#881337">
@@ -703,8 +683,7 @@
       <div class="card-name">Industri Pati Ubi Kayu</div>
       <div class="card-footer">
         <div class="card-bar-track"><div class="card-bar-fill" style="width:9%;background:#F43F5E"></div></div>
-        <span class="card-freq">1x</span>
-        <span class="card-ki">1 KI</span>
+        <span class="card-freq">1 KI</span>
       </div>
     </div>
     <div class="kbli-card" data-code="10639" data-name="Industri Tepung Lainnya" style="--card-color:#F43F5E;--card-tc:#881337">
@@ -712,8 +691,7 @@
       <div class="card-name">Industri Tepung Lainnya</div>
       <div class="card-footer">
         <div class="card-bar-track"><div class="card-bar-fill" style="width:9%;background:#F43F5E"></div></div>
-        <span class="card-freq">1x</span>
-        <span class="card-ki">1 KI</span>
+        <span class="card-freq">1 KI</span>
       </div>
     </div>
   </div>
@@ -723,7 +701,7 @@
   <div class="sector-header">
     <div class="sector-dot" style="background:#FB7185"></div>
     <span class="sector-name" style="color:#9F1239">Industri Minuman</span>
-    <span class="sector-meta">1 kode · 3 opsi</span>
+    <span class="sector-meta">1 kode</span>
   </div>
   <div class="cards-grid">
     <div class="kbli-card" data-code="11060" data-name="Industri Minuman Lainnya" style="--card-color:#FB7185;--card-tc:#9F1239">
@@ -731,8 +709,7 @@
       <div class="card-name">Industri Minuman Lainnya</div>
       <div class="card-footer">
         <div class="card-bar-track"><div class="card-bar-fill" style="width:27%;background:#FB7185"></div></div>
-        <span class="card-freq">3x</span>
-        <span class="card-ki">3 KI</span>
+        <span class="card-freq">3 KI</span>
       </div>
     </div>
   </div>
@@ -742,7 +719,7 @@
   <div class="sector-header">
     <div class="sector-dot" style="background:#8B5CF6"></div>
     <span class="sector-name" style="color:#4C1D95">Industri Kimia & Biokimia</span>
-    <span class="sector-meta">4 kode · 19 opsi</span>
+    <span class="sector-meta">4 kode</span>
   </div>
   <div class="cards-grid">
     <div class="kbli-card" data-code="20219" data-name="Industri Pupuk Lainnya" style="--card-color:#8B5CF6;--card-tc:#4C1D95">
@@ -750,8 +727,7 @@
       <div class="card-name">Industri Pupuk Lainnya</div>
       <div class="card-footer">
         <div class="card-bar-track"><div class="card-bar-fill" style="width:91%;background:#8B5CF6"></div></div>
-        <span class="card-freq">10x</span>
-        <span class="card-ki">10 KI</span>
+        <span class="card-freq">10 KI</span>
       </div>
     </div>
     <div class="kbli-card" data-code="20293" data-name="Industri Bahan Kimia Lainnya" style="--card-color:#8B5CF6;--card-tc:#4C1D95">
@@ -759,8 +735,7 @@
       <div class="card-name">Industri Bahan Kimia Lainnya</div>
       <div class="card-footer">
         <div class="card-bar-track"><div class="card-bar-fill" style="width:45%;background:#8B5CF6"></div></div>
-        <span class="card-freq">5x</span>
-        <span class="card-ki">5 KI</span>
+        <span class="card-freq">5 KI</span>
       </div>
     </div>
     <div class="kbli-card" data-code="20115" data-name="Industri Kimia Dasar Organik yang Bersumber dari Hasil Pertanian" style="--card-color:#8B5CF6;--card-tc:#4C1D95">
@@ -768,8 +743,7 @@
       <div class="card-name">Industri Kimia Dasar Organik yang Bersumber dari Hasil Pertanian</div>
       <div class="card-footer">
         <div class="card-bar-track"><div class="card-bar-fill" style="width:27%;background:#8B5CF6"></div></div>
-        <span class="card-freq">3x</span>
-        <span class="card-ki">3 KI</span>
+        <span class="card-freq">3 KI</span>
       </div>
     </div>
     <div class="kbli-card" data-code="20232" data-name="Industri Kosmetik dan Produk Kecantikan" style="--card-color:#8B5CF6;--card-tc:#4C1D95">
@@ -777,8 +751,7 @@
       <div class="card-name">Industri Kosmetik dan Produk Kecantikan</div>
       <div class="card-footer">
         <div class="card-bar-track"><div class="card-bar-fill" style="width:9%;background:#8B5CF6"></div></div>
-        <span class="card-freq">1x</span>
-        <span class="card-ki">1 KI</span>
+        <span class="card-freq">1 KI</span>
       </div>
     </div>
   </div>
@@ -788,7 +761,7 @@
   <div class="sector-header">
     <div class="sector-dot" style="background:#3B82F6"></div>
     <span class="sector-name" style="color:#1E3A8A">Industri Farmasi & Biotek</span>
-    <span class="sector-meta">4 kode · 16 opsi</span>
+    <span class="sector-meta">4 kode</span>
   </div>
   <div class="cards-grid">
     <div class="kbli-card" data-code="21012" data-name="Industri Bahan Farmasi" style="--card-color:#3B82F6;--card-tc:#1E3A8A">
@@ -796,8 +769,7 @@
       <div class="card-name">Industri Bahan Farmasi</div>
       <div class="card-footer">
         <div class="card-bar-track"><div class="card-bar-fill" style="width:100%;background:#3B82F6"></div></div>
-        <span class="card-freq">11x</span>
-        <span class="card-ki">11 KI</span>
+        <span class="card-freq">11 KI</span>
       </div>
     </div>
     <div class="kbli-card" data-code="21021" data-name="Industri Produk Farmasi untuk Manusia" style="--card-color:#3B82F6;--card-tc:#1E3A8A">
@@ -805,8 +777,7 @@
       <div class="card-name">Industri Produk Farmasi untuk Manusia</div>
       <div class="card-footer">
         <div class="card-bar-track"><div class="card-bar-fill" style="width:27%;background:#3B82F6"></div></div>
-        <span class="card-freq">3x</span>
-        <span class="card-ki">3 KI</span>
+        <span class="card-freq">3 KI</span>
       </div>
     </div>
     <div class="kbli-card" data-code="21030" data-name="Industri Produk Obat Tradisional untuk Manusia" style="--card-color:#3B82F6;--card-tc:#1E3A8A">
@@ -814,8 +785,7 @@
       <div class="card-name">Industri Produk Obat Tradisional untuk Manusia</div>
       <div class="card-footer">
         <div class="card-bar-track"><div class="card-bar-fill" style="width:9%;background:#3B82F6"></div></div>
-        <span class="card-freq">1x</span>
-        <span class="card-ki">1 KI</span>
+        <span class="card-freq">1 KI</span>
       </div>
     </div>
     <div class="kbli-card" data-code="21022" data-name="Industri Produk Farmasi untuk Hewan" style="--card-color:#3B82F6;--card-tc:#1E3A8A">
@@ -823,8 +793,7 @@
       <div class="card-name">Industri Produk Farmasi untuk Hewan</div>
       <div class="card-footer">
         <div class="card-bar-track"><div class="card-bar-fill" style="width:9%;background:#3B82F6"></div></div>
-        <span class="card-freq">1x</span>
-        <span class="card-ki">1 KI</span>
+        <span class="card-freq">1 KI</span>
       </div>
     </div>
   </div>
@@ -834,7 +803,7 @@
   <div class="sector-header">
     <div class="sector-dot" style="background:#F97316"></div>
     <span class="sector-name" style="color:#7C2D12">Perdagangan Besar</span>
-    <span class="sector-meta">5 kode · 21 opsi</span>
+    <span class="sector-meta">5 kode</span>
   </div>
   <div class="cards-grid">
     <div class="kbli-card" data-code="46612" data-name="Perdagangan Besar Pupuk dan Produk Agrokimia" style="--card-color:#F97316;--card-tc:#7C2D12">
@@ -842,8 +811,7 @@
       <div class="card-name">Perdagangan Besar Pupuk dan Produk Agrokimia</div>
       <div class="card-footer">
         <div class="card-bar-track"><div class="card-bar-fill" style="width:73%;background:#F97316"></div></div>
-        <span class="card-freq">8x</span>
-        <span class="card-ki">8 KI</span>
+        <span class="card-freq">8 KI</span>
       </div>
     </div>
     <div class="kbli-card" data-code="46319" data-name="Perdagangan Besar Makanan dan Minuman Lainnya" style="--card-color:#F97316;--card-tc:#7C2D12">
@@ -851,17 +819,15 @@
       <div class="card-name">Perdagangan Besar Makanan dan Minuman Lainnya</div>
       <div class="card-footer">
         <div class="card-bar-track"><div class="card-bar-fill" style="width:64%;background:#F97316"></div></div>
-        <span class="card-freq">7x</span>
-        <span class="card-ki">7 KI</span>
+        <span class="card-freq">7 KI</span>
       </div>
     </div>
     <div class="kbli-card" data-code="46211" data-name="Perdagangan Besar Biji-bijian, Benih Tanaman dan Pakan Ternak" style="--card-color:#F97316;--card-tc:#7C2D12">
       <div class="card-code">46211</div>
       <div class="card-name">Perdagangan Besar Biji-bijian, Benih Tanaman dan Pakan Ternak</div>
       <div class="card-footer">
-        <div class="card-bar-track"><div class="card-bar-fill" style="width:36%;background:#F97316"></div></div>
-        <span class="card-freq">4x</span>
-        <span class="card-ki">3 KI</span>
+        <div class="card-bar-track"><div class="card-bar-fill" style="width:27%;background:#F97316"></div></div>
+        <span class="card-freq">3 KI</span>
       </div>
     </div>
     <div class="kbli-card" data-code="46906" data-name="Perdagangan Besar Barang Lainnya" style="--card-color:#F97316;--card-tc:#7C2D12">
@@ -869,8 +835,7 @@
       <div class="card-name">Perdagangan Besar Barang Lainnya</div>
       <div class="card-footer">
         <div class="card-bar-track"><div class="card-bar-fill" style="width:9%;background:#F97316"></div></div>
-        <span class="card-freq">1x</span>
-        <span class="card-ki">1 KI</span>
+        <span class="card-freq">1 KI</span>
       </div>
     </div>
     <div class="kbli-card" data-code="46521" data-name="Perdagangan Besar Peralatan dan Suku Cadang Elektronik" style="--card-color:#F97316;--card-tc:#7C2D12">
@@ -878,8 +843,7 @@
       <div class="card-name">Perdagangan Besar Peralatan dan Suku Cadang Elektronik</div>
       <div class="card-footer">
         <div class="card-bar-track"><div class="card-bar-fill" style="width:9%;background:#F97316"></div></div>
-        <span class="card-freq">1x</span>
-        <span class="card-ki">1 KI</span>
+        <span class="card-freq">1 KI</span>
       </div>
     </div>
   </div>
@@ -889,7 +853,7 @@
   <div class="sector-header">
     <div class="sector-dot" style="background:#06B6D4"></div>
     <span class="sector-name" style="color:#164E63">Industri Alat Kesehatan</span>
-    <span class="sector-meta">1 kode · 6 opsi</span>
+    <span class="sector-meta">1 kode</span>
   </div>
   <div class="cards-grid">
     <div class="kbli-card" data-code="32501" data-name="Industri Peralatan Kedokteran dan Kedokteran Gigi serta Perlengkapannya" style="--card-color:#06B6D4;--card-tc:#164E63">
@@ -897,8 +861,7 @@
       <div class="card-name">Industri Peralatan Kedokteran dan Kedokteran Gigi serta Perlengkapannya</div>
       <div class="card-footer">
         <div class="card-bar-track"><div class="card-bar-fill" style="width:55%;background:#06B6D4"></div></div>
-        <span class="card-freq">6x</span>
-        <span class="card-ki">6 KI</span>
+        <span class="card-freq">6 KI</span>
       </div>
     </div>
   </div>
@@ -908,7 +871,7 @@
   <div class="sector-header">
     <div class="sector-dot" style="background:#EC4899"></div>
     <span class="sector-name" style="color:#831843">Kesehatan & Lab Klinik</span>
-    <span class="sector-meta">1 kode · 4 opsi</span>
+    <span class="sector-meta">1 kode</span>
   </div>
   <div class="cards-grid">
     <div class="kbli-card" data-code="86901" data-name="Aktivitas Laboratorium Kesehatan" style="--card-color:#EC4899;--card-tc:#831843">
@@ -916,8 +879,7 @@
       <div class="card-name">Aktivitas Laboratorium Kesehatan</div>
       <div class="card-footer">
         <div class="card-bar-track"><div class="card-bar-fill" style="width:36%;background:#EC4899"></div></div>
-        <span class="card-freq">4x</span>
-        <span class="card-ki">4 KI</span>
+        <span class="card-freq">4 KI</span>
       </div>
     </div>
   </div>
@@ -927,7 +889,7 @@
   <div class="sector-header">
     <div class="sector-dot" style="background:#10B981"></div>
     <span class="sector-name" style="color:#064E3B">Pengelolaan Lingkungan</span>
-    <span class="sector-meta">1 kode · 2 opsi</span>
+    <span class="sector-meta">1 kode</span>
   </div>
   <div class="cards-grid">
     <div class="kbli-card" data-code="38210" data-name="Pengolahan dan Pembuangan Sampah Tidak Berbahaya" style="--card-color:#10B981;--card-tc:#064E3B">
@@ -935,8 +897,7 @@
       <div class="card-name">Pengolahan dan Pembuangan Sampah Tidak Berbahaya</div>
       <div class="card-footer">
         <div class="card-bar-track"><div class="card-bar-fill" style="width:18%;background:#10B981"></div></div>
-        <span class="card-freq">2x</span>
-        <span class="card-ki">2 KI</span>
+        <span class="card-freq">2 KI</span>
       </div>
     </div>
   </div>
@@ -946,7 +907,7 @@
   <div class="sector-header">
     <div class="sector-dot" style="background:#84CC16"></div>
     <span class="sector-name" style="color:#365314">Industri Plastik & Kemasan</span>
-    <span class="sector-meta">1 kode · 2 opsi</span>
+    <span class="sector-meta">1 kode</span>
   </div>
   <div class="cards-grid">
     <div class="kbli-card" data-code="22291" data-name="Industri Produk Plastik Lainnya" style="--card-color:#84CC16;--card-tc:#365314">
@@ -954,8 +915,7 @@
       <div class="card-name">Industri Produk Plastik Lainnya</div>
       <div class="card-footer">
         <div class="card-bar-track"><div class="card-bar-fill" style="width:18%;background:#84CC16"></div></div>
-        <span class="card-freq">2x</span>
-        <span class="card-ki">2 KI</span>
+        <span class="card-freq">2 KI</span>
       </div>
     </div>
   </div>
@@ -965,7 +925,7 @@
   <div class="sector-header">
     <div class="sector-dot" style="background:#A3E635"></div>
     <span class="sector-name" style="color:#365314">Industri Kemasan</span>
-    <span class="sector-meta">1 kode · 2 opsi</span>
+    <span class="sector-meta">1 kode</span>
   </div>
   <div class="cards-grid">
     <div class="kbli-card" data-code="17021" data-name="Industri Wadah dari Kertas dan Karton" style="--card-color:#A3E635;--card-tc:#365314">
@@ -973,8 +933,7 @@
       <div class="card-name">Industri Wadah dari Kertas dan Karton</div>
       <div class="card-footer">
         <div class="card-bar-track"><div class="card-bar-fill" style="width:18%;background:#A3E635"></div></div>
-        <span class="card-freq">2x</span>
-        <span class="card-ki">2 KI</span>
+        <span class="card-freq">2 KI</span>
       </div>
     </div>
   </div>
@@ -984,7 +943,7 @@
   <div class="sector-header">
     <div class="sector-dot" style="background:#A78BFA"></div>
     <span class="sector-name" style="color:#5B21B6">Industri Tekstil & Serat</span>
-    <span class="sector-meta">1 kode · 2 opsi</span>
+    <span class="sector-meta">1 kode</span>
   </div>
   <div class="cards-grid">
     <div class="kbli-card" data-code="13111" data-name="Industri Persiapan Serat Tekstil" style="--card-color:#A78BFA;--card-tc:#5B21B6">
@@ -992,8 +951,7 @@
       <div class="card-name">Industri Persiapan Serat Tekstil</div>
       <div class="card-footer">
         <div class="card-bar-track"><div class="card-bar-fill" style="width:18%;background:#A78BFA"></div></div>
-        <span class="card-freq">2x</span>
-        <span class="card-ki">2 KI</span>
+        <span class="card-freq">2 KI</span>
       </div>
     </div>
   </div>
@@ -1003,7 +961,7 @@
   <div class="sector-header">
     <div class="sector-dot" style="background:#94A3B8"></div>
     <span class="sector-name" style="color:#475569">Jasa Pengujian & Inspeksi</span>
-    <span class="sector-meta">1 kode · 2 opsi</span>
+    <span class="sector-meta">1 kode</span>
   </div>
   <div class="cards-grid">
     <div class="kbli-card" data-code="71201" data-name="Jasa Pengujian dan Analisis Teknis" style="--card-color:#94A3B8;--card-tc:#475569">
@@ -1011,8 +969,7 @@
       <div class="card-name">Jasa Pengujian dan Analisis Teknis</div>
       <div class="card-footer">
         <div class="card-bar-track"><div class="card-bar-fill" style="width:18%;background:#94A3B8"></div></div>
-        <span class="card-freq">2x</span>
-        <span class="card-ki">2 KI</span>
+        <span class="card-freq">2 KI</span>
       </div>
     </div>
   </div>
@@ -1022,7 +979,7 @@
   <div class="sector-header">
     <div class="sector-dot" style="background:#78716C"></div>
     <span class="sector-name" style="color:#44403C">Pertambangan & Mineral</span>
-    <span class="sector-meta">1 kode · 1 opsi</span>
+    <span class="sector-meta">1 kode</span>
   </div>
   <div class="cards-grid">
     <div class="kbli-card" data-code="08931" data-name="Pertambangan Garam" style="--card-color:#78716C;--card-tc:#44403C">
@@ -1030,8 +987,7 @@
       <div class="card-name">Pertambangan Garam</div>
       <div class="card-footer">
         <div class="card-bar-track"><div class="card-bar-fill" style="width:9%;background:#78716C"></div></div>
-        <span class="card-freq">1x</span>
-        <span class="card-ki">1 KI</span>
+        <span class="card-freq">1 KI</span>
       </div>
     </div>
   </div>
@@ -1041,7 +997,7 @@
   <div class="sector-header">
     <div class="sector-dot" style="background:#22D3EE"></div>
     <span class="sector-name" style="color:#155E75">Industri Elektronik & Instrumen</span>
-    <span class="sector-meta">1 kode · 1 opsi</span>
+    <span class="sector-meta">1 kode</span>
   </div>
   <div class="cards-grid">
     <div class="kbli-card" data-code="26513" data-name="Industri Instrumen dan Peralatan untuk Mengukur, Menguji, Navigasi" style="--card-color:#22D3EE;--card-tc:#155E75">
@@ -1049,12 +1005,13 @@
       <div class="card-name">Industri Instrumen dan Peralatan untuk Mengukur, Menguji, Navigasi</div>
       <div class="card-footer">
         <div class="card-bar-track"><div class="card-bar-fill" style="width:9%;background:#22D3EE"></div></div>
-        <span class="card-freq">1x</span>
-        <span class="card-ki">1 KI</span>
+        <span class="card-freq">1 KI</span>
       </div>
     </div>
   </div>
 </div>
+
+
 
 
 
