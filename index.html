@@ -1052,5 +1052,220 @@ document.querySelectorAll('.chart-seg[data-tip]').forEach(function(el){
   el.addEventListener('mouseleave', function(){ tt.style.display='none'; });
 });
 </script>
+
+<style>
+/* ── FILTER STATE ── */
+.chart-seg          { transition: opacity .2s, filter .2s; }
+.chart-row          { transition: opacity .25s; }
+.chart-row.dimmed   { opacity: .12; }
+.chart-seg.dimmed   { opacity: .1; filter: grayscale(1); }
+.chart-seg.active   { outline: 2px solid rgba(255,255,255,.8); outline-offset: -1px; }
+.chart-wrap.filtered .chart-row:not(.dimmed) .chart-total { font-weight: 900; color: #1E1B4B; }
+
+/* Reset button */
+#filter-reset {
+  display: none;
+  position: fixed; top: 14px; right: 14px;
+  background: #1E1B4B; color: #F59E0B;
+  border: none; border-radius: 20px;
+  padding: 7px 16px; font-size: 11px;
+  font-family: 'Courier New', monospace; font-weight: 700;
+  cursor: pointer; z-index: 8888;
+  box-shadow: 0 4px 16px rgba(0,0,0,.3);
+  letter-spacing: .04em;
+}
+#filter-reset:hover { background: #2D2A60; }
+
+/* Active filter label */
+#filter-label {
+  display: none;
+  position: fixed; top: 14px; right: 130px;
+  background: rgba(245,158,11,.15); color: #92400E;
+  border: 1px solid #F59E0B; border-radius: 20px;
+  padding: 6px 14px; font-size: 11px;
+  font-family: 'Courier New', monospace;
+  z-index: 8888;
+  max-width: 260px;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+</style>
+
+<div id="filter-reset" onclick="resetFilter()">✕ Reset Filter</div>
+<div id="filter-label"></div>
+
+<script>
+// ── FILTER STATE ────────────────────────────────────────────
+var activeFilter = null;  // {type: 'trl'|'sector', value: string}
+
+function applyFilter(type, value, label) {
+  // Toggle off if same filter clicked again
+  if (activeFilter && activeFilter.type === type && activeFilter.value === value) {
+    resetFilter(); return;
+  }
+  activeFilter = {type: type, value: value};
+
+  // Show reset button + label
+  document.getElementById('filter-reset').style.display = 'block';
+  var lbl = document.getElementById('filter-label');
+  lbl.style.display = 'block';
+  lbl.textContent = label;
+
+  // ── Chart 1 (TRL per Sektor): rows = sectors, segs = TRL classes ──
+  var cw1 = document.getElementById('cw1');
+  if (cw1) {
+    cw1.classList.add('filtered');
+    cw1.querySelectorAll('.chart-row').forEach(function(row) {
+      if (type === 'sector') {
+        // Get sector name from chart-sector div
+        var secEl = row.querySelector('.chart-sector');
+        var secName = secEl ? secEl.textContent.trim() : '';
+        if (secName === value) {
+          row.classList.remove('dimmed');
+          row.querySelectorAll('.chart-seg').forEach(function(s){ s.classList.remove('dimmed','active'); });
+        } else {
+          row.classList.add('dimmed');
+        }
+      } else if (type === 'trl') {
+        // value = 't1'..'t9'
+        var hasMatch = row.querySelector('.chart-seg.' + value);
+        if (hasMatch) {
+          row.classList.remove('dimmed');
+          row.querySelectorAll('.chart-seg').forEach(function(s){
+            if (s.classList.contains(value)) {
+              s.classList.add('active'); s.classList.remove('dimmed');
+            } else {
+              s.classList.add('dimmed'); s.classList.remove('active');
+            }
+          });
+        } else {
+          row.classList.add('dimmed');
+        }
+      }
+    });
+  }
+
+  // ── Chart 2 (Sektor per TRL): rows = TRL, segs = sector colors ──
+  var cw2 = document.getElementById('cw2');
+  if (cw2) {
+    cw2.classList.add('filtered');
+    cw2.querySelectorAll('.chart-row').forEach(function(row) {
+      if (type === 'trl') {
+        // Get TRL from the span class
+        var trlEl = row.querySelector('.chart-sector span:first-child');
+        var trlCls = trlEl ? trlEl.className : '';
+        // trlCls = "tl1".."tl9", value = "t1".."t9"
+        var rowTrl = trlCls.replace('tl','t');
+        if (rowTrl === value) {
+          row.classList.remove('dimmed');
+          row.querySelectorAll('.chart-seg').forEach(function(s){ s.classList.remove('dimmed','active'); });
+        } else {
+          row.classList.add('dimmed');
+        }
+      } else if (type === 'sector') {
+        // Find seg whose data-tip starts with value
+        var matchSeg = null;
+        row.querySelectorAll('.chart-seg[data-tip]').forEach(function(s){
+          if (s.getAttribute('data-tip').indexOf(value + ':') === 0) matchSeg = s;
+        });
+        if (matchSeg) {
+          row.classList.remove('dimmed');
+          row.querySelectorAll('.chart-seg').forEach(function(s){
+            if (s === matchSeg) { s.classList.add('active'); s.classList.remove('dimmed'); }
+            else                { s.classList.add('dimmed'); s.classList.remove('active'); }
+          });
+        } else {
+          row.classList.add('dimmed');
+        }
+      }
+    });
+  }
+}
+
+function resetFilter() {
+  activeFilter = null;
+  document.getElementById('filter-reset').style.display = 'none';
+  document.getElementById('filter-label').style.display = 'none';
+  ['cw1','cw2'].forEach(function(id){
+    var cw = document.getElementById(id);
+    if (!cw) return;
+    cw.classList.remove('filtered');
+    cw.querySelectorAll('.chart-row').forEach(function(r){ r.classList.remove('dimmed'); });
+    cw.querySelectorAll('.chart-seg').forEach(function(s){ s.classList.remove('dimmed','active'); });
+  });
+}
+
+// ── Wire up clicks on chart segments ──────────────────────
+document.addEventListener('DOMContentLoaded', function() {
+  wireCharts();
+});
+// Also call immediately in case DOM is ready
+wireCharts();
+
+function wireCharts() {
+  // Chart 1: segment click → filter by TRL
+  var cw1 = document.getElementById('cw1');
+  if (cw1) {
+    cw1.querySelectorAll('.chart-seg').forEach(function(seg) {
+      seg.style.cursor = 'pointer';
+      seg.addEventListener('click', function(e) {
+        e.stopPropagation();
+        // Get TRL class: t1..t9
+        var trlCls = null;
+        seg.classList.forEach(function(c){ if (/^t[1-9]$/.test(c)) trlCls = c; });
+        if (!trlCls) return;
+        var trlNum = trlCls.replace('t','');
+        var TRL_N = {1:"Prinsip dasar",2:"Konsep teknologi",3:"Bukti konsep",
+                     4:"Validasi laboratorium",5:"Validasi lingk. relevan",
+                     6:"Demo lingk. relevan",7:"Demo lingk. operasional",
+                     8:"Sistem lengkap & kualifikasi",9:"Sistem terbukti operasional"};
+        applyFilter('trl', trlCls, 'TRL ' + trlNum + ' — ' + TRL_N[parseInt(trlNum)]);
+      });
+    });
+
+    // Chart 1: row click (on sector label) → filter by sector
+    cw1.querySelectorAll('.chart-sector').forEach(function(secEl) {
+      secEl.style.cursor = 'pointer';
+      secEl.addEventListener('click', function(e) {
+        e.stopPropagation();
+        var name = secEl.textContent.trim();
+        applyFilter('sector', name, 'Sektor: ' + name);
+      });
+    });
+  }
+
+  // Chart 2: segment click → filter by sector
+  var cw2 = document.getElementById('cw2');
+  if (cw2) {
+    cw2.querySelectorAll('.chart-seg').forEach(function(seg) {
+      seg.style.cursor = 'pointer';
+      seg.addEventListener('click', function(e) {
+        e.stopPropagation();
+        var tip = seg.getAttribute('data-tip') || '';
+        var name = tip.split(':')[0].trim();
+        if (name) applyFilter('sector', name, 'Sektor: ' + name);
+      });
+    });
+
+    // Chart 2: row label click → filter by TRL
+    cw2.querySelectorAll('.chart-sector').forEach(function(secEl) {
+      secEl.style.cursor = 'pointer';
+      secEl.addEventListener('click', function(e) {
+        e.stopPropagation();
+        var span = secEl.querySelector('span:first-child');
+        if (!span) return;
+        var trlCls = span.className.replace('tl','t');  // tl1 → t1
+        var trlText = span.textContent.trim();
+        var trlNum  = trlText.replace('TRL ','');
+        var TRL_N = {1:"Prinsip dasar",2:"Konsep teknologi",3:"Bukti konsep",
+                     4:"Validasi laboratorium",5:"Validasi lingk. relevan",
+                     6:"Demo lingk. relevan",7:"Demo lingk. operasional",
+                     8:"Sistem lengkap & kualifikasi",9:"Sistem terbukti operasional"};
+        applyFilter('trl', trlCls, 'TRL ' + trlNum + ' — ' + TRL_N[parseInt(trlNum)]);
+      });
+    });
+  }
+}
+</script>
+
 </body>
 </html>
