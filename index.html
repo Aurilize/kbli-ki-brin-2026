@@ -2,55 +2,69 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<title>Analisis KBLI 2025 – Potensi Komersialisasi KI BRIN</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>KBLI 2025 – Potensi Komersialisasi KI BRIN</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.0.0/tabler-icons.min.css">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:'Helvetica Neue',Arial,sans-serif;font-size:13px;color:#1C1917;background:#FAFAF8}
+body{font-family:'Helvetica Neue',Arial,sans-serif;font-size:13px;color:#1C1917;background:#F1F5F9;height:100vh;overflow:hidden;display:flex;flex-direction:column}
 
 /* ── HEADER ── */
-.page-header{background:#1E1B4B;color:#fff;padding:24px 36px 20px}
-.page-header h1{font-family:Georgia,serif;font-size:20px;font-weight:400;color:#fff;margin-bottom:4px;letter-spacing:-.3px}
-.page-header p{font-size:11px;color:#A5B4FC}
-.meta{display:flex;gap:24px;margin-top:14px;flex-wrap:wrap}
-.meta-item b{display:block;font-family:'Courier New',monospace;font-size:26px;font-weight:700;color:#F59E0B;line-height:1}
-.meta-item span{font-size:10px;color:#818CF8;text-transform:uppercase;letter-spacing:.06em}
-
-/* ── TAB BAR ── */
-.tab-bar{display:flex;gap:0;border-bottom:2px solid #E7E5E4;background:#fff;padding:0 36px;position:sticky;top:0;z-index:999;box-shadow:0 1px 8px rgba(0,0,0,.07)}
-.tab-btn{padding:11px 20px;font-size:12px;font-weight:500;color:#78716C;cursor:pointer;
-  border:none;background:none;border-bottom:2.5px solid transparent;margin-bottom:-2px;
-  transition:color .15s,border-color .15s;white-space:nowrap}
-.tab-btn:hover{color:#1C1917}
-.tab-btn.active{color:#1E1B4B;border-bottom-color:#F59E0B;font-weight:600}
-.tab-pill{display:inline-block;font-size:9px;font-family:'Courier New',monospace;
-  padding:1px 6px;border-radius:20px;margin-left:5px;font-weight:700;vertical-align:middle}
-.tab-pill-all{background:#F5F3FF;color:#4C1D95}
-.tab-pill-excl{background:#DCFCE7;color:#14532D}
+.hdr{background:linear-gradient(135deg,#1E1B4B 0%,#312E81 100%);color:#fff;padding:14px 24px;display:flex;align-items:center;gap:20px;flex-shrink:0;box-shadow:0 2px 12px rgba(0,0,0,.3)}
+.hdr-title{font-family:Georgia,serif;font-size:16px;font-weight:400;color:#fff;letter-spacing:-.2px}
+.hdr-sub{font-size:10px;color:#A5B4FC;margin-top:2px}
+.hdr-chips{display:flex;gap:6px;margin-left:auto;flex-shrink:0}
+.hdr-chip{font-size:9.5px;font-family:'Courier New',monospace;font-weight:700;padding:3px 10px;border-radius:20px}
 
 /* ── LAYOUT ── */
-.content{padding:22px 36px}
-.section-title{font-family:Georgia,serif;font-size:15px;font-weight:400;color:#1E1B4B;
-  padding-bottom:5px;border-bottom:2.5px solid #F59E0B;margin-bottom:12px;margin-top:26px;letter-spacing:-.2px}
-.section-tag{font-size:9.5px;color:#A8A29E;font-family:'Courier New',monospace;margin-left:6px}
-.note{font-size:10px;color:#78716C;font-style:italic;margin-bottom:11px;line-height:1.55}
-.divider{height:1px;background:#E7E5E4;margin:16px 0}
+.app{display:flex;flex:1;overflow:hidden}
 
-/* ── SUMMARY CARDS ── */
-.summary{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:20px}
-.sum-card{background:#fff;border:1px solid #E7E5E4;border-radius:8px;padding:10px 16px;min-width:110px;border-top:3px solid #F59E0B}
-.sum-card b{display:block;font-family:'Courier New',monospace;font-size:24px;font-weight:700;color:#1E1B4B;line-height:1.1}
-.sum-card span{font-size:10px;color:#78716C;text-transform:uppercase;letter-spacing:.05em}
+/* ── SIDEBAR ── */
+.sb{width:220px;flex-shrink:0;background:#0F172A;display:flex;flex-direction:column;overflow:hidden}
+.sb-tabs{display:flex;padding:10px 10px 0;gap:5px;border-bottom:1px solid rgba(255,255,255,.07)}
+.sb-tab{flex:1;padding:7px 4px;font-size:10px;font-weight:500;border-radius:6px 6px 0 0;border:none;cursor:pointer;text-align:center;letter-spacing:.01em;transition:all .15s}
+.sb-tab.off{background:transparent;color:#475569}
+.sb-tab.off:hover{color:#94A3B8}
+.sb-tab.on{background:#1E293B;color:#F59E0B;font-weight:700}
+.nav{flex:1;overflow-y:auto;padding:6px 0}
+.nav-grp{font-size:9px;text-transform:uppercase;letter-spacing:.08em;color:#334155;padding:10px 14px 4px;font-weight:600}
+.nav-item{display:flex;align-items:center;gap:9px;padding:9px 14px;font-size:11px;cursor:pointer;border-left:3px solid transparent;color:#94A3B8;transition:all .15s;text-decoration:none}
+.nav-item.on{color:#F8FAFC;background:rgba(255,255,255,.06);border-left-color:#F59E0B}
+.nav-item:hover:not(.on){color:#CBD5E1;background:rgba(255,255,255,.04)}
+.nav-icon{font-size:15px;flex-shrink:0}
+.nav-badge{margin-left:auto;font-size:9px;font-family:'Courier New',monospace;background:rgba(255,255,255,.08);padding:1px 6px;border-radius:20px;color:#475569;flex-shrink:0}
+.filt-wrap{padding:10px;border-top:1px solid rgba(255,255,255,.07)}
+.filt-box{border-radius:8px;padding:10px 12px;background:#1E293B;border:1px solid rgba(255,255,255,.08)}
+.filt-lbl{font-size:9px;text-transform:uppercase;letter-spacing:.07em;color:#475569;margin-bottom:8px;font-weight:600}
+.filt-none{font-size:10px;color:#475569;font-style:italic}
+.filt-active{display:inline-flex;align-items:center;gap:7px;padding:5px 10px;border-radius:20px;font-size:10px;font-weight:700;font-family:'Courier New',monospace;cursor:pointer;border:none}
+.filt-scope{font-size:9px;color:#475569;margin-top:6px;line-height:1.4}
+.filt-reset-btn{display:block;width:100%;margin-top:8px;padding:6px;background:transparent;border:1px solid rgba(255,255,255,.1);border-radius:6px;color:#475569;font-size:10px;cursor:pointer;transition:all .15s}
+.filt-reset-btn:hover{border-color:rgba(255,255,255,.25);color:#94A3B8}
 
-/* ── CHART BARS ── */
-.chart-wrap{margin-bottom:6px}
+/* ── MAIN CONTENT ── */
+.main{flex:1;overflow-y:auto;background:#F1F5F9;scroll-behavior:smooth}
+.content{padding:20px 24px;max-width:1100px}
+
+/* ── SECTION ── */
+.section-block{background:#fff;border-radius:12px;padding:18px 20px;margin-bottom:14px;border:1px solid #E2E8F0}
+.sec-title{font-family:Georgia,serif;font-size:14px;font-weight:400;color:#0F172A;padding-bottom:6px;border-bottom:2px solid #F59E0B;margin-bottom:10px;display:flex;align-items:baseline;gap:8px}
+.sec-tag{font-size:10px;color:#94A3B8;font-family:'Courier New',monospace;font-weight:400}
+.note{font-size:10px;color:#94A3B8;font-style:italic;margin-bottom:10px;line-height:1.55}
+
+/* ── CHARTS ── */
+.chart-wrap{margin-bottom:4px}
 .chart-row{display:flex;align-items:center;gap:10px;margin-bottom:5px;transition:opacity .18s}
-.chart-sector{font-size:11px;color:#292524;width:220px;flex-shrink:0;line-height:1.35;cursor:pointer}
-.chart-sector:hover{color:#1E1B4B}
-.chart-sector .sub{font-size:9.5px;color:#A8A29E;font-weight:300}
-.chart-track{flex:1;height:21px;display:flex;border-radius:4px;overflow:hidden;background:#F5F5F4}
-.chart-seg{height:100%;display:flex;align-items:center;justify-content:center;overflow:hidden;cursor:pointer;position:relative;transition:opacity .18s,filter .18s}
-.seg-lbl{font-family:'Courier New',monospace;font-size:9px;font-weight:700;color:rgba(255,255,255,.92);text-shadow:0 1px 2px rgba(0,0,0,.4);pointer-events:none;user-select:none}
-.chart-total{font-family:'Courier New',monospace;font-size:11px;font-weight:700;color:#44403C;width:24px;text-align:right;flex-shrink:0}
+.chart-row.f-dim{opacity:.1;pointer-events:none}
+.chart-sector{font-size:11px;color:#334155;width:200px;flex-shrink:0;cursor:pointer;line-height:1.35;padding:2px 0}
+.chart-sector:hover{color:#0F172A}
+.chart-sector .sub{font-size:9.5px;color:#94A3B8}
+.chart-track{flex:1;height:20px;display:flex;border-radius:5px;overflow:hidden;background:#F1F5F9}
+.chart-seg{height:100%;display:flex;align-items:center;justify-content:center;overflow:hidden;cursor:pointer;transition:opacity .18s,filter .18s}
+.chart-seg.f-dim{opacity:.1;filter:grayscale(1)}
+.chart-seg.f-on{outline:2px solid rgba(255,255,255,.9);outline-offset:-2px;position:relative;z-index:1}
+.seg-lbl{font-family:'Courier New',monospace;font-size:8.5px;font-weight:700;color:rgba(255,255,255,.95);text-shadow:0 1px 2px rgba(0,0,0,.4);pointer-events:none;user-select:none}
+.chart-total{font-family:'Courier New',monospace;font-size:11px;font-weight:700;color:#475569;width:24px;text-align:right;flex-shrink:0}
 
 /* TRL colors */
 .t1{background:#DC2626}.t2{background:#EA580C}.t3{background:#D97706}.t4{background:#CA8A04}
@@ -59,128 +73,142 @@ body{font-family:'Helvetica Neue',Arial,sans-serif;font-size:13px;color:#1C1917;
 .tl5{color:#65A30D}.tl6{color:#16A34A}.tl7{color:#0D9488}.tl8{color:#0369A1}.tl9{color:#4F46E5}
 
 /* ── LEGEND ── */
-.leg{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:12px}
-.leg-item{display:flex;align-items:center;gap:5px;font-size:10px;color:#57534E}
-.leg-dot{width:11px;height:11px;border-radius:2px;flex-shrink:0}
+.leg{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px}
+.leg-item{display:flex;align-items:center;gap:5px;font-size:10px;color:#64748B}
+.leg-dot{width:10px;height:10px;border-radius:2px;flex-shrink:0}
 
 /* ── TOP 15 TABLE ── */
-table.top{width:100%;border-collapse:collapse;margin-bottom:12px}
+table.top{width:100%;border-collapse:collapse}
 table.top thead tr{background:#1E1B4B}
-table.top th{color:#E0E7FF;font-size:10px;font-weight:600;padding:6px 9px;text-align:left;letter-spacing:.04em;text-transform:uppercase}
-table.top td{font-size:11px;padding:6px 9px;border-bottom:1px solid #F5F5F4;vertical-align:middle}
-table.top tr:nth-child(even) td{background:#FAFAF8}
+table.top th{color:#E0E7FF;font-size:10px;font-weight:600;padding:7px 10px;text-align:left;letter-spacing:.04em;text-transform:uppercase}
+table.top td{font-size:11px;padding:7px 10px;border-bottom:1px solid #F1F5F9;vertical-align:middle}
+table.top tr:nth-child(even) td{background:#F8FAFC}
 code{font-family:'Courier New',monospace;font-weight:700}
-.freq-badge{display:inline-block;background:#1E1B4B;color:#F59E0B;font-family:'Courier New',monospace;font-size:10px;font-weight:600;padding:2px 8px;border-radius:20px}
+.freq-badge{display:inline-block;background:#1E1B4B;color:#F59E0B;font-family:'Courier New',monospace;font-size:10px;font-weight:600;padding:2px 9px;border-radius:20px}
 
-/* ── SECTOR BLOCK ── */
-.sector-block{margin-bottom:24px}
+/* ── SECTOR BLOCKS ── */
+.sector-block{margin-bottom:22px}
 .sector-header{display:flex;align-items:center;gap:8px;margin-bottom:10px}
 .sector-dot{width:11px;height:11px;border-radius:3px;flex-shrink:0}
-.sector-name{font-family:Georgia,serif;font-size:14px;font-weight:400;letter-spacing:-.1px}
-.sector-meta{font-size:10px;color:#A8A29E;margin-left:4px}
+.sector-name{font-family:Georgia,serif;font-size:14px;letter-spacing:-.1px}
+.sector-meta{font-size:10px;color:#94A3B8;margin-left:4px}
 
 /* ── KBLI CARDS ── */
-.cards-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:9px}
-.kbli-card{border:1px solid #E7E5E4;border-radius:10px;padding:12px 14px;background:#fff;
-  border-left:4px solid var(--card-color);cursor:pointer;
-  transition:box-shadow .15s,transform .12s}
-.kbli-card:hover{box-shadow:0 4px 18px rgba(0,0,0,.09);transform:translateY(-2px)}
+.cards-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:8px}
+.kbli-card{border:1px solid #E2E8F0;border-radius:10px;padding:12px 13px;background:#fff;
+  border-left:4px solid var(--card-color);cursor:pointer;transition:box-shadow .15s,transform .12s,opacity .2s}
+.kbli-card:hover{box-shadow:0 4px 16px rgba(0,0,0,.08);transform:translateY(-2px)}
 .kbli-card:active{transform:translateY(0)}
-.card-code{font-family:'Courier New',monospace;font-size:14px;font-weight:700;color:var(--card-color);margin-bottom:4px}
-.card-name{font-size:11.5px;color:#292524;line-height:1.4;margin-bottom:9px;min-height:32px}
-.card-footer{display:flex;align-items:center;gap:7px}
-.card-bar-track{flex:1;height:4px;background:#F5F5F4;border-radius:2px;overflow:hidden}
-.card-bar-fill{height:100%;border-radius:2px;opacity:.7}
-.card-freq{font-family:'Courier New',monospace;font-size:11px;font-weight:700;color:var(--card-color);flex-shrink:0;
-  padding:2px 8px;background:color-mix(in srgb,var(--card-color) 12%,transparent);border-radius:20px}
+.kbli-card.f-dim{opacity:.12;pointer-events:none}
+.kbli-card.f-hl{border-color:var(--card-color)!important;box-shadow:0 0 0 2px color-mix(in srgb,var(--card-color) 30%,transparent);background:color-mix(in srgb,var(--card-color) 4%,white)}
+.card-code{font-family:'Courier New',monospace;font-size:14px;font-weight:700;color:var(--card-color);margin-bottom:3px}
+.card-name{font-size:11px;color:#475569;line-height:1.4;margin-bottom:8px;min-height:30px}
+.card-footer{display:flex;align-items:center;gap:6px}
+.card-bar-track{flex:1;height:3px;background:#F1F5F9;border-radius:2px;overflow:hidden}
+.card-bar-fill{height:100%;border-radius:2px}
+.card-freq{font-family:'Courier New',monospace;font-size:10.5px;font-weight:700;color:var(--card-color);flex-shrink:0;padding:2px 8px;border-radius:20px;background:color-mix(in srgb,var(--card-color) 10%,transparent)}
 
-/* ── TRL HIGH SECTION ── */
-.trl-high-section{margin-top:6px}
-.trl-hblock{margin-bottom:14px;border-radius:12px;overflow:hidden;border:1px solid #E7E5E4;box-shadow:0 1px 4px rgba(0,0,0,.05)}
-.trl-hblock-head{display:flex;align-items:center;gap:12px;padding:11px 18px;border-left:5px solid;flex-wrap:wrap}
+/* ── TRL HIGH ── */
+.trl-high-section{display:flex;flex-direction:column;gap:10px}
+.trl-hblock{border-radius:10px;overflow:hidden;border:1px solid #E2E8F0;background:#fff;transition:opacity .2s}
+.trl-hblock.f-dim{opacity:.1;pointer-events:none}
+.trl-hblock-head{display:flex;align-items:center;gap:12px;padding:11px 16px;border-left:5px solid}
 .trl-hnum{font-family:'Courier New',monospace;font-size:16px;font-weight:700;flex-shrink:0}
-.trl-hlabel{font-size:11.5px;flex:1;letter-spacing:.01em}
+.trl-hlabel{font-size:11px;flex:1}
 .trl-hstats{display:flex;gap:6px;flex-shrink:0}
-.trl-hbadge{font-family:'Courier New',monospace;font-size:10px;font-weight:600;padding:3px 10px;border-radius:20px}
+.trl-hbadge{font-family:'Courier New',monospace;font-size:9.5px;font-weight:600;padding:3px 10px;border-radius:20px}
 .trl-hbody{background:#fff}
 .trl-hki{display:grid;grid-template-columns:1fr 1fr;gap:0}
-.trl-hki-item{padding:10px 15px;border-top:1px solid #F5F5F4;border-right:1px solid #F5F5F4}
-.trl-hki-item:nth-child(even){border-right:none}
-.trl-hki-title{font-size:11.5px;font-weight:500;color:#1C1917;line-height:1.4;margin-bottom:2px}
-.trl-hki-unit{font-size:9.5px;color:#A8A29E;margin-bottom:6px;line-height:1.3}
-.trl-hki-chips{display:flex;flex-wrap:wrap;gap:4px}
-.trl-hkbli-chip{display:inline-flex;align-items:center;gap:5px;font-size:10px;padding:2px 8px 2px 6px;border-radius:5px;border:1px solid;line-height:1.5}
-.trl-hkbli-chip code{font-family:'Courier New',monospace;font-size:10px;font-weight:700}
-
-/* ── FILTER ── */
-.chart-row.f-dim{opacity:.1;pointer-events:none}
-.chart-seg.f-dim{opacity:.08;filter:grayscale(1)}
-.chart-seg.f-on{outline:2px solid rgba(255,255,255,.85);outline-offset:-1px;position:relative;z-index:1}
-#f-reset{display:none;position:fixed;top:58px;right:14px;z-index:9999;
-  background:#1E1B4B;color:#F59E0B;border:none;border-radius:20px;
-  padding:7px 18px;font-size:11px;font-family:'Courier New',monospace;
-  font-weight:700;cursor:pointer;box-shadow:0 4px 16px rgba(0,0,0,.35)}
-#f-reset:hover{background:#2D2A60}
-#f-label{display:none;position:fixed;top:58px;right:140px;z-index:9999;
-  background:rgba(245,158,11,.13);color:#92400E;border:1px solid #F59E0B;
-  border-radius:20px;padding:6px 14px;font-size:11px;font-family:'Courier New',monospace;
-  max-width:280px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.trl-hki-item{padding:10px 14px;border-top:1px solid #F8FAFC;border-right:1px solid #F8FAFC}
+.trl-hki-item:nth-child(2n){border-right:none}
+.trl-hki-title{font-size:11px;font-weight:500;color:#1E293B;line-height:1.4;margin-bottom:3px}
+.trl-hki-unit{font-size:9.5px;color:#94A3B8;margin-bottom:6px}
+.trl-hki-chips{display:flex;flex-wrap:wrap;gap:3px}
+.trl-hkbli-chip{display:inline-flex;align-items:center;gap:4px;font-size:9.5px;padding:2px 8px 2px 5px;border-radius:5px;border:1px solid;line-height:1.5}
+.trl-hkbli-chip code{font-family:'Courier New',monospace;font-size:9.5px;font-weight:700}
 
 /* ── MODAL ── */
-#ki-overlay{display:none;position:fixed;inset:0;background:rgba(15,12,40,.55);backdrop-filter:blur(3px);z-index:10000;align-items:center;justify-content:center}
+#ki-overlay{display:none;position:fixed;inset:0;background:rgba(15,12,40,.6);backdrop-filter:blur(4px);z-index:10000;align-items:center;justify-content:center}
 #ki-overlay.open{display:flex}
-#ki-modal{background:#fff;border-radius:14px;width:min(600px,94vw);max-height:82vh;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 24px 60px rgba(0,0,0,.3)}
-#ki-mhdr{background:#1E1B4B;color:#fff;padding:14px 18px;display:flex;align-items:flex-start;gap:12px}
-#ki-mcode{font-family:'Courier New',monospace;font-size:19px;font-weight:700;color:#F59E0B;flex-shrink:0;margin-top:1px}
-#ki-mtitle{font-size:11.5px;line-height:1.5;color:#C7D2FE;flex:1}
-#ki-mclose{background:none;border:none;color:#818CF8;font-size:19px;cursor:pointer;flex-shrink:0;line-height:1;padding:0}
+#ki-modal{background:#fff;border-radius:16px;width:min(600px,94vw);max-height:82vh;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 32px 80px rgba(0,0,0,.35)}
+#ki-mhdr{background:#0F172A;color:#fff;padding:16px 20px;display:flex;align-items:flex-start;gap:12px}
+#ki-mcode{font-family:'Courier New',monospace;font-size:20px;font-weight:700;color:#F59E0B;flex-shrink:0;margin-top:1px}
+#ki-mtitle{font-size:12px;line-height:1.5;color:#94A3B8;flex:1}
+#ki-mclose{background:none;border:none;color:#475569;font-size:20px;cursor:pointer;flex-shrink:0;padding:0;line-height:1}
 #ki-mclose:hover{color:#fff}
-#ki-mbody{overflow-y:auto;padding:14px 18px;flex:1}
-#ki-mcount{font-size:10px;font-family:'Courier New',monospace;color:#A8A29E;text-transform:uppercase;letter-spacing:.06em;margin-bottom:10px}
-.ki-item{border:1px solid #F0EDFC;border-left:3px solid #1E1B4B;border-radius:8px;padding:9px 12px;margin-bottom:8px;background:#FAFAF8}
+#ki-mbody{overflow-y:auto;padding:16px 20px;flex:1;background:#F8FAFC}
+#ki-mcount{font-size:10px;font-family:'Courier New',monospace;color:#94A3B8;text-transform:uppercase;letter-spacing:.06em;margin-bottom:12px}
+.ki-item{border:1px solid #E2E8F0;border-left:3px solid #1E1B4B;border-radius:8px;padding:10px 13px;margin-bottom:8px;background:#fff}
 .ki-item:last-child{margin-bottom:0}
-.ki-title{font-size:11.5px;font-weight:500;color:#1C1917;line-height:1.4;margin-bottom:4px}
-.ki-meta{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:3px}
-.ki-trl{font-family:'Courier New',monospace;font-size:9.5px;font-weight:700;padding:2px 8px;border-radius:20px;color:#fff;flex-shrink:0}
-.ki-unit{font-size:10px;color:#78716C;line-height:1.3}
-.ki-just{font-size:10px;color:#57534E;font-style:italic;margin-top:2px;padding-top:2px;border-top:1px dashed #E7E5E4}
+.ki-title{font-size:12px;font-weight:500;color:#1C1917;line-height:1.4;margin-bottom:5px}
+.ki-meta{display:flex;align-items:center;gap:9px;flex-wrap:wrap;margin-bottom:3px}
+.ki-trl{font-family:'Courier New',monospace;font-size:9.5px;font-weight:700;padding:2px 9px;border-radius:20px;color:#fff;flex-shrink:0}
+.ki-unit{font-size:10px;color:#78716C}
+.ki-just{font-size:10px;color:#64748B;font-style:italic;margin-top:3px;padding-top:3px;border-top:1px dashed #E2E8F0}
 
 /* ── TOOLTIP ── */
-.tt{display:none;position:fixed;background:#1E1B4B;color:#fff;font-family:'Courier New',monospace;font-size:11px;padding:5px 11px;border-radius:6px;white-space:nowrap;pointer-events:none;z-index:9999;border-left:3px solid #F59E0B}
+.tt{display:none;position:fixed;background:#0F172A;color:#fff;font-family:'Courier New',monospace;font-size:11px;padding:6px 12px;border-radius:6px;white-space:nowrap;pointer-events:none;z-index:9999;border-left:3px solid #F59E0B;box-shadow:0 4px 20px rgba(0,0,0,.3)}
 
-.page-break{page-break-before:always}
-.footer{text-align:center;font-size:10px;color:#A8A29E;padding:14px 36px;border-top:1px solid #E7E5E4;margin-top:6px;font-family:'Courier New',monospace}
+.footer{text-align:center;font-size:10px;color:#94A3B8;padding:14px 24px;font-family:'Courier New',monospace;background:#fff;border-top:1px solid #E2E8F0;flex-shrink:0}
 </style>
 </head>
 <body>
 
-<div class="page-header">
-  <h1>Analisis KBLI 2025 — Potensi Komersialisasi KI BRIN</h1>
-  <p>Pemetaan Kekayaan Intelektual BRIN terhadap sektor industri berdasarkan KBLI 2025 &nbsp;·&nbsp; Verifikasi TRL 2026</p>
-  <div class="meta">
-    <div class="meta-item"><b>50</b><span>KI dianalisis</span></div>
-    <div class="meta-item"><b>127</b><span>Total opsi KBLI</span></div>
-    <div class="meta-item"><b>44</b><span>Kode KBLI unik</span></div>
-    <div class="meta-item"><b>14</b><span>Sektor industri</span></div>
+<div class="hdr">
+  <div>
+    <div class="hdr-title">Analisis KBLI 2025 — Potensi Komersialisasi KI BRIN</div>
+    <div class="hdr-sub">Pemetaan KI BRIN · Booklet KBLI 2025 BPS · TRL Terverifikasi 2026</div>
+  </div>
+  <div class="hdr-chips">
+    <span class="hdr-chip" style="background:rgba(245,158,11,.2);color:#F59E0B">50 KI</span>
+    <span class="hdr-chip" style="background:rgba(99,102,241,.2);color:#818CF8">44 kode</span>
+    <span class="hdr-chip" style="background:rgba(16,185,129,.2);color:#34D399">14 sektor</span>
   </div>
 </div>
 
-<div class="tab-bar">
-  <button class="tab-btn active" onclick="switchTab(1)">
-    Semua KBLI <span class="tab-pill tab-pill-all">127 opsi</span>
-  </button>
-  <button class="tab-btn" onclick="switchTab(2)">
-    Tanpa Perdagangan <span class="tab-pill tab-pill-excl">106 opsi</span>
-  </button>
-</div>
+<div class="app">
+  <div class="sb">
+    <div class="sb-tabs">
+      <button class="sb-tab off" id="tab-all" onclick="switchTab(1)">Semua</button>
+      <button class="sb-tab on"  id="tab-excl" onclick="switchTab(2)">–Perdagangan</button>
+    </div>
+    <nav class="nav" id="main-nav">
+      <div class="nav-item on" onclick="scrollTo('sec-chart1e')" data-sec="sec-chart1">
+        <i class="ti ti-chart-bar nav-icon" aria-hidden="true"></i>TRL per Sektor
+      </div>
+      <div class="nav-item" onclick="scrollTo('sec-chart2e')" data-sec="sec-chart2">
+        <i class="ti ti-layout-grid nav-icon" aria-hidden="true"></i>Sektor per TRL
+      </div>
+      <div class="nav-item" onclick="scrollTo('sec-top15e')" data-sec="sec-top15">
+        <i class="ti ti-medal nav-icon" aria-hidden="true"></i>Top 15 KBLI
+      </div>
+      <div class="nav-item" onclick="scrollTo('sec-cardse')" data-sec="sec-cards">
+        <i class="ti ti-cards nav-icon" aria-hidden="true"></i>Kode KBLI Unik
+        <span class="nav-badge" id="nav-badge-cards">39</span>
+      </div>
+      <div class="nav-item" onclick="scrollTo('sec-trle')" data-sec="sec-trl">
+        <i class="ti ti-rocket nav-icon" aria-hidden="true"></i>TRL 6–9
+        <span class="nav-badge">24 KI</span>
+      </div>
+    </nav>
+    <div class="filt-wrap">
+      <div class="filt-box">
+        <div class="filt-lbl">Filter aktif</div>
+        <div id="filt-display"><span class="filt-none">Tidak ada — klik chart</span></div>
+        <div class="filt-scope" id="filt-scope" style="display:none">Berlaku ke semua section ↓</div>
+        <button class="filt-reset-btn" id="filt-reset-btn" style="display:none" onclick="fReset()">✕ Reset filter</button>
+      </div>
+    </div>
+  </div>
 
-<div id="tab1-content">
-<div class="content">
-<div class="section-title">Distribusi TRL per Sektor KBLI</div>
-<p class="note">Setiap KI dapat muncul di lebih dari satu sektor. Panjang bar = jumlah KI berpotensi di sektor tersebut, diwarnai berdasarkan TRL.</p>
-<div class="leg"><div class="leg-item"><div class="leg-dot t1"></div>TRL 1 – Prinsip dasar</div><div class="leg-item"><div class="leg-dot t2"></div>TRL 2 – Konsep teknologi</div><div class="leg-item"><div class="leg-dot t3"></div>TRL 3 – Bukti konsep</div><div class="leg-item"><div class="leg-dot t4"></div>TRL 4 – Validasi laboratorium</div><div class="leg-item"><div class="leg-dot t5"></div>TRL 5 – Validasi lingk. relevan</div><div class="leg-item"><div class="leg-dot t6"></div>TRL 6 – Demo lingk. relevan</div><div class="leg-item"><div class="leg-dot t7"></div>TRL 7 – Demo lingk. operasional</div><div class="leg-item"><div class="leg-dot t8"></div>TRL 8 – Sistem lengkap & kualifikasi</div><div class="leg-item"><div class="leg-dot t9"></div>TRL 9 – Sistem terbukti operasional</div></div>
-<div class="chart-wrap" id="cw1">
-  <div class="chart-row">
+  <div class="main" id="main-scroll">
+    <div class="content">
+      <div id="tab1-content" style="display:none">
+<div id="sec-chart1" class="section-block">
+  <div class="sec-title">Distribusi TRL per Sektor KBLI</div>
+  <p class="note">Klik segmen atau label sektor untuk filter. Setiap KI bisa muncul di lebih dari satu sektor.</p>
+  <div class="leg"><div class="leg-item"><div class="leg-dot t1"></div>TRL 1 – Prinsip dasar</div><div class="leg-item"><div class="leg-dot t2"></div>TRL 2 – Konsep teknologi</div><div class="leg-item"><div class="leg-dot t3"></div>TRL 3 – Bukti konsep</div><div class="leg-item"><div class="leg-dot t4"></div>TRL 4 – Validasi laboratorium</div><div class="leg-item"><div class="leg-dot t5"></div>TRL 5 – Validasi lingk. relevan</div><div class="leg-item"><div class="leg-dot t6"></div>TRL 6 – Demo lingk. relevan</div><div class="leg-item"><div class="leg-dot t7"></div>TRL 7 – Demo lingk. operasional</div><div class="leg-item"><div class="leg-dot t8"></div>TRL 8 – Sistem lengkap & kualifikasi</div><div class="leg-item"><div class="leg-dot t9"></div>TRL 9 – Sistem terbukti operasional</div></div>
+  <div class="chart-wrap" id="cw1">  <div class="chart-row">
     <div class="chart-sector" style="border-left:3px solid #F97316;padding-left:7px">Perdagangan Besar</div>
     <div class="chart-track" style="width:100.0%">
       <div class="chart-seg t3" style="width:5.0%" data-tip="TRL 3 - Bukti konsep: 1 KI"><span class="seg-lbl" style="font-size:7px">1</span></div>
@@ -302,15 +330,13 @@ code{font-family:'Courier New',monospace;font-weight:700}
       <div class="chart-seg t6" style="width:100.0%" data-tip="TRL 6 - Demo lingk. relevan: 1 KI"><span class="seg-lbl">1</span></div>
     </div>
     <div class="chart-total">1</div>
-  </div>
+  </div></div>
 </div>
-
-<div class="page-break"></div>
-<div class="section-title">Distribusi Sektor per TRL</div>
-<p class="note">Setiap bar mewakili satu level TRL. Warna menunjukkan kontribusi tiap sektor industri.</p>
-<div class="leg"><div class="leg-item"><div class="leg-dot" style="background:#F59E0B"></div>Pertanian & Perkebunan</div><div class="leg-item"><div class="leg-dot" style="background:#F43F5E"></div>Industri Pangan & Minuman</div><div class="leg-item"><div class="leg-dot" style="background:#FB7185"></div>Industri Minuman</div><div class="leg-item"><div class="leg-dot" style="background:#8B5CF6"></div>Industri Kimia & Biokimia</div><div class="leg-item"><div class="leg-dot" style="background:#3B82F6"></div>Industri Farmasi & Biotek</div><div class="leg-item"><div class="leg-dot" style="background:#F97316"></div>Perdagangan Besar</div><div class="leg-item"><div class="leg-dot" style="background:#FB923C"></div>Perdagangan Eceran</div><div class="leg-item"><div class="leg-dot" style="background:#06B6D4"></div>Industri Alat Kesehatan</div><div class="leg-item"><div class="leg-dot" style="background:#EC4899"></div>Kesehatan & Lab Klinik</div><div class="leg-item"><div class="leg-dot" style="background:#10B981"></div>Pengelolaan Lingkungan</div><div class="leg-item"><div class="leg-dot" style="background:#84CC16"></div>Industri Plastik & Kemasan</div><div class="leg-item"><div class="leg-dot" style="background:#A78BFA"></div>Industri Tekstil & Serat</div><div class="leg-item"><div class="leg-dot" style="background:#94A3B8"></div>Jasa Pengujian & Inspeksi</div><div class="leg-item"><div class="leg-dot" style="background:#78716C"></div>Pertambangan & Mineral</div><div class="leg-item"><div class="leg-dot" style="background:#22D3EE"></div>Industri Elektronik & Instrumen</div></div>
-<div class="chart-wrap" id="cw2">
-  <div class="chart-row">
+<div id="sec-chart2" class="section-block">
+  <div class="sec-title">Distribusi Sektor per TRL</div>
+  <p class="note">Klik segmen atau label TRL untuk filter. Berlaku ke semua section di bawah.</p>
+  <div class="leg"><div class="leg-item"><div class="leg-dot" style="background:#F59E0B"></div>Pertanian & Perkebunan</div><div class="leg-item"><div class="leg-dot" style="background:#F43F5E"></div>Industri Pangan & Minuman</div><div class="leg-item"><div class="leg-dot" style="background:#FB7185"></div>Industri Minuman</div><div class="leg-item"><div class="leg-dot" style="background:#8B5CF6"></div>Industri Kimia & Biokimia</div><div class="leg-item"><div class="leg-dot" style="background:#3B82F6"></div>Industri Farmasi & Biotek</div><div class="leg-item"><div class="leg-dot" style="background:#F97316"></div>Perdagangan Besar</div><div class="leg-item"><div class="leg-dot" style="background:#FB923C"></div>Perdagangan Eceran</div><div class="leg-item"><div class="leg-dot" style="background:#06B6D4"></div>Industri Alat Kesehatan</div><div class="leg-item"><div class="leg-dot" style="background:#EC4899"></div>Kesehatan & Lab Klinik</div><div class="leg-item"><div class="leg-dot" style="background:#10B981"></div>Pengelolaan Lingkungan</div><div class="leg-item"><div class="leg-dot" style="background:#84CC16"></div>Industri Plastik & Kemasan</div><div class="leg-item"><div class="leg-dot" style="background:#A78BFA"></div>Industri Tekstil & Serat</div><div class="leg-item"><div class="leg-dot" style="background:#94A3B8"></div>Jasa Pengujian & Inspeksi</div><div class="leg-item"><div class="leg-dot" style="background:#78716C"></div>Pertambangan & Mineral</div><div class="leg-item"><div class="leg-dot" style="background:#22D3EE"></div>Industri Elektronik & Instrumen</div></div>
+  <div class="chart-wrap" id="cw2">  <div class="chart-row">
     <div class="chart-sector"><span class="tl3" style="font-family:'Courier New',monospace;font-weight:700">TRL 3</span> <span class="sub">Bukti konsep</span></div>
     <div class="chart-track" style="width:60.0%">
       <div class="chart-seg" style="width:33.3%;background:#3B82F6" data-tip="Industri Farmasi & Biotek: 4 KI"><span class="seg-lbl">4</span></div>
@@ -390,15 +416,13 @@ code{font-family:'Courier New',monospace;font-weight:700}
       <div class="chart-seg" style="width:50.0%;background:#F43F5E" data-tip="Industri Pangan & Minuman: 1 KI"><span class="seg-lbl">1</span></div>
     </div>
     <div class="chart-total">2</div>
-  </div>
+  </div></div>
 </div>
-
-<div class="page-break"></div>
-<div class="section-title">Top 15 Kode KBLI Terbanyak</div>
-<table class="top">
-  <thead><tr><th>Kode</th><th>Nama Subgolongan KBLI 2025</th><th>Sektor</th><th style="text-align:center">KI</th></tr></thead>
-  <tbody>
-    <tr>
+<div id="sec-top15" class="section-block">
+  <div class="sec-title">Top 15 Kode KBLI Terbanyak</div>
+  <table class="top">
+    <thead><tr><th>Kode</th><th>Nama Subgolongan KBLI 2025</th><th>Sektor</th><th style="text-align:center">KI</th></tr></thead>
+    <tbody>    <tr>
       <td><code style="color:#3B82F6;font-size:13px">21012</code></td>
       <td style="font-size:11px">Industri Produk Farmasi untuk Manusia</td>
       <td><span style="font-size:10px;color:#1E3A8A;background:#3B82F622;padding:2px 8px;border-radius:20px">Industri Farmasi & Biotek</span></td>
@@ -488,13 +512,13 @@ code{font-family:'Courier New',monospace;font-weight:700}
       <td><span style="font-size:10px;color:#92400E;background:#F59E0B22;padding:2px 8px;border-radius:20px">Pertanian & Perkebunan</span></td>
       <td style="text-align:center"><span class="freq-badge">3 KI</span></td>
     </tr>
-  </tbody>
-</table>
-
-<div class="page-break"></div>
-<div class="section-title">44 Kode KBLI Unik — Detail per Sektor</div>
-<p class="note">Klik card untuk melihat daftar KI yang berpotensi di kode KBLI tersebut.</p>
-
+</tbody>
+  </table>
+</div>
+<div id="sec-cards" class="section-block">
+  <div class="sec-title">44 Kode KBLI Unik</div>
+  <p class="note">Klik card untuk detail KI. Filter aktif akan highlight card yang relevan.</p>
+  
 <div class="sector-block">
   <div class="sector-header">
     <div class="sector-dot" style="background:#F59E0B"></div>
@@ -987,12 +1011,11 @@ code{font-family:'Courier New',monospace;font-weight:700}
   </div>
 </div>
 
-
-<div class="page-break"></div>
-<div class="section-title">KI Siap Komersialisasi — TRL 6 sampai 9</div>
-<p class="note">KI dengan TRL 6–9 terverifikasi, beserta sebaran potensi kode KBLI industrinya.</p>
-<div class="trl-high-section">
-<div class="trl-high-section">
+</div>
+<div id="sec-trl" class="section-block">
+  <div class="sec-title">KI Siap Komersialisasi — TRL 6 sampai 9</div>
+  <p class="note">KI dengan TRL 6–9 terverifikasi. Filter TRL akan highlight blok yang sesuai.</p>
+  <div class="trl-high-section"><div class="trl-high-section">
 <div class="trl-hblock">
   <div class="trl-hblock-head" style="background:#F0FDF4;border-left-color:#16A34A">
     <span class="trl-hnum" style="color:#16A34A">TRL 6</span>
@@ -1173,14 +1196,12 @@ code{font-family:'Courier New',monospace;font-weight:700}
 </div>
 </div>
 </div>
-
-<div id="tab2-content" style="display:none">
-<div class="content">
-<div class="section-title">Distribusi TRL per Sektor KBLI <span class="section-tag">(tanpa perdagangan)</span></div>
-<p class="note">Seluruh kode Perdagangan Besar (46xxx) dan Perdagangan Eceran (47xxx) dikeluarkan.</p>
-<div class="leg"><div class="leg-item"><div class="leg-dot t1"></div>TRL 1 – Prinsip dasar</div><div class="leg-item"><div class="leg-dot t2"></div>TRL 2 – Konsep teknologi</div><div class="leg-item"><div class="leg-dot t3"></div>TRL 3 – Bukti konsep</div><div class="leg-item"><div class="leg-dot t4"></div>TRL 4 – Validasi laboratorium</div><div class="leg-item"><div class="leg-dot t5"></div>TRL 5 – Validasi lingk. relevan</div><div class="leg-item"><div class="leg-dot t6"></div>TRL 6 – Demo lingk. relevan</div><div class="leg-item"><div class="leg-dot t7"></div>TRL 7 – Demo lingk. operasional</div><div class="leg-item"><div class="leg-dot t8"></div>TRL 8 – Sistem lengkap & kualifikasi</div><div class="leg-item"><div class="leg-dot t9"></div>TRL 9 – Sistem terbukti operasional</div></div>
-<div class="chart-wrap" id="cw1e">
-  <div class="chart-row">
+      <div id="tab2-content">
+<div id="sec-chart1e" class="section-block">
+  <div class="sec-title">Distribusi TRL per Sektor KBLI <span class="sec-tag">(tanpa perdagangan)</span></div>
+  <p class="note">Klik segmen atau label sektor untuk filter. Setiap KI bisa muncul di lebih dari satu sektor.</p>
+  <div class="leg"><div class="leg-item"><div class="leg-dot t1"></div>TRL 1 – Prinsip dasar</div><div class="leg-item"><div class="leg-dot t2"></div>TRL 2 – Konsep teknologi</div><div class="leg-item"><div class="leg-dot t3"></div>TRL 3 – Bukti konsep</div><div class="leg-item"><div class="leg-dot t4"></div>TRL 4 – Validasi laboratorium</div><div class="leg-item"><div class="leg-dot t5"></div>TRL 5 – Validasi lingk. relevan</div><div class="leg-item"><div class="leg-dot t6"></div>TRL 6 – Demo lingk. relevan</div><div class="leg-item"><div class="leg-dot t7"></div>TRL 7 – Demo lingk. operasional</div><div class="leg-item"><div class="leg-dot t8"></div>TRL 8 – Sistem lengkap & kualifikasi</div><div class="leg-item"><div class="leg-dot t9"></div>TRL 9 – Sistem terbukti operasional</div></div>
+  <div class="chart-wrap" id="cw1e">  <div class="chart-row">
     <div class="chart-sector" style="border-left:3px solid #F59E0B;padding-left:7px">Pertanian & Perkebunan</div>
     <div class="chart-track" style="width:100.0%">
       <div class="chart-seg t4" style="width:4.3%" data-tip="TRL 4 - Validasi laboratorium: 1 KI"><span class="seg-lbl" style="font-size:7px">1</span></div>
@@ -1283,15 +1304,13 @@ code{font-family:'Courier New',monospace;font-weight:700}
       <div class="chart-seg t6" style="width:100.0%" data-tip="TRL 6 - Demo lingk. relevan: 1 KI"><span class="seg-lbl">1</span></div>
     </div>
     <div class="chart-total">1</div>
-  </div>
+  </div></div>
 </div>
-
-<div class="page-break"></div>
-<div class="section-title">Distribusi Sektor per TRL <span class="section-tag">(tanpa perdagangan)</span></div>
-<p class="note">Distribusi sektor per level TRL setelah mengecualikan jalur perdagangan.</p>
-<div class="leg"><div class="leg-item"><div class="leg-dot" style="background:#F59E0B"></div>Pertanian & Perkebunan</div><div class="leg-item"><div class="leg-dot" style="background:#F43F5E"></div>Industri Pangan & Minuman</div><div class="leg-item"><div class="leg-dot" style="background:#FB7185"></div>Industri Minuman</div><div class="leg-item"><div class="leg-dot" style="background:#8B5CF6"></div>Industri Kimia & Biokimia</div><div class="leg-item"><div class="leg-dot" style="background:#3B82F6"></div>Industri Farmasi & Biotek</div><div class="leg-item"><div class="leg-dot" style="background:#06B6D4"></div>Industri Alat Kesehatan</div><div class="leg-item"><div class="leg-dot" style="background:#EC4899"></div>Kesehatan & Lab Klinik</div><div class="leg-item"><div class="leg-dot" style="background:#10B981"></div>Pengelolaan Lingkungan</div><div class="leg-item"><div class="leg-dot" style="background:#84CC16"></div>Industri Plastik & Kemasan</div><div class="leg-item"><div class="leg-dot" style="background:#A78BFA"></div>Industri Tekstil & Serat</div><div class="leg-item"><div class="leg-dot" style="background:#94A3B8"></div>Jasa Pengujian & Inspeksi</div><div class="leg-item"><div class="leg-dot" style="background:#78716C"></div>Pertambangan & Mineral</div><div class="leg-item"><div class="leg-dot" style="background:#22D3EE"></div>Industri Elektronik & Instrumen</div></div>
-<div class="chart-wrap" id="cw2e">
-  <div class="chart-row">
+<div id="sec-chart2e" class="section-block">
+  <div class="sec-title">Distribusi Sektor per TRL <span class="sec-tag">(tanpa perdagangan)</span></div>
+  <p class="note">Klik segmen atau label TRL untuk filter. Berlaku ke semua section di bawah.</p>
+  <div class="leg"><div class="leg-item"><div class="leg-dot" style="background:#F59E0B"></div>Pertanian & Perkebunan</div><div class="leg-item"><div class="leg-dot" style="background:#F43F5E"></div>Industri Pangan & Minuman</div><div class="leg-item"><div class="leg-dot" style="background:#FB7185"></div>Industri Minuman</div><div class="leg-item"><div class="leg-dot" style="background:#8B5CF6"></div>Industri Kimia & Biokimia</div><div class="leg-item"><div class="leg-dot" style="background:#3B82F6"></div>Industri Farmasi & Biotek</div><div class="leg-item"><div class="leg-dot" style="background:#06B6D4"></div>Industri Alat Kesehatan</div><div class="leg-item"><div class="leg-dot" style="background:#EC4899"></div>Kesehatan & Lab Klinik</div><div class="leg-item"><div class="leg-dot" style="background:#10B981"></div>Pengelolaan Lingkungan</div><div class="leg-item"><div class="leg-dot" style="background:#84CC16"></div>Industri Plastik & Kemasan</div><div class="leg-item"><div class="leg-dot" style="background:#A78BFA"></div>Industri Tekstil & Serat</div><div class="leg-item"><div class="leg-dot" style="background:#94A3B8"></div>Jasa Pengujian & Inspeksi</div><div class="leg-item"><div class="leg-dot" style="background:#78716C"></div>Pertambangan & Mineral</div><div class="leg-item"><div class="leg-dot" style="background:#22D3EE"></div>Industri Elektronik & Instrumen</div></div>
+  <div class="chart-wrap" id="cw2e">  <div class="chart-row">
     <div class="chart-sector"><span class="tl3" style="font-family:'Courier New',monospace;font-weight:700">TRL 3</span> <span class="sub">Bukti konsep</span></div>
     <div class="chart-track" style="width:65.2%">
       <div class="chart-seg" style="width:46.7%;background:#3B82F6" data-tip="Industri Farmasi & Biotek: 7 KI"><span class="seg-lbl">7</span></div>
@@ -1364,15 +1383,13 @@ code{font-family:'Courier New',monospace;font-weight:700}
       <div class="chart-seg" style="width:50.0%;background:#84CC16" data-tip="Industri Plastik & Kemasan: 1 KI"><span class="seg-lbl">1</span></div>
     </div>
     <div class="chart-total">2</div>
-  </div>
+  </div></div>
 </div>
-
-<div class="page-break"></div>
-<div class="section-title">Top 15 Kode KBLI Terbanyak <span class="section-tag">(tanpa perdagangan)</span></div>
-<table class="top">
-  <thead><tr><th>Kode</th><th>Nama Subgolongan KBLI 2025</th><th>Sektor</th><th style="text-align:center">KI</th></tr></thead>
-  <tbody>
-    <tr>
+<div id="sec-top15e" class="section-block">
+  <div class="sec-title">Top 15 Kode KBLI Terbanyak <span class="sec-tag">(tanpa perdagangan)</span></div>
+  <table class="top">
+    <thead><tr><th>Kode</th><th>Nama Subgolongan KBLI 2025</th><th>Sektor</th><th style="text-align:center">KI</th></tr></thead>
+    <tbody>    <tr>
       <td><code style="color:#3B82F6;font-size:13px">21012</code></td>
       <td style="font-size:11px">Industri Produk Farmasi untuk Manusia</td>
       <td><span style="font-size:10px;color:#1E3A8A;background:#3B82F622;padding:2px 8px;border-radius:20px">Industri Farmasi & Biotek</span></td>
@@ -1462,13 +1479,13 @@ code{font-family:'Courier New',monospace;font-weight:700}
       <td><span style="font-size:10px;color:#365314;background:#84CC1622;padding:2px 8px;border-radius:20px">Industri Plastik & Kemasan</span></td>
       <td style="text-align:center"><span class="freq-badge">3 KI</span></td>
     </tr>
-  </tbody>
-</table>
-
-<div class="page-break"></div>
-<div class="section-title">39 Kode KBLI Unik <span class="section-tag">(tanpa perdagangan)</span></div>
-<p class="note">Klik card untuk melihat daftar KI. Perdagangan tidak ditampilkan di tab ini.</p>
-
+</tbody>
+  </table>
+</div>
+<div id="sec-cardse" class="section-block">
+  <div class="sec-title">39 Kode KBLI Unik <span class="sec-tag">(tanpa perdagangan)</span></div>
+  <p class="note">Klik card untuk detail KI. Filter aktif akan highlight card yang relevan.</p>
+  
 <div class="sector-block">
   <div class="sector-header">
     <div class="sector-dot" style="background:#F59E0B"></div>
@@ -1901,12 +1918,11 @@ code{font-family:'Courier New',monospace;font-weight:700}
   </div>
 </div>
 
-
-<div class="page-break"></div>
-<div class="section-title">KI Siap Komersialisasi — TRL 6 sampai 9 <span class="section-tag">(tanpa perdagangan)</span></div>
-<p class="note">KI TRL 6–9, hanya menampilkan kode KBLI sektor produksi dan jasa.</p>
-<div class="trl-high-section">
-<div class="trl-hblock">
+</div>
+<div id="sec-trle" class="section-block">
+  <div class="sec-title">KI Siap Komersialisasi — TRL 6 sampai 9 <span class="sec-tag">(tanpa perdagangan)</span></div>
+  <p class="note">KI dengan TRL 6–9 terverifikasi. Filter TRL akan highlight blok yang sesuai.</p>
+  <div class="trl-high-section"><div class="trl-hblock">
   <div class="trl-hblock-head" style="background:#F0FDF4;border-left-color:#16A34A">
     <span class="trl-hnum" style="color:#16A34A">TRL 6</span>
     <span class="trl-hlabel" style="color:#14532D">Demo di lingkungan relevan</span>
@@ -1969,11 +1985,13 @@ code{font-family:'Courier New',monospace;font-weight:700}
 </div>
 </div>
 </div>
+    </div>
+  </div>
+</div>
 
 <div class="footer">
-  KBLI 2025 &nbsp;·&nbsp; Potensi Komersialisasi KI BRIN &nbsp;·&nbsp;
-  Sumber: Booklet KBLI 2025 BPS | TRL Terverifikasi &nbsp;·&nbsp;
-  50 KI &nbsp;·&nbsp; 44 kode KBLI &nbsp;·&nbsp; 14 sektor industri
+  KBLI 2025 · Potensi Komersialisasi KI BRIN · Sumber: Booklet KBLI 2025 BPS | TRL Terverifikasi ·
+  50 KI · 44 kode KBLI · 14 sektor industri
 </div>
 
 <div id="ki-overlay">
@@ -1994,17 +2012,61 @@ code{font-family:'Courier New',monospace;font-weight:700}
 <script>
 const KD={'01111':[{t:'AGEN  PEMACU  PERTUMBUHAN  TANAMAN  JAGUNG  BERBASIS  FILTRAT  KULTUR Trichoderma asperellum AC.3, PROSES PEMBUATAN, DAN PENGGUNAA',u:'Pengelolaan Hama dan Penyakit tanaman Jagung dan serealia potensial lainnya - Pusat Riset',r:4,j:'Diadopsi langsung usaha pertanian jagung komersial'}],'01112':[{t:'Biofertizinc (Pupuk hayati peningkat kandungan Zn untuk padi/serealia)',u:'Pengelolaan Lahan Pupuk & Pembenah Tanah - PR Tanaman Pangan - ORPP',r:7,j:'Diadopsi pertanian serealia selain padi dan jagung untuk biofortifikasi'}],'01113':[{t:'Varietas unggul kedelai BRINUSA',u:'Kelompok Riset Perakitan Varietas Unggul Aneka Kacang - Pusat Riset Tanaman Pangan - Organ',r:7,j:'Benih varietas kedelai BRINUSA diproduksi penangkar benih komersial'},{t:'Varietas unggul kedelai BRINARA',u:'Kelompok Riset Perakitan Varietas Unggul Aneka Kacang - Pusat Riset Tanaman Pangan - Organ',r:7,j:'Benih varietas kedelai BRINARA diproduksi penangkar benih komersial'}],'01115':[{t:'Kacang Hijau Varietas Muri',u:'Kelris 22 TERAPPAN PRTP ORPP BRIN',r:8,j:'Benih varietas kacang hijau Muri diproduksi penangkar benih komersial'}],'01121':[{t:'KOMPOSISI PUPUK HAYATI UNTUK MENINGKATKAN PRODUKTIVITAS PADI DI LAHAN SAWAH TERPAPAR KERING DAN PROSES PEMBUATANNYA',u:'Kelris Mikroba untuk Energi Terbarukan, PR Mikrobiologi Terapan, OR Hayati dan Lingkungan',r:5,j:'Diadopsi usaha pertanian padi hibrida di lahan kering'},{t:'Biofertizinc (Pupuk hayati peningkat kandungan Zn untuk padi/serealia)',u:'Pengelolaan Lahan Pupuk & Pembenah Tanah - PR Tanaman Pangan - ORPP',r:7,j:'Diadopsi usaha pertanian padi hibrida untuk biofortifikasi'}],'01122':[{t:'KOMPOSISI PUPUK HAYATI UNTUK MENINGKATKAN PRODUKTIVITAS PADI DI LAHAN SAWAH TERPAPAR KERING DAN PROSES PEMBUATANNYA',u:'Kelris Mikroba untuk Energi Terbarukan, PR Mikrobiologi Terapan, OR Hayati dan Lingkungan',r:5,j:'Diadopsi usaha pertanian padi inbrida di lahan kering'},{t:'Biofertizinc (Pupuk hayati peningkat kandungan Zn untuk padi/serealia)',u:'Pengelolaan Lahan Pupuk & Pembenah Tanah - PR Tanaman Pangan - ORPP',r:7,j:'Diadopsi usaha pertanian padi inbrida untuk biofortifikasi'}],'01133':[{t:'FORMULASI BIO-SEED COATING MENGGUNAKAN JAMUR Trichoderma asperellum SEBAGAI PELAPIS BENIH CABAI MERAH (Capsicum annum L) DAN PROSE',u:'Interaksi Serangga dan Agen Hayati - Pusat Riset Zoologi Terapan - Organisasi Riset Hayati',r:6,j:'Diadopsi pertanian hortikultura sayuran buah (cabai merah)'},{t:'Formulasi Pupuk Organik Hayati Cair berbasis Rizobakteri Multifungsi Untuk Meningkatkan Kesehatan Tanah dan Produktivitas Tanaman',u:'Pusat Riset Mikrobiologi Terapan',r:5,j:'Diadopsi pertanian hortikultura sayuran buah (bawang merah)'},{t:'Formulasi Biostimulan Berbasis Konsorsium Bakteri Pemacu Tumbuh Untuk Efisiensi Hara  Tanaman Bawang Merah Dan Proses Pembuatannya',u:'Mikrobioma Holobion Tanaman/Peningkat Holobion Tanaman',r:6,j:'Diadopsi pertanian hortikultura sayuran buah (bawang merah)'}],'01140':[{t:'METODE OPTIMASI PROTOKOL REGENERASI KALUS SOMATIK EMBRYOGENIK TEBU (Saccharum officinarum L.) DENGAN KOMBINASI SUMBER KARBON DAN H',u:'Pusat Riset Botani Terapan',r:5,j:'Protokol regenerasi diadopsi perkebunan tebu perbanyakan bibit massal'},{t:'METODE OPTIMASI PROTOKOL REGENERASI KALUS  SOMATIK EMBRIOGENIK TEBU (Saccharum officinarum L.)  DENGAN KOMBINASI SUMBER KARBON DAN',u:'Manipulasi Selular Cekaman Abiotik - PR Botani Terapan, OR Hayati dan Lingkungan',r:6,j:'Sama dgn row 3&5 – protokol perbanyakan bibit tebu'}],'01289':[{t:'METODE PERBANYAKAN TANAMAN ANDALIMAN (Zanthoxylum acanthopodium)',u:'Makropropagasi / ULTRASTRUKTUR - PR Botani Terapan -ORHL',r:7,j:'Mendukung budidaya pertanian tanaman rempah-rempah dan aromatik'}],'01309':[{t:'METODE OPTIMASI PROTOKOL REGENERASI KALUS SOMATIK EMBRYOGENIK TEBU (Saccharum officinarum L.) DENGAN KOMBINASI SUMBER KARBON DAN H',u:'Pusat Riset Botani Terapan',r:5,j:'Dikomersialisasikan sbg teknologi pembiakan tanaman tebu di nursery'},{t:'METODE PERBANYAKAN TANAMAN ANDALIMAN (Zanthoxylum acanthopodium)',u:'Makropropagasi / ULTRASTRUKTUR - PR Botani Terapan -ORHL',r:7,j:'Dikomersialisasikan sbg pembiakan tanaman rempah endemik andaliman'},{t:'METODE OPTIMASI PROTOKOL REGENERASI KALUS  SOMATIK EMBRIOGENIK TEBU (Saccharum officinarum L.)  DENGAN KOMBINASI SUMBER KARBON DAN',u:'Manipulasi Selular Cekaman Abiotik - PR Botani Terapan, OR Hayati dan Lingkungan',r:6,j:'Sama dgn row 3&5 – teknologi pembiakan tanaman tebu'}],'01492':[{t:'Metode Hibernasi Buatan Telur Ulat Sutra Bombyx mori L.',u:'Domestikasi dan Pemuliaan Hewan Tropis - Pusat Riset Zoologi Terapan - OR Hayati dan Lingk',r:7,j:'Metode diadopsi industri budi daya dan pembibitan ulat sutra'}],'01619':[{t:'Alat Sensor dan Monitoring Serangga',u:'Interaksi Serangga-Agen Hayati, Pusat Riset Zoologi Terapan',r:6,j:'Diintegrasikan ke jasa penunjang pertanian precision farming'},{t:'PROSES PEMBUATAN BIOAGEN FOTOSINTESIS DENGAN BAHAN AKTIF KONSORSIUM BAKTERI DAN PRODUK YANG DIHASILKANNYA',u:'Kelompok Riset Metabolit Mikroba Tanaman - Pusat Riset Mikrobiologi Terapan - Organisasi R',r:6,j:'Diintegrasikan ke jasa penunjang pertanian organik'}],'01621':[{t:'Metode Pembutan Nano Liposom dari Fosfolipid Kedelai dan Formulasi  Medium  Pengencer  Nano  Liposom  Sebagai  Kriopreservasi   Sp',u:'Kelompok Riset Repronomik - Pusat Riset Zoologi Terapan - Organisasi Riset Hayati dan Ling',r:7,j:'Diadopsi jasa perkawinan ternak untuk inseminasi buatan'}],'01629':[{t:'Komposisi Medium Pertumbuhan Bakteri Asam Laktat Untuk Probiotik Ternak Ruminansia',u:'Pusat Riset Zoologi Terapan',r:7,j:'Diadopsi jasa penunjang peternakan untuk efisiensi pakan ruminansia'}],'08930':[{t:'MEDIUM LOKAL UNTUK ARKEA HALOFILIK BERBASIS  HIDROLISAT PROTEIN IKAN DAN GARAM KROSOK SERTA  METODA APLIKASINYA UNTUK OPTIMALISASI',u:'PR Mikrobiologi Terapan, OR HL, BRIN',r:6,j:'Medium biokatalis diadopsi industri ekstraksi garam'}],'10393':[{t:'Kacang Hijau Varietas Muri',u:'Kelris 22 TERAPPAN PRTP ORPP BRIN',r:8,j:'Varietas mendorong industri pengolahan dan pengawetan kacang-kacangan'},{t:'Varietas unggul kedelai BRINUSA',u:'Kelompok Riset Perakitan Varietas Unggul Aneka Kacang - Pusat Riset Tanaman Pangan - Organ',r:7,j:'Varietas mendorong industri pengolahan dan pengawetan kedelai'},{t:'Varietas unggul kedelai BRINARA',u:'Kelompok Riset Perakitan Varietas Unggul Aneka Kacang - Pusat Riset Tanaman Pangan - Organ',r:7,j:'Varietas mendorong industri pengolahan dan pengawetan kedelai'}],'10613':[{t:'Tepung ubi kayu termodifikasi dan proses yang dihasilkannya',u:'Pusat Riset Rekayasa Genetika',r:7,j:'Proses modifikasi di industri produk gilingan aneka umbi'},{t:'Produk Hidrolisat Sorgum Merah Sebagai Pangan Fungsional',u:'Pemanfaatan sarang burung walet untuk pangan - Pusat Riset Teknologi dan Proses Pangan - O',r:3,j:'Proses hidrolisis sorgum di industri produk gilingan aneka umbi/tanaman'}],'10621':[{t:'Tepung ubi kayu termodifikasi dan proses yang dihasilkannya',u:'Pusat Riset Rekayasa Genetika',r:7,j:'Diproduksi sbg industri pati ubi kayu (MOCAF/tepung modifikasi)'}],'10710':[{t:'Formulasi Kukis Sorgum Dengan Campuran Ekstrak Kulit Manggis Dan Produk Yang Dihasilkannya',u:'Fitonutrien dan nutrasetikal pangan-PRTPP-ORPP',r:4,j:'Diproduksi massal sbg produk bakeri fungsional'}],'10797':[{t:'Komposisi Teh Celup Buah Kayu Ules (Helicteres Isora L.), Jahe (Zingiber Officinale), Dan Daun Stevia (Stevia Rebaundiana)',u:'Kelompok Riset Pemuliaan Sumber Daya Penghasil Biodiesel, Pusat Riset Botani Terapan, ORHL',r:6,j:'Diproduksi sbg industri infusi herbal/herb infusion'},{t:'Formula Teh Celup Ganoderma Terfermentasi dan Proses Pembuatannya',u:'Pusat Riset Teknologi dan Proses Pangan - OR Pertanian dan Pangan',r:6,j:'Diproduksi sbg industri infusi herbal/herb infusion'},{t:'Formula dan Produk Minuman Fermentasi Sari Kacang Merah Dengan Penambahan ektrak Jahe sebagai Sumber antioksidan',u:'Teknologi Makanan dan Minuman Fungsional, Pusat Riset Teknologi  dan Proses Pangan , Organ',r:4,j:'Diposisikan sbg industri infusi herbal/herb infusion antioksidan'}],'10799':[{t:'Metode Analisis Kandungan GABA (Gamma-Aminobutyric Acid) Pada Beras Berpigmen',u:'Pemetaan Genetik dan Seleksi Berbasis Molekuler - PR Botani Terapan - OR Hayati dan Lingku',r:3,j:'Diadopsi industri makanan fungsional untuk kontrol kualitas beras berpigmen'},{t:'Komposisi Pelapis Dan Metode Pelapisan Bioplastik Berbasis Pati Untuk Aplikasi Kemasan Aktif  Pangan Serta Produk Yang Dihasilkann',u:'Keamanan Pangan - Pusat Riset Teknologi dan Proses Pangan - Organisasi Riset Pertanian dan',r:4,j:'Diadopsi industri pangan untuk memperpanjang shelf life produk makanan'},{t:'Formulasi Kukis Sorgum Dengan Campuran Ekstrak Kulit Manggis Dan Produk Yang Dihasilkannya',u:'Fitonutrien dan nutrasetikal pangan-PRTPP-ORPP',r:4,j:'Diposisikan sbg produk makanan lainnya fungsional antioksidan'},{t:'SEDIAAN EKTRAK JAMUR SHIITAKE DALAM BENTUK MIKROENKAPSULASI DAN PROSES PEMBUATANNYA',u:'Fitonutrien dan Nutrasetikal Pangan - PRTPP - ORPP',r:5,j:'Dijual sbg produk makanan lainnya/suplemen fungsional'},{t:'Metode pengemasan bahan makanan heterogen dalam satu wadah',u:'Kelris Pengemasan Steril Komersial - Pusat Riset Teknologi dan Proses Pangan - Organisasi',r:9,j:'Diadopsi industri makanan lainnya untuk produk meal kit/makanan campuran'},{t:'Proses pembuatan sambal tabur kaya protein',u:'Kelris Pengemasan Steril Komersial - Pusat Riset Teknologi dan Proses Pangan - Organisasi',r:6,j:'Diproduksi sbg produk makanan lainnya kaya protein'},{t:'Produk Hidrolisat Sorgum Merah Sebagai Pangan Fungsional',u:'Pemanfaatan sarang burung walet untuk pangan - Pusat Riset Teknologi dan Proses Pangan - O',r:3,j:'Diproduksi sbg produk makanan lainnya fungsional'},{t:'EDIBLE COATING BERBASIS EKSTRAK DAUN SIRIH CINA (Peperomia pellucida) DAN APLIKASINYA',u:'Fitonutrien dan Nutrasetikal Pangan - Pusat Riset Teknologi dan Proses Pangan - Organisasi',r:4,j:'Edible coating diaplikasikan ke produk makanan lainnya untuk shelf life'}],'10801':[{t:'Formulasi dan Proses Pembuatan Kukis (Cookuker) untuk Burung Kakatua Koki (Cacatua galerita)',u:'Fisiologi Biokimia dan Perilaku Hewan - Pusat Riset Zoologi Terapan - Organisasi Riset Hay',r:5,j:'Diproduksi sbg industri ransum pakan hewan'}],'11059':[{t:'Komposisi Teh Celup Buah Kayu Ules (Helicteres Isora L.), Jahe (Zingiber Officinale), Dan Daun Stevia (Stevia Rebaundiana)',u:'Kelompok Riset Pemuliaan Sumber Daya Penghasil Biodiesel, Pusat Riset Botani Terapan, ORHL',r:6,j:'Diposisikan sbg industri minuman lainnya fungsional'},{t:'Formula Teh Celup Ganoderma Terfermentasi dan Proses Pembuatannya',u:'Pusat Riset Teknologi dan Proses Pangan - OR Pertanian dan Pangan',r:6,j:'Diposisikan sbg industri minuman lainnya fungsional herbal'},{t:'Formula dan Produk Minuman Fermentasi Sari Kacang Merah Dengan Penambahan ektrak Jahe sebagai Sumber antioksidan',u:'Teknologi Makanan dan Minuman Fungsional, Pusat Riset Teknologi  dan Proses Pangan , Organ',r:4,j:'Diproduksi sbg industri minuman lainnya fungsional fermentasi'}],'13111':[{t:'Metode Hibernasi Buatan Telur Ulat Sutra Bombyx mori L.',u:'Domestikasi dan Pemuliaan Hewan Tropis - Pusat Riset Zoologi Terapan - OR Hayati dan Lingk',r:7,j:'Mendukung ketersediaan kokon untuk industri persiapan serat tekstil'},{t:'Komposisi dan Proses Penghilangan Gum Serat Rami Menggunakan Gas Ozon, Xilanase dan Pektinase',u:'Bioproses Enzim- Pusat Riset Mikrobiologi Terapan- ORHL',r:5,j:'Proses diadopsi industri persiapan serat tekstil rami ramah lingkungan'}],'20115':[{t:'SEDIAAN PEWARNA NATURAL BERBASIS FIKOERITRIN DARI RUMPUT LAUT MERAH (Halymenia durvillei) BESERTA FORMULASI PRODUKNYA UNTUK BIBIR',u:'MCE-PRMT-ORHL',r:7,j:'Fikoeritrin sbg bahan kimia dasar organik dari sumber daya alam hayati'},{t:'Produksi Dan Imobilisasi Enzim Selulase Dari Pseudozyma rugulosa Inacc Y335 Sebagai Produk Biokatalis Untuk Sintesis Bioetanol',u:'Bioenergi dan Biokonversi Biomassa-Mikrobiologi Terapan-ORHL',r:4,j:'Dikategorikan sbg bahan kimia dasar organik dari sumber daya alam hayati'},{t:'EDIBLE COATING BERBASIS EKSTRAK DAUN SIRIH CINA (Peperomia pellucida) DAN APLIKASINYA',u:'Fitonutrien dan Nutrasetikal Pangan - Pusat Riset Teknologi dan Proses Pangan - Organisasi',r:4,j:'Ekstrak Peperomia sbg bahan kimia dasar organik dari sumber alam hayati'}],'20127':[{t:'KOMPOSISI PUPUK HAYATI UNTUK MENINGKATKAN PRODUKTIVITAS PADI DI LAHAN SAWAH TERPAPAR KERING DAN PROSES PEMBUATANNYA',u:'Kelris Mikroba untuk Energi Terbarukan, PR Mikrobiologi Terapan, OR Hayati dan Lingkungan',r:5,j:'Diproduksi massal sbg pupuk pelengkap/pupuk hayati komersial'},{t:'FORMULASI DAN PROSES PEMBUATAN BIOAKTIVATOR UNTUK FERMENTASI LIMBAH ORGANIK PADAT (FLOP)',u:'Mikrobioma Nutisi Tanaman - Pusat Riset Mikrobiologi Terapan - Organisasi Riset Hayati dan',r:6,j:'Diproduksi sbg pupuk pelengkap dari hasil fermentasi limbah organik'},{t:'Pupuk Organik Hayati Cair Dan Proses Pembuatannya',u:'Mikrobioma Nutrisi Tanaman - Pusat Riset Mikrobiologi Terapan - ORHL',r:7,j:'Diproduksi sbg pupuk pelengkap/pupuk hayati cair komersial'},{t:'Formulasi Pupuk Organik Hayati Cair berbasis Rizobakteri Multifungsi Untuk Meningkatkan Kesehatan Tanah dan Produktivitas Tanaman',u:'Pusat Riset Mikrobiologi Terapan',r:5,j:'Diproduksi sbg pupuk pelengkap/hayati cair khusus hortikultura'},{t:'Formulasi  Tepung Biostimulan Berbahan Aktif Bakteri Halotoleran Asal Pesisir  Pantai Utara Jawa Nitratireductor aquibiodomus (Pen',u:'Peningkat Holobion Tanaman-Pusat Riset Mikrobiologi Terapan-ORHL',r:6,j:'Dikategorikan sbg pupuk pelengkap untuk pertanian lahan salin'},{t:'Biofertizinc (Pupuk hayati peningkat kandungan Zn untuk padi/serealia)',u:'Pengelolaan Lahan Pupuk & Pembenah Tanah - PR Tanaman Pangan - ORPP',r:7,j:'Diproduksi sbg pupuk pelengkap/hayati biofortifikasi Zn'}],'20213':[{t:'FORMULASI BIO-SEED COATING MENGGUNAKAN JAMUR Trichoderma asperellum SEBAGAI PELAPIS BENIH CABAI MERAH (Capsicum annum L) DAN PROSE',u:'Interaksi Serangga dan Agen Hayati - Pusat Riset Zoologi Terapan - Organisasi Riset Hayati',r:6,j:'Formulasi diproduksi sbg industri zat pengatur tumbuh/biopestisida'},{t:'Formulasi Biostimulan Berbasis Konsorsium Bakteri Pemacu Tumbuh Untuk Efisiensi Hara  Tanaman Bawang Merah Dan Proses Pembuatannya',u:'Mikrobioma Holobion Tanaman/Peningkat Holobion Tanaman',r:6,j:'Diproduksi sbg industri zat pengatur tumbuh/biostimulant bawang merah'},{t:'PROSES PEMBUATAN BIOAGEN FOTOSINTESIS DENGAN BAHAN AKTIF KONSORSIUM BAKTERI DAN PRODUK YANG DIHASILKANNYA',u:'Kelompok Riset Metabolit Mikroba Tanaman - Pusat Riset Mikrobiologi Terapan - Organisasi R',r:6,j:'Diproduksi sbg zat pengatur tumbuh/biofertilizer fotosintetik'},{t:'Formulasi  Tepung Biostimulan Berbahan Aktif Bakteri Halotoleran Asal Pesisir  Pantai Utara Jawa Nitratireductor aquibiodomus (Pen',u:'Peningkat Holobion Tanaman-Pusat Riset Mikrobiologi Terapan-ORHL',r:6,j:'Formulasi diproduksi sbg industri zat pengatur tumbuh/biostimulant'},{t:'AGEN  PEMACU  PERTUMBUHAN  TANAMAN  JAGUNG  BERBASIS  FILTRAT  KULTUR Trichoderma asperellum AC.3, PROSES PEMBUATAN, DAN PENGGUNAA',u:'Pengelolaan Hama dan Penyakit tanaman Jagung dan serealia potensial lainnya - Pusat Riset',r:4,j:'Diproduksi sbg industri zat pengatur tumbuh/biostimulant jagung'}],'20232':[{t:'SEDIAAN PEWARNA NATURAL BERBASIS FIKOERITRIN DARI RUMPUT LAUT MERAH (Halymenia durvillei) BESERTA FORMULASI PRODUKNYA UNTUK BIBIR',u:'MCE-PRMT-ORHL',r:7,j:'Formulasi produk bibir diproduksi sbg kosmetik untuk manusia'}],'20299':[{t:'MEDIUM LOKAL UNTUK ARKEA HALOFILIK BERBASIS  HIDROLISAT PROTEIN IKAN DAN GARAM KROSOK SERTA  METODA APLIKASINYA UNTUK OPTIMALISASI',u:'PR Mikrobiologi Terapan, OR HL, BRIN',r:6,j:'Medium diproduksi sbg bahan kimia lainnya untuk bioproses'},{t:'Produksi Dan Imobilisasi Enzim Selulase Dari Pseudozyma rugulosa Inacc Y335 Sebagai Produk Biokatalis Untuk Sintesis Bioetanol',u:'Bioenergi dan Biokonversi Biomassa-Mikrobiologi Terapan-ORHL',r:4,j:'Enzim selulase diproduksi sbg barang kimia lainnya/biokatalis industri'},{t:'Komposisi dan Proses Penghilangan Gum Serat Rami Menggunakan Gas Ozon, Xilanase dan Pektinase',u:'Bioproses Enzim- Pusat Riset Mikrobiologi Terapan- ORHL',r:5,j:'Enzim xilanase+pektinase sbg barang kimia lainnya untuk industri tekstil'},{t:'Kaset Ekspresi Gen Penyandi Kitinase dari Sorgum (Sorghum bicolor (L.) Moench) Indonesia Aksesi Kempul',u:'Kelompok Riset Rekayasa Tanaman untuk Lingkungan Ekstrim - Pusat Riset Rekayasa Genetika',r:4,j:'Protein kitinase diproduksi sbg barang kimia lainnya/biopestisida'},{t:'Kaset Ekspresi untuk Pustaka Plasmid Rekombinan yang Mengekspresikan Gen Penyandi Kitinase dari Sorgum Manis (Sorghum bicolor L. M',u:'Kelompok Riset Rekayasa Tanaman untuk Lingkungan Ekstrim - Pusat Riset Rekayasa Genetika',r:4,j:'Protein kitinase diproduksi sbg barang kimia lainnya/biopestisida'}],'21012':[{t:'2.        Kit Untuk Mendeteksi 25 Tipe Human Papiloma Virus (HPV)  Secara Tidak Invasif',u:'Pusat Riset Biomedis',r:7,j:'Reagen kit dikategorikan sbg produk farmasi untuk manusia'},{t:'8.        KIT UNTUK MENGANALISIS GENOM UTUH HUMAN PAPILLOMAVIRUS (HPV) TIPE 16',u:'Pusat Riset Biomedis',r:3,j:'Reagen kit dijual sbg produk farmasi diagnostik untuk manusia'},{t:'KIT DETEKSI DAN IDENTIFIKASI DNA BABI DAN SAPI PADA SATU TABUNG TUNGGAL BERBASIS SYBR GREEN I qPCR',u:'Kelompok Riset Rekayasa Biomolekul untuk Aplikasi Deteksi-PR Rekayasa Genetika-OR Hayati d',r:3,j:'Reagen kit dijual ke industri pangan dan lembaga sertifikasi halal'},{t:'Kit Deteksi Mutasi Δ69-Δ70 Virus Sars-Cov 2 Berbasis Sybr Green I qQPCR',u:'Kelompok Riset Rekayasa Biomolekul Untuk Aplikasi Deteksi - PR Rekayasa Genetika- OR Hayat',r:3,j:'Dijual sbg produk farmasi diagnostik IVD'},{t:'Metode Pembutan Nano Liposom dari Fosfolipid Kedelai dan Formulasi  Medium  Pengencer  Nano  Liposom  Sebagai  Kriopreservasi   Sp',u:'Kelompok Riset Repronomik - Pusat Riset Zoologi Terapan - Organisasi Riset Hayati dan Ling',r:7,j:'Medium kriopreservasi diproduksi sbg produk farmasi/reagensia bioteknologi'},{t:'METODE PEROLEHAN KLON TUNGGAL SEL KANKER PAYUDARA TRIPEL NEGATIF YANG MENGEKSPRESIKAN PROTEIN FLUORESENS mCHERRY DENGAN PENANDA EK',u:'Kelompok Riset Rekayasa Sel Mamalia',r:5,j:'Lini sel dikomersialisasikan sbg produk farmasi/reagensia riset kanker'},{t:'Proses Pembuatan Partikel Mirip Virus L1 Virus Human Papilloma Tipe 52 Sebagai Bahan Baku Vaksin Profilaktik Menggunakan Inang Han',u:'Protein Rekombinan Virus-Pusat Riset Rekayasa Genetika-Organisasi Riset Hayati dan Lingkun',r:5,j:'VLP diproduksi sbg produk farmasi/bahan baku vaksin HPV'},{t:'Kit Bioassay Untuk Uji In Vitro Inhibisi Protease Sarscov2 Sebagai Alat Skrining Obat Anti Covid19',u:'Rekayasa bakteri dan enzim',r:4,j:'Kit dijual ke industri farmasi sbg produk farmasi untuk skrining antivirus'},{t:'Kaset Ekspresi untuk Pustaka Plasmid Rekombinan yang Mengekspresikan Gen Penyandi Protein Reseptor PcLYM2-1 dari Tanaman Populus x',u:'Rekayasa Tanaman untuk Lingkungan Ekstrim - Pusat Riset Rekayasa Genetika',r:4,j:'Kaset ekspresi dijual sbg produk farmasi/reagensia riset rekayasa genetika'},{t:'Kaset Ekspresi Gen Penyandi Kitinase dari Sorgum (Sorghum bicolor (L.) Moench) Indonesia Aksesi Kempul',u:'Kelompok Riset Rekayasa Tanaman untuk Lingkungan Ekstrim - Pusat Riset Rekayasa Genetika',r:4,j:'Kaset ekspresi dijual sbg produk farmasi/reagensia rekayasa genetika'},{t:'Kaset Ekspresi untuk Pustaka Plasmid Rekombinan yang Mengekspresikan Gen Penyandi Kitinase dari Sorgum Manis (Sorghum bicolor L. M',u:'Kelompok Riset Rekayasa Tanaman untuk Lingkungan Ekstrim - Pusat Riset Rekayasa Genetika',r:4,j:'Kaset ekspresi dijual sbg produk farmasi/reagensia rekayasa genetika'}],'21015':[{t:'2.        Kit Untuk Mendeteksi 25 Tipe Human Papiloma Virus (HPV)  Secara Tidak Invasif',u:'Pusat Riset Biomedis',r:7,j:'Kit IVD diproduksi sbg alat diagnosis medis dan penunjang kesehatan'},{t:'8.        KIT UNTUK MENGANALISIS GENOM UTUH HUMAN PAPILLOMAVIRUS (HPV) TIPE 16',u:'Pusat Riset Biomedis',r:3,j:'Kit analisis genomik HPV diproduksi sbg alat diagnosis medis'},{t:'7.        METODE PENYIMPANAN SAMPEL URIN MENGGUNAKAN KERTAS SARING',u:'Pusat Riset Biomedis',r:3,j:'Dikomersialisasikan sbg alat penunjang kesehatan/collection device'},{t:'KIT DETEKSI DAN IDENTIFIKASI DNA BABI DAN SAPI PADA SATU TABUNG TUNGGAL BERBASIS SYBR GREEN I qPCR',u:'Kelompok Riset Rekayasa Biomolekul untuk Aplikasi Deteksi-PR Rekayasa Genetika-OR Hayati d',r:3,j:'Diproduksi sbg alat diagnosis/uji autentikasi halal dan keamanan pangan'},{t:'Kit Deteksi Mutasi Δ69-Δ70 Virus Sars-Cov 2 Berbasis Sybr Green I qQPCR',u:'Kelompok Riset Rekayasa Biomolekul Untuk Aplikasi Deteksi - PR Rekayasa Genetika- OR Hayat',r:3,j:'Diproduksi sbg alat diagnosis medis penyakit infeksi'},{t:'Proses Pembuatan Partikel Mirip Virus L1 Virus Human Papilloma Tipe 52 Sebagai Bahan Baku Vaksin Profilaktik Menggunakan Inang Han',u:'Protein Rekombinan Virus-Pusat Riset Rekayasa Genetika-Organisasi Riset Hayati dan Lingkun',r:5,j:'VLP dikategorikan sbg alat diagnosis/penunjang kesehatan bahan baku vaksin'},{t:'Kit Bioassay Untuk Uji In Vitro Inhibisi Protease Sarscov2 Sebagai Alat Skrining Obat Anti Covid19',u:'Rekayasa bakteri dan enzim',r:4,j:'Diproduksi sbg alat diagnosis medis/bioassay kit komersial'}],'21021':[{t:'METODE PEROLEHAN KLON TUNGGAL SEL KANKER PAYUDARA TRIPEL NEGATIF YANG MENGEKSPRESIKAN PROTEIN FLUORESENS mCHERRY DENGAN PENANDA EK',u:'Kelompok Riset Rekayasa Sel Mamalia',r:5,j:'Digunakan industri untuk bahan baku obat bahan alam penelitian kanker'}],'21022':[{t:'Komposisi Medium Pertumbuhan Bakteri Asam Laktat Untuk Probiotik Ternak Ruminansia',u:'Pusat Riset Zoologi Terapan',r:7,j:'Medium + kultur BAL diproduksi sbg produk obat bahan alam untuk hewan'},{t:'SEDIAAN EKTRAK JAMUR SHIITAKE DALAM BENTUK MIKROENKAPSULASI DAN PROSES PEMBUATANNYA',u:'Fitonutrien dan Nutrasetikal Pangan - PRTPP - ORPP',r:5,j:'Dikomersialisasikan sbg produk obat bahan alam untuk manusia'}],'22202':[{t:'Komposisi Pelapis Dan Metode Pelapisan Bioplastik Berbasis Pati Untuk Aplikasi Kemasan Aktif  Pangan Serta Produk Yang Dihasilkann',u:'Keamanan Pangan - Pusat Riset Teknologi dan Proses Pangan - Organisasi Riset Pertanian dan',r:4,j:'Bioplastik diproduksi sbg barang dari plastik dan bioplastik untuk pengemasan'},{t:'Metode pengemasan bahan makanan heterogen dalam satu wadah',u:'Kelris Pengemasan Steril Komersial - Pusat Riset Teknologi dan Proses Pangan - Organisasi',r:9,j:'Metode dilisensikan ke industri barang plastik dan bioplastik pengemasan'},{t:'EDIBLE COATING BERBASIS EKSTRAK DAUN SIRIH CINA (Peperomia pellucida) DAN APLIKASINYA',u:'Fitonutrien dan Nutrasetikal Pangan - Pusat Riset Teknologi dan Proses Pangan - Organisasi',r:4,j:'Formulasi dikomersialisasikan sbg barang plastik/bioplastik pengemasan'}],'22209':[{t:'Komposisi Pelapis Dan Metode Pelapisan Bioplastik Berbasis Pati Untuk Aplikasi Kemasan Aktif  Pangan Serta Produk Yang Dihasilkann',u:'Keamanan Pangan - Pusat Riset Teknologi dan Proses Pangan - Organisasi Riset Pertanian dan',r:4,j:'Diposisikan sbg produk plastik lainnya biodegradable'}],'26513':[{t:'Alat Sensor dan Monitoring Serangga',u:'Interaksi Serangga-Agen Hayati, Pusat Riset Zoologi Terapan',r:6,j:'Diproduksi sbg industri alat ukur dan alat uji elektronik (IoT pertanian)'}],'38212':[{t:'FORMULASI DAN PROSES PEMBUATAN BIOAKTIVATOR UNTUK FERMENTASI LIMBAH ORGANIK PADAT (FLOP)',u:'Mikrobioma Nutisi Tanaman - Pusat Riset Mikrobiologi Terapan - Organisasi Riset Hayati dan',r:6,j:'Diadopsi industri produksi kompos sampah organik'},{t:'PROSES PEMBUATAN BIOAGEN FOTOSINTESIS DENGAN BAHAN AKTIF KONSORSIUM BAKTERI DAN PRODUK YANG DIHASILKANNYA',u:'Kelompok Riset Metabolit Mikroba Tanaman - Pusat Riset Mikrobiologi Terapan - Organisasi R',r:6,j:'Digunakan dalam produksi kompos sampah organik dan rehabilitasi lahan'}],'46201':[{t:'Kacang Hijau Varietas Muri',u:'Kelris 22 TERAPPAN PRTP ORPP BRIN',r:8,j:'Benih didistribusikan melalui perdagangan besar padi dan palawija'},{t:'Varietas unggul kedelai BRINUSA',u:'Kelompok Riset Perakitan Varietas Unggul Aneka Kacang - Pusat Riset Tanaman Pangan - Organ',r:7,j:'Benih didistribusikan melalui perdagangan besar padi dan palawija'},{t:'Varietas unggul kedelai BRINARA',u:'Kelompok Riset Perakitan Varietas Unggul Aneka Kacang - Pusat Riset Tanaman Pangan - Organ',r:7,j:'Benih didistribusikan melalui perdagangan besar padi dan palawija'}],'46319':[{t:'Komposisi Teh Celup Buah Kayu Ules (Helicteres Isora L.), Jahe (Zingiber Officinale), Dan Daun Stevia (Stevia Rebaundiana)',u:'Kelompok Riset Pemuliaan Sumber Daya Penghasil Biodiesel, Pusat Riset Botani Terapan, ORHL',r:6,j:'Didistribusikan melalui perdagangan besar makanan dan minuman'},{t:'Tepung ubi kayu termodifikasi dan proses yang dihasilkannya',u:'Pusat Riset Rekayasa Genetika',r:7,j:'Didistribusikan sbg bahan baku tepung lokal melalui perdagangan besar'},{t:'Formulasi Kukis Sorgum Dengan Campuran Ekstrak Kulit Manggis Dan Produk Yang Dihasilkannya',u:'Fitonutrien dan nutrasetikal pangan-PRTPP-ORPP',r:4,j:'Didistribusikan melalui perdagangan besar makanan dan minuman'},{t:'Formula Teh Celup Ganoderma Terfermentasi dan Proses Pembuatannya',u:'Pusat Riset Teknologi dan Proses Pangan - OR Pertanian dan Pangan',r:6,j:'Masuk jalur perdagangan besar makanan dan minuman'},{t:'Proses pembuatan sambal tabur kaya protein',u:'Kelris Pengemasan Steril Komersial - Pusat Riset Teknologi dan Proses Pangan - Organisasi',r:6,j:'Didistribusikan melalui perdagangan besar makanan dan minuman'},{t:'Produk Hidrolisat Sorgum Merah Sebagai Pangan Fungsional',u:'Pemanfaatan sarang burung walet untuk pangan - Pusat Riset Teknologi dan Proses Pangan - O',r:3,j:'Didistribusikan sbg bahan baku pangan fungsional'},{t:'Formula dan Produk Minuman Fermentasi Sari Kacang Merah Dengan Penambahan ektrak Jahe sebagai Sumber antioksidan',u:'Teknologi Makanan dan Minuman Fungsional, Pusat Riset Teknologi  dan Proses Pangan , Organ',r:4,j:'Didistribusikan melalui perdagangan besar makanan dan minuman'}],'46521':[{t:'Alat Sensor dan Monitoring Serangga',u:'Interaksi Serangga-Agen Hayati, Pusat Riset Zoologi Terapan',r:6,j:'Didistribusikan melalui perdagangan besar suku cadang elektronik'}],'46652':[{t:'KOMPOSISI PUPUK HAYATI UNTUK MENINGKATKAN PRODUKTIVITAS PADI DI LAHAN SAWAH TERPAPAR KERING DAN PROSES PEMBUATANNYA',u:'Kelris Mikroba untuk Energi Terbarukan, PR Mikrobiologi Terapan, OR Hayati dan Lingkungan',r:5,j:'Didistribusikan melalui perdagangan besar pupuk dan produk agrokimia'},{t:'FORMULASI BIO-SEED COATING MENGGUNAKAN JAMUR Trichoderma asperellum SEBAGAI PELAPIS BENIH CABAI MERAH (Capsicum annum L) DAN PROSE',u:'Interaksi Serangga dan Agen Hayati - Pusat Riset Zoologi Terapan - Organisasi Riset Hayati',r:6,j:'Didistribusikan sbg produk seed treatment ke perdagangan besar agrokimia'},{t:'Pupuk Organik Hayati Cair Dan Proses Pembuatannya',u:'Mikrobioma Nutrisi Tanaman - Pusat Riset Mikrobiologi Terapan - ORHL',r:7,j:'Didistribusikan melalui perdagangan besar pupuk dan produk agrokimia'},{t:'Formulasi Pupuk Organik Hayati Cair berbasis Rizobakteri Multifungsi Untuk Meningkatkan Kesehatan Tanah dan Produktivitas Tanaman',u:'Pusat Riset Mikrobiologi Terapan',r:5,j:'Didistribusikan melalui perdagangan besar pupuk dan produk agrokimia'},{t:'Formulasi Biostimulan Berbasis Konsorsium Bakteri Pemacu Tumbuh Untuk Efisiensi Hara  Tanaman Bawang Merah Dan Proses Pembuatannya',u:'Mikrobioma Holobion Tanaman/Peningkat Holobion Tanaman',r:6,j:'Didistribusikan melalui perdagangan besar pupuk dan produk agrokimia'},{t:'Formulasi  Tepung Biostimulan Berbahan Aktif Bakteri Halotoleran Asal Pesisir  Pantai Utara Jawa Nitratireductor aquibiodomus (Pen',u:'Peningkat Holobion Tanaman-Pusat Riset Mikrobiologi Terapan-ORHL',r:6,j:'Didistribusikan melalui perdagangan besar pupuk dan produk agrokimia'},{t:'AGEN  PEMACU  PERTUMBUHAN  TANAMAN  JAGUNG  BERBASIS  FILTRAT  KULTUR Trichoderma asperellum AC.3, PROSES PEMBUATAN, DAN PENGGUNAA',u:'Pengelolaan Hama dan Penyakit tanaman Jagung dan serealia potensial lainnya - Pusat Riset',r:4,j:'Didistribusikan melalui perdagangan besar pupuk dan produk agrokimia'},{t:'Biofertizinc (Pupuk hayati peningkat kandungan Zn untuk padi/serealia)',u:'Pengelolaan Lahan Pupuk & Pembenah Tanah - PR Tanaman Pangan - ORPP',r:7,j:'Didistribusikan melalui perdagangan besar pupuk dan produk agrokimia'}],'47754':[{t:'Formulasi dan Proses Pembuatan Kukis (Cookuker) untuk Burung Kakatua Koki (Cacatua galerita)',u:'Fisiologi Biokimia dan Perilaku Hewan - Pusat Riset Zoologi Terapan - Organisasi Riset Hay',r:5,j:'Didistribusikan melalui perdagangan eceran pakan hewan kesayangan'}],'71204':[{t:'Metode Analisis Kandungan GABA (Gamma-Aminobutyric Acid) Pada Beras Berpigmen',u:'Pemetaan Genetik dan Seleksi Berbasis Molekuler - PR Botani Terapan - OR Hayati dan Lingku',r:3,j:'Dikomersialisasikan sbg layanan jasa pengujian teknis kandungan GABA'},{t:'KIT DETEKSI DAN IDENTIFIKASI DNA BABI DAN SAPI PADA SATU TABUNG TUNGGAL BERBASIS SYBR GREEN I qPCR',u:'Kelompok Riset Rekayasa Biomolekul untuk Aplikasi Deteksi-PR Rekayasa Genetika-OR Hayati d',r:3,j:'Dikomersialisasikan sbg layanan jasa pengujian teknis halal'}],'86903':[{t:'2.        Kit Untuk Mendeteksi 25 Tipe Human Papiloma Virus (HPV)  Secara Tidak Invasif',u:'Pusat Riset Biomedis',r:7,j:'Dikomersialisasikan sbg layanan pelayanan penunjang kesehatan di lab klinik'},{t:'8.        KIT UNTUK MENGANALISIS GENOM UTUH HUMAN PAPILLOMAVIRUS (HPV) TIPE 16',u:'Pusat Riset Biomedis',r:3,j:'Dikomersialisasikan sbg layanan pelayanan penunjang kesehatan'},{t:'7.        METODE PENYIMPANAN SAMPEL URIN MENGGUNAKAN KERTAS SARING',u:'Pusat Riset Biomedis',r:3,j:'Diadopsi sbg protokol standar pelayanan penunjang kesehatan'},{t:'Kit Deteksi Mutasi Δ69-Δ70 Virus Sars-Cov 2 Berbasis Sybr Green I qQPCR',u:'Kelompok Riset Rekayasa Biomolekul Untuk Aplikasi Deteksi - PR Rekayasa Genetika- OR Hayat',r:3,j:'Digunakan sbg basis layanan pelayanan penunjang kesehatan'}]};
 const KD_EXCL={'01111':[{t:'AGEN  PEMACU  PERTUMBUHAN  TANAMAN  JAGUNG  BERBASIS  FILTRAT  KULTUR Trichoderma asperellum AC.3, PROSES PEMBUATAN, DAN PENGGUNAA',u:'Pengelolaan Hama dan Penyakit tanaman Jagung dan serealia potensial lainnya - Pusat Riset',r:4,j:'Diadopsi langsung usaha pertanian jagung komersial'}],'01112':[{t:'Biofertizinc (Pupuk hayati peningkat kandungan Zn untuk padi/serealia)',u:'Pengelolaan Lahan Pupuk & Pembenah Tanah - PR Tanaman Pangan - ORPP',r:7,j:'Diadopsi pertanian serealia selain padi dan jagung untuk biofortifikasi'}],'01113':[{t:'Varietas unggul kedelai BRINUSA',u:'Kelompok Riset Perakitan Varietas Unggul Aneka Kacang - Pusat Riset Tanaman Pangan - Organ',r:7,j:'Benih varietas kedelai BRINUSA diproduksi penangkar benih komersial'},{t:'Varietas unggul kedelai BRINARA',u:'Kelompok Riset Perakitan Varietas Unggul Aneka Kacang - Pusat Riset Tanaman Pangan - Organ',r:7,j:'Benih varietas kedelai BRINARA diproduksi penangkar benih komersial'}],'01115':[{t:'Kacang Hijau Varietas Muri',u:'Kelris 22 TERAPPAN PRTP ORPP BRIN',r:8,j:'Benih varietas kacang hijau Muri diproduksi penangkar benih komersial'}],'01121':[{t:'KOMPOSISI PUPUK HAYATI UNTUK MENINGKATKAN PRODUKTIVITAS PADI DI LAHAN SAWAH TERPAPAR KERING DAN PROSES PEMBUATANNYA',u:'Kelris Mikroba untuk Energi Terbarukan, PR Mikrobiologi Terapan, OR Hayati dan Lingkungan',r:5,j:'Diadopsi usaha pertanian padi hibrida di lahan kering'},{t:'Biofertizinc (Pupuk hayati peningkat kandungan Zn untuk padi/serealia)',u:'Pengelolaan Lahan Pupuk & Pembenah Tanah - PR Tanaman Pangan - ORPP',r:7,j:'Diadopsi usaha pertanian padi hibrida untuk biofortifikasi'}],'01122':[{t:'KOMPOSISI PUPUK HAYATI UNTUK MENINGKATKAN PRODUKTIVITAS PADI DI LAHAN SAWAH TERPAPAR KERING DAN PROSES PEMBUATANNYA',u:'Kelris Mikroba untuk Energi Terbarukan, PR Mikrobiologi Terapan, OR Hayati dan Lingkungan',r:5,j:'Diadopsi usaha pertanian padi inbrida di lahan kering'},{t:'Biofertizinc (Pupuk hayati peningkat kandungan Zn untuk padi/serealia)',u:'Pengelolaan Lahan Pupuk & Pembenah Tanah - PR Tanaman Pangan - ORPP',r:7,j:'Diadopsi usaha pertanian padi inbrida untuk biofortifikasi'}],'01133':[{t:'FORMULASI BIO-SEED COATING MENGGUNAKAN JAMUR Trichoderma asperellum SEBAGAI PELAPIS BENIH CABAI MERAH (Capsicum annum L) DAN PROSE',u:'Interaksi Serangga dan Agen Hayati - Pusat Riset Zoologi Terapan - Organisasi Riset Hayati',r:6,j:'Diadopsi pertanian hortikultura sayuran buah (cabai merah)'},{t:'Formulasi Pupuk Organik Hayati Cair berbasis Rizobakteri Multifungsi Untuk Meningkatkan Kesehatan Tanah dan Produktivitas Tanaman',u:'Pusat Riset Mikrobiologi Terapan',r:5,j:'Diadopsi pertanian hortikultura sayuran buah (bawang merah)'},{t:'Formulasi Biostimulan Berbasis Konsorsium Bakteri Pemacu Tumbuh Untuk Efisiensi Hara  Tanaman Bawang Merah Dan Proses Pembuatannya',u:'Mikrobioma Holobion Tanaman/Peningkat Holobion Tanaman',r:6,j:'Diadopsi pertanian hortikultura sayuran buah (bawang merah)'}],'01140':[{t:'METODE OPTIMASI PROTOKOL REGENERASI KALUS SOMATIK EMBRYOGENIK TEBU (Saccharum officinarum L.) DENGAN KOMBINASI SUMBER KARBON DAN H',u:'Pusat Riset Botani Terapan',r:5,j:'Protokol regenerasi diadopsi perkebunan tebu perbanyakan bibit massal'},{t:'METODE OPTIMASI PROTOKOL REGENERASI KALUS  SOMATIK EMBRIOGENIK TEBU (Saccharum officinarum L.)  DENGAN KOMBINASI SUMBER KARBON DAN',u:'Manipulasi Selular Cekaman Abiotik - PR Botani Terapan, OR Hayati dan Lingkungan',r:6,j:'Sama dgn row 3&5 – protokol perbanyakan bibit tebu'}],'01289':[{t:'METODE PERBANYAKAN TANAMAN ANDALIMAN (Zanthoxylum acanthopodium)',u:'Makropropagasi / ULTRASTRUKTUR - PR Botani Terapan -ORHL',r:7,j:'Mendukung budidaya pertanian tanaman rempah-rempah dan aromatik'}],'01309':[{t:'METODE OPTIMASI PROTOKOL REGENERASI KALUS SOMATIK EMBRYOGENIK TEBU (Saccharum officinarum L.) DENGAN KOMBINASI SUMBER KARBON DAN H',u:'Pusat Riset Botani Terapan',r:5,j:'Dikomersialisasikan sbg teknologi pembiakan tanaman tebu di nursery'},{t:'METODE PERBANYAKAN TANAMAN ANDALIMAN (Zanthoxylum acanthopodium)',u:'Makropropagasi / ULTRASTRUKTUR - PR Botani Terapan -ORHL',r:7,j:'Dikomersialisasikan sbg pembiakan tanaman rempah endemik andaliman'},{t:'METODE OPTIMASI PROTOKOL REGENERASI KALUS  SOMATIK EMBRIOGENIK TEBU (Saccharum officinarum L.)  DENGAN KOMBINASI SUMBER KARBON DAN',u:'Manipulasi Selular Cekaman Abiotik - PR Botani Terapan, OR Hayati dan Lingkungan',r:6,j:'Sama dgn row 3&5 – teknologi pembiakan tanaman tebu'}],'01492':[{t:'Metode Hibernasi Buatan Telur Ulat Sutra Bombyx mori L.',u:'Domestikasi dan Pemuliaan Hewan Tropis - Pusat Riset Zoologi Terapan - OR Hayati dan Lingk',r:7,j:'Metode diadopsi industri budi daya dan pembibitan ulat sutra'}],'01619':[{t:'Alat Sensor dan Monitoring Serangga',u:'Interaksi Serangga-Agen Hayati, Pusat Riset Zoologi Terapan',r:6,j:'Diintegrasikan ke jasa penunjang pertanian precision farming'},{t:'PROSES PEMBUATAN BIOAGEN FOTOSINTESIS DENGAN BAHAN AKTIF KONSORSIUM BAKTERI DAN PRODUK YANG DIHASILKANNYA',u:'Kelompok Riset Metabolit Mikroba Tanaman - Pusat Riset Mikrobiologi Terapan - Organisasi R',r:6,j:'Diintegrasikan ke jasa penunjang pertanian organik'}],'01621':[{t:'Metode Pembutan Nano Liposom dari Fosfolipid Kedelai dan Formulasi  Medium  Pengencer  Nano  Liposom  Sebagai  Kriopreservasi   Sp',u:'Kelompok Riset Repronomik - Pusat Riset Zoologi Terapan - Organisasi Riset Hayati dan Ling',r:7,j:'Diadopsi jasa perkawinan ternak untuk inseminasi buatan'}],'01629':[{t:'Komposisi Medium Pertumbuhan Bakteri Asam Laktat Untuk Probiotik Ternak Ruminansia',u:'Pusat Riset Zoologi Terapan',r:7,j:'Diadopsi jasa penunjang peternakan untuk efisiensi pakan ruminansia'}],'08930':[{t:'MEDIUM LOKAL UNTUK ARKEA HALOFILIK BERBASIS  HIDROLISAT PROTEIN IKAN DAN GARAM KROSOK SERTA  METODA APLIKASINYA UNTUK OPTIMALISASI',u:'PR Mikrobiologi Terapan, OR HL, BRIN',r:6,j:'Medium biokatalis diadopsi industri ekstraksi garam'}],'10393':[{t:'Kacang Hijau Varietas Muri',u:'Kelris 22 TERAPPAN PRTP ORPP BRIN',r:8,j:'Varietas mendorong industri pengolahan dan pengawetan kacang-kacangan'},{t:'Varietas unggul kedelai BRINUSA',u:'Kelompok Riset Perakitan Varietas Unggul Aneka Kacang - Pusat Riset Tanaman Pangan - Organ',r:7,j:'Varietas mendorong industri pengolahan dan pengawetan kedelai'},{t:'Varietas unggul kedelai BRINARA',u:'Kelompok Riset Perakitan Varietas Unggul Aneka Kacang - Pusat Riset Tanaman Pangan - Organ',r:7,j:'Varietas mendorong industri pengolahan dan pengawetan kedelai'}],'10613':[{t:'Tepung ubi kayu termodifikasi dan proses yang dihasilkannya',u:'Pusat Riset Rekayasa Genetika',r:7,j:'Proses modifikasi di industri produk gilingan aneka umbi'},{t:'Produk Hidrolisat Sorgum Merah Sebagai Pangan Fungsional',u:'Pemanfaatan sarang burung walet untuk pangan - Pusat Riset Teknologi dan Proses Pangan - O',r:3,j:'Proses hidrolisis sorgum di industri produk gilingan aneka umbi/tanaman'}],'10621':[{t:'Tepung ubi kayu termodifikasi dan proses yang dihasilkannya',u:'Pusat Riset Rekayasa Genetika',r:7,j:'Diproduksi sbg industri pati ubi kayu (MOCAF/tepung modifikasi)'}],'10710':[{t:'Formulasi Kukis Sorgum Dengan Campuran Ekstrak Kulit Manggis Dan Produk Yang Dihasilkannya',u:'Fitonutrien dan nutrasetikal pangan-PRTPP-ORPP',r:4,j:'Diproduksi massal sbg produk bakeri fungsional'}],'10797':[{t:'Komposisi Teh Celup Buah Kayu Ules (Helicteres Isora L.), Jahe (Zingiber Officinale), Dan Daun Stevia (Stevia Rebaundiana)',u:'Kelompok Riset Pemuliaan Sumber Daya Penghasil Biodiesel, Pusat Riset Botani Terapan, ORHL',r:6,j:'Diproduksi sbg industri infusi herbal/herb infusion'},{t:'Formula Teh Celup Ganoderma Terfermentasi dan Proses Pembuatannya',u:'Pusat Riset Teknologi dan Proses Pangan - OR Pertanian dan Pangan',r:6,j:'Diproduksi sbg industri infusi herbal/herb infusion'},{t:'Formula dan Produk Minuman Fermentasi Sari Kacang Merah Dengan Penambahan ektrak Jahe sebagai Sumber antioksidan',u:'Teknologi Makanan dan Minuman Fungsional, Pusat Riset Teknologi  dan Proses Pangan , Organ',r:4,j:'Diposisikan sbg industri infusi herbal/herb infusion antioksidan'}],'10799':[{t:'Metode Analisis Kandungan GABA (Gamma-Aminobutyric Acid) Pada Beras Berpigmen',u:'Pemetaan Genetik dan Seleksi Berbasis Molekuler - PR Botani Terapan - OR Hayati dan Lingku',r:3,j:'Diadopsi industri makanan fungsional untuk kontrol kualitas beras berpigmen'},{t:'Komposisi Pelapis Dan Metode Pelapisan Bioplastik Berbasis Pati Untuk Aplikasi Kemasan Aktif  Pangan Serta Produk Yang Dihasilkann',u:'Keamanan Pangan - Pusat Riset Teknologi dan Proses Pangan - Organisasi Riset Pertanian dan',r:4,j:'Diadopsi industri pangan untuk memperpanjang shelf life produk makanan'},{t:'Formulasi Kukis Sorgum Dengan Campuran Ekstrak Kulit Manggis Dan Produk Yang Dihasilkannya',u:'Fitonutrien dan nutrasetikal pangan-PRTPP-ORPP',r:4,j:'Diposisikan sbg produk makanan lainnya fungsional antioksidan'},{t:'SEDIAAN EKTRAK JAMUR SHIITAKE DALAM BENTUK MIKROENKAPSULASI DAN PROSES PEMBUATANNYA',u:'Fitonutrien dan Nutrasetikal Pangan - PRTPP - ORPP',r:5,j:'Dijual sbg produk makanan lainnya/suplemen fungsional'},{t:'Metode pengemasan bahan makanan heterogen dalam satu wadah',u:'Kelris Pengemasan Steril Komersial - Pusat Riset Teknologi dan Proses Pangan - Organisasi',r:9,j:'Diadopsi industri makanan lainnya untuk produk meal kit/makanan campuran'},{t:'Proses pembuatan sambal tabur kaya protein',u:'Kelris Pengemasan Steril Komersial - Pusat Riset Teknologi dan Proses Pangan - Organisasi',r:6,j:'Diproduksi sbg produk makanan lainnya kaya protein'},{t:'Produk Hidrolisat Sorgum Merah Sebagai Pangan Fungsional',u:'Pemanfaatan sarang burung walet untuk pangan - Pusat Riset Teknologi dan Proses Pangan - O',r:3,j:'Diproduksi sbg produk makanan lainnya fungsional'},{t:'EDIBLE COATING BERBASIS EKSTRAK DAUN SIRIH CINA (Peperomia pellucida) DAN APLIKASINYA',u:'Fitonutrien dan Nutrasetikal Pangan - Pusat Riset Teknologi dan Proses Pangan - Organisasi',r:4,j:'Edible coating diaplikasikan ke produk makanan lainnya untuk shelf life'}],'10801':[{t:'Formulasi dan Proses Pembuatan Kukis (Cookuker) untuk Burung Kakatua Koki (Cacatua galerita)',u:'Fisiologi Biokimia dan Perilaku Hewan - Pusat Riset Zoologi Terapan - Organisasi Riset Hay',r:5,j:'Diproduksi sbg industri ransum pakan hewan'}],'11059':[{t:'Komposisi Teh Celup Buah Kayu Ules (Helicteres Isora L.), Jahe (Zingiber Officinale), Dan Daun Stevia (Stevia Rebaundiana)',u:'Kelompok Riset Pemuliaan Sumber Daya Penghasil Biodiesel, Pusat Riset Botani Terapan, ORHL',r:6,j:'Diposisikan sbg industri minuman lainnya fungsional'},{t:'Formula Teh Celup Ganoderma Terfermentasi dan Proses Pembuatannya',u:'Pusat Riset Teknologi dan Proses Pangan - OR Pertanian dan Pangan',r:6,j:'Diposisikan sbg industri minuman lainnya fungsional herbal'},{t:'Formula dan Produk Minuman Fermentasi Sari Kacang Merah Dengan Penambahan ektrak Jahe sebagai Sumber antioksidan',u:'Teknologi Makanan dan Minuman Fungsional, Pusat Riset Teknologi  dan Proses Pangan , Organ',r:4,j:'Diproduksi sbg industri minuman lainnya fungsional fermentasi'}],'13111':[{t:'Metode Hibernasi Buatan Telur Ulat Sutra Bombyx mori L.',u:'Domestikasi dan Pemuliaan Hewan Tropis - Pusat Riset Zoologi Terapan - OR Hayati dan Lingk',r:7,j:'Mendukung ketersediaan kokon untuk industri persiapan serat tekstil'},{t:'Komposisi dan Proses Penghilangan Gum Serat Rami Menggunakan Gas Ozon, Xilanase dan Pektinase',u:'Bioproses Enzim- Pusat Riset Mikrobiologi Terapan- ORHL',r:5,j:'Proses diadopsi industri persiapan serat tekstil rami ramah lingkungan'}],'20115':[{t:'SEDIAAN PEWARNA NATURAL BERBASIS FIKOERITRIN DARI RUMPUT LAUT MERAH (Halymenia durvillei) BESERTA FORMULASI PRODUKNYA UNTUK BIBIR',u:'MCE-PRMT-ORHL',r:7,j:'Fikoeritrin sbg bahan kimia dasar organik dari sumber daya alam hayati'},{t:'Produksi Dan Imobilisasi Enzim Selulase Dari Pseudozyma rugulosa Inacc Y335 Sebagai Produk Biokatalis Untuk Sintesis Bioetanol',u:'Bioenergi dan Biokonversi Biomassa-Mikrobiologi Terapan-ORHL',r:4,j:'Dikategorikan sbg bahan kimia dasar organik dari sumber daya alam hayati'},{t:'EDIBLE COATING BERBASIS EKSTRAK DAUN SIRIH CINA (Peperomia pellucida) DAN APLIKASINYA',u:'Fitonutrien dan Nutrasetikal Pangan - Pusat Riset Teknologi dan Proses Pangan - Organisasi',r:4,j:'Ekstrak Peperomia sbg bahan kimia dasar organik dari sumber alam hayati'}],'20127':[{t:'KOMPOSISI PUPUK HAYATI UNTUK MENINGKATKAN PRODUKTIVITAS PADI DI LAHAN SAWAH TERPAPAR KERING DAN PROSES PEMBUATANNYA',u:'Kelris Mikroba untuk Energi Terbarukan, PR Mikrobiologi Terapan, OR Hayati dan Lingkungan',r:5,j:'Diproduksi massal sbg pupuk pelengkap/pupuk hayati komersial'},{t:'FORMULASI DAN PROSES PEMBUATAN BIOAKTIVATOR UNTUK FERMENTASI LIMBAH ORGANIK PADAT (FLOP)',u:'Mikrobioma Nutisi Tanaman - Pusat Riset Mikrobiologi Terapan - Organisasi Riset Hayati dan',r:6,j:'Diproduksi sbg pupuk pelengkap dari hasil fermentasi limbah organik'},{t:'Pupuk Organik Hayati Cair Dan Proses Pembuatannya',u:'Mikrobioma Nutrisi Tanaman - Pusat Riset Mikrobiologi Terapan - ORHL',r:7,j:'Diproduksi sbg pupuk pelengkap/pupuk hayati cair komersial'},{t:'Formulasi Pupuk Organik Hayati Cair berbasis Rizobakteri Multifungsi Untuk Meningkatkan Kesehatan Tanah dan Produktivitas Tanaman',u:'Pusat Riset Mikrobiologi Terapan',r:5,j:'Diproduksi sbg pupuk pelengkap/hayati cair khusus hortikultura'},{t:'Formulasi  Tepung Biostimulan Berbahan Aktif Bakteri Halotoleran Asal Pesisir  Pantai Utara Jawa Nitratireductor aquibiodomus (Pen',u:'Peningkat Holobion Tanaman-Pusat Riset Mikrobiologi Terapan-ORHL',r:6,j:'Dikategorikan sbg pupuk pelengkap untuk pertanian lahan salin'},{t:'Biofertizinc (Pupuk hayati peningkat kandungan Zn untuk padi/serealia)',u:'Pengelolaan Lahan Pupuk & Pembenah Tanah - PR Tanaman Pangan - ORPP',r:7,j:'Diproduksi sbg pupuk pelengkap/hayati biofortifikasi Zn'}],'20213':[{t:'FORMULASI BIO-SEED COATING MENGGUNAKAN JAMUR Trichoderma asperellum SEBAGAI PELAPIS BENIH CABAI MERAH (Capsicum annum L) DAN PROSE',u:'Interaksi Serangga dan Agen Hayati - Pusat Riset Zoologi Terapan - Organisasi Riset Hayati',r:6,j:'Formulasi diproduksi sbg industri zat pengatur tumbuh/biopestisida'},{t:'Formulasi Biostimulan Berbasis Konsorsium Bakteri Pemacu Tumbuh Untuk Efisiensi Hara  Tanaman Bawang Merah Dan Proses Pembuatannya',u:'Mikrobioma Holobion Tanaman/Peningkat Holobion Tanaman',r:6,j:'Diproduksi sbg industri zat pengatur tumbuh/biostimulant bawang merah'},{t:'PROSES PEMBUATAN BIOAGEN FOTOSINTESIS DENGAN BAHAN AKTIF KONSORSIUM BAKTERI DAN PRODUK YANG DIHASILKANNYA',u:'Kelompok Riset Metabolit Mikroba Tanaman - Pusat Riset Mikrobiologi Terapan - Organisasi R',r:6,j:'Diproduksi sbg zat pengatur tumbuh/biofertilizer fotosintetik'},{t:'Formulasi  Tepung Biostimulan Berbahan Aktif Bakteri Halotoleran Asal Pesisir  Pantai Utara Jawa Nitratireductor aquibiodomus (Pen',u:'Peningkat Holobion Tanaman-Pusat Riset Mikrobiologi Terapan-ORHL',r:6,j:'Formulasi diproduksi sbg industri zat pengatur tumbuh/biostimulant'},{t:'AGEN  PEMACU  PERTUMBUHAN  TANAMAN  JAGUNG  BERBASIS  FILTRAT  KULTUR Trichoderma asperellum AC.3, PROSES PEMBUATAN, DAN PENGGUNAA',u:'Pengelolaan Hama dan Penyakit tanaman Jagung dan serealia potensial lainnya - Pusat Riset',r:4,j:'Diproduksi sbg industri zat pengatur tumbuh/biostimulant jagung'}],'20232':[{t:'SEDIAAN PEWARNA NATURAL BERBASIS FIKOERITRIN DARI RUMPUT LAUT MERAH (Halymenia durvillei) BESERTA FORMULASI PRODUKNYA UNTUK BIBIR',u:'MCE-PRMT-ORHL',r:7,j:'Formulasi produk bibir diproduksi sbg kosmetik untuk manusia'}],'20299':[{t:'MEDIUM LOKAL UNTUK ARKEA HALOFILIK BERBASIS  HIDROLISAT PROTEIN IKAN DAN GARAM KROSOK SERTA  METODA APLIKASINYA UNTUK OPTIMALISASI',u:'PR Mikrobiologi Terapan, OR HL, BRIN',r:6,j:'Medium diproduksi sbg bahan kimia lainnya untuk bioproses'},{t:'Produksi Dan Imobilisasi Enzim Selulase Dari Pseudozyma rugulosa Inacc Y335 Sebagai Produk Biokatalis Untuk Sintesis Bioetanol',u:'Bioenergi dan Biokonversi Biomassa-Mikrobiologi Terapan-ORHL',r:4,j:'Enzim selulase diproduksi sbg barang kimia lainnya/biokatalis industri'},{t:'Komposisi dan Proses Penghilangan Gum Serat Rami Menggunakan Gas Ozon, Xilanase dan Pektinase',u:'Bioproses Enzim- Pusat Riset Mikrobiologi Terapan- ORHL',r:5,j:'Enzim xilanase+pektinase sbg barang kimia lainnya untuk industri tekstil'},{t:'Kaset Ekspresi Gen Penyandi Kitinase dari Sorgum (Sorghum bicolor (L.) Moench) Indonesia Aksesi Kempul',u:'Kelompok Riset Rekayasa Tanaman untuk Lingkungan Ekstrim - Pusat Riset Rekayasa Genetika',r:4,j:'Protein kitinase diproduksi sbg barang kimia lainnya/biopestisida'},{t:'Kaset Ekspresi untuk Pustaka Plasmid Rekombinan yang Mengekspresikan Gen Penyandi Kitinase dari Sorgum Manis (Sorghum bicolor L. M',u:'Kelompok Riset Rekayasa Tanaman untuk Lingkungan Ekstrim - Pusat Riset Rekayasa Genetika',r:4,j:'Protein kitinase diproduksi sbg barang kimia lainnya/biopestisida'}],'21012':[{t:'2.        Kit Untuk Mendeteksi 25 Tipe Human Papiloma Virus (HPV)  Secara Tidak Invasif',u:'Pusat Riset Biomedis',r:7,j:'Reagen kit dikategorikan sbg produk farmasi untuk manusia'},{t:'8.        KIT UNTUK MENGANALISIS GENOM UTUH HUMAN PAPILLOMAVIRUS (HPV) TIPE 16',u:'Pusat Riset Biomedis',r:3,j:'Reagen kit dijual sbg produk farmasi diagnostik untuk manusia'},{t:'KIT DETEKSI DAN IDENTIFIKASI DNA BABI DAN SAPI PADA SATU TABUNG TUNGGAL BERBASIS SYBR GREEN I qPCR',u:'Kelompok Riset Rekayasa Biomolekul untuk Aplikasi Deteksi-PR Rekayasa Genetika-OR Hayati d',r:3,j:'Reagen kit dijual ke industri pangan dan lembaga sertifikasi halal'},{t:'Kit Deteksi Mutasi Δ69-Δ70 Virus Sars-Cov 2 Berbasis Sybr Green I qQPCR',u:'Kelompok Riset Rekayasa Biomolekul Untuk Aplikasi Deteksi - PR Rekayasa Genetika- OR Hayat',r:3,j:'Dijual sbg produk farmasi diagnostik IVD'},{t:'Metode Pembutan Nano Liposom dari Fosfolipid Kedelai dan Formulasi  Medium  Pengencer  Nano  Liposom  Sebagai  Kriopreservasi   Sp',u:'Kelompok Riset Repronomik - Pusat Riset Zoologi Terapan - Organisasi Riset Hayati dan Ling',r:7,j:'Medium kriopreservasi diproduksi sbg produk farmasi/reagensia bioteknologi'},{t:'METODE PEROLEHAN KLON TUNGGAL SEL KANKER PAYUDARA TRIPEL NEGATIF YANG MENGEKSPRESIKAN PROTEIN FLUORESENS mCHERRY DENGAN PENANDA EK',u:'Kelompok Riset Rekayasa Sel Mamalia',r:5,j:'Lini sel dikomersialisasikan sbg produk farmasi/reagensia riset kanker'},{t:'Proses Pembuatan Partikel Mirip Virus L1 Virus Human Papilloma Tipe 52 Sebagai Bahan Baku Vaksin Profilaktik Menggunakan Inang Han',u:'Protein Rekombinan Virus-Pusat Riset Rekayasa Genetika-Organisasi Riset Hayati dan Lingkun',r:5,j:'VLP diproduksi sbg produk farmasi/bahan baku vaksin HPV'},{t:'Kit Bioassay Untuk Uji In Vitro Inhibisi Protease Sarscov2 Sebagai Alat Skrining Obat Anti Covid19',u:'Rekayasa bakteri dan enzim',r:4,j:'Kit dijual ke industri farmasi sbg produk farmasi untuk skrining antivirus'},{t:'Kaset Ekspresi untuk Pustaka Plasmid Rekombinan yang Mengekspresikan Gen Penyandi Protein Reseptor PcLYM2-1 dari Tanaman Populus x',u:'Rekayasa Tanaman untuk Lingkungan Ekstrim - Pusat Riset Rekayasa Genetika',r:4,j:'Kaset ekspresi dijual sbg produk farmasi/reagensia riset rekayasa genetika'},{t:'Kaset Ekspresi Gen Penyandi Kitinase dari Sorgum (Sorghum bicolor (L.) Moench) Indonesia Aksesi Kempul',u:'Kelompok Riset Rekayasa Tanaman untuk Lingkungan Ekstrim - Pusat Riset Rekayasa Genetika',r:4,j:'Kaset ekspresi dijual sbg produk farmasi/reagensia rekayasa genetika'},{t:'Kaset Ekspresi untuk Pustaka Plasmid Rekombinan yang Mengekspresikan Gen Penyandi Kitinase dari Sorgum Manis (Sorghum bicolor L. M',u:'Kelompok Riset Rekayasa Tanaman untuk Lingkungan Ekstrim - Pusat Riset Rekayasa Genetika',r:4,j:'Kaset ekspresi dijual sbg produk farmasi/reagensia rekayasa genetika'}],'21015':[{t:'2.        Kit Untuk Mendeteksi 25 Tipe Human Papiloma Virus (HPV)  Secara Tidak Invasif',u:'Pusat Riset Biomedis',r:7,j:'Kit IVD diproduksi sbg alat diagnosis medis dan penunjang kesehatan'},{t:'8.        KIT UNTUK MENGANALISIS GENOM UTUH HUMAN PAPILLOMAVIRUS (HPV) TIPE 16',u:'Pusat Riset Biomedis',r:3,j:'Kit analisis genomik HPV diproduksi sbg alat diagnosis medis'},{t:'7.        METODE PENYIMPANAN SAMPEL URIN MENGGUNAKAN KERTAS SARING',u:'Pusat Riset Biomedis',r:3,j:'Dikomersialisasikan sbg alat penunjang kesehatan/collection device'},{t:'KIT DETEKSI DAN IDENTIFIKASI DNA BABI DAN SAPI PADA SATU TABUNG TUNGGAL BERBASIS SYBR GREEN I qPCR',u:'Kelompok Riset Rekayasa Biomolekul untuk Aplikasi Deteksi-PR Rekayasa Genetika-OR Hayati d',r:3,j:'Diproduksi sbg alat diagnosis/uji autentikasi halal dan keamanan pangan'},{t:'Kit Deteksi Mutasi Δ69-Δ70 Virus Sars-Cov 2 Berbasis Sybr Green I qQPCR',u:'Kelompok Riset Rekayasa Biomolekul Untuk Aplikasi Deteksi - PR Rekayasa Genetika- OR Hayat',r:3,j:'Diproduksi sbg alat diagnosis medis penyakit infeksi'},{t:'Proses Pembuatan Partikel Mirip Virus L1 Virus Human Papilloma Tipe 52 Sebagai Bahan Baku Vaksin Profilaktik Menggunakan Inang Han',u:'Protein Rekombinan Virus-Pusat Riset Rekayasa Genetika-Organisasi Riset Hayati dan Lingkun',r:5,j:'VLP dikategorikan sbg alat diagnosis/penunjang kesehatan bahan baku vaksin'},{t:'Kit Bioassay Untuk Uji In Vitro Inhibisi Protease Sarscov2 Sebagai Alat Skrining Obat Anti Covid19',u:'Rekayasa bakteri dan enzim',r:4,j:'Diproduksi sbg alat diagnosis medis/bioassay kit komersial'}],'21021':[{t:'METODE PEROLEHAN KLON TUNGGAL SEL KANKER PAYUDARA TRIPEL NEGATIF YANG MENGEKSPRESIKAN PROTEIN FLUORESENS mCHERRY DENGAN PENANDA EK',u:'Kelompok Riset Rekayasa Sel Mamalia',r:5,j:'Digunakan industri untuk bahan baku obat bahan alam penelitian kanker'}],'21022':[{t:'Komposisi Medium Pertumbuhan Bakteri Asam Laktat Untuk Probiotik Ternak Ruminansia',u:'Pusat Riset Zoologi Terapan',r:7,j:'Medium + kultur BAL diproduksi sbg produk obat bahan alam untuk hewan'},{t:'SEDIAAN EKTRAK JAMUR SHIITAKE DALAM BENTUK MIKROENKAPSULASI DAN PROSES PEMBUATANNYA',u:'Fitonutrien dan Nutrasetikal Pangan - PRTPP - ORPP',r:5,j:'Dikomersialisasikan sbg produk obat bahan alam untuk manusia'}],'22202':[{t:'Komposisi Pelapis Dan Metode Pelapisan Bioplastik Berbasis Pati Untuk Aplikasi Kemasan Aktif  Pangan Serta Produk Yang Dihasilkann',u:'Keamanan Pangan - Pusat Riset Teknologi dan Proses Pangan - Organisasi Riset Pertanian dan',r:4,j:'Bioplastik diproduksi sbg barang dari plastik dan bioplastik untuk pengemasan'},{t:'Metode pengemasan bahan makanan heterogen dalam satu wadah',u:'Kelris Pengemasan Steril Komersial - Pusat Riset Teknologi dan Proses Pangan - Organisasi',r:9,j:'Metode dilisensikan ke industri barang plastik dan bioplastik pengemasan'},{t:'EDIBLE COATING BERBASIS EKSTRAK DAUN SIRIH CINA (Peperomia pellucida) DAN APLIKASINYA',u:'Fitonutrien dan Nutrasetikal Pangan - Pusat Riset Teknologi dan Proses Pangan - Organisasi',r:4,j:'Formulasi dikomersialisasikan sbg barang plastik/bioplastik pengemasan'}],'22209':[{t:'Komposisi Pelapis Dan Metode Pelapisan Bioplastik Berbasis Pati Untuk Aplikasi Kemasan Aktif  Pangan Serta Produk Yang Dihasilkann',u:'Keamanan Pangan - Pusat Riset Teknologi dan Proses Pangan - Organisasi Riset Pertanian dan',r:4,j:'Diposisikan sbg produk plastik lainnya biodegradable'}],'26513':[{t:'Alat Sensor dan Monitoring Serangga',u:'Interaksi Serangga-Agen Hayati, Pusat Riset Zoologi Terapan',r:6,j:'Diproduksi sbg industri alat ukur dan alat uji elektronik (IoT pertanian)'}],'38212':[{t:'FORMULASI DAN PROSES PEMBUATAN BIOAKTIVATOR UNTUK FERMENTASI LIMBAH ORGANIK PADAT (FLOP)',u:'Mikrobioma Nutisi Tanaman - Pusat Riset Mikrobiologi Terapan - Organisasi Riset Hayati dan',r:6,j:'Diadopsi industri produksi kompos sampah organik'},{t:'PROSES PEMBUATAN BIOAGEN FOTOSINTESIS DENGAN BAHAN AKTIF KONSORSIUM BAKTERI DAN PRODUK YANG DIHASILKANNYA',u:'Kelompok Riset Metabolit Mikroba Tanaman - Pusat Riset Mikrobiologi Terapan - Organisasi R',r:6,j:'Digunakan dalam produksi kompos sampah organik dan rehabilitasi lahan'}],'71204':[{t:'Metode Analisis Kandungan GABA (Gamma-Aminobutyric Acid) Pada Beras Berpigmen',u:'Pemetaan Genetik dan Seleksi Berbasis Molekuler - PR Botani Terapan - OR Hayati dan Lingku',r:3,j:'Dikomersialisasikan sbg layanan jasa pengujian teknis kandungan GABA'},{t:'KIT DETEKSI DAN IDENTIFIKASI DNA BABI DAN SAPI PADA SATU TABUNG TUNGGAL BERBASIS SYBR GREEN I qPCR',u:'Kelompok Riset Rekayasa Biomolekul untuk Aplikasi Deteksi-PR Rekayasa Genetika-OR Hayati d',r:3,j:'Dikomersialisasikan sbg layanan jasa pengujian teknis halal'}],'86903':[{t:'2.        Kit Untuk Mendeteksi 25 Tipe Human Papiloma Virus (HPV)  Secara Tidak Invasif',u:'Pusat Riset Biomedis',r:7,j:'Dikomersialisasikan sbg layanan pelayanan penunjang kesehatan di lab klinik'},{t:'8.        KIT UNTUK MENGANALISIS GENOM UTUH HUMAN PAPILLOMAVIRUS (HPV) TIPE 16',u:'Pusat Riset Biomedis',r:3,j:'Dikomersialisasikan sbg layanan pelayanan penunjang kesehatan'},{t:'7.        METODE PENYIMPANAN SAMPEL URIN MENGGUNAKAN KERTAS SARING',u:'Pusat Riset Biomedis',r:3,j:'Diadopsi sbg protokol standar pelayanan penunjang kesehatan'},{t:'Kit Deteksi Mutasi Δ69-Δ70 Virus Sars-Cov 2 Berbasis Sybr Green I qQPCR',u:'Kelompok Riset Rekayasa Biomolekul Untuk Aplikasi Deteksi - PR Rekayasa Genetika- OR Hayat',r:3,j:'Digunakan sbg basis layanan pelayanan penunjang kesehatan'}]};
-const TRL_C={1:"#DC2626",2:"#EA580C",3:"#D97706",4:"#CA8A04",5:"#65A30D",6:"#16A34A",7:"#0D9488",8:"#0369A1",9:"#4F46E5"};
+const CT_ALL={'71204':[3],'10799':[3,4,5,6,9],'08930':[6],'20299':[4,5,6],'01140':[5,6],'01309':[5,6,7],'21015':[3,4,5,7],'21012':[3,4,5,7],'86903':[3,7],'20232':[7],'20115':[4,7],'20127':[5,6,7],'46652':[4,5,6,7],'01121':[5,7],'01122':[5,7],'01492':[7],'13111':[5,7],'20213':[4,6],'01133':[5,6],'01621':[7],'38212':[6],'21022':[5,7],'01629':[7],'01289':[7],'10797':[4,6],'11059':[4,6],'46319':[3,4,6,7],'21021':[5],'10801':[5],'47754':[5],'26513':[6],'46521':[6],'01619':[6],'10621':[7],'10613':[3,7],'22202':[4,9],'22209':[4],'10710':[4],'01115':[8],'46201':[7,8],'10393':[7,8],'01111':[4],'01113':[7],'01112':[7]};
+const CT_EXCL={'71204':[3],'10799':[3,4,5,6,9],'08930':[6],'20299':[4,5,6],'01140':[5,6],'01309':[5,6,7],'21015':[3,4,5,7],'21012':[3,4,5,7],'86903':[3,7],'20232':[7],'20115':[4,7],'20127':[5,6,7],'01121':[5,7],'01122':[5,7],'01492':[7],'13111':[5,7],'20213':[4,6],'01133':[5,6],'01621':[7],'38212':[6],'21022':[5,7],'01629':[7],'01289':[7],'10797':[4,6],'11059':[4,6],'21021':[5],'10801':[5],'26513':[6],'01619':[6],'10621':[7],'10613':[3,7],'22202':[4,9],'22209':[4],'10710':[4],'01115':[8],'10393':[7,8],'01111':[4],'01113':[7],'01112':[7]};
+const CS_ALL={'71204':'Jasa Pengujian & Inspeksi','10799':'Industri Pangan & Minuman','08930':'Pertambangan & Mineral','20299':'Industri Kimia & Biokimia','01140':'Pertanian & Perkebunan','01309':'Pertanian & Perkebunan','21015':'Industri Farmasi & Biotek','21012':'Industri Farmasi & Biotek','86903':'Kesehatan & Lab Klinik','20232':'Industri Kimia & Biokimia','20115':'Industri Kimia & Biokimia','20127':'Industri Kimia & Biokimia','46652':'Perdagangan Besar','01121':'Pertanian & Perkebunan','01122':'Pertanian & Perkebunan','01492':'Pertanian & Perkebunan','13111':'Industri Tekstil & Serat','20213':'Industri Kimia & Biokimia','01133':'Pertanian & Perkebunan','01621':'Pertanian & Perkebunan','38212':'Pengelolaan Lingkungan','21022':'Industri Farmasi & Biotek','01629':'Pertanian & Perkebunan','01289':'Pertanian & Perkebunan','10797':'Industri Pangan & Minuman','11059':'Industri Minuman','46319':'Perdagangan Besar','21021':'Industri Farmasi & Biotek','10801':'Industri Pangan & Minuman','47754':'Perdagangan Eceran','26513':'Industri Elektronik & Instrumen','46521':'Perdagangan Besar','01619':'Pertanian & Perkebunan','10621':'Industri Pangan & Minuman','10613':'Industri Pangan & Minuman','22202':'Industri Plastik & Kemasan','22209':'Industri Plastik & Kemasan','10710':'Industri Pangan & Minuman','01115':'Pertanian & Perkebunan','46201':'Perdagangan Besar','10393':'Industri Pangan & Minuman','01111':'Pertanian & Perkebunan','01113':'Pertanian & Perkebunan','01112':'Pertanian & Perkebunan'};
+const CS_EXCL={'71204':'Jasa Pengujian & Inspeksi','10799':'Industri Pangan & Minuman','08930':'Pertambangan & Mineral','20299':'Industri Kimia & Biokimia','01140':'Pertanian & Perkebunan','01309':'Pertanian & Perkebunan','21015':'Industri Farmasi & Biotek','21012':'Industri Farmasi & Biotek','86903':'Kesehatan & Lab Klinik','20232':'Industri Kimia & Biokimia','20115':'Industri Kimia & Biokimia','20127':'Industri Kimia & Biokimia','01121':'Pertanian & Perkebunan','01122':'Pertanian & Perkebunan','01492':'Pertanian & Perkebunan','13111':'Industri Tekstil & Serat','20213':'Industri Kimia & Biokimia','01133':'Pertanian & Perkebunan','01621':'Pertanian & Perkebunan','38212':'Pengelolaan Lingkungan','21022':'Industri Farmasi & Biotek','01629':'Pertanian & Perkebunan','01289':'Pertanian & Perkebunan','10797':'Industri Pangan & Minuman','11059':'Industri Minuman','21021':'Industri Farmasi & Biotek','10801':'Industri Pangan & Minuman','26513':'Industri Elektronik & Instrumen','01619':'Pertanian & Perkebunan','10621':'Industri Pangan & Minuman','10613':'Industri Pangan & Minuman','22202':'Industri Plastik & Kemasan','22209':'Industri Plastik & Kemasan','10710':'Industri Pangan & Minuman','01115':'Pertanian & Perkebunan','10393':'Industri Pangan & Minuman','01111':'Pertanian & Perkebunan','01113':'Pertanian & Perkebunan','01112':'Pertanian & Perkebunan'};
 
-// ── MODAL ────────────────────────────────────────────────────────
+const TRL_C={1:"#DC2626",2:"#EA580C",3:"#D97706",4:"#CA8A04",5:"#65A30D",6:"#16A34A",7:"#0D9488",8:"#0369A1",9:"#4F46E5"};
+const TRL_N={1:'Prinsip dasar',2:'Konsep teknologi',3:'Bukti konsep',
+  4:'Validasi laboratorium',5:'Validasi lingk. relevan',
+  6:'Demo lingk. relevan',7:'Demo lingk. operasional',
+  8:'Sistem lengkap & kualifikasi',9:'Sistem terbukti operasional'};
+
+var curTab=2, active=null;
+
+/* ── TAB SWITCH ──────────────────────────────────────────────── */
+window.switchTab=function(n){
+  curTab=n;
+  document.getElementById('tab1-content').style.display=n===1?'':'none';
+  document.getElementById('tab2-content').style.display=n===2?'':'none';
+  document.getElementById('tab-all').className='sb-tab '+(n===1?'on':'off');
+  document.getElementById('tab-excl').className='sb-tab '+(n===2?'on':'off');
+  // Update nav badge
+  var badge=document.getElementById('nav-badge-cards');
+  if(badge) badge.textContent=n===1?'44':'39';
+  // Update nav scroll targets
+  document.querySelectorAll('#main-nav .nav-item').forEach(function(el){
+    var base=el.dataset.sec;
+    el.onclick=function(){scrollToSec(base+(n===2?'e':''));};
+  });
+  fReset();
+};
+
+/* ── SCROLL TO SECTION ───────────────────────────────────────── */
+function scrollToSec(id){
+  var el=document.getElementById(id);
+  if(!el)return;
+  el.scrollIntoView({behavior:'smooth',block:'start'});
+  document.querySelectorAll('.nav-item').forEach(function(n){n.classList.remove('on')});
+  var base=id.replace(/e$/,'');
+  document.querySelectorAll('[data-sec="'+base+'"]').forEach(function(n){n.classList.add('on')});
+}
+window.scrollTo=function(id){scrollToSec(id);};
+
+/* ── MODAL ───────────────────────────────────────────────────── */
 function openModal(code,name,useExcl){
-  var items=(useExcl?KD_EXCL:KD)[code]||[];
+  var KD_USE=useExcl?KD_EXCL:KD;
+  var items=(KD_USE[code]||[]);
   document.getElementById('ki-mcode').textContent=code;
   document.getElementById('ki-mtitle').textContent=name;
   document.getElementById('ki-mcount').textContent=items.length+' KI berpotensi di sektor ini';
   document.getElementById('ki-mlist').innerHTML=items.map(function(ki){
     var c=TRL_C[ki.r]||'#888';
-    return '<div class="ki-item"><div class="ki-title">'+ki.t+'</div><div class="ki-meta"><span class="ki-trl" style="background:'+c+'">TRL '+ki.r+'</span><span class="ki-unit">'+ki.u+'</span></div>'+(ki.j?'<div class="ki-just">'+ki.j+'</div>':'')+  '</div>';
+    return '<div class="ki-item"><div class="ki-title">'+ki.t+'</div>'
+      +'<div class="ki-meta"><span class="ki-trl" style="background:'+c+'">TRL '+ki.r+'</span>'
+      +'<span class="ki-unit">'+ki.u+'</span></div>'
+      +(ki.j?'<div class="ki-just">'+ki.j+'</div>':'')+'</div>';
   }).join('');
   document.getElementById('ki-overlay').classList.add('open');
 }
@@ -2012,50 +2074,85 @@ window.closeModal=function(){document.getElementById('ki-overlay').classList.rem
 document.getElementById('ki-overlay').addEventListener('click',function(e){if(e.target===this)closeModal();});
 document.addEventListener('keydown',function(e){if(e.key==='Escape')closeModal();});
 
-// ── TABS ─────────────────────────────────────────────────────────
-window.switchTab=function(n){
-  document.getElementById('tab1-content').style.display=n===1?'':'none';
-  document.getElementById('tab2-content').style.display=n===2?'':'none';
-  document.querySelectorAll('.tab-btn').forEach(function(b,i){b.classList.toggle('active',i===n-1);});
-  fReset();
-};
-
-// ── FILTER ────────────────────────────────────────────────────────
-var active=null;
-var TN={'t1':'Prinsip dasar','t2':'Konsep teknologi','t3':'Bukti konsep',
-        't4':'Validasi laboratorium','t5':'Validasi lingk. relevan',
-        't6':'Demo lingk. relevan','t7':'Demo lingk. operasional',
-        't8':'Sistem lengkap & kualifikasi','t9':'Sistem terbukti operasional'};
-
-function setUI(txt){
-  document.getElementById('f-label').textContent=txt;
-  document.getElementById('f-label').style.display='block';
-  document.getElementById('f-reset').style.display='block';
+/* ── FILTER ──────────────────────────────────────────────────── */
+function setFilterUI(label,color){
+  var disp=document.getElementById('filt-display');
+  var scope=document.getElementById('filt-scope');
+  var btn=document.getElementById('filt-reset-btn');
+  if(label){
+    disp.innerHTML='<button class="filt-active" style="background:'+color+';color:#fff" onclick="fReset()">'+label+' ×</button>';
+    scope.style.display='block';
+    btn.style.display='block';
+  } else {
+    disp.innerHTML='<span class="filt-none">Tidak ada — klik chart</span>';
+    scope.style.display='none';
+    btn.style.display='none';
+  }
 }
+
 window.fReset=function(){
   active=null;
-  document.getElementById('f-reset').style.display='none';
-  document.getElementById('f-label').style.display='none';
+  setFilterUI(null,null);
   ['cw1','cw2','cw1e','cw2e'].forEach(function(id){
     var cw=document.getElementById(id);if(!cw)return;
     cw.querySelectorAll('.chart-row').forEach(function(r){r.classList.remove('f-dim')});
     cw.querySelectorAll('.chart-seg').forEach(function(s){s.classList.remove('f-dim','f-on')});
   });
+  document.querySelectorAll('.kbli-card').forEach(function(c){c.classList.remove('f-dim','f-hl')});
+  document.querySelectorAll('.trl-hblock').forEach(function(b){b.classList.remove('f-dim')});
 };
 
-function getActiveCW(){
-  var tab2=document.getElementById('tab2-content');
-  var inTab2=tab2&&tab2.style.display!=='none';
-  return inTab2?['cw1e','cw2e']:['cw1','cw2'];
+function getSuffix(){ return curTab===2?'e':''; }
+function getCT(){ return curTab===2?CT_EXCL:CT_ALL; }
+function getCS(){ return curTab===2?CS_EXCL:CS_ALL; }
+
+/* Apply filter to cards */
+function applyCardFilter(type,value){
+  var ct=getCT(), cs=getCS(), suf=getSuffix();
+  var container=document.getElementById('tab'+(curTab===1?'1':'2')+'-content');
+  if(!container)return;
+  container.querySelectorAll('.kbli-card[data-code]').forEach(function(card){
+    var code=card.dataset.code;
+    var match=false;
+    if(type==='trl'){
+      var trls=ct[code]||[];
+      match=trls.indexOf(parseInt(value))>=0;
+    } else if(type==='sector'){
+      match=(cs[code]||'')=== value;
+    }
+    card.classList.toggle('f-dim',!match);
+    card.classList.toggle('f-hl',match);
+  });
+}
+
+/* Apply filter to TRL blocks */
+function applyTrlBlockFilter(type,value){
+  var suf=getSuffix();
+  var sec=document.getElementById('sec-trl'+suf);
+  if(!sec)return;
+  sec.querySelectorAll('.trl-hblock').forEach(function(block){
+    var trlNum=block.querySelector('.trl-hnum');
+    if(!trlNum)return;
+    var t=parseInt(trlNum.textContent.replace('TRL ',''));
+    var match=false;
+    if(type==='trl') match=(t===parseInt(value));
+    else if(type==='sector'){
+      // For sector filter: show all TRL blocks (sector doesn't filter TRL blocks)
+      match=true;
+    }
+    block.classList.toggle('f-dim',!match);
+  });
 }
 
 function byTrl(tc){
-  if(active&&active.t==='trl'&&active.v===tc){window.fReset();return;}
+  if(active&&active.t==='trl'&&active.v===tc){fReset();return;}
   active={t:'trl',v:tc};
   var n=tc.replace('t','');
-  setUI('TRL '+n+' — '+TN[tc]);
-  var cws=getActiveCW();
-  var cw1=document.getElementById(cws[0]);
+  var color=TRL_C[parseInt(n)]||'#888';
+  setFilterUI('TRL '+n+' — '+TRL_N[parseInt(n)],color);
+  var suf=getSuffix();
+  // Chart 1
+  var cw1=document.getElementById('cw1'+suf);
   if(cw1)cw1.querySelectorAll('.chart-row').forEach(function(row){
     var has=row.querySelector('.chart-seg.'+tc);
     row.classList.toggle('f-dim',!has);
@@ -2063,28 +2160,47 @@ function byTrl(tc){
       var m=s.classList.contains(tc);s.classList.toggle('f-dim',!m);s.classList.toggle('f-on',m);
     });
   });
-  var cw2=document.getElementById(cws[1]);
+  // Chart 2
+  var cw2=document.getElementById('cw2'+suf);
   if(cw2)cw2.querySelectorAll('.chart-row').forEach(function(row){
     var sp=row.querySelector('.chart-sector span');
     var m=sp&&sp.classList.contains('tl'+n);
     row.classList.toggle('f-dim',!m);
     if(m)row.querySelectorAll('.chart-seg').forEach(function(s){s.classList.remove('f-dim','f-on')});
   });
+  // Cards
+  applyCardFilter('trl',n);
+  // TRL blocks
+  applyTrlBlockFilter('trl',n);
 }
 
 function bySector(name){
-  if(active&&active.t==='sector'&&active.v===name){window.fReset();return;}
+  if(active&&active.t==='sector'&&active.v===name){fReset();return;}
   active={t:'sector',v:name};
-  setUI('Sektor: '+name);
-  var cws=getActiveCW();
-  var cw1=document.getElementById(cws[0]);
+  // Find color from chart row border
+  var suf=getSuffix();
+  var cw1=document.getElementById('cw1'+suf);
+  var color='#888';
+  if(cw1){
+    cw1.querySelectorAll('.chart-row').forEach(function(row){
+      var el=row.querySelector('.chart-sector');
+      if(el&&el.textContent.trim()===name){
+        var style=el.getAttribute('style')||'';
+        var m=style.match(/border-left.*?(#[0-9A-Fa-f]{6})/);
+        if(m)color=m[1];
+      }
+    });
+  }
+  setFilterUI('Sektor: '+name,color);
+  // Chart 1
   if(cw1)cw1.querySelectorAll('.chart-row').forEach(function(row){
     var el=row.querySelector('.chart-sector');
     var m=el&&el.textContent.trim()===name;
     row.classList.toggle('f-dim',!m);
     if(m)row.querySelectorAll('.chart-seg').forEach(function(s){s.classList.remove('f-dim','f-on')});
   });
-  var cw2=document.getElementById(cws[1]);
+  // Chart 2
+  var cw2=document.getElementById('cw2'+suf);
   if(cw2)cw2.querySelectorAll('.chart-row').forEach(function(row){
     var hit=null;
     row.querySelectorAll('.chart-seg[data-tip]').forEach(function(s){
@@ -2095,10 +2211,14 @@ function bySector(name){
       s.classList.toggle('f-dim',s!==hit);s.classList.toggle('f-on',s===hit);
     });
   });
+  // Cards
+  applyCardFilter('sector',name);
+  // TRL blocks — for sector, show all
+  applyTrlBlockFilter('sector',name);
 }
 
-// ── WIRE CHARTS ──────────────────────────────────────────────────
-function wireChartPair(id1,id2){
+/* ── WIRE CHARTS ─────────────────────────────────────────────── */
+function wireCharts(id1,id2){
   var cw1=document.getElementById(id1);
   if(cw1){
     cw1.querySelectorAll('.chart-seg').forEach(function(s){
@@ -2110,7 +2230,6 @@ function wireChartPair(id1,id2){
       });
     });
     cw1.querySelectorAll('.chart-sector').forEach(function(el){
-      el.style.cursor='pointer';
       el.addEventListener('click',function(e){e.stopPropagation();bySector(el.textContent.trim());});
     });
   }
@@ -2125,7 +2244,6 @@ function wireChartPair(id1,id2){
       });
     });
     cw2.querySelectorAll('.chart-sector').forEach(function(el){
-      el.style.cursor='pointer';
       el.addEventListener('click',function(e){
         e.stopPropagation();
         var sp=el.querySelector('span');if(!sp)return;
@@ -2136,25 +2254,24 @@ function wireChartPair(id1,id2){
   }
 }
 
-// ── WIRE CARDS ───────────────────────────────────────────────────
 function wireCards(excl){
-  var sel=excl?'#tab2-content .kbli-card':'#tab1-content .kbli-card';
-  document.querySelectorAll(sel+'[data-code]').forEach(function(card){
+  var sel='#tab'+(excl?'2':'1')+'-content .kbli-card[data-code]';
+  document.querySelectorAll(sel).forEach(function(card){
     card.addEventListener('click',function(){
+      if(card.classList.contains('f-dim'))return;
       openModal(this.dataset.code,this.dataset.name,excl);
     });
   });
 }
 
-// ── TOOLTIP ──────────────────────────────────────────────────────
-var tt=document.getElementById('tt');
-function wireTooltips(cwId){
-  var cw=document.getElementById(cwId);if(!cw)return;
+function wireTooltips(id){
+  var cw=document.getElementById(id);if(!cw)return;
+  var tt=document.getElementById('tt');
   cw.querySelectorAll('.chart-seg[data-tip]').forEach(function(el){
     el.addEventListener('mouseenter',function(){tt.textContent=el.getAttribute('data-tip');tt.style.display='block';});
     el.addEventListener('mousemove',function(e){
-      var x=e.clientX+14,y=e.clientY-34;
-      if(x+tt.offsetWidth>window.innerWidth-8)x=e.clientX-tt.offsetWidth-8;
+      var x=e.clientX+14,y=e.clientY-36;
+      if(x+tt.offsetWidth>window.innerWidth-8)x=e.clientX-tt.offsetWidth-12;
       if(y<4)y=e.clientY+14;
       tt.style.left=x+'px';tt.style.top=y+'px';
     });
@@ -2162,16 +2279,41 @@ function wireTooltips(cwId){
   });
 }
 
+/* ── SCROLL SPY ──────────────────────────────────────────────── */
+function setupScrollSpy(){
+  var scroll=document.getElementById('main-scroll');
+  if(!scroll)return;
+  scroll.addEventListener('scroll',function(){
+    var suf=curTab===2?'e':'';
+    var secs=['chart1','chart2','top15','cards','trl'];
+    var scrollTop=scroll.scrollTop+80;
+    var active_sec=secs[0];
+    secs.forEach(function(s){
+      var el=document.getElementById('sec-'+s+suf);
+      if(el&&el.offsetTop<=scrollTop)active_sec=s;
+    });
+    document.querySelectorAll('.nav-item').forEach(function(n){
+      var base=n.dataset.sec||'';
+      n.classList.toggle('on',base==='sec-'+active_sec);
+    });
+  });
+}
+
+/* ── INIT ────────────────────────────────────────────────────── */
 document.addEventListener('DOMContentLoaded',function(){
-  wireChartPair('cw1','cw2');
-  wireChartPair('cw1e','cw2e');
+  wireCharts('cw1','cw2');
+  wireCharts('cw1e','cw2e');
   wireTooltips('cw1');wireTooltips('cw2');
   wireTooltips('cw1e');wireTooltips('cw2e');
   wireCards(false);
   wireCards(true);
+  setupScrollSpy();
+  // Fix nav onclick for default tab 2
+  document.querySelectorAll('#main-nav .nav-item').forEach(function(el){
+    var base=el.dataset.sec;
+    el.onclick=function(){scrollToSec(base+'e');};
+  });
 });
 </script>
-<div id="f-reset" onclick="fReset()">&#x2715; Reset Filter</div>
-<div id="f-label"></div>
 </body>
 </html>
