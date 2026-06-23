@@ -2018,7 +2018,6 @@ window.switchTab=function(n){
   document.getElementById('tab2-content').style.display=n===2?'':'none';
   document.querySelectorAll('.tab-btn').forEach(function(b,i){b.classList.toggle('active',i===n-1);});
   fReset();
-  if(n===2&&!window._t2wired){wireCards(true);window._t2wired=true;}
 };
 
 // ── FILTER ────────────────────────────────────────────────────────
@@ -2165,8 +2164,11 @@ function wireTooltips(cwId){
 
 document.addEventListener('DOMContentLoaded',function(){
   wireChartPair('cw1','cw2');
+  wireChartPair('cw1e','cw2e');
   wireTooltips('cw1');wireTooltips('cw2');
+  wireTooltips('cw1e');wireTooltips('cw2e');
   wireCards(false);
+  wireCards(true);
 });
 </script>
 <div id="f-reset" onclick="fReset()">&#x2715; Reset Filter</div>
