@@ -188,7 +188,7 @@ code{font-family:'Courier New',monospace;font-weight:700}
         <div class="filt-lbl">Filter aktif</div>
         <div id="filt-display"><span class="filt-none">Tidak ada — klik chart</span></div>
         <div class="filt-scope" id="filt-scope" style="display:none">Berlaku ke semua section ↓</div>
-        <button class="filt-reset-btn" id="filt-reset-btn" style="display:none" onclick="fReset()">✕ Reset filter</button>
+        <button class="filt-reset-btn" id="filt-reset-btn" style="display:none" onclick="fReset()">✕ Reset semua filter</button>
       </div>
     </div>
   </div>
@@ -1917,7 +1917,7 @@ const TRL_N={1:'Prinsip dasar',2:'Konsep teknologi',3:'Bukti konsep',
   6:'Demo lingk. relevan',7:'Demo lingk. operasional',
   8:'Sistem lengkap & kualifikasi',9:'Sistem terbukti operasional'};
 
-var curTab=2, active=null;
+var curTab=2, activeTrl=null, activeSector=null;
 
 /* ── TAB SWITCH ──────────────────────────────────────────────── */
 window.switchTab=function(n){
@@ -1927,7 +1927,7 @@ window.switchTab=function(n){
   document.getElementById('tab-all').className='sb-tab '+(n===1?'on':'off');
   document.getElementById('tab-excl').className='sb-tab '+(n===2?'on':'off');
   // Update nav badge
-  resetTop15();
+  activeTrl=null; activeSector=null; updateFilterUI(); resetTop15();
   var badge=document.getElementById('nav-badge-cards');
   if(badge) badge.textContent=n===1?'44':'39';
   // Update nav scroll targets
@@ -1986,8 +1986,8 @@ function setFilterUI(label,color){
 }
 
 window.fReset=function(){
-  active=null;
-  setFilterUI(null,null);
+  activeTrl=null; activeSector=null;
+  updateFilterUI();
   ['cw1','cw2','cw1e','cw2e'].forEach(function(id){
     var cw=document.getElementById(id);if(!cw)return;
     cw.querySelectorAll('.chart-row').forEach(function(r){r.classList.remove('f-dim')});
@@ -1997,6 +1997,46 @@ window.fReset=function(){
   document.querySelectorAll('.trl-hblock').forEach(function(b){b.classList.remove('f-dim')});
   resetTop15();
 };
+
+window.fResetTrl=function(){
+  activeTrl=null;
+  applyAllFilters();
+};
+
+window.fResetSector=function(){
+  activeSector=null;
+  applyAllFilters();
+};
+
+function updateFilterUI(){
+  var disp=document.getElementById('filt-display');
+  var scope=document.getElementById('filt-scope');
+  var btn=document.getElementById('filt-reset-btn');
+  var TRL_C_MAP={1:'#DC2626',2:'#EA580C',3:'#D97706',4:'#CA8A04',5:'#65A30D',
+                 6:'#16A34A',7:'#0D9488',8:'#0369A1',9:'#4F46E5'};
+
+  if(!activeTrl && !activeSector){
+    disp.innerHTML='<span class="filt-none">Tidak ada — klik chart</span>';
+    scope.style.display='none'; btn.style.display='none'; return;
+  }
+
+  var parts=[];
+  if(activeSector){
+    var cs2=getCS(); var code2=Object.keys(cs2).find(function(c){return cs2[c]===activeSector;});
+    var meta2=getMeta(); var scolor=code2&&meta2[code2]?meta2[code2].c:'#888';
+    parts.push('<button class="filt-active" style="background:'+scolor+';color:#fff" onclick="fResetSector()" title="Hapus filter sektor">'
+      +activeSector+' ×</button>');
+  }
+  if(activeTrl){
+    var trlColor=TRL_C_MAP[parseInt(activeTrl)]||'#888';
+    parts.push('<button class="filt-active" style="background:'+trlColor+';color:#fff" onclick="fResetTrl()" title="Hapus filter TRL">'
+      +'TRL '+activeTrl+' ×</button>');
+  }
+  disp.innerHTML='<div style="display:flex;flex-direction:column;gap:5px">'+parts.join('')+'</div>';
+  var hint=activeTrl&&activeSector?'Filter kombinasi aktif':'Filter aktif';
+  scope.textContent=hint+' — berlaku ke semua section';
+  scope.style.display='block'; btn.style.display='block';
+}
 
 function getSuffix(){ return curTab===2?'e':''; }
 function getCT(){ return curTab===2?CT_EXCL:CT_ALL; }
@@ -2097,77 +2137,112 @@ function applyTrlBlockFilter(type,value){
   });
 }
 
-function byTrl(tc){
-  if(active&&active.t==='trl'&&active.v===tc){fReset();return;}
-  active={t:'trl',v:tc};
-  var n=tc.replace('t','');
-  var color=TRL_C[parseInt(n)]||'#888';
-  setFilterUI('TRL '+n+' — '+TRL_N[parseInt(n)],color);
+
+function codeMatchesFilter(code){
+  var ct=getCT(), cs=getCS();
+  var matchTrl=true, matchSector=true;
+  if(activeTrl) matchTrl=(ct[code]||[]).indexOf(parseInt(activeTrl))>=0;
+  if(activeSector) matchSector=(cs[code]||'')=== activeSector;
+  return matchTrl && matchSector;
+}
+
+function applyAllFilters(){
+  updateFilterUI();
   var suf=getSuffix();
-  // Chart 1
+  var hasTrl=!!activeTrl, hasSector=!!activeSector;
+  var tc=hasTrl?('t'+activeTrl):null;
+
+  // ── Chart 1: rows=sectors, segs=TRL ──
   var cw1=document.getElementById('cw1'+suf);
-  if(cw1)cw1.querySelectorAll('.chart-row').forEach(function(row){
-    var has=row.querySelector('.chart-seg.'+tc);
-    row.classList.toggle('f-dim',!has);
+  if(cw1) cw1.querySelectorAll('.chart-row').forEach(function(row){
+    var el=row.querySelector('.chart-sector');
+    var rowSector=el?el.textContent.trim():'';
+    var sectorMatch=!hasSector||(rowSector===activeSector);
+    row.classList.toggle('f-dim',!sectorMatch);
     row.querySelectorAll('.chart-seg').forEach(function(s){
-      var m=s.classList.contains(tc);s.classList.toggle('f-dim',!m);s.classList.toggle('f-on',m);
+      if(!sectorMatch){ s.classList.add('f-dim'); s.classList.remove('f-on'); return; }
+      if(hasTrl){
+        var m=s.classList.contains(tc);
+        s.classList.toggle('f-dim',!m); s.classList.toggle('f-on',m);
+      } else {
+        s.classList.remove('f-dim','f-on');
+      }
     });
   });
-  // Chart 2
+
+  // ── Chart 2: rows=TRL, segs=sectors ──
   var cw2=document.getElementById('cw2'+suf);
-  if(cw2)cw2.querySelectorAll('.chart-row').forEach(function(row){
+  if(cw2) cw2.querySelectorAll('.chart-row').forEach(function(row){
     var sp=row.querySelector('.chart-sector span');
-    var m=sp&&sp.classList.contains('tl'+n);
-    row.classList.toggle('f-dim',!m);
-    if(m)row.querySelectorAll('.chart-seg').forEach(function(s){s.classList.remove('f-dim','f-on')});
+    var rowTc=sp?sp.className.split(' ')[0].replace('tl','t'):'';
+    var trlMatch=!hasTrl||(rowTc===tc);
+    row.classList.toggle('f-dim',!trlMatch);
+    row.querySelectorAll('.chart-seg[data-tip]').forEach(function(s){
+      if(!trlMatch){ s.classList.add('f-dim'); s.classList.remove('f-on'); return; }
+      if(hasSector){
+        var tip=s.getAttribute('data-tip')||'';
+        var m=tip.indexOf(activeSector+':')===0;
+        s.classList.toggle('f-dim',!m); s.classList.toggle('f-on',m);
+      } else {
+        s.classList.remove('f-dim','f-on');
+      }
+    });
   });
-  // Top15 + Cards + TRL blocks
-  renderTop15('trl',n);
-  applyCardFilter('trl',n);
-  applyTrlBlockFilter('trl',n);
+
+  // ── Cards ──
+  var container=document.getElementById('tab'+(curTab===1?'1':'2')+'-content');
+  if(container) container.querySelectorAll('.kbli-card[data-code]').forEach(function(card){
+    var match=codeMatchesFilter(card.dataset.code);
+    card.classList.toggle('f-dim',!match);
+    card.classList.toggle('f-hl',match);
+  });
+
+  // ── TRL blocks ──
+  var sec=document.getElementById('sec-trl'+suf);
+  if(sec) sec.querySelectorAll('.trl-hblock').forEach(function(block){
+    var t=parseInt(block.getAttribute('data-trl')||'0');
+    var match=!hasTrl||(t===parseInt(activeTrl));
+    block.classList.toggle('f-dim',!match);
+  });
+
+  // ── Top 15 (combined filter) ──
+  var meta=getMeta();
+  var tbody=document.getElementById('top15'+suf+'-body');
+  if(tbody){
+    var entries=Object.keys(meta).filter(codeMatchesFilter).map(function(code){
+      return {code:code,m:meta[code]};
+    });
+    if(!hasTrl && !hasSector){
+      resetTop15(); return;
+    }
+    entries.sort(function(a,b){return b.m.ki-a.m.ki;});
+    var top=entries.slice(0,15);
+    if(top.length===0){
+      tbody.innerHTML='<tr><td colspan="4" style="text-align:center;color:#94A3B8;padding:16px;font-style:italic">Tidak ada data untuk kombinasi filter ini</td></tr>';
+      return;
+    }
+    tbody.innerHTML=top.map(function(e,i){
+      var m=e.m;
+      return '<tr>'
+        +'<td><span style="font-family:monospace;font-size:10px;color:#94A3B8;margin-right:6px">'+(i+1)+'</span>'
+        +'<code style="color:'+m.c+';font-size:13px">'+e.code+'</code></td>'
+        +'<td style="font-size:11px">'+m.n+'</td>'
+        +'<td><span style="font-size:10px;color:'+m.tc+';background:'+m.c+'22;padding:2px 8px;border-radius:20px">'+m.s+'</span></td>'
+        +'<td style="text-align:center"><span class="freq-badge">'+m.ki+' KI</span></td>'
+        +'</tr>';
+    }).join('');
+  }
+}
+
+function byTrl(tc){
+  var n=tc.replace('t','');
+  if(activeTrl===n){ activeTrl=null; } else { activeTrl=n; }
+  applyAllFilters();
 }
 
 function bySector(name){
-  if(active&&active.t==='sector'&&active.v===name){fReset();return;}
-  active={t:'sector',v:name};
-  // Find color from chart row border
-  var suf=getSuffix();
-  var cw1=document.getElementById('cw1'+suf);
-  var color='#888';
-  if(cw1){
-    cw1.querySelectorAll('.chart-row').forEach(function(row){
-      var el=row.querySelector('.chart-sector');
-      if(el&&el.textContent.trim()===name){
-        var style=el.getAttribute('style')||'';
-        var m=style.match(/border-left.*?(#[0-9A-Fa-f]{6})/);
-        if(m)color=m[1];
-      }
-    });
-  }
-  setFilterUI('Sektor: '+name,color);
-  // Chart 1
-  if(cw1)cw1.querySelectorAll('.chart-row').forEach(function(row){
-    var el=row.querySelector('.chart-sector');
-    var m=el&&el.textContent.trim()===name;
-    row.classList.toggle('f-dim',!m);
-    if(m)row.querySelectorAll('.chart-seg').forEach(function(s){s.classList.remove('f-dim','f-on')});
-  });
-  // Chart 2
-  var cw2=document.getElementById('cw2'+suf);
-  if(cw2)cw2.querySelectorAll('.chart-row').forEach(function(row){
-    var hit=null;
-    row.querySelectorAll('.chart-seg[data-tip]').forEach(function(s){
-      if(s.getAttribute('data-tip').indexOf(name+':')===0)hit=s;
-    });
-    row.classList.toggle('f-dim',!hit);
-    if(hit)row.querySelectorAll('.chart-seg').forEach(function(s){
-      s.classList.toggle('f-dim',s!==hit);s.classList.toggle('f-on',s===hit);
-    });
-  });
-  // Top15 + Cards + TRL blocks
-  renderTop15('sector',name);
-  applyCardFilter('sector',name);
-  applyTrlBlockFilter('sector',name);
+  if(activeSector===name){ activeSector=null; } else { activeSector=name; }
+  applyAllFilters();
 }
 
 /* ── WIRE CHARTS ─────────────────────────────────────────────── */
