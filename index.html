@@ -185,6 +185,17 @@ code{font-family:'Courier New',monospace;font-weight:700}
 .ki-sector-item-kbli{font-size:10px;font-family:'Courier New',monospace;margin-bottom:2px}
 .ki-sector-item-unit{font-size:9.5px;color:#94A3B8}
 
+
+/* ── COLLAPSIBLE SECTIONS ── */
+.section-block{transition:all .2s}
+.sec-hdr{display:flex;align-items:center;justify-content:space-between;cursor:pointer;user-select:none;margin-bottom:0}
+.sec-hdr:hover .sec-chevron{color:#1E1B4B}
+.sec-chevron{font-size:14px;color:#94A3B8;transition:transform .2s;flex-shrink:0;margin-left:8px}
+.sec-chevron.open{transform:rotate(180deg)}
+.sec-body{overflow:hidden;transition:max-height .3s ease,opacity .2s;max-height:9999px;opacity:1}
+.sec-body.collapsed{max-height:0!important;opacity:0}
+.sec-body.collapsed+*{margin-top:0}
+
 </style>
 </head>
 <body>
@@ -235,8 +246,14 @@ code{font-family:'Courier New',monospace;font-weight:700}
     <div class="content">
       <div id="tab1-content" style="display:none">
 <div id="sec-chart1" class="section-block">
+<div class="sec-hdr" onclick="toggleSec('sec-chart1')">
   <div class="sec-title">Distribusi TRL per Sektor KBLI</div>
+  <i class="ti ti-chevron-down sec-chevron open" id="chev-sec-chart1" aria-hidden="true"></i>
+</div>
+<div class="sec-body" id="body-sec-chart1">
+  
   <p class="note">Klik segmen atau label sektor untuk filter. Setiap KI bisa muncul di lebih dari satu sektor.</p>
+  
   <div class="leg"><div class="leg-item"><div class="leg-dot t1"></div>TRL 1 – Prinsip dasar</div><div class="leg-item"><div class="leg-dot t2"></div>TRL 2 – Konsep teknologi</div><div class="leg-item"><div class="leg-dot t3"></div>TRL 3 – Bukti konsep</div><div class="leg-item"><div class="leg-dot t4"></div>TRL 4 – Validasi laboratorium</div><div class="leg-item"><div class="leg-dot t5"></div>TRL 5 – Validasi lingk. relevan</div><div class="leg-item"><div class="leg-dot t6"></div>TRL 6 – Demo lingk. relevan</div><div class="leg-item"><div class="leg-dot t7"></div>TRL 7 – Demo lingk. operasional</div><div class="leg-item"><div class="leg-dot t8"></div>TRL 8 – Sistem lengkap & kualifikasi</div><div class="leg-item"><div class="leg-dot t9"></div>TRL 9 – Sistem terbukti operasional</div></div>
   <div class="chart-wrap" id="cw1">  <div class="chart-row">
     <div class="chart-sector" style="border-left:3px solid #F97316;padding-left:7px">Perdagangan Besar</div>
@@ -361,10 +378,19 @@ code{font-family:'Courier New',monospace;font-weight:700}
     </div>
     <div class="chart-total">1</div>
   </div></div>
+
 </div>
+</div>
+
 <div id="sec-chart2" class="section-block">
+<div class="sec-hdr" onclick="toggleSec('sec-chart2')">
   <div class="sec-title">Distribusi Sektor per TRL</div>
+  <i class="ti ti-chevron-down sec-chevron open" id="chev-sec-chart2" aria-hidden="true"></i>
+</div>
+<div class="sec-body" id="body-sec-chart2">
+  
   <p class="note">Angka pada bar = jumlah pasangan sektor×KI (satu KI bisa muncul di beberapa sektor). Klik segmen atau label TRL untuk filter.</p>
+  
   <div class="leg"><div class="leg-item"><div class="leg-dot" style="background:#F59E0B"></div>Pertanian & Perkebunan</div><div class="leg-item"><div class="leg-dot" style="background:#F43F5E"></div>Industri Pangan & Minuman</div><div class="leg-item"><div class="leg-dot" style="background:#FB7185"></div>Industri Minuman</div><div class="leg-item"><div class="leg-dot" style="background:#8B5CF6"></div>Industri Kimia & Biokimia</div><div class="leg-item"><div class="leg-dot" style="background:#3B82F6"></div>Industri Farmasi & Biotek</div><div class="leg-item"><div class="leg-dot" style="background:#F97316"></div>Perdagangan Besar</div><div class="leg-item"><div class="leg-dot" style="background:#FB923C"></div>Perdagangan Eceran</div><div class="leg-item"><div class="leg-dot" style="background:#06B6D4"></div>Industri Alat Kesehatan</div><div class="leg-item"><div class="leg-dot" style="background:#EC4899"></div>Kesehatan & Lab Klinik</div><div class="leg-item"><div class="leg-dot" style="background:#10B981"></div>Pengelolaan Lingkungan</div><div class="leg-item"><div class="leg-dot" style="background:#84CC16"></div>Industri Plastik & Kemasan</div><div class="leg-item"><div class="leg-dot" style="background:#A78BFA"></div>Industri Tekstil & Serat</div><div class="leg-item"><div class="leg-dot" style="background:#94A3B8"></div>Jasa Pengujian & Inspeksi</div><div class="leg-item"><div class="leg-dot" style="background:#78716C"></div>Pertambangan & Mineral</div><div class="leg-item"><div class="leg-dot" style="background:#22D3EE"></div>Industri Elektronik & Instrumen</div></div>
   <div class="chart-wrap" id="cw2">  <div class="chart-row">
     <div class="chart-sector"><span class="tl3" style="font-family:'Courier New',monospace;font-weight:700">TRL 3</span> <span class="sub">Bukti konsep</span></div>
@@ -447,9 +473,18 @@ code{font-family:'Courier New',monospace;font-weight:700}
     </div>
     <div class="chart-total">2</div>
   </div></div>
+
 </div>
+</div>
+
 <div id="sec-top15" class="section-block">
+<div class="sec-hdr" onclick="toggleSec('sec-top15')">
   <div class="sec-title">Top 15 Kode KBLI Terbanyak</div>
+  <i class="ti ti-chevron-down sec-chevron open" id="chev-sec-top15" aria-hidden="true"></i>
+</div>
+<div class="sec-body" id="body-sec-top15">
+  
+  
   <table class="top">
     <thead><tr><th>Kode</th><th>Nama Subgolongan KBLI 2025</th><th>Sektor</th><th style="text-align:center">KI</th></tr></thead>
     <tbody id="top15-body">    <tr>
@@ -544,10 +579,19 @@ code{font-family:'Courier New',monospace;font-weight:700}
     </tr>
 </tbody>
   </table>
+
 </div>
+</div>
+
 <div id="sec-cards" class="section-block">
+<div class="sec-hdr" onclick="toggleSec('sec-cards')">
   <div class="sec-title">44 Kode KBLI Unik</div>
+  <i class="ti ti-chevron-down sec-chevron open" id="chev-sec-cards" aria-hidden="true"></i>
+</div>
+<div class="sec-body" id="body-sec-cards">
+  
   <p class="note">Klik card untuk detail KI. Filter aktif akan highlight card yang relevan.</p>
+  
   
 <div class="sector-block">
   <div class="sector-header">
@@ -1041,10 +1085,19 @@ code{font-family:'Courier New',monospace;font-weight:700}
   </div>
 </div>
 
+
 </div>
+</div>
+
 <div id="sec-trl" class="section-block">
+<div class="sec-hdr" onclick="toggleSec('sec-trl')">
   <div class="sec-title">KI Siap Komersialisasi — TRL 6 sampai 9</div>
+  <i class="ti ti-chevron-down sec-chevron open" id="chev-sec-trl" aria-hidden="true"></i>
+</div>
+<div class="sec-body" id="body-sec-trl">
+  
   <p class="note">KI dengan TRL 6–9 terverifikasi. Filter TRL akan highlight blok yang sesuai.</p>
+  
   <div class="trl-high-section">
 <div class="trl-hblock" data-trl="6">
   <div class="trl-hblock-head" style="background:#F0FDF4;border-left-color:#16A34A">
@@ -1115,12 +1168,21 @@ code{font-family:'Courier New',monospace;font-weight:700}
   </div>
 </div>
 </div>
+
 </div>
+</div>
+
 </div>
       <div id="tab2-content">
 <div id="sec-chart1e" class="section-block">
+<div class="sec-hdr" onclick="toggleSec('sec-chart1e')">
   <div class="sec-title">Distribusi TRL per Sektor KBLI <span class="sec-tag">(tanpa perdagangan)</span></div>
+  <i class="ti ti-chevron-down sec-chevron open" id="chev-sec-chart1e" aria-hidden="true"></i>
+</div>
+<div class="sec-body" id="body-sec-chart1e">
+  
   <p class="note">Klik segmen atau label sektor untuk filter. Setiap KI bisa muncul di lebih dari satu sektor.</p>
+  
   <div class="leg"><div class="leg-item"><div class="leg-dot t1"></div>TRL 1 – Prinsip dasar</div><div class="leg-item"><div class="leg-dot t2"></div>TRL 2 – Konsep teknologi</div><div class="leg-item"><div class="leg-dot t3"></div>TRL 3 – Bukti konsep</div><div class="leg-item"><div class="leg-dot t4"></div>TRL 4 – Validasi laboratorium</div><div class="leg-item"><div class="leg-dot t5"></div>TRL 5 – Validasi lingk. relevan</div><div class="leg-item"><div class="leg-dot t6"></div>TRL 6 – Demo lingk. relevan</div><div class="leg-item"><div class="leg-dot t7"></div>TRL 7 – Demo lingk. operasional</div><div class="leg-item"><div class="leg-dot t8"></div>TRL 8 – Sistem lengkap & kualifikasi</div><div class="leg-item"><div class="leg-dot t9"></div>TRL 9 – Sistem terbukti operasional</div></div>
   <div class="chart-wrap" id="cw1e">  <div class="chart-row">
     <div class="chart-sector" style="border-left:3px solid #F59E0B;padding-left:7px">Pertanian & Perkebunan</div>
@@ -1226,10 +1288,19 @@ code{font-family:'Courier New',monospace;font-weight:700}
     </div>
     <div class="chart-total">1</div>
   </div></div>
+
 </div>
+</div>
+
 <div id="sec-chart2e" class="section-block">
+<div class="sec-hdr" onclick="toggleSec('sec-chart2e')">
   <div class="sec-title">Distribusi Sektor per TRL <span class="sec-tag">(tanpa perdagangan)</span></div>
+  <i class="ti ti-chevron-down sec-chevron open" id="chev-sec-chart2e" aria-hidden="true"></i>
+</div>
+<div class="sec-body" id="body-sec-chart2e">
+  
   <p class="note">Angka pada bar = jumlah pasangan sektor×KI (satu KI bisa muncul di beberapa sektor). Klik segmen atau label TRL untuk filter.</p>
+  
   <div class="leg"><div class="leg-item"><div class="leg-dot" style="background:#F59E0B"></div>Pertanian & Perkebunan</div><div class="leg-item"><div class="leg-dot" style="background:#F43F5E"></div>Industri Pangan & Minuman</div><div class="leg-item"><div class="leg-dot" style="background:#FB7185"></div>Industri Minuman</div><div class="leg-item"><div class="leg-dot" style="background:#8B5CF6"></div>Industri Kimia & Biokimia</div><div class="leg-item"><div class="leg-dot" style="background:#3B82F6"></div>Industri Farmasi & Biotek</div><div class="leg-item"><div class="leg-dot" style="background:#06B6D4"></div>Industri Alat Kesehatan</div><div class="leg-item"><div class="leg-dot" style="background:#EC4899"></div>Kesehatan & Lab Klinik</div><div class="leg-item"><div class="leg-dot" style="background:#10B981"></div>Pengelolaan Lingkungan</div><div class="leg-item"><div class="leg-dot" style="background:#84CC16"></div>Industri Plastik & Kemasan</div><div class="leg-item"><div class="leg-dot" style="background:#A78BFA"></div>Industri Tekstil & Serat</div><div class="leg-item"><div class="leg-dot" style="background:#94A3B8"></div>Jasa Pengujian & Inspeksi</div><div class="leg-item"><div class="leg-dot" style="background:#78716C"></div>Pertambangan & Mineral</div><div class="leg-item"><div class="leg-dot" style="background:#22D3EE"></div>Industri Elektronik & Instrumen</div></div>
   <div class="chart-wrap" id="cw2e">  <div class="chart-row">
     <div class="chart-sector"><span class="tl3" style="font-family:'Courier New',monospace;font-weight:700">TRL 3</span> <span class="sub">Bukti konsep</span></div>
@@ -1305,9 +1376,18 @@ code{font-family:'Courier New',monospace;font-weight:700}
     </div>
     <div class="chart-total">2</div>
   </div></div>
+
 </div>
+</div>
+
 <div id="sec-top15e" class="section-block">
+<div class="sec-hdr" onclick="toggleSec('sec-top15e')">
   <div class="sec-title">Top 15 Kode KBLI Terbanyak <span class="sec-tag">(tanpa perdagangan)</span></div>
+  <i class="ti ti-chevron-down sec-chevron open" id="chev-sec-top15e" aria-hidden="true"></i>
+</div>
+<div class="sec-body" id="body-sec-top15e">
+  
+  
   <table class="top">
     <thead><tr><th>Kode</th><th>Nama Subgolongan KBLI 2025</th><th>Sektor</th><th style="text-align:center">KI</th></tr></thead>
     <tbody id="top15e-body">    <tr>
@@ -1402,10 +1482,19 @@ code{font-family:'Courier New',monospace;font-weight:700}
     </tr>
 </tbody>
   </table>
+
 </div>
+</div>
+
 <div id="sec-cardse" class="section-block">
+<div class="sec-hdr" onclick="toggleSec('sec-cardse')">
   <div class="sec-title">39 Kode KBLI Unik <span class="sec-tag">(tanpa perdagangan)</span></div>
+  <i class="ti ti-chevron-down sec-chevron open" id="chev-sec-cardse" aria-hidden="true"></i>
+</div>
+<div class="sec-body" id="body-sec-cardse">
+  
   <p class="note">Klik card untuk detail KI. Filter aktif akan highlight card yang relevan.</p>
+  
   
 <div class="sector-block">
   <div class="sector-header">
@@ -1839,10 +1928,19 @@ code{font-family:'Courier New',monospace;font-weight:700}
   </div>
 </div>
 
+
 </div>
+</div>
+
 <div id="sec-trle" class="section-block">
+<div class="sec-hdr" onclick="toggleSec('sec-trle')">
   <div class="sec-title">KI Siap Komersialisasi — TRL 6 sampai 9 <span class="sec-tag">(tanpa perdagangan)</span></div>
+  <i class="ti ti-chevron-down sec-chevron open" id="chev-sec-trle" aria-hidden="true"></i>
+</div>
+<div class="sec-body" id="body-sec-trle">
+  
   <p class="note">KI dengan TRL 6–9 terverifikasi. Filter TRL akan highlight blok yang sesuai.</p>
+  
   <div class="trl-high-section">
 <div class="trl-hblock" data-trl="6">
   <div class="trl-hblock-head" style="background:#F0FDF4;border-left-color:#16A34A">
@@ -1913,7 +2011,10 @@ code{font-family:'Courier New',monospace;font-weight:700}
   </div>
 </div>
 </div>
+
 </div>
+</div>
+
 </div>
     </div>
   </div>
@@ -1980,6 +2081,13 @@ window.switchTab=function(n){
 function scrollToSec(id){
   var el=document.getElementById(id);
   if(!el)return;
+  // Auto-expand if collapsed
+  var body=document.getElementById('body-'+id);
+  var chev=document.getElementById('chev-'+id);
+  if(body&&body.classList.contains('collapsed')){
+    body.classList.remove('collapsed');
+    if(chev)chev.classList.add('open');
+  }
   el.scrollIntoView({behavior:'smooth',block:'start'});
   document.querySelectorAll('.nav-item').forEach(function(n){n.classList.remove('on')});
   var base=id.replace(/e$/,'');
@@ -2410,6 +2518,17 @@ function setupScrollSpy(){
   });
 }
 
+
+/* ── COLLAPSIBLE ── */
+window.toggleSec=function(id){
+  var body=document.getElementById('body-'+id);
+  var chev=document.getElementById('chev-'+id);
+  if(!body)return;
+  var isOpen=!body.classList.contains('collapsed');
+  body.classList.toggle('collapsed',isOpen);
+  if(chev) chev.classList.toggle('open',!isOpen);
+};
+
 /* ── INIT ────────────────────────────────────────────────────── */
 document.addEventListener('DOMContentLoaded',function(){
   resetTop15();
@@ -2431,8 +2550,14 @@ document.addEventListener('DOMContentLoaded',function(){
 </body>
 </html>
 <div id="sec-ki-trl" class="section-block">
-<div class="section-title">Distribusi KI per TRL Terverifikasi</div>
+<div class="sec-hdr" onclick="toggleSec('sec-ki-trl')">
+  <div class="section-title">Distribusi KI per TRL Terverifikasi</div>
+  <i class="ti ti-chevron-down sec-chevron open" id="chev-sec-ki-trl" aria-hidden="true"></i>
+</div>
+<div class="sec-body" id="body-sec-ki-trl">
+  
 <p class="note">Distribusi 48 KI unik berdasarkan TRL terverifikasi, dikelompokkan per jenis KI. Klik segmen untuk filter.</p>
+  
 <div class="leg"><div class="leg-item"><div class="leg-dot t3"></div>TRL 3</div><div class="leg-item"><div class="leg-dot t4"></div>TRL 4</div><div class="leg-item"><div class="leg-dot t5"></div>TRL 5</div><div class="leg-item"><div class="leg-dot t6"></div>TRL 6</div><div class="leg-item"><div class="leg-dot t7"></div>TRL 7</div><div class="leg-item"><div class="leg-dot t8"></div>TRL 8</div><div class="leg-item"><div class="leg-dot t9"></div>TRL 9</div></div>
 
 <div class="chart-wrap" id="cw-trl-ki">
@@ -2520,12 +2645,21 @@ document.addEventListener('DOMContentLoaded',function(){
     <div class="chart-total">1</div>
   </div>
 </div>
+
 </div>
+</div>
+
 
 
 <div id="sec-ki-sector" class="section-block">
-<div class="section-title">Analisis Sektor Utama per KI</div>
+<div class="sec-hdr" onclick="toggleSec('sec-ki-sector')">
+  <div class="section-title">Analisis Sektor Utama per KI</div>
+  <i class="ti ti-chevron-down sec-chevron open" id="chev-sec-ki-sector" aria-hidden="true"></i>
+</div>
+<div class="sec-body" id="body-sec-ki-sector">
+  
 <p class="note">48 KI unik masing-masing dipetakan ke 1 sektor industri paling sesuai (prioritas sektor produksi &gt; pertanian &gt; jasa). 6 dari 15 sektor memiliki KI primer.</p>
+  
 <div class="section-title">Distribusi Sektor Utama KI per TRL</div>
 <p class="note">Setiap KI dipetakan ke 1 sektor industri paling sesuai (prioritas: produksi &gt; pertanian &gt; jasa). Bar diwarnai per TRL.</p>
 <div class="leg"><div class="leg-item"><div class="leg-dot t3"></div>TRL 3</div><div class="leg-item"><div class="leg-dot t4"></div>TRL 4</div><div class="leg-item"><div class="leg-dot t5"></div>TRL 5</div><div class="leg-item"><div class="leg-dot t6"></div>TRL 6</div><div class="leg-item"><div class="leg-dot t7"></div>TRL 7</div><div class="leg-item"><div class="leg-dot t8"></div>TRL 8</div><div class="leg-item"><div class="leg-dot t9"></div>TRL 9</div></div>
@@ -2655,12 +2789,21 @@ document.addEventListener('DOMContentLoaded',function(){
     <div class="chart-total">1</div>
   </div>
 </div>
+
+</div>
 </div>
 
 
+
 <div id="sec-ki-trle" class="section-block">
-<div class="section-title">Distribusi KI per TRL Terverifikasi</div>
+<div class="sec-hdr" onclick="toggleSec('sec-ki-trle')">
+  <div class="section-title">Distribusi KI per TRL Terverifikasi</div>
+  <i class="ti ti-chevron-down sec-chevron open" id="chev-sec-ki-trle" aria-hidden="true"></i>
+</div>
+<div class="sec-body" id="body-sec-ki-trle">
+  
 <p class="note">Distribusi 48 KI unik berdasarkan TRL terverifikasi, dikelompokkan per jenis KI. Klik segmen untuk filter.</p>
+  
 <div class="leg"><div class="leg-item"><div class="leg-dot t3"></div>TRL 3</div><div class="leg-item"><div class="leg-dot t4"></div>TRL 4</div><div class="leg-item"><div class="leg-dot t5"></div>TRL 5</div><div class="leg-item"><div class="leg-dot t6"></div>TRL 6</div><div class="leg-item"><div class="leg-dot t7"></div>TRL 7</div><div class="leg-item"><div class="leg-dot t8"></div>TRL 8</div><div class="leg-item"><div class="leg-dot t9"></div>TRL 9</div></div>
 
 <div class="chart-wrap" id="cw-trl-ki">
@@ -2748,12 +2891,21 @@ document.addEventListener('DOMContentLoaded',function(){
     <div class="chart-total">1</div>
   </div>
 </div>
+
+</div>
 </div>
 
 
+
 <div id="sec-ki-sectore" class="section-block">
-<div class="section-title">Analisis Sektor Utama per KI</div>
+<div class="sec-hdr" onclick="toggleSec('sec-ki-sectore')">
+  <div class="section-title">Analisis Sektor Utama per KI</div>
+  <i class="ti ti-chevron-down sec-chevron open" id="chev-sec-ki-sectore" aria-hidden="true"></i>
+</div>
+<div class="sec-body" id="body-sec-ki-sectore">
+  
 <p class="note">48 KI unik masing-masing dipetakan ke 1 sektor industri paling sesuai (prioritas sektor produksi &gt; pertanian &gt; jasa). 6 dari 15 sektor memiliki KI primer.</p>
+  
 <div class="section-title">Distribusi Sektor Utama KI per TRL</div>
 <p class="note">Setiap KI dipetakan ke 1 sektor industri paling sesuai (prioritas: produksi &gt; pertanian &gt; jasa). Bar diwarnai per TRL.</p>
 <div class="leg"><div class="leg-item"><div class="leg-dot t3"></div>TRL 3</div><div class="leg-item"><div class="leg-dot t4"></div>TRL 4</div><div class="leg-item"><div class="leg-dot t5"></div>TRL 5</div><div class="leg-item"><div class="leg-dot t6"></div>TRL 6</div><div class="leg-item"><div class="leg-dot t7"></div>TRL 7</div><div class="leg-item"><div class="leg-dot t8"></div>TRL 8</div><div class="leg-item"><div class="leg-dot t9"></div>TRL 9</div></div>
@@ -2883,6 +3035,9 @@ document.addEventListener('DOMContentLoaded',function(){
     <div class="chart-total">1</div>
   </div>
 </div>
+
 </div>
+</div>
+
 
 
