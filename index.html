@@ -147,6 +147,44 @@ code{font-family:'Courier New',monospace;font-weight:700}
 .tt{display:none;position:fixed;background:#0F172A;color:#fff;font-family:'Courier New',monospace;font-size:11px;padding:6px 12px;border-radius:6px;white-space:nowrap;pointer-events:none;z-index:9999;border-left:3px solid #F59E0B;box-shadow:0 4px 20px rgba(0,0,0,.3)}
 
 .footer{text-align:center;font-size:10px;color:#94A3B8;padding:14px 24px;font-family:'Courier New',monospace;background:#fff;border-top:1px solid #E2E8F0;flex-shrink:0}
+
+/* ── KI PER TRL SECTION ── */
+.ki-trl-section{display:flex;flex-direction:column;gap:12px}
+.ki-trl-block{border-radius:10px;overflow:hidden;border:1px solid #E2E8F0;background:#fff}
+.ki-trl-head{display:flex;align-items:center;gap:12px;padding:11px 16px}
+.ki-trl-label{font-size:11px;flex:1}
+.ki-trl-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:0}
+.ki-card-item{padding:11px 15px;border-top:1px solid #F1F5F9;border-right:1px solid #F1F5F9;position:relative}
+.ki-card-item:nth-child(even){border-right:none}
+.ki-card-jenis{display:inline-block;font-size:9px;font-weight:600;padding:2px 8px;border-radius:20px;margin-bottom:5px;letter-spacing:.02em}
+.ki-card-title{font-size:11.5px;font-weight:500;color:#1E293B;line-height:1.4;margin-bottom:4px}
+.ki-card-unit{font-size:9.5px;color:#94A3B8}
+
+/* ── SEKTOR UTAMA PER KI SECTION ── */
+.ki-sector-summary{background:#fff;border-radius:10px;border:1px solid #E2E8F0;padding:14px 16px;margin-bottom:12px}
+.ki-sector-sum-row{display:flex;align-items:center;gap:10px;margin-bottom:6px}
+.ki-sector-sum-row:last-child{margin-bottom:0}
+.ki-sector-sum-name{font-size:10.5px;font-weight:500;width:180px;flex-shrink:0}
+.ki-sector-sum-bar-wrap{flex:1;height:8px;background:#F1F5F9;border-radius:4px;overflow:hidden}
+.ki-sector-sum-bar{height:100%;border-radius:4px;transition:width .3s}
+.ki-sector-sum-count{font-family:'Courier New',monospace;font-size:10px;font-weight:700;width:35px;text-align:right;flex-shrink:0}
+.ki-sector-section{display:flex;flex-direction:column;gap:10px}
+.ki-sector-block{border-radius:10px;overflow:hidden;border:1px solid #E2E8F0;background:#fff}
+.ki-sector-head{display:flex;align-items:center;gap:9px;padding:10px 16px;border-bottom:1px solid #F1F5F9}
+.ki-sector-dot{width:10px;height:10px;border-radius:3px;flex-shrink:0}
+.ki-sector-name{font-size:13px;font-weight:500;flex:1;font-family:Georgia,serif}
+.ki-sector-cnt{font-family:'Courier New',monospace;font-size:10px;font-weight:700;color:#94A3B8}
+.ki-sector-list{display:flex;flex-direction:column}
+.ki-sector-item{display:flex;gap:12px;padding:10px 15px;border-bottom:1px solid #F8FAFC;align-items:flex-start}
+.ki-sector-item:last-child{border-bottom:none}
+.ki-sector-item-left{display:flex;flex-direction:column;gap:4px;flex-shrink:0;padding-top:1px}
+.ki-trl-pill{font-family:'Courier New',monospace;font-size:9px;font-weight:700;padding:2px 8px;border-radius:20px;white-space:nowrap}
+.ki-jenis-pill{font-size:9px;font-weight:500;padding:2px 7px;border-radius:20px;white-space:nowrap}
+.ki-sector-item-body{flex:1;min-width:0}
+.ki-sector-item-title{font-size:11.5px;font-weight:500;color:#1E293B;line-height:1.4;margin-bottom:3px}
+.ki-sector-item-kbli{font-size:10px;font-family:'Courier New',monospace;margin-bottom:2px}
+.ki-sector-item-unit{font-size:9.5px;color:#94A3B8}
+
 </style>
 </head>
 <body>
@@ -2392,3 +2430,1821 @@ document.addEventListener('DOMContentLoaded',function(){
 </script>
 </body>
 </html>
+<div id="sec-ki-trl" class="section-block">
+  <div class="sec-title">Peta KI per TRL Terverifikasi</div>
+  <p class="note">48 KI unik dikelompokkan berdasarkan TRL terverifikasi. Duplikat submission dihapus.</p>
+  <div class="ki-trl-section">
+<div class="ki-trl-block" data-trl="3">
+  <div class="ki-trl-head" style="background:#D9770618;border-left:5px solid #D97706">
+    <span class="ki-trl-num" style="color:#D97706;font-family:'Courier New',monospace;font-size:17px;font-weight:700">TRL 3</span>
+    <span class="ki-trl-label" style="color:#D97706cc;font-size:11px">Bukti konsep</span>
+    <span class="ki-trl-badge" style="background:#D97706;color:#fff;font-family:'Courier New',monospace;font-size:10px;font-weight:700;padding:3px 10px;border-radius:20px;margin-left:auto">6 KI</span>
+  </div>
+  <div class="ki-trl-grid">
+    <div class="ki-card-item" data-trl="3">
+      <div class="ki-card-jenis" style="background:#EEF2FF;color:#6366F1">Paten</div>
+      <div class="ki-card-title">Metode Analisis Kandungan GABA (Gamma-Aminobutyric Acid) Pada Beras Berpigmen</div>
+      <div class="ki-card-unit">Pemetaan Genetik dan Seleksi Berbasis Molekuler</div>
+    </div>
+    <div class="ki-card-item" data-trl="3">
+      <div class="ki-card-jenis" style="background:#EEF2FF;color:#6366F1">Paten</div>
+      <div class="ki-card-title">KIT UNTUK MENGANALISIS GENOM UTUH HUMAN PAPILLOMAVIRUS (HPV) TIPE 16</div>
+      <div class="ki-card-unit">Pusat Riset Biomedis</div>
+    </div>
+    <div class="ki-card-item" data-trl="3">
+      <div class="ki-card-jenis" style="background:#EEF2FF;color:#6366F1">Paten</div>
+      <div class="ki-card-title">METODE PENYIMPANAN SAMPEL URIN MENGGUNAKAN KERTAS SARING</div>
+      <div class="ki-card-unit">Pusat Riset Biomedis</div>
+    </div>
+    <div class="ki-card-item" data-trl="3">
+      <div class="ki-card-jenis" style="background:#EEF2FF;color:#6366F1">Paten</div>
+      <div class="ki-card-title">KIT DETEKSI DAN IDENTIFIKASI DNA BABI DAN SAPI PADA SATU TABUNG TUNGGAL BERBASIS SYBR GREEN I qPCR</div>
+      <div class="ki-card-unit">Kelompok Riset Rekayasa Biomolekul untuk Aplikasi Detek</div>
+    </div>
+    <div class="ki-card-item" data-trl="3">
+      <div class="ki-card-jenis" style="background:#EEF2FF;color:#6366F1">Paten</div>
+      <div class="ki-card-title">Kit Deteksi Mutasi Δ69-Δ70 Virus Sars-Cov 2 Berbasis Sybr Green I qQPCR</div>
+      <div class="ki-card-unit">Kelompok Riset Rekayasa Biomolekul Untuk Aplikasi Detek</div>
+    </div>
+    <div class="ki-card-item" data-trl="3">
+      <div class="ki-card-jenis" style="background:#EEF2FF;color:#6366F1">Paten</div>
+      <div class="ki-card-title">Produk Hidrolisat Sorgum Merah Sebagai Pangan Fungsional</div>
+      <div class="ki-card-unit">Pemanfaatan sarang burung walet untuk pangan</div>
+    </div>
+  </div>
+</div>
+<div class="ki-trl-block" data-trl="4">
+  <div class="ki-trl-head" style="background:#CA8A0418;border-left:5px solid #CA8A04">
+    <span class="ki-trl-num" style="color:#CA8A04;font-family:'Courier New',monospace;font-size:17px;font-weight:700">TRL 4</span>
+    <span class="ki-trl-label" style="color:#CA8A04cc;font-size:11px">Validasi laboratorium</span>
+    <span class="ki-trl-badge" style="background:#CA8A04;color:#fff;font-family:'Courier New',monospace;font-size:10px;font-weight:700;padding:3px 10px;border-radius:20px;margin-left:auto">10 KI</span>
+  </div>
+  <div class="ki-trl-grid">
+    <div class="ki-card-item" data-trl="4">
+      <div class="ki-card-jenis" style="background:#EEF2FF;color:#6366F1">Paten</div>
+      <div class="ki-card-title">Produksi Dan Imobilisasi Enzim Selulase Dari Pseudozyma rugulosa Inacc Y335 Sebagai Produk Biokatalis Untuk Sintesis Bioetanol</div>
+      <div class="ki-card-unit">Bioenergi dan Biokonversi Biomassa</div>
+    </div>
+    <div class="ki-card-item" data-trl="4">
+      <div class="ki-card-jenis" style="background:#EEF2FF;color:#6366F1">Paten</div>
+      <div class="ki-card-title">Kit Bioassay Untuk Uji In Vitro Inhibisi Protease Sarscov2 Sebagai Alat Skrining Obat Anti Covid19</div>
+      <div class="ki-card-unit">Rekayasa bakteri dan enzim</div>
+    </div>
+    <div class="ki-card-item" data-trl="4">
+      <div class="ki-card-jenis" style="background:#EEF2FF;color:#6366F1">Paten</div>
+      <div class="ki-card-title">Kaset Ekspresi untuk Pustaka Plasmid Rekombinan yang Mengekspresikan Gen Penyandi Protein Reseptor PcLYM2-1 dari Tanaman Populus x</div>
+      <div class="ki-card-unit">Rekayasa Tanaman untuk Lingkungan Ekstrim</div>
+    </div>
+    <div class="ki-card-item" data-trl="4">
+      <div class="ki-card-jenis" style="background:#EEF2FF;color:#6366F1">Paten</div>
+      <div class="ki-card-title">Kaset Ekspresi Gen Penyandi Kitinase dari Sorgum (Sorghum bicolor (L.) Moench) Indonesia Aksesi Kempul</div>
+      <div class="ki-card-unit">Kelompok Riset Rekayasa Tanaman untuk Lingkungan Ekstri</div>
+    </div>
+    <div class="ki-card-item" data-trl="4">
+      <div class="ki-card-jenis" style="background:#EEF2FF;color:#6366F1">Paten</div>
+      <div class="ki-card-title">Kaset Ekspresi untuk Pustaka Plasmid Rekombinan yang Mengekspresikan Gen Penyandi Kitinase dari Sorgum Manis (Sorghum bicolor L. M</div>
+      <div class="ki-card-unit">Kelompok Riset Rekayasa Tanaman untuk Lingkungan Ekstri</div>
+    </div>
+    <div class="ki-card-item" data-trl="4">
+      <div class="ki-card-jenis" style="background:#EEF2FF;color:#6366F1">Paten</div>
+      <div class="ki-card-title">Komposisi Pelapis Dan Metode Pelapisan Bioplastik Berbasis Pati Untuk Aplikasi Kemasan Aktif  Pangan Serta Produk Yang Dihasilkann</div>
+      <div class="ki-card-unit">Keamanan Pangan</div>
+    </div>
+    <div class="ki-card-item" data-trl="4">
+      <div class="ki-card-jenis" style="background:#EEF2FF;color:#6366F1">Paten</div>
+      <div class="ki-card-title">Formulasi Kukis Sorgum Dengan Campuran Ekstrak Kulit Manggis Dan Produk Yang Dihasilkannya</div>
+      <div class="ki-card-unit">Fitonutrien dan nutrasetikal pangan</div>
+    </div>
+    <div class="ki-card-item" data-trl="4">
+      <div class="ki-card-jenis" style="background:#EEF2FF;color:#6366F1">Paten</div>
+      <div class="ki-card-title">AGEN  PEMACU  PERTUMBUHAN  TANAMAN  JAGUNG  BERBASIS  FILTRAT  KULTUR Trichoderma asperellum AC.3, PROSES PEMBUATAN, DAN PENGGUNAA</div>
+      <div class="ki-card-unit">Pengelolaan Hama dan Penyakit tanaman Jagung dan sereal</div>
+    </div>
+    <div class="ki-card-item" data-trl="4">
+      <div class="ki-card-jenis" style="background:#EEF2FF;color:#6366F1">Paten</div>
+      <div class="ki-card-title">EDIBLE COATING BERBASIS EKSTRAK DAUN SIRIH CINA (Peperomia pellucida) DAN APLIKASINYA</div>
+      <div class="ki-card-unit">Fitonutrien dan Nutrasetikal Pangan</div>
+    </div>
+    <div class="ki-card-item" data-trl="4">
+      <div class="ki-card-jenis" style="background:#EEF2FF;color:#6366F1">Paten</div>
+      <div class="ki-card-title">Formula dan Produk Minuman Fermentasi Sari Kacang Merah Dengan Penambahan ektrak Jahe sebagai Sumber antioksidan</div>
+      <div class="ki-card-unit">Teknologi Makanan dan Minuman Fungsional, Pusat Riset T</div>
+    </div>
+  </div>
+</div>
+<div class="ki-trl-block" data-trl="5">
+  <div class="ki-trl-head" style="background:#65A30D18;border-left:5px solid #65A30D">
+    <span class="ki-trl-num" style="color:#65A30D;font-family:'Courier New',monospace;font-size:17px;font-weight:700">TRL 5</span>
+    <span class="ki-trl-label" style="color:#65A30Dcc;font-size:11px">Validasi lingk. relevan</span>
+    <span class="ki-trl-badge" style="background:#65A30D;color:#fff;font-family:'Courier New',monospace;font-size:10px;font-weight:700;padding:3px 10px;border-radius:20px;margin-left:auto">8 KI</span>
+  </div>
+  <div class="ki-trl-grid">
+    <div class="ki-card-item" data-trl="5">
+      <div class="ki-card-jenis" style="background:#EEF2FF;color:#6366F1">Paten</div>
+      <div class="ki-card-title">METODE OPTIMASI PROTOKOL REGENERASI KALUS SOMATIK EMBRYOGENIK TEBU (Saccharum officinarum L.) DENGAN KOMBINASI SUMBER KARBON DAN H</div>
+      <div class="ki-card-unit">Pusat Riset Botani Terapan</div>
+    </div>
+    <div class="ki-card-item" data-trl="5">
+      <div class="ki-card-jenis" style="background:#EEF2FF;color:#6366F1">Paten</div>
+      <div class="ki-card-title">KOMPOSISI PUPUK HAYATI UNTUK MENINGKATKAN PRODUKTIVITAS PADI DI LAHAN SAWAH TERPAPAR KERING DAN PROSES PEMBUATANNYA</div>
+      <div class="ki-card-unit">Kelris Mikroba untuk Energi Terbarukan, PR Mikrobiologi</div>
+    </div>
+    <div class="ki-card-item" data-trl="5">
+      <div class="ki-card-jenis" style="background:#EEF2FF;color:#6366F1">Paten</div>
+      <div class="ki-card-title">Formulasi Pupuk Organik Hayati Cair berbasis Rizobakteri Multifungsi Untuk Meningkatkan Kesehatan Tanah dan Produktivitas Tanaman </div>
+      <div class="ki-card-unit">Pusat Riset Mikrobiologi Terapan</div>
+    </div>
+    <div class="ki-card-item" data-trl="5">
+      <div class="ki-card-jenis" style="background:#EEF2FF;color:#6366F1">Paten</div>
+      <div class="ki-card-title">METODE PEROLEHAN KLON TUNGGAL SEL KANKER PAYUDARA TRIPEL NEGATIF YANG MENGEKSPRESIKAN PROTEIN FLUORESENS mCHERRY DENGAN PENANDA EK</div>
+      <div class="ki-card-unit">Kelompok Riset Rekayasa Sel Mamalia</div>
+    </div>
+    <div class="ki-card-item" data-trl="5">
+      <div class="ki-card-jenis" style="background:#EEF2FF;color:#6366F1">Paten</div>
+      <div class="ki-card-title">Formulasi dan Proses Pembuatan Kukis (Cookuker) untuk Burung Kakatua Koki (Cacatua galerita)</div>
+      <div class="ki-card-unit">Fisiologi Biokimia dan Perilaku Hewan</div>
+    </div>
+    <div class="ki-card-item" data-trl="5">
+      <div class="ki-card-jenis" style="background:#EEF2FF;color:#6366F1">Paten</div>
+      <div class="ki-card-title">Proses Pembuatan Partikel Mirip Virus L1 Virus Human Papilloma Tipe 52 Sebagai Bahan Baku Vaksin Profilaktik Menggunakan Inang Han</div>
+      <div class="ki-card-unit">Protein Rekombinan Virus</div>
+    </div>
+    <div class="ki-card-item" data-trl="5">
+      <div class="ki-card-jenis" style="background:#EEF2FF;color:#6366F1">Paten</div>
+      <div class="ki-card-title">Komposisi dan Proses Penghilangan Gum Serat Rami Menggunakan Gas Ozon, Xilanase dan Pektinase</div>
+      <div class="ki-card-unit">Bioproses Enzim</div>
+    </div>
+    <div class="ki-card-item" data-trl="5">
+      <div class="ki-card-jenis" style="background:#EEF2FF;color:#6366F1">Paten</div>
+      <div class="ki-card-title">SEDIAAN EKTRAK JAMUR SHIITAKE DALAM BENTUK MIKROENKAPSULASI DAN PROSES PEMBUATANNYA</div>
+      <div class="ki-card-unit">Fitonutrien dan Nutrasetikal Pangan</div>
+    </div>
+  </div>
+</div>
+<div class="ki-trl-block" data-trl="6">
+  <div class="ki-trl-head" style="background:#16A34A18;border-left:5px solid #16A34A">
+    <span class="ki-trl-num" style="color:#16A34A;font-family:'Courier New',monospace;font-size:17px;font-weight:700">TRL 6</span>
+    <span class="ki-trl-label" style="color:#16A34Acc;font-size:11px">Demo lingk. relevan</span>
+    <span class="ki-trl-badge" style="background:#16A34A;color:#fff;font-family:'Courier New',monospace;font-size:10px;font-weight:700;padding:3px 10px;border-radius:20px;margin-left:auto">11 KI</span>
+  </div>
+  <div class="ki-trl-grid">
+    <div class="ki-card-item" data-trl="6">
+      <div class="ki-card-jenis" style="background:#EEF2FF;color:#6366F1">Paten</div>
+      <div class="ki-card-title">MEDIUM LOKAL UNTUK ARKEA HALOFILIK BERBASIS  HIDROLISAT PROTEIN IKAN DAN GARAM KROSOK SERTA  METODA APLIKASINYA UNTUK OPTIMALISASI</div>
+      <div class="ki-card-unit">PR Mikrobiologi Terapan, OR HL, BRIN</div>
+    </div>
+    <div class="ki-card-item" data-trl="6">
+      <div class="ki-card-jenis" style="background:#EEF2FF;color:#6366F1">Paten</div>
+      <div class="ki-card-title">FORMULASI BIO-SEED COATING MENGGUNAKAN JAMUR Trichoderma asperellum SEBAGAI PELAPIS BENIH CABAI MERAH (Capsicum annum L) DAN PROSE</div>
+      <div class="ki-card-unit">Interaksi Serangga dan Agen Hayati</div>
+    </div>
+    <div class="ki-card-item" data-trl="6">
+      <div class="ki-card-jenis" style="background:#EEF2FF;color:#6366F1">Paten</div>
+      <div class="ki-card-title">FORMULASI DAN PROSES PEMBUATAN BIOAKTIVATOR UNTUK FERMENTASI LIMBAH ORGANIK PADAT (FLOP)</div>
+      <div class="ki-card-unit">Mikrobioma Nutisi Tanaman</div>
+    </div>
+    <div class="ki-card-item" data-trl="6">
+      <div class="ki-card-jenis" style="background:#EEF2FF;color:#6366F1">Paten</div>
+      <div class="ki-card-title">Komposisi Teh Celup Buah Kayu Ules (Helicteres Isora L.), Jahe (Zingiber Officinale), Dan Daun Stevia (Stevia Rebaundiana)</div>
+      <div class="ki-card-unit">Kelompok Riset Pemuliaan Sumber Daya Penghasil Biodiese</div>
+    </div>
+    <div class="ki-card-item" data-trl="6">
+      <div class="ki-card-jenis" style="background:#FEF9EE;color:#F59E0B">Desain Industri</div>
+      <div class="ki-card-title">Alat Sensor dan Monitoring Serangga</div>
+      <div class="ki-card-unit">Interaksi Serangga</div>
+    </div>
+    <div class="ki-card-item" data-trl="6">
+      <div class="ki-card-jenis" style="background:#EEF2FF;color:#6366F1">Paten</div>
+      <div class="ki-card-title">METODE OPTIMASI PROTOKOL REGENERASI KALUS  SOMATIK EMBRIOGENIK TEBU (Saccharum officinarum L.)  DENGAN KOMBINASI SUMBER KARBON DAN</div>
+      <div class="ki-card-unit">Manipulasi Selular Cekaman Abiotik</div>
+    </div>
+    <div class="ki-card-item" data-trl="6">
+      <div class="ki-card-jenis" style="background:#EEF2FF;color:#6366F1">Paten</div>
+      <div class="ki-card-title">Formulasi Biostimulan Berbasis Konsorsium Bakteri Pemacu Tumbuh Untuk Efisiensi Hara  Tanaman Bawang Merah Dan Proses Pembuatannya</div>
+      <div class="ki-card-unit">Mikrobioma Holobion Tanaman/Peningkat Holobion Tanaman</div>
+    </div>
+    <div class="ki-card-item" data-trl="6">
+      <div class="ki-card-jenis" style="background:#EEF2FF;color:#6366F1">Paten</div>
+      <div class="ki-card-title">PROSES PEMBUATAN BIOAGEN FOTOSINTESIS DENGAN BAHAN AKTIF KONSORSIUM BAKTERI DAN PRODUK YANG DIHASILKANNYA</div>
+      <div class="ki-card-unit">Kelompok Riset Metabolit Mikroba Tanaman</div>
+    </div>
+    <div class="ki-card-item" data-trl="6">
+      <div class="ki-card-jenis" style="background:#EEF2FF;color:#6366F1">Paten</div>
+      <div class="ki-card-title">Formulasi  Tepung Biostimulan Berbahan Aktif Bakteri Halotoleran Asal Pesisir  Pantai Utara Jawa Nitratireductor aquibiodomus (Pen</div>
+      <div class="ki-card-unit">Peningkat Holobion Tanaman</div>
+    </div>
+    <div class="ki-card-item" data-trl="6">
+      <div class="ki-card-jenis" style="background:#EEF2FF;color:#6366F1">Paten</div>
+      <div class="ki-card-title">Formula Teh Celup Ganoderma Terfermentasi dan Proses Pembuatannya</div>
+      <div class="ki-card-unit">Pusat Riset Teknologi dan Proses Pangan</div>
+    </div>
+    <div class="ki-card-item" data-trl="6">
+      <div class="ki-card-jenis" style="background:#EEF2FF;color:#6366F1">Paten</div>
+      <div class="ki-card-title">Proses pembuatan sambal tabur kaya protein</div>
+      <div class="ki-card-unit">Kelris Pengemasan Steril Komersial</div>
+    </div>
+  </div>
+</div>
+<div class="ki-trl-block" data-trl="7">
+  <div class="ki-trl-head" style="background:#0D948818;border-left:5px solid #0D9488">
+    <span class="ki-trl-num" style="color:#0D9488;font-family:'Courier New',monospace;font-size:17px;font-weight:700">TRL 7</span>
+    <span class="ki-trl-label" style="color:#0D9488cc;font-size:11px">Demo lingk. operasional</span>
+    <span class="ki-trl-badge" style="background:#0D9488;color:#fff;font-family:'Courier New',monospace;font-size:10px;font-weight:700;padding:3px 10px;border-radius:20px;margin-left:auto">11 KI</span>
+  </div>
+  <div class="ki-trl-grid">
+    <div class="ki-card-item" data-trl="7">
+      <div class="ki-card-jenis" style="background:#EEF2FF;color:#6366F1">Paten</div>
+      <div class="ki-card-title">Kit Untuk Mendeteksi 25 Tipe Human Papiloma Virus (HPV)  Secara Tidak Invasif</div>
+      <div class="ki-card-unit">Pusat Riset Biomedis</div>
+    </div>
+    <div class="ki-card-item" data-trl="7">
+      <div class="ki-card-jenis" style="background:#EEF2FF;color:#6366F1">Paten</div>
+      <div class="ki-card-title">SEDIAAN PEWARNA NATURAL BERBASIS FIKOERITRIN DARI RUMPUT LAUT MERAH (Halymenia durvillei) BESERTA FORMULASI PRODUKNYA UNTUK BIBIR</div>
+      <div class="ki-card-unit">MCE</div>
+    </div>
+    <div class="ki-card-item" data-trl="7">
+      <div class="ki-card-jenis" style="background:#EEF2FF;color:#6366F1">Paten</div>
+      <div class="ki-card-title">Metode Hibernasi Buatan Telur Ulat Sutra Bombyx mori L.</div>
+      <div class="ki-card-unit">Domestikasi dan Pemuliaan Hewan Tropis</div>
+    </div>
+    <div class="ki-card-item" data-trl="7">
+      <div class="ki-card-jenis" style="background:#EEF2FF;color:#6366F1">Paten</div>
+      <div class="ki-card-title">Metode Pembutan Nano Liposom dari Fosfolipid Kedelai dan Formulasi  Medium  Pengencer  Nano  Liposom  Sebagai  Kriopreservasi   Sp</div>
+      <div class="ki-card-unit">Kelompok Riset Repronomik</div>
+    </div>
+    <div class="ki-card-item" data-trl="7">
+      <div class="ki-card-jenis" style="background:#EEF2FF;color:#6366F1">Paten</div>
+      <div class="ki-card-title">Komposisi Medium Pertumbuhan Bakteri Asam Laktat Untuk Probiotik Ternak Ruminansia</div>
+      <div class="ki-card-unit">Pusat Riset Zoologi Terapan</div>
+    </div>
+    <div class="ki-card-item" data-trl="7">
+      <div class="ki-card-jenis" style="background:#EEF2FF;color:#6366F1">Paten</div>
+      <div class="ki-card-title">Pupuk Organik Hayati Cair Dan Proses Pembuatannya</div>
+      <div class="ki-card-unit">Mikrobioma Nutrisi Tanaman</div>
+    </div>
+    <div class="ki-card-item" data-trl="7">
+      <div class="ki-card-jenis" style="background:#EEF2FF;color:#6366F1">Paten</div>
+      <div class="ki-card-title">METODE PERBANYAKAN TANAMAN ANDALIMAN (Zanthoxylum acanthopodium)</div>
+      <div class="ki-card-unit">Makropropagasi / ULTRASTRUKTUR</div>
+    </div>
+    <div class="ki-card-item" data-trl="7">
+      <div class="ki-card-jenis" style="background:#EEF2FF;color:#6366F1">Paten</div>
+      <div class="ki-card-title">Tepung ubi kayu termodifikasi dan proses yang dihasilkannya</div>
+      <div class="ki-card-unit">Pusat Riset Rekayasa Genetika</div>
+    </div>
+    <div class="ki-card-item" data-trl="7">
+      <div class="ki-card-jenis" style="background:#ECFDF5;color:#10B981">PVT</div>
+      <div class="ki-card-title">Varietas unggul kedelai BRINUSA</div>
+      <div class="ki-card-unit">Kelompok Riset Perakitan Varietas Unggul Aneka Kacang</div>
+    </div>
+    <div class="ki-card-item" data-trl="7">
+      <div class="ki-card-jenis" style="background:#ECFDF5;color:#10B981">PVT</div>
+      <div class="ki-card-title">Varietas unggul kedelai BRINARA</div>
+      <div class="ki-card-unit">Kelompok Riset Perakitan Varietas Unggul Aneka Kacang</div>
+    </div>
+    <div class="ki-card-item" data-trl="7">
+      <div class="ki-card-jenis" style="background:#EEF2FF;color:#6366F1">Paten</div>
+      <div class="ki-card-title">Biofertizinc (Pupuk hayati peningkat kandungan Zn untuk padi/serealia)</div>
+      <div class="ki-card-unit">Pengelolaan Lahan Pupuk & Pembenah Tanah</div>
+    </div>
+  </div>
+</div>
+<div class="ki-trl-block" data-trl="8">
+  <div class="ki-trl-head" style="background:#0369A118;border-left:5px solid #0369A1">
+    <span class="ki-trl-num" style="color:#0369A1;font-family:'Courier New',monospace;font-size:17px;font-weight:700">TRL 8</span>
+    <span class="ki-trl-label" style="color:#0369A1cc;font-size:11px">Sistem lengkap & kualifikasi</span>
+    <span class="ki-trl-badge" style="background:#0369A1;color:#fff;font-family:'Courier New',monospace;font-size:10px;font-weight:700;padding:3px 10px;border-radius:20px;margin-left:auto">1 KI</span>
+  </div>
+  <div class="ki-trl-grid">
+    <div class="ki-card-item" data-trl="8">
+      <div class="ki-card-jenis" style="background:#ECFDF5;color:#10B981">PVT</div>
+      <div class="ki-card-title">Kacang Hijau Varietas Muri</div>
+      <div class="ki-card-unit">Kelris 22 TERAPPAN PRTP ORPP BRIN</div>
+    </div>
+  </div>
+</div>
+<div class="ki-trl-block" data-trl="9">
+  <div class="ki-trl-head" style="background:#4F46E518;border-left:5px solid #4F46E5">
+    <span class="ki-trl-num" style="color:#4F46E5;font-family:'Courier New',monospace;font-size:17px;font-weight:700">TRL 9</span>
+    <span class="ki-trl-label" style="color:#4F46E5cc;font-size:11px">Sistem terbukti operasional</span>
+    <span class="ki-trl-badge" style="background:#4F46E5;color:#fff;font-family:'Courier New',monospace;font-size:10px;font-weight:700;padding:3px 10px;border-radius:20px;margin-left:auto">1 KI</span>
+  </div>
+  <div class="ki-trl-grid">
+    <div class="ki-card-item" data-trl="9">
+      <div class="ki-card-jenis" style="background:#EEF2FF;color:#6366F1">Paten</div>
+      <div class="ki-card-title">Metode pengemasan bahan makanan heterogen dalam satu wadah</div>
+      <div class="ki-card-unit">Kelris Pengemasan Steril Komersial</div>
+    </div>
+  </div>
+</div>
+</div>
+
+</div>
+
+<div id="sec-ki-sector" class="section-block">
+  <div class="sec-title">Analisis Sektor Utama per KI</div>
+  <p class="note">Setiap KI dipetakan ke 1 sektor industri yang paling sesuai berdasarkan substansi KI — sektor produksi diprioritaskan di atas jalur perdagangan.</p>
+  <div class="ki-sector-section">
+<div class="ki-sector-summary">
+<div class="ki-sector-sum-row"><div class="ki-sector-sum-name" style="color:#4C1D95">Industri Kimia & Biokimia</div><div class="ki-sector-sum-bar-wrap"><div class="ki-sector-sum-bar" style="width:31%;background:#8B5CF6"></div></div><span class="ki-sector-sum-count" style="color:#4C1D95">15 KI</span></div>
+<div class="ki-sector-sum-row"><div class="ki-sector-sum-name" style="color:#881337">Industri Pangan & Minuman</div><div class="ki-sector-sum-bar-wrap"><div class="ki-sector-sum-bar" style="width:29%;background:#F43F5E"></div></div><span class="ki-sector-sum-count" style="color:#881337">14 KI</span></div>
+<div class="ki-sector-sum-row"><div class="ki-sector-sum-name" style="color:#1E3A8A">Industri Farmasi & Biotek</div><div class="ki-sector-sum-bar-wrap"><div class="ki-sector-sum-bar" style="width:29%;background:#3B82F6"></div></div><span class="ki-sector-sum-count" style="color:#1E3A8A">14 KI</span></div>
+<div class="ki-sector-sum-row"><div class="ki-sector-sum-name" style="color:#92400E">Pertanian & Perkebunan</div><div class="ki-sector-sum-bar-wrap"><div class="ki-sector-sum-bar" style="width:6%;background:#F59E0B"></div></div><span class="ki-sector-sum-count" style="color:#92400E">3 KI</span></div>
+<div class="ki-sector-sum-row"><div class="ki-sector-sum-name" style="color:#5B21B6">Industri Tekstil & Serat</div><div class="ki-sector-sum-bar-wrap"><div class="ki-sector-sum-bar" style="width:2%;background:#A78BFA"></div></div><span class="ki-sector-sum-count" style="color:#5B21B6">1 KI</span></div>
+<div class="ki-sector-sum-row"><div class="ki-sector-sum-name" style="color:#155E75">Industri Elektronik & Instrumen</div><div class="ki-sector-sum-bar-wrap"><div class="ki-sector-sum-bar" style="width:2%;background:#22D3EE"></div></div><span class="ki-sector-sum-count" style="color:#155E75">1 KI</span></div>
+</div>
+<div class="ki-sector-block">
+  <div class="ki-sector-head">
+    <div class="ki-sector-dot" style="background:#8B5CF6"></div>
+    <span class="ki-sector-name" style="color:#4C1D95">Industri Kimia & Biokimia</span>
+    <span class="ki-sector-cnt">15 KI</span>
+  </div>
+  <div class="ki-sector-list">
+    <div class="ki-sector-item">
+      <div class="ki-sector-item-left">
+        <span class="ki-trl-pill" style="background:#0D9488;color:#fff">TRL 7</span>
+        <span class="ki-jenis-pill" style="background:#EEF2FF;color:#6366F1">Paten</span>
+      </div>
+      <div class="ki-sector-item-body">
+        <div class="ki-sector-item-title">SEDIAAN PEWARNA NATURAL BERBASIS FIKOERITRIN DARI RUMPUT LAUT MERAH (Halymenia durvillei) BESERTA FORMULASI PRODUKNYA UN</div>
+        <div class="ki-sector-item-kbli" style="color:#8B5CF6">20232 › Industri Kosmetik untuk Manusia, Cairan Lensa Kont</div>
+        <div class="ki-sector-item-unit">MCE</div>
+      </div>
+    </div>
+    <div class="ki-sector-item">
+      <div class="ki-sector-item-left">
+        <span class="ki-trl-pill" style="background:#0D9488;color:#fff">TRL 7</span>
+        <span class="ki-jenis-pill" style="background:#EEF2FF;color:#6366F1">Paten</span>
+      </div>
+      <div class="ki-sector-item-body">
+        <div class="ki-sector-item-title">Pupuk Organik Hayati Cair Dan Proses Pembuatannya</div>
+        <div class="ki-sector-item-kbli" style="color:#8B5CF6">20127 › Industri Pupuk Pelengkap</div>
+        <div class="ki-sector-item-unit">Mikrobioma Nutrisi Tanaman</div>
+      </div>
+    </div>
+    <div class="ki-sector-item">
+      <div class="ki-sector-item-left">
+        <span class="ki-trl-pill" style="background:#0D9488;color:#fff">TRL 7</span>
+        <span class="ki-jenis-pill" style="background:#EEF2FF;color:#6366F1">Paten</span>
+      </div>
+      <div class="ki-sector-item-body">
+        <div class="ki-sector-item-title">Biofertizinc (Pupuk hayati peningkat kandungan Zn untuk padi/serealia)</div>
+        <div class="ki-sector-item-kbli" style="color:#8B5CF6">20127 › Industri Pupuk Pelengkap</div>
+        <div class="ki-sector-item-unit">Pengelolaan Lahan Pupuk & Pembenah Tanah</div>
+      </div>
+    </div>
+    <div class="ki-sector-item">
+      <div class="ki-sector-item-left">
+        <span class="ki-trl-pill" style="background:#16A34A;color:#fff">TRL 6</span>
+        <span class="ki-jenis-pill" style="background:#EEF2FF;color:#6366F1">Paten</span>
+      </div>
+      <div class="ki-sector-item-body">
+        <div class="ki-sector-item-title">MEDIUM LOKAL UNTUK ARKEA HALOFILIK BERBASIS  HIDROLISAT PROTEIN IKAN DAN GARAM KROSOK SERTA  METODA APLIKASINYA UNTUK OP</div>
+        <div class="ki-sector-item-kbli" style="color:#8B5CF6">20299 › Industri Barang Kimia Lainnya YTDL</div>
+        <div class="ki-sector-item-unit">PR Mikrobiologi Terapan, OR HL, BRIN</div>
+      </div>
+    </div>
+    <div class="ki-sector-item">
+      <div class="ki-sector-item-left">
+        <span class="ki-trl-pill" style="background:#16A34A;color:#fff">TRL 6</span>
+        <span class="ki-jenis-pill" style="background:#EEF2FF;color:#6366F1">Paten</span>
+      </div>
+      <div class="ki-sector-item-body">
+        <div class="ki-sector-item-title">FORMULASI BIO-SEED COATING MENGGUNAKAN JAMUR Trichoderma asperellum SEBAGAI PELAPIS BENIH CABAI MERAH (Capsicum annum L)</div>
+        <div class="ki-sector-item-kbli" style="color:#8B5CF6">20213 › Industri Zat Pengatur Tumbuh</div>
+        <div class="ki-sector-item-unit">Interaksi Serangga dan Agen Hayati</div>
+      </div>
+    </div>
+    <div class="ki-sector-item">
+      <div class="ki-sector-item-left">
+        <span class="ki-trl-pill" style="background:#16A34A;color:#fff">TRL 6</span>
+        <span class="ki-jenis-pill" style="background:#EEF2FF;color:#6366F1">Paten</span>
+      </div>
+      <div class="ki-sector-item-body">
+        <div class="ki-sector-item-title">FORMULASI DAN PROSES PEMBUATAN BIOAKTIVATOR UNTUK FERMENTASI LIMBAH ORGANIK PADAT (FLOP)</div>
+        <div class="ki-sector-item-kbli" style="color:#8B5CF6">20127 › Industri Pupuk Pelengkap</div>
+        <div class="ki-sector-item-unit">Mikrobioma Nutisi Tanaman</div>
+      </div>
+    </div>
+    <div class="ki-sector-item">
+      <div class="ki-sector-item-left">
+        <span class="ki-trl-pill" style="background:#16A34A;color:#fff">TRL 6</span>
+        <span class="ki-jenis-pill" style="background:#EEF2FF;color:#6366F1">Paten</span>
+      </div>
+      <div class="ki-sector-item-body">
+        <div class="ki-sector-item-title">Formulasi Biostimulan Berbasis Konsorsium Bakteri Pemacu Tumbuh Untuk Efisiensi Hara  Tanaman Bawang Merah Dan Proses Pe</div>
+        <div class="ki-sector-item-kbli" style="color:#8B5CF6">20213 › Industri Zat Pengatur Tumbuh</div>
+        <div class="ki-sector-item-unit">Mikrobioma Holobion Tanaman/Peningkat Holobion Tanaman</div>
+      </div>
+    </div>
+    <div class="ki-sector-item">
+      <div class="ki-sector-item-left">
+        <span class="ki-trl-pill" style="background:#16A34A;color:#fff">TRL 6</span>
+        <span class="ki-jenis-pill" style="background:#EEF2FF;color:#6366F1">Paten</span>
+      </div>
+      <div class="ki-sector-item-body">
+        <div class="ki-sector-item-title">PROSES PEMBUATAN BIOAGEN FOTOSINTESIS DENGAN BAHAN AKTIF KONSORSIUM BAKTERI DAN PRODUK YANG DIHASILKANNYA</div>
+        <div class="ki-sector-item-kbli" style="color:#8B5CF6">20213 › Industri Zat Pengatur Tumbuh</div>
+        <div class="ki-sector-item-unit">Kelompok Riset Metabolit Mikroba Tanaman</div>
+      </div>
+    </div>
+    <div class="ki-sector-item">
+      <div class="ki-sector-item-left">
+        <span class="ki-trl-pill" style="background:#16A34A;color:#fff">TRL 6</span>
+        <span class="ki-jenis-pill" style="background:#EEF2FF;color:#6366F1">Paten</span>
+      </div>
+      <div class="ki-sector-item-body">
+        <div class="ki-sector-item-title">Formulasi  Tepung Biostimulan Berbahan Aktif Bakteri Halotoleran Asal Pesisir  Pantai Utara Jawa Nitratireductor aquibio</div>
+        <div class="ki-sector-item-kbli" style="color:#8B5CF6">20213 › Industri Zat Pengatur Tumbuh</div>
+        <div class="ki-sector-item-unit">Peningkat Holobion Tanaman</div>
+      </div>
+    </div>
+    <div class="ki-sector-item">
+      <div class="ki-sector-item-left">
+        <span class="ki-trl-pill" style="background:#65A30D;color:#fff">TRL 5</span>
+        <span class="ki-jenis-pill" style="background:#EEF2FF;color:#6366F1">Paten</span>
+      </div>
+      <div class="ki-sector-item-body">
+        <div class="ki-sector-item-title">KOMPOSISI PUPUK HAYATI UNTUK MENINGKATKAN PRODUKTIVITAS PADI DI LAHAN SAWAH TERPAPAR KERING DAN PROSES PEMBUATANNYA</div>
+        <div class="ki-sector-item-kbli" style="color:#8B5CF6">20127 › Industri Pupuk Pelengkap</div>
+        <div class="ki-sector-item-unit">Kelris Mikroba untuk Energi Terbarukan, PR Mikrobiologi Tera</div>
+      </div>
+    </div>
+    <div class="ki-sector-item">
+      <div class="ki-sector-item-left">
+        <span class="ki-trl-pill" style="background:#65A30D;color:#fff">TRL 5</span>
+        <span class="ki-jenis-pill" style="background:#EEF2FF;color:#6366F1">Paten</span>
+      </div>
+      <div class="ki-sector-item-body">
+        <div class="ki-sector-item-title">Formulasi Pupuk Organik Hayati Cair berbasis Rizobakteri Multifungsi Untuk Meningkatkan Kesehatan Tanah dan Produktivita</div>
+        <div class="ki-sector-item-kbli" style="color:#8B5CF6">20127 › Industri Pupuk Pelengkap</div>
+        <div class="ki-sector-item-unit">Pusat Riset Mikrobiologi Terapan</div>
+      </div>
+    </div>
+    <div class="ki-sector-item">
+      <div class="ki-sector-item-left">
+        <span class="ki-trl-pill" style="background:#65A30D;color:#fff">TRL 5</span>
+        <span class="ki-jenis-pill" style="background:#EEF2FF;color:#6366F1">Paten</span>
+      </div>
+      <div class="ki-sector-item-body">
+        <div class="ki-sector-item-title">Komposisi dan Proses Penghilangan Gum Serat Rami Menggunakan Gas Ozon, Xilanase dan Pektinase</div>
+        <div class="ki-sector-item-kbli" style="color:#8B5CF6">20299 › Industri Barang Kimia Lainnya YTDL</div>
+        <div class="ki-sector-item-unit">Bioproses Enzim</div>
+      </div>
+    </div>
+    <div class="ki-sector-item">
+      <div class="ki-sector-item-left">
+        <span class="ki-trl-pill" style="background:#CA8A04;color:#fff">TRL 4</span>
+        <span class="ki-jenis-pill" style="background:#EEF2FF;color:#6366F1">Paten</span>
+      </div>
+      <div class="ki-sector-item-body">
+        <div class="ki-sector-item-title">Produksi Dan Imobilisasi Enzim Selulase Dari Pseudozyma rugulosa Inacc Y335 Sebagai Produk Biokatalis Untuk Sintesis Bio</div>
+        <div class="ki-sector-item-kbli" style="color:#8B5CF6">20299 › Industri Barang Kimia Lainnya YTDL</div>
+        <div class="ki-sector-item-unit">Bioenergi dan Biokonversi Biomassa</div>
+      </div>
+    </div>
+    <div class="ki-sector-item">
+      <div class="ki-sector-item-left">
+        <span class="ki-trl-pill" style="background:#CA8A04;color:#fff">TRL 4</span>
+        <span class="ki-jenis-pill" style="background:#EEF2FF;color:#6366F1">Paten</span>
+      </div>
+      <div class="ki-sector-item-body">
+        <div class="ki-sector-item-title">AGEN  PEMACU  PERTUMBUHAN  TANAMAN  JAGUNG  BERBASIS  FILTRAT  KULTUR Trichoderma asperellum AC.3, PROSES PEMBUATAN, DAN</div>
+        <div class="ki-sector-item-kbli" style="color:#8B5CF6">20213 › Industri Zat Pengatur Tumbuh</div>
+        <div class="ki-sector-item-unit">Pengelolaan Hama dan Penyakit tanaman Jagung dan serealia po</div>
+      </div>
+    </div>
+    <div class="ki-sector-item">
+      <div class="ki-sector-item-left">
+        <span class="ki-trl-pill" style="background:#CA8A04;color:#fff">TRL 4</span>
+        <span class="ki-jenis-pill" style="background:#EEF2FF;color:#6366F1">Paten</span>
+      </div>
+      <div class="ki-sector-item-body">
+        <div class="ki-sector-item-title">EDIBLE COATING BERBASIS EKSTRAK DAUN SIRIH CINA (Peperomia pellucida) DAN APLIKASINYA</div>
+        <div class="ki-sector-item-kbli" style="color:#8B5CF6">20115 › Industri Kimia Dasar Organik dari Sumber Daya Alam</div>
+        <div class="ki-sector-item-unit">Fitonutrien dan Nutrasetikal Pangan</div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="ki-sector-block">
+  <div class="ki-sector-head">
+    <div class="ki-sector-dot" style="background:#F43F5E"></div>
+    <span class="ki-sector-name" style="color:#881337">Industri Pangan & Minuman</span>
+    <span class="ki-sector-cnt">14 KI</span>
+  </div>
+  <div class="ki-sector-list">
+    <div class="ki-sector-item">
+      <div class="ki-sector-item-left">
+        <span class="ki-trl-pill" style="background:#4F46E5;color:#fff">TRL 9</span>
+        <span class="ki-jenis-pill" style="background:#EEF2FF;color:#6366F1">Paten</span>
+      </div>
+      <div class="ki-sector-item-body">
+        <div class="ki-sector-item-title">Metode pengemasan bahan makanan heterogen dalam satu wadah</div>
+        <div class="ki-sector-item-kbli" style="color:#F43F5E">10799 › Industri Produk Makanan Lainnya</div>
+        <div class="ki-sector-item-unit">Kelris Pengemasan Steril Komersial</div>
+      </div>
+    </div>
+    <div class="ki-sector-item">
+      <div class="ki-sector-item-left">
+        <span class="ki-trl-pill" style="background:#0369A1;color:#fff">TRL 8</span>
+        <span class="ki-jenis-pill" style="background:#ECFDF5;color:#10B981">PVT</span>
+      </div>
+      <div class="ki-sector-item-body">
+        <div class="ki-sector-item-title">Kacang Hijau Varietas Muri</div>
+        <div class="ki-sector-item-kbli" style="color:#F43F5E">10393 › Industri Pengolahan dan Pengawetan Kedelai dan Kac</div>
+        <div class="ki-sector-item-unit">Kelris 22 TERAPPAN PRTP ORPP BRIN</div>
+      </div>
+    </div>
+    <div class="ki-sector-item">
+      <div class="ki-sector-item-left">
+        <span class="ki-trl-pill" style="background:#0D9488;color:#fff">TRL 7</span>
+        <span class="ki-jenis-pill" style="background:#EEF2FF;color:#6366F1">Paten</span>
+      </div>
+      <div class="ki-sector-item-body">
+        <div class="ki-sector-item-title">Tepung ubi kayu termodifikasi dan proses yang dihasilkannya</div>
+        <div class="ki-sector-item-kbli" style="color:#F43F5E">10621 › Industri Pati Ubi Kayu</div>
+        <div class="ki-sector-item-unit">Pusat Riset Rekayasa Genetika</div>
+      </div>
+    </div>
+    <div class="ki-sector-item">
+      <div class="ki-sector-item-left">
+        <span class="ki-trl-pill" style="background:#0D9488;color:#fff">TRL 7</span>
+        <span class="ki-jenis-pill" style="background:#ECFDF5;color:#10B981">PVT</span>
+      </div>
+      <div class="ki-sector-item-body">
+        <div class="ki-sector-item-title">Varietas unggul kedelai BRINUSA</div>
+        <div class="ki-sector-item-kbli" style="color:#F43F5E">10393 › Industri Pengolahan dan Pengawetan Kedelai dan Kac</div>
+        <div class="ki-sector-item-unit">Kelompok Riset Perakitan Varietas Unggul Aneka Kacang</div>
+      </div>
+    </div>
+    <div class="ki-sector-item">
+      <div class="ki-sector-item-left">
+        <span class="ki-trl-pill" style="background:#0D9488;color:#fff">TRL 7</span>
+        <span class="ki-jenis-pill" style="background:#ECFDF5;color:#10B981">PVT</span>
+      </div>
+      <div class="ki-sector-item-body">
+        <div class="ki-sector-item-title">Varietas unggul kedelai BRINARA</div>
+        <div class="ki-sector-item-kbli" style="color:#F43F5E">10393 › Industri Pengolahan dan Pengawetan Kedelai dan Kac</div>
+        <div class="ki-sector-item-unit">Kelompok Riset Perakitan Varietas Unggul Aneka Kacang</div>
+      </div>
+    </div>
+    <div class="ki-sector-item">
+      <div class="ki-sector-item-left">
+        <span class="ki-trl-pill" style="background:#16A34A;color:#fff">TRL 6</span>
+        <span class="ki-jenis-pill" style="background:#EEF2FF;color:#6366F1">Paten</span>
+      </div>
+      <div class="ki-sector-item-body">
+        <div class="ki-sector-item-title">Komposisi Teh Celup Buah Kayu Ules (Helicteres Isora L.), Jahe (Zingiber Officinale), Dan Daun Stevia (Stevia Rebaundian</div>
+        <div class="ki-sector-item-kbli" style="color:#F43F5E">10797 › Industri Infusi Herbal/Herb Infusion</div>
+        <div class="ki-sector-item-unit">Kelompok Riset Pemuliaan Sumber Daya Penghasil Biodiesel, Pu</div>
+      </div>
+    </div>
+    <div class="ki-sector-item">
+      <div class="ki-sector-item-left">
+        <span class="ki-trl-pill" style="background:#16A34A;color:#fff">TRL 6</span>
+        <span class="ki-jenis-pill" style="background:#EEF2FF;color:#6366F1">Paten</span>
+      </div>
+      <div class="ki-sector-item-body">
+        <div class="ki-sector-item-title">Formula Teh Celup Ganoderma Terfermentasi dan Proses Pembuatannya</div>
+        <div class="ki-sector-item-kbli" style="color:#F43F5E">10797 › Industri Infusi Herbal/Herb Infusion</div>
+        <div class="ki-sector-item-unit">Pusat Riset Teknologi dan Proses Pangan</div>
+      </div>
+    </div>
+    <div class="ki-sector-item">
+      <div class="ki-sector-item-left">
+        <span class="ki-trl-pill" style="background:#16A34A;color:#fff">TRL 6</span>
+        <span class="ki-jenis-pill" style="background:#EEF2FF;color:#6366F1">Paten</span>
+      </div>
+      <div class="ki-sector-item-body">
+        <div class="ki-sector-item-title">Proses pembuatan sambal tabur kaya protein</div>
+        <div class="ki-sector-item-kbli" style="color:#F43F5E">10799 › Industri Produk Makanan Lainnya</div>
+        <div class="ki-sector-item-unit">Kelris Pengemasan Steril Komersial</div>
+      </div>
+    </div>
+    <div class="ki-sector-item">
+      <div class="ki-sector-item-left">
+        <span class="ki-trl-pill" style="background:#65A30D;color:#fff">TRL 5</span>
+        <span class="ki-jenis-pill" style="background:#EEF2FF;color:#6366F1">Paten</span>
+      </div>
+      <div class="ki-sector-item-body">
+        <div class="ki-sector-item-title">Formulasi dan Proses Pembuatan Kukis (Cookuker) untuk Burung Kakatua Koki (Cacatua galerita)</div>
+        <div class="ki-sector-item-kbli" style="color:#F43F5E">10801 › Industri Ransum Pakan Hewan</div>
+        <div class="ki-sector-item-unit">Fisiologi Biokimia dan Perilaku Hewan</div>
+      </div>
+    </div>
+    <div class="ki-sector-item">
+      <div class="ki-sector-item-left">
+        <span class="ki-trl-pill" style="background:#CA8A04;color:#fff">TRL 4</span>
+        <span class="ki-jenis-pill" style="background:#EEF2FF;color:#6366F1">Paten</span>
+      </div>
+      <div class="ki-sector-item-body">
+        <div class="ki-sector-item-title">Komposisi Pelapis Dan Metode Pelapisan Bioplastik Berbasis Pati Untuk Aplikasi Kemasan Aktif  Pangan Serta Produk Yang D</div>
+        <div class="ki-sector-item-kbli" style="color:#F43F5E">10799 › Industri Produk Makanan Lainnya</div>
+        <div class="ki-sector-item-unit">Keamanan Pangan</div>
+      </div>
+    </div>
+    <div class="ki-sector-item">
+      <div class="ki-sector-item-left">
+        <span class="ki-trl-pill" style="background:#CA8A04;color:#fff">TRL 4</span>
+        <span class="ki-jenis-pill" style="background:#EEF2FF;color:#6366F1">Paten</span>
+      </div>
+      <div class="ki-sector-item-body">
+        <div class="ki-sector-item-title">Formulasi Kukis Sorgum Dengan Campuran Ekstrak Kulit Manggis Dan Produk Yang Dihasilkannya</div>
+        <div class="ki-sector-item-kbli" style="color:#F43F5E">10710 › Industri Produk Bakeri</div>
+        <div class="ki-sector-item-unit">Fitonutrien dan nutrasetikal pangan</div>
+      </div>
+    </div>
+    <div class="ki-sector-item">
+      <div class="ki-sector-item-left">
+        <span class="ki-trl-pill" style="background:#CA8A04;color:#fff">TRL 4</span>
+        <span class="ki-jenis-pill" style="background:#EEF2FF;color:#6366F1">Paten</span>
+      </div>
+      <div class="ki-sector-item-body">
+        <div class="ki-sector-item-title">Formula dan Produk Minuman Fermentasi Sari Kacang Merah Dengan Penambahan ektrak Jahe sebagai Sumber antioksidan</div>
+        <div class="ki-sector-item-kbli" style="color:#F43F5E">10797 › Industri Infusi Herbal/Herb Infusion</div>
+        <div class="ki-sector-item-unit">Teknologi Makanan dan Minuman Fungsional, Pusat Riset Teknol</div>
+      </div>
+    </div>
+    <div class="ki-sector-item">
+      <div class="ki-sector-item-left">
+        <span class="ki-trl-pill" style="background:#D97706;color:#fff">TRL 3</span>
+        <span class="ki-jenis-pill" style="background:#EEF2FF;color:#6366F1">Paten</span>
+      </div>
+      <div class="ki-sector-item-body">
+        <div class="ki-sector-item-title">Metode Analisis Kandungan GABA (Gamma-Aminobutyric Acid) Pada Beras Berpigmen</div>
+        <div class="ki-sector-item-kbli" style="color:#F43F5E">10799 › Industri Produk Makanan Lainnya</div>
+        <div class="ki-sector-item-unit">Pemetaan Genetik dan Seleksi Berbasis Molekuler</div>
+      </div>
+    </div>
+    <div class="ki-sector-item">
+      <div class="ki-sector-item-left">
+        <span class="ki-trl-pill" style="background:#D97706;color:#fff">TRL 3</span>
+        <span class="ki-jenis-pill" style="background:#EEF2FF;color:#6366F1">Paten</span>
+      </div>
+      <div class="ki-sector-item-body">
+        <div class="ki-sector-item-title">Produk Hidrolisat Sorgum Merah Sebagai Pangan Fungsional</div>
+        <div class="ki-sector-item-kbli" style="color:#F43F5E">10613 › Industri Produk Gilingan Aneka Umbi, Tanaman Rimpa</div>
+        <div class="ki-sector-item-unit">Pemanfaatan sarang burung walet untuk pangan</div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="ki-sector-block">
+  <div class="ki-sector-head">
+    <div class="ki-sector-dot" style="background:#3B82F6"></div>
+    <span class="ki-sector-name" style="color:#1E3A8A">Industri Farmasi & Biotek</span>
+    <span class="ki-sector-cnt">14 KI</span>
+  </div>
+  <div class="ki-sector-list">
+    <div class="ki-sector-item">
+      <div class="ki-sector-item-left">
+        <span class="ki-trl-pill" style="background:#0D9488;color:#fff">TRL 7</span>
+        <span class="ki-jenis-pill" style="background:#EEF2FF;color:#6366F1">Paten</span>
+      </div>
+      <div class="ki-sector-item-body">
+        <div class="ki-sector-item-title">Kit Untuk Mendeteksi 25 Tipe Human Papiloma Virus (HPV)  Secara Tidak Invasif</div>
+        <div class="ki-sector-item-kbli" style="color:#3B82F6">21015 › Industri Alat Diagnosis Medis, Perban, Kasa, dan P</div>
+        <div class="ki-sector-item-unit">Pusat Riset Biomedis</div>
+      </div>
+    </div>
+    <div class="ki-sector-item">
+      <div class="ki-sector-item-left">
+        <span class="ki-trl-pill" style="background:#0D9488;color:#fff">TRL 7</span>
+        <span class="ki-jenis-pill" style="background:#EEF2FF;color:#6366F1">Paten</span>
+      </div>
+      <div class="ki-sector-item-body">
+        <div class="ki-sector-item-title">Metode Pembutan Nano Liposom dari Fosfolipid Kedelai dan Formulasi  Medium  Pengencer  Nano  Liposom  Sebagai  Krioprese</div>
+        <div class="ki-sector-item-kbli" style="color:#3B82F6">21012 › Industri Produk Farmasi untuk Manusia</div>
+        <div class="ki-sector-item-unit">Kelompok Riset Repronomik</div>
+      </div>
+    </div>
+    <div class="ki-sector-item">
+      <div class="ki-sector-item-left">
+        <span class="ki-trl-pill" style="background:#0D9488;color:#fff">TRL 7</span>
+        <span class="ki-jenis-pill" style="background:#EEF2FF;color:#6366F1">Paten</span>
+      </div>
+      <div class="ki-sector-item-body">
+        <div class="ki-sector-item-title">Komposisi Medium Pertumbuhan Bakteri Asam Laktat Untuk Probiotik Ternak Ruminansia</div>
+        <div class="ki-sector-item-kbli" style="color:#3B82F6">21022 › Industri Produk Obat Bahan Alam untuk Manusia</div>
+        <div class="ki-sector-item-unit">Pusat Riset Zoologi Terapan</div>
+      </div>
+    </div>
+    <div class="ki-sector-item">
+      <div class="ki-sector-item-left">
+        <span class="ki-trl-pill" style="background:#65A30D;color:#fff">TRL 5</span>
+        <span class="ki-jenis-pill" style="background:#EEF2FF;color:#6366F1">Paten</span>
+      </div>
+      <div class="ki-sector-item-body">
+        <div class="ki-sector-item-title">METODE PEROLEHAN KLON TUNGGAL SEL KANKER PAYUDARA TRIPEL NEGATIF YANG MENGEKSPRESIKAN PROTEIN FLUORESENS mCHERRY DENGAN </div>
+        <div class="ki-sector-item-kbli" style="color:#3B82F6">21012 › Industri Produk Farmasi untuk Manusia</div>
+        <div class="ki-sector-item-unit">Kelompok Riset Rekayasa Sel Mamalia</div>
+      </div>
+    </div>
+    <div class="ki-sector-item">
+      <div class="ki-sector-item-left">
+        <span class="ki-trl-pill" style="background:#65A30D;color:#fff">TRL 5</span>
+        <span class="ki-jenis-pill" style="background:#EEF2FF;color:#6366F1">Paten</span>
+      </div>
+      <div class="ki-sector-item-body">
+        <div class="ki-sector-item-title">Proses Pembuatan Partikel Mirip Virus L1 Virus Human Papilloma Tipe 52 Sebagai Bahan Baku Vaksin Profilaktik Menggunakan</div>
+        <div class="ki-sector-item-kbli" style="color:#3B82F6">21012 › Industri Produk Farmasi untuk Manusia</div>
+        <div class="ki-sector-item-unit">Protein Rekombinan Virus</div>
+      </div>
+    </div>
+    <div class="ki-sector-item">
+      <div class="ki-sector-item-left">
+        <span class="ki-trl-pill" style="background:#65A30D;color:#fff">TRL 5</span>
+        <span class="ki-jenis-pill" style="background:#EEF2FF;color:#6366F1">Paten</span>
+      </div>
+      <div class="ki-sector-item-body">
+        <div class="ki-sector-item-title">SEDIAAN EKTRAK JAMUR SHIITAKE DALAM BENTUK MIKROENKAPSULASI DAN PROSES PEMBUATANNYA</div>
+        <div class="ki-sector-item-kbli" style="color:#3B82F6">21022 › Industri Produk Obat Bahan Alam untuk Manusia</div>
+        <div class="ki-sector-item-unit">Fitonutrien dan Nutrasetikal Pangan</div>
+      </div>
+    </div>
+    <div class="ki-sector-item">
+      <div class="ki-sector-item-left">
+        <span class="ki-trl-pill" style="background:#CA8A04;color:#fff">TRL 4</span>
+        <span class="ki-jenis-pill" style="background:#EEF2FF;color:#6366F1">Paten</span>
+      </div>
+      <div class="ki-sector-item-body">
+        <div class="ki-sector-item-title">Kit Bioassay Untuk Uji In Vitro Inhibisi Protease Sarscov2 Sebagai Alat Skrining Obat Anti Covid19</div>
+        <div class="ki-sector-item-kbli" style="color:#3B82F6">21012 › Industri Produk Farmasi untuk Manusia</div>
+        <div class="ki-sector-item-unit">Rekayasa bakteri dan enzim</div>
+      </div>
+    </div>
+    <div class="ki-sector-item">
+      <div class="ki-sector-item-left">
+        <span class="ki-trl-pill" style="background:#CA8A04;color:#fff">TRL 4</span>
+        <span class="ki-jenis-pill" style="background:#EEF2FF;color:#6366F1">Paten</span>
+      </div>
+      <div class="ki-sector-item-body">
+        <div class="ki-sector-item-title">Kaset Ekspresi untuk Pustaka Plasmid Rekombinan yang Mengekspresikan Gen Penyandi Protein Reseptor PcLYM2-1 dari Tanaman</div>
+        <div class="ki-sector-item-kbli" style="color:#3B82F6">21012 › Industri Produk Farmasi untuk Manusia</div>
+        <div class="ki-sector-item-unit">Rekayasa Tanaman untuk Lingkungan Ekstrim</div>
+      </div>
+    </div>
+    <div class="ki-sector-item">
+      <div class="ki-sector-item-left">
+        <span class="ki-trl-pill" style="background:#CA8A04;color:#fff">TRL 4</span>
+        <span class="ki-jenis-pill" style="background:#EEF2FF;color:#6366F1">Paten</span>
+      </div>
+      <div class="ki-sector-item-body">
+        <div class="ki-sector-item-title">Kaset Ekspresi Gen Penyandi Kitinase dari Sorgum (Sorghum bicolor (L.) Moench) Indonesia Aksesi Kempul</div>
+        <div class="ki-sector-item-kbli" style="color:#3B82F6">21012 › Industri Produk Farmasi untuk Manusia</div>
+        <div class="ki-sector-item-unit">Kelompok Riset Rekayasa Tanaman untuk Lingkungan Ekstrim</div>
+      </div>
+    </div>
+    <div class="ki-sector-item">
+      <div class="ki-sector-item-left">
+        <span class="ki-trl-pill" style="background:#CA8A04;color:#fff">TRL 4</span>
+        <span class="ki-jenis-pill" style="background:#EEF2FF;color:#6366F1">Paten</span>
+      </div>
+      <div class="ki-sector-item-body">
+        <div class="ki-sector-item-title">Kaset Ekspresi untuk Pustaka Plasmid Rekombinan yang Mengekspresikan Gen Penyandi Kitinase dari Sorgum Manis (Sorghum bi</div>
+        <div class="ki-sector-item-kbli" style="color:#3B82F6">21012 › Industri Produk Farmasi untuk Manusia</div>
+        <div class="ki-sector-item-unit">Kelompok Riset Rekayasa Tanaman untuk Lingkungan Ekstrim</div>
+      </div>
+    </div>
+    <div class="ki-sector-item">
+      <div class="ki-sector-item-left">
+        <span class="ki-trl-pill" style="background:#D97706;color:#fff">TRL 3</span>
+        <span class="ki-jenis-pill" style="background:#EEF2FF;color:#6366F1">Paten</span>
+      </div>
+      <div class="ki-sector-item-body">
+        <div class="ki-sector-item-title">KIT UNTUK MENGANALISIS GENOM UTUH HUMAN PAPILLOMAVIRUS (HPV) TIPE 16</div>
+        <div class="ki-sector-item-kbli" style="color:#3B82F6">21015 › Industri Alat Diagnosis Medis, Perban, Kasa, dan P</div>
+        <div class="ki-sector-item-unit">Pusat Riset Biomedis</div>
+      </div>
+    </div>
+    <div class="ki-sector-item">
+      <div class="ki-sector-item-left">
+        <span class="ki-trl-pill" style="background:#D97706;color:#fff">TRL 3</span>
+        <span class="ki-jenis-pill" style="background:#EEF2FF;color:#6366F1">Paten</span>
+      </div>
+      <div class="ki-sector-item-body">
+        <div class="ki-sector-item-title">METODE PENYIMPANAN SAMPEL URIN MENGGUNAKAN KERTAS SARING</div>
+        <div class="ki-sector-item-kbli" style="color:#3B82F6">21015 › Industri Alat Diagnosis Medis, Perban, Kasa, dan P</div>
+        <div class="ki-sector-item-unit">Pusat Riset Biomedis</div>
+      </div>
+    </div>
+    <div class="ki-sector-item">
+      <div class="ki-sector-item-left">
+        <span class="ki-trl-pill" style="background:#D97706;color:#fff">TRL 3</span>
+        <span class="ki-jenis-pill" style="background:#EEF2FF;color:#6366F1">Paten</span>
+      </div>
+      <div class="ki-sector-item-body">
+        <div class="ki-sector-item-title">KIT DETEKSI DAN IDENTIFIKASI DNA BABI DAN SAPI PADA SATU TABUNG TUNGGAL BERBASIS SYBR GREEN I qPCR</div>
+        <div class="ki-sector-item-kbli" style="color:#3B82F6">21015 › Industri Alat Diagnosis Medis, Perban, Kasa, dan P</div>
+        <div class="ki-sector-item-unit">Kelompok Riset Rekayasa Biomolekul untuk Aplikasi Deteksi</div>
+      </div>
+    </div>
+    <div class="ki-sector-item">
+      <div class="ki-sector-item-left">
+        <span class="ki-trl-pill" style="background:#D97706;color:#fff">TRL 3</span>
+        <span class="ki-jenis-pill" style="background:#EEF2FF;color:#6366F1">Paten</span>
+      </div>
+      <div class="ki-sector-item-body">
+        <div class="ki-sector-item-title">Kit Deteksi Mutasi Δ69-Δ70 Virus Sars-Cov 2 Berbasis Sybr Green I qQPCR</div>
+        <div class="ki-sector-item-kbli" style="color:#3B82F6">21015 › Industri Alat Diagnosis Medis, Perban, Kasa, dan P</div>
+        <div class="ki-sector-item-unit">Kelompok Riset Rekayasa Biomolekul Untuk Aplikasi Deteksi</div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="ki-sector-block">
+  <div class="ki-sector-head">
+    <div class="ki-sector-dot" style="background:#F59E0B"></div>
+    <span class="ki-sector-name" style="color:#92400E">Pertanian & Perkebunan</span>
+    <span class="ki-sector-cnt">3 KI</span>
+  </div>
+  <div class="ki-sector-list">
+    <div class="ki-sector-item">
+      <div class="ki-sector-item-left">
+        <span class="ki-trl-pill" style="background:#0D9488;color:#fff">TRL 7</span>
+        <span class="ki-jenis-pill" style="background:#EEF2FF;color:#6366F1">Paten</span>
+      </div>
+      <div class="ki-sector-item-body">
+        <div class="ki-sector-item-title">METODE PERBANYAKAN TANAMAN ANDALIMAN (Zanthoxylum acanthopodium)</div>
+        <div class="ki-sector-item-kbli" style="color:#F59E0B">01309 › Pembiakan Tanaman Lainnya</div>
+        <div class="ki-sector-item-unit">Makropropagasi / ULTRASTRUKTUR</div>
+      </div>
+    </div>
+    <div class="ki-sector-item">
+      <div class="ki-sector-item-left">
+        <span class="ki-trl-pill" style="background:#16A34A;color:#fff">TRL 6</span>
+        <span class="ki-jenis-pill" style="background:#EEF2FF;color:#6366F1">Paten</span>
+      </div>
+      <div class="ki-sector-item-body">
+        <div class="ki-sector-item-title">METODE OPTIMASI PROTOKOL REGENERASI KALUS  SOMATIK EMBRIOGENIK TEBU (Saccharum officinarum L.)  DENGAN KOMBINASI SUMBER </div>
+        <div class="ki-sector-item-kbli" style="color:#F59E0B">01140 › Pertanian Tebu</div>
+        <div class="ki-sector-item-unit">Manipulasi Selular Cekaman Abiotik</div>
+      </div>
+    </div>
+    <div class="ki-sector-item">
+      <div class="ki-sector-item-left">
+        <span class="ki-trl-pill" style="background:#65A30D;color:#fff">TRL 5</span>
+        <span class="ki-jenis-pill" style="background:#EEF2FF;color:#6366F1">Paten</span>
+      </div>
+      <div class="ki-sector-item-body">
+        <div class="ki-sector-item-title">METODE OPTIMASI PROTOKOL REGENERASI KALUS SOMATIK EMBRYOGENIK TEBU (Saccharum officinarum L.) DENGAN KOMBINASI SUMBER KA</div>
+        <div class="ki-sector-item-kbli" style="color:#F59E0B">01140 › Pertanian Tebu</div>
+        <div class="ki-sector-item-unit">Pusat Riset Botani Terapan</div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="ki-sector-block">
+  <div class="ki-sector-head">
+    <div class="ki-sector-dot" style="background:#A78BFA"></div>
+    <span class="ki-sector-name" style="color:#5B21B6">Industri Tekstil & Serat</span>
+    <span class="ki-sector-cnt">1 KI</span>
+  </div>
+  <div class="ki-sector-list">
+    <div class="ki-sector-item">
+      <div class="ki-sector-item-left">
+        <span class="ki-trl-pill" style="background:#0D9488;color:#fff">TRL 7</span>
+        <span class="ki-jenis-pill" style="background:#EEF2FF;color:#6366F1">Paten</span>
+      </div>
+      <div class="ki-sector-item-body">
+        <div class="ki-sector-item-title">Metode Hibernasi Buatan Telur Ulat Sutra Bombyx mori L.</div>
+        <div class="ki-sector-item-kbli" style="color:#A78BFA">13111 › Persiapan Serat Tekstil</div>
+        <div class="ki-sector-item-unit">Domestikasi dan Pemuliaan Hewan Tropis</div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="ki-sector-block">
+  <div class="ki-sector-head">
+    <div class="ki-sector-dot" style="background:#22D3EE"></div>
+    <span class="ki-sector-name" style="color:#155E75">Industri Elektronik & Instrumen</span>
+    <span class="ki-sector-cnt">1 KI</span>
+  </div>
+  <div class="ki-sector-list">
+    <div class="ki-sector-item">
+      <div class="ki-sector-item-left">
+        <span class="ki-trl-pill" style="background:#16A34A;color:#fff">TRL 6</span>
+        <span class="ki-jenis-pill" style="background:#FEF9EE;color:#F59E0B">Desain Industri</span>
+      </div>
+      <div class="ki-sector-item-body">
+        <div class="ki-sector-item-title">Alat Sensor dan Monitoring Serangga</div>
+        <div class="ki-sector-item-kbli" style="color:#22D3EE">26513 › Industri Alat Ukur dan Alat Uji Elektronik</div>
+        <div class="ki-sector-item-unit">Interaksi Serangga</div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+</div>
+
+<div id="sec-ki-trle" class="section-block">
+  <div class="sec-title">Peta KI per TRL Terverifikasi</div>
+  <p class="note">48 KI unik dikelompokkan berdasarkan TRL terverifikasi. Duplikat submission dihapus.</p>
+  <div class="ki-trl-section">
+<div class="ki-trl-block" data-trl="3">
+  <div class="ki-trl-head" style="background:#D9770618;border-left:5px solid #D97706">
+    <span class="ki-trl-num" style="color:#D97706;font-family:'Courier New',monospace;font-size:17px;font-weight:700">TRL 3</span>
+    <span class="ki-trl-label" style="color:#D97706cc;font-size:11px">Bukti konsep</span>
+    <span class="ki-trl-badge" style="background:#D97706;color:#fff;font-family:'Courier New',monospace;font-size:10px;font-weight:700;padding:3px 10px;border-radius:20px;margin-left:auto">6 KI</span>
+  </div>
+  <div class="ki-trl-grid">
+    <div class="ki-card-item" data-trl="3">
+      <div class="ki-card-jenis" style="background:#EEF2FF;color:#6366F1">Paten</div>
+      <div class="ki-card-title">Metode Analisis Kandungan GABA (Gamma-Aminobutyric Acid) Pada Beras Berpigmen</div>
+      <div class="ki-card-unit">Pemetaan Genetik dan Seleksi Berbasis Molekuler</div>
+    </div>
+    <div class="ki-card-item" data-trl="3">
+      <div class="ki-card-jenis" style="background:#EEF2FF;color:#6366F1">Paten</div>
+      <div class="ki-card-title">KIT UNTUK MENGANALISIS GENOM UTUH HUMAN PAPILLOMAVIRUS (HPV) TIPE 16</div>
+      <div class="ki-card-unit">Pusat Riset Biomedis</div>
+    </div>
+    <div class="ki-card-item" data-trl="3">
+      <div class="ki-card-jenis" style="background:#EEF2FF;color:#6366F1">Paten</div>
+      <div class="ki-card-title">METODE PENYIMPANAN SAMPEL URIN MENGGUNAKAN KERTAS SARING</div>
+      <div class="ki-card-unit">Pusat Riset Biomedis</div>
+    </div>
+    <div class="ki-card-item" data-trl="3">
+      <div class="ki-card-jenis" style="background:#EEF2FF;color:#6366F1">Paten</div>
+      <div class="ki-card-title">KIT DETEKSI DAN IDENTIFIKASI DNA BABI DAN SAPI PADA SATU TABUNG TUNGGAL BERBASIS SYBR GREEN I qPCR</div>
+      <div class="ki-card-unit">Kelompok Riset Rekayasa Biomolekul untuk Aplikasi Detek</div>
+    </div>
+    <div class="ki-card-item" data-trl="3">
+      <div class="ki-card-jenis" style="background:#EEF2FF;color:#6366F1">Paten</div>
+      <div class="ki-card-title">Kit Deteksi Mutasi Δ69-Δ70 Virus Sars-Cov 2 Berbasis Sybr Green I qQPCR</div>
+      <div class="ki-card-unit">Kelompok Riset Rekayasa Biomolekul Untuk Aplikasi Detek</div>
+    </div>
+    <div class="ki-card-item" data-trl="3">
+      <div class="ki-card-jenis" style="background:#EEF2FF;color:#6366F1">Paten</div>
+      <div class="ki-card-title">Produk Hidrolisat Sorgum Merah Sebagai Pangan Fungsional</div>
+      <div class="ki-card-unit">Pemanfaatan sarang burung walet untuk pangan</div>
+    </div>
+  </div>
+</div>
+<div class="ki-trl-block" data-trl="4">
+  <div class="ki-trl-head" style="background:#CA8A0418;border-left:5px solid #CA8A04">
+    <span class="ki-trl-num" style="color:#CA8A04;font-family:'Courier New',monospace;font-size:17px;font-weight:700">TRL 4</span>
+    <span class="ki-trl-label" style="color:#CA8A04cc;font-size:11px">Validasi laboratorium</span>
+    <span class="ki-trl-badge" style="background:#CA8A04;color:#fff;font-family:'Courier New',monospace;font-size:10px;font-weight:700;padding:3px 10px;border-radius:20px;margin-left:auto">10 KI</span>
+  </div>
+  <div class="ki-trl-grid">
+    <div class="ki-card-item" data-trl="4">
+      <div class="ki-card-jenis" style="background:#EEF2FF;color:#6366F1">Paten</div>
+      <div class="ki-card-title">Produksi Dan Imobilisasi Enzim Selulase Dari Pseudozyma rugulosa Inacc Y335 Sebagai Produk Biokatalis Untuk Sintesis Bioetanol</div>
+      <div class="ki-card-unit">Bioenergi dan Biokonversi Biomassa</div>
+    </div>
+    <div class="ki-card-item" data-trl="4">
+      <div class="ki-card-jenis" style="background:#EEF2FF;color:#6366F1">Paten</div>
+      <div class="ki-card-title">Kit Bioassay Untuk Uji In Vitro Inhibisi Protease Sarscov2 Sebagai Alat Skrining Obat Anti Covid19</div>
+      <div class="ki-card-unit">Rekayasa bakteri dan enzim</div>
+    </div>
+    <div class="ki-card-item" data-trl="4">
+      <div class="ki-card-jenis" style="background:#EEF2FF;color:#6366F1">Paten</div>
+      <div class="ki-card-title">Kaset Ekspresi untuk Pustaka Plasmid Rekombinan yang Mengekspresikan Gen Penyandi Protein Reseptor PcLYM2-1 dari Tanaman Populus x</div>
+      <div class="ki-card-unit">Rekayasa Tanaman untuk Lingkungan Ekstrim</div>
+    </div>
+    <div class="ki-card-item" data-trl="4">
+      <div class="ki-card-jenis" style="background:#EEF2FF;color:#6366F1">Paten</div>
+      <div class="ki-card-title">Kaset Ekspresi Gen Penyandi Kitinase dari Sorgum (Sorghum bicolor (L.) Moench) Indonesia Aksesi Kempul</div>
+      <div class="ki-card-unit">Kelompok Riset Rekayasa Tanaman untuk Lingkungan Ekstri</div>
+    </div>
+    <div class="ki-card-item" data-trl="4">
+      <div class="ki-card-jenis" style="background:#EEF2FF;color:#6366F1">Paten</div>
+      <div class="ki-card-title">Kaset Ekspresi untuk Pustaka Plasmid Rekombinan yang Mengekspresikan Gen Penyandi Kitinase dari Sorgum Manis (Sorghum bicolor L. M</div>
+      <div class="ki-card-unit">Kelompok Riset Rekayasa Tanaman untuk Lingkungan Ekstri</div>
+    </div>
+    <div class="ki-card-item" data-trl="4">
+      <div class="ki-card-jenis" style="background:#EEF2FF;color:#6366F1">Paten</div>
+      <div class="ki-card-title">Komposisi Pelapis Dan Metode Pelapisan Bioplastik Berbasis Pati Untuk Aplikasi Kemasan Aktif  Pangan Serta Produk Yang Dihasilkann</div>
+      <div class="ki-card-unit">Keamanan Pangan</div>
+    </div>
+    <div class="ki-card-item" data-trl="4">
+      <div class="ki-card-jenis" style="background:#EEF2FF;color:#6366F1">Paten</div>
+      <div class="ki-card-title">Formulasi Kukis Sorgum Dengan Campuran Ekstrak Kulit Manggis Dan Produk Yang Dihasilkannya</div>
+      <div class="ki-card-unit">Fitonutrien dan nutrasetikal pangan</div>
+    </div>
+    <div class="ki-card-item" data-trl="4">
+      <div class="ki-card-jenis" style="background:#EEF2FF;color:#6366F1">Paten</div>
+      <div class="ki-card-title">AGEN  PEMACU  PERTUMBUHAN  TANAMAN  JAGUNG  BERBASIS  FILTRAT  KULTUR Trichoderma asperellum AC.3, PROSES PEMBUATAN, DAN PENGGUNAA</div>
+      <div class="ki-card-unit">Pengelolaan Hama dan Penyakit tanaman Jagung dan sereal</div>
+    </div>
+    <div class="ki-card-item" data-trl="4">
+      <div class="ki-card-jenis" style="background:#EEF2FF;color:#6366F1">Paten</div>
+      <div class="ki-card-title">EDIBLE COATING BERBASIS EKSTRAK DAUN SIRIH CINA (Peperomia pellucida) DAN APLIKASINYA</div>
+      <div class="ki-card-unit">Fitonutrien dan Nutrasetikal Pangan</div>
+    </div>
+    <div class="ki-card-item" data-trl="4">
+      <div class="ki-card-jenis" style="background:#EEF2FF;color:#6366F1">Paten</div>
+      <div class="ki-card-title">Formula dan Produk Minuman Fermentasi Sari Kacang Merah Dengan Penambahan ektrak Jahe sebagai Sumber antioksidan</div>
+      <div class="ki-card-unit">Teknologi Makanan dan Minuman Fungsional, Pusat Riset T</div>
+    </div>
+  </div>
+</div>
+<div class="ki-trl-block" data-trl="5">
+  <div class="ki-trl-head" style="background:#65A30D18;border-left:5px solid #65A30D">
+    <span class="ki-trl-num" style="color:#65A30D;font-family:'Courier New',monospace;font-size:17px;font-weight:700">TRL 5</span>
+    <span class="ki-trl-label" style="color:#65A30Dcc;font-size:11px">Validasi lingk. relevan</span>
+    <span class="ki-trl-badge" style="background:#65A30D;color:#fff;font-family:'Courier New',monospace;font-size:10px;font-weight:700;padding:3px 10px;border-radius:20px;margin-left:auto">8 KI</span>
+  </div>
+  <div class="ki-trl-grid">
+    <div class="ki-card-item" data-trl="5">
+      <div class="ki-card-jenis" style="background:#EEF2FF;color:#6366F1">Paten</div>
+      <div class="ki-card-title">METODE OPTIMASI PROTOKOL REGENERASI KALUS SOMATIK EMBRYOGENIK TEBU (Saccharum officinarum L.) DENGAN KOMBINASI SUMBER KARBON DAN H</div>
+      <div class="ki-card-unit">Pusat Riset Botani Terapan</div>
+    </div>
+    <div class="ki-card-item" data-trl="5">
+      <div class="ki-card-jenis" style="background:#EEF2FF;color:#6366F1">Paten</div>
+      <div class="ki-card-title">KOMPOSISI PUPUK HAYATI UNTUK MENINGKATKAN PRODUKTIVITAS PADI DI LAHAN SAWAH TERPAPAR KERING DAN PROSES PEMBUATANNYA</div>
+      <div class="ki-card-unit">Kelris Mikroba untuk Energi Terbarukan, PR Mikrobiologi</div>
+    </div>
+    <div class="ki-card-item" data-trl="5">
+      <div class="ki-card-jenis" style="background:#EEF2FF;color:#6366F1">Paten</div>
+      <div class="ki-card-title">Formulasi Pupuk Organik Hayati Cair berbasis Rizobakteri Multifungsi Untuk Meningkatkan Kesehatan Tanah dan Produktivitas Tanaman </div>
+      <div class="ki-card-unit">Pusat Riset Mikrobiologi Terapan</div>
+    </div>
+    <div class="ki-card-item" data-trl="5">
+      <div class="ki-card-jenis" style="background:#EEF2FF;color:#6366F1">Paten</div>
+      <div class="ki-card-title">METODE PEROLEHAN KLON TUNGGAL SEL KANKER PAYUDARA TRIPEL NEGATIF YANG MENGEKSPRESIKAN PROTEIN FLUORESENS mCHERRY DENGAN PENANDA EK</div>
+      <div class="ki-card-unit">Kelompok Riset Rekayasa Sel Mamalia</div>
+    </div>
+    <div class="ki-card-item" data-trl="5">
+      <div class="ki-card-jenis" style="background:#EEF2FF;color:#6366F1">Paten</div>
+      <div class="ki-card-title">Formulasi dan Proses Pembuatan Kukis (Cookuker) untuk Burung Kakatua Koki (Cacatua galerita)</div>
+      <div class="ki-card-unit">Fisiologi Biokimia dan Perilaku Hewan</div>
+    </div>
+    <div class="ki-card-item" data-trl="5">
+      <div class="ki-card-jenis" style="background:#EEF2FF;color:#6366F1">Paten</div>
+      <div class="ki-card-title">Proses Pembuatan Partikel Mirip Virus L1 Virus Human Papilloma Tipe 52 Sebagai Bahan Baku Vaksin Profilaktik Menggunakan Inang Han</div>
+      <div class="ki-card-unit">Protein Rekombinan Virus</div>
+    </div>
+    <div class="ki-card-item" data-trl="5">
+      <div class="ki-card-jenis" style="background:#EEF2FF;color:#6366F1">Paten</div>
+      <div class="ki-card-title">Komposisi dan Proses Penghilangan Gum Serat Rami Menggunakan Gas Ozon, Xilanase dan Pektinase</div>
+      <div class="ki-card-unit">Bioproses Enzim</div>
+    </div>
+    <div class="ki-card-item" data-trl="5">
+      <div class="ki-card-jenis" style="background:#EEF2FF;color:#6366F1">Paten</div>
+      <div class="ki-card-title">SEDIAAN EKTRAK JAMUR SHIITAKE DALAM BENTUK MIKROENKAPSULASI DAN PROSES PEMBUATANNYA</div>
+      <div class="ki-card-unit">Fitonutrien dan Nutrasetikal Pangan</div>
+    </div>
+  </div>
+</div>
+<div class="ki-trl-block" data-trl="6">
+  <div class="ki-trl-head" style="background:#16A34A18;border-left:5px solid #16A34A">
+    <span class="ki-trl-num" style="color:#16A34A;font-family:'Courier New',monospace;font-size:17px;font-weight:700">TRL 6</span>
+    <span class="ki-trl-label" style="color:#16A34Acc;font-size:11px">Demo lingk. relevan</span>
+    <span class="ki-trl-badge" style="background:#16A34A;color:#fff;font-family:'Courier New',monospace;font-size:10px;font-weight:700;padding:3px 10px;border-radius:20px;margin-left:auto">11 KI</span>
+  </div>
+  <div class="ki-trl-grid">
+    <div class="ki-card-item" data-trl="6">
+      <div class="ki-card-jenis" style="background:#EEF2FF;color:#6366F1">Paten</div>
+      <div class="ki-card-title">MEDIUM LOKAL UNTUK ARKEA HALOFILIK BERBASIS  HIDROLISAT PROTEIN IKAN DAN GARAM KROSOK SERTA  METODA APLIKASINYA UNTUK OPTIMALISASI</div>
+      <div class="ki-card-unit">PR Mikrobiologi Terapan, OR HL, BRIN</div>
+    </div>
+    <div class="ki-card-item" data-trl="6">
+      <div class="ki-card-jenis" style="background:#EEF2FF;color:#6366F1">Paten</div>
+      <div class="ki-card-title">FORMULASI BIO-SEED COATING MENGGUNAKAN JAMUR Trichoderma asperellum SEBAGAI PELAPIS BENIH CABAI MERAH (Capsicum annum L) DAN PROSE</div>
+      <div class="ki-card-unit">Interaksi Serangga dan Agen Hayati</div>
+    </div>
+    <div class="ki-card-item" data-trl="6">
+      <div class="ki-card-jenis" style="background:#EEF2FF;color:#6366F1">Paten</div>
+      <div class="ki-card-title">FORMULASI DAN PROSES PEMBUATAN BIOAKTIVATOR UNTUK FERMENTASI LIMBAH ORGANIK PADAT (FLOP)</div>
+      <div class="ki-card-unit">Mikrobioma Nutisi Tanaman</div>
+    </div>
+    <div class="ki-card-item" data-trl="6">
+      <div class="ki-card-jenis" style="background:#EEF2FF;color:#6366F1">Paten</div>
+      <div class="ki-card-title">Komposisi Teh Celup Buah Kayu Ules (Helicteres Isora L.), Jahe (Zingiber Officinale), Dan Daun Stevia (Stevia Rebaundiana)</div>
+      <div class="ki-card-unit">Kelompok Riset Pemuliaan Sumber Daya Penghasil Biodiese</div>
+    </div>
+    <div class="ki-card-item" data-trl="6">
+      <div class="ki-card-jenis" style="background:#FEF9EE;color:#F59E0B">Desain Industri</div>
+      <div class="ki-card-title">Alat Sensor dan Monitoring Serangga</div>
+      <div class="ki-card-unit">Interaksi Serangga</div>
+    </div>
+    <div class="ki-card-item" data-trl="6">
+      <div class="ki-card-jenis" style="background:#EEF2FF;color:#6366F1">Paten</div>
+      <div class="ki-card-title">METODE OPTIMASI PROTOKOL REGENERASI KALUS  SOMATIK EMBRIOGENIK TEBU (Saccharum officinarum L.)  DENGAN KOMBINASI SUMBER KARBON DAN</div>
+      <div class="ki-card-unit">Manipulasi Selular Cekaman Abiotik</div>
+    </div>
+    <div class="ki-card-item" data-trl="6">
+      <div class="ki-card-jenis" style="background:#EEF2FF;color:#6366F1">Paten</div>
+      <div class="ki-card-title">Formulasi Biostimulan Berbasis Konsorsium Bakteri Pemacu Tumbuh Untuk Efisiensi Hara  Tanaman Bawang Merah Dan Proses Pembuatannya</div>
+      <div class="ki-card-unit">Mikrobioma Holobion Tanaman/Peningkat Holobion Tanaman</div>
+    </div>
+    <div class="ki-card-item" data-trl="6">
+      <div class="ki-card-jenis" style="background:#EEF2FF;color:#6366F1">Paten</div>
+      <div class="ki-card-title">PROSES PEMBUATAN BIOAGEN FOTOSINTESIS DENGAN BAHAN AKTIF KONSORSIUM BAKTERI DAN PRODUK YANG DIHASILKANNYA</div>
+      <div class="ki-card-unit">Kelompok Riset Metabolit Mikroba Tanaman</div>
+    </div>
+    <div class="ki-card-item" data-trl="6">
+      <div class="ki-card-jenis" style="background:#EEF2FF;color:#6366F1">Paten</div>
+      <div class="ki-card-title">Formulasi  Tepung Biostimulan Berbahan Aktif Bakteri Halotoleran Asal Pesisir  Pantai Utara Jawa Nitratireductor aquibiodomus (Pen</div>
+      <div class="ki-card-unit">Peningkat Holobion Tanaman</div>
+    </div>
+    <div class="ki-card-item" data-trl="6">
+      <div class="ki-card-jenis" style="background:#EEF2FF;color:#6366F1">Paten</div>
+      <div class="ki-card-title">Formula Teh Celup Ganoderma Terfermentasi dan Proses Pembuatannya</div>
+      <div class="ki-card-unit">Pusat Riset Teknologi dan Proses Pangan</div>
+    </div>
+    <div class="ki-card-item" data-trl="6">
+      <div class="ki-card-jenis" style="background:#EEF2FF;color:#6366F1">Paten</div>
+      <div class="ki-card-title">Proses pembuatan sambal tabur kaya protein</div>
+      <div class="ki-card-unit">Kelris Pengemasan Steril Komersial</div>
+    </div>
+  </div>
+</div>
+<div class="ki-trl-block" data-trl="7">
+  <div class="ki-trl-head" style="background:#0D948818;border-left:5px solid #0D9488">
+    <span class="ki-trl-num" style="color:#0D9488;font-family:'Courier New',monospace;font-size:17px;font-weight:700">TRL 7</span>
+    <span class="ki-trl-label" style="color:#0D9488cc;font-size:11px">Demo lingk. operasional</span>
+    <span class="ki-trl-badge" style="background:#0D9488;color:#fff;font-family:'Courier New',monospace;font-size:10px;font-weight:700;padding:3px 10px;border-radius:20px;margin-left:auto">11 KI</span>
+  </div>
+  <div class="ki-trl-grid">
+    <div class="ki-card-item" data-trl="7">
+      <div class="ki-card-jenis" style="background:#EEF2FF;color:#6366F1">Paten</div>
+      <div class="ki-card-title">Kit Untuk Mendeteksi 25 Tipe Human Papiloma Virus (HPV)  Secara Tidak Invasif</div>
+      <div class="ki-card-unit">Pusat Riset Biomedis</div>
+    </div>
+    <div class="ki-card-item" data-trl="7">
+      <div class="ki-card-jenis" style="background:#EEF2FF;color:#6366F1">Paten</div>
+      <div class="ki-card-title">SEDIAAN PEWARNA NATURAL BERBASIS FIKOERITRIN DARI RUMPUT LAUT MERAH (Halymenia durvillei) BESERTA FORMULASI PRODUKNYA UNTUK BIBIR</div>
+      <div class="ki-card-unit">MCE</div>
+    </div>
+    <div class="ki-card-item" data-trl="7">
+      <div class="ki-card-jenis" style="background:#EEF2FF;color:#6366F1">Paten</div>
+      <div class="ki-card-title">Metode Hibernasi Buatan Telur Ulat Sutra Bombyx mori L.</div>
+      <div class="ki-card-unit">Domestikasi dan Pemuliaan Hewan Tropis</div>
+    </div>
+    <div class="ki-card-item" data-trl="7">
+      <div class="ki-card-jenis" style="background:#EEF2FF;color:#6366F1">Paten</div>
+      <div class="ki-card-title">Metode Pembutan Nano Liposom dari Fosfolipid Kedelai dan Formulasi  Medium  Pengencer  Nano  Liposom  Sebagai  Kriopreservasi   Sp</div>
+      <div class="ki-card-unit">Kelompok Riset Repronomik</div>
+    </div>
+    <div class="ki-card-item" data-trl="7">
+      <div class="ki-card-jenis" style="background:#EEF2FF;color:#6366F1">Paten</div>
+      <div class="ki-card-title">Komposisi Medium Pertumbuhan Bakteri Asam Laktat Untuk Probiotik Ternak Ruminansia</div>
+      <div class="ki-card-unit">Pusat Riset Zoologi Terapan</div>
+    </div>
+    <div class="ki-card-item" data-trl="7">
+      <div class="ki-card-jenis" style="background:#EEF2FF;color:#6366F1">Paten</div>
+      <div class="ki-card-title">Pupuk Organik Hayati Cair Dan Proses Pembuatannya</div>
+      <div class="ki-card-unit">Mikrobioma Nutrisi Tanaman</div>
+    </div>
+    <div class="ki-card-item" data-trl="7">
+      <div class="ki-card-jenis" style="background:#EEF2FF;color:#6366F1">Paten</div>
+      <div class="ki-card-title">METODE PERBANYAKAN TANAMAN ANDALIMAN (Zanthoxylum acanthopodium)</div>
+      <div class="ki-card-unit">Makropropagasi / ULTRASTRUKTUR</div>
+    </div>
+    <div class="ki-card-item" data-trl="7">
+      <div class="ki-card-jenis" style="background:#EEF2FF;color:#6366F1">Paten</div>
+      <div class="ki-card-title">Tepung ubi kayu termodifikasi dan proses yang dihasilkannya</div>
+      <div class="ki-card-unit">Pusat Riset Rekayasa Genetika</div>
+    </div>
+    <div class="ki-card-item" data-trl="7">
+      <div class="ki-card-jenis" style="background:#ECFDF5;color:#10B981">PVT</div>
+      <div class="ki-card-title">Varietas unggul kedelai BRINUSA</div>
+      <div class="ki-card-unit">Kelompok Riset Perakitan Varietas Unggul Aneka Kacang</div>
+    </div>
+    <div class="ki-card-item" data-trl="7">
+      <div class="ki-card-jenis" style="background:#ECFDF5;color:#10B981">PVT</div>
+      <div class="ki-card-title">Varietas unggul kedelai BRINARA</div>
+      <div class="ki-card-unit">Kelompok Riset Perakitan Varietas Unggul Aneka Kacang</div>
+    </div>
+    <div class="ki-card-item" data-trl="7">
+      <div class="ki-card-jenis" style="background:#EEF2FF;color:#6366F1">Paten</div>
+      <div class="ki-card-title">Biofertizinc (Pupuk hayati peningkat kandungan Zn untuk padi/serealia)</div>
+      <div class="ki-card-unit">Pengelolaan Lahan Pupuk & Pembenah Tanah</div>
+    </div>
+  </div>
+</div>
+<div class="ki-trl-block" data-trl="8">
+  <div class="ki-trl-head" style="background:#0369A118;border-left:5px solid #0369A1">
+    <span class="ki-trl-num" style="color:#0369A1;font-family:'Courier New',monospace;font-size:17px;font-weight:700">TRL 8</span>
+    <span class="ki-trl-label" style="color:#0369A1cc;font-size:11px">Sistem lengkap & kualifikasi</span>
+    <span class="ki-trl-badge" style="background:#0369A1;color:#fff;font-family:'Courier New',monospace;font-size:10px;font-weight:700;padding:3px 10px;border-radius:20px;margin-left:auto">1 KI</span>
+  </div>
+  <div class="ki-trl-grid">
+    <div class="ki-card-item" data-trl="8">
+      <div class="ki-card-jenis" style="background:#ECFDF5;color:#10B981">PVT</div>
+      <div class="ki-card-title">Kacang Hijau Varietas Muri</div>
+      <div class="ki-card-unit">Kelris 22 TERAPPAN PRTP ORPP BRIN</div>
+    </div>
+  </div>
+</div>
+<div class="ki-trl-block" data-trl="9">
+  <div class="ki-trl-head" style="background:#4F46E518;border-left:5px solid #4F46E5">
+    <span class="ki-trl-num" style="color:#4F46E5;font-family:'Courier New',monospace;font-size:17px;font-weight:700">TRL 9</span>
+    <span class="ki-trl-label" style="color:#4F46E5cc;font-size:11px">Sistem terbukti operasional</span>
+    <span class="ki-trl-badge" style="background:#4F46E5;color:#fff;font-family:'Courier New',monospace;font-size:10px;font-weight:700;padding:3px 10px;border-radius:20px;margin-left:auto">1 KI</span>
+  </div>
+  <div class="ki-trl-grid">
+    <div class="ki-card-item" data-trl="9">
+      <div class="ki-card-jenis" style="background:#EEF2FF;color:#6366F1">Paten</div>
+      <div class="ki-card-title">Metode pengemasan bahan makanan heterogen dalam satu wadah</div>
+      <div class="ki-card-unit">Kelris Pengemasan Steril Komersial</div>
+    </div>
+  </div>
+</div>
+</div>
+
+</div>
+
+<div id="sec-ki-sectore" class="section-block">
+  <div class="sec-title">Analisis Sektor Utama per KI</div>
+  <p class="note">Setiap KI dipetakan ke 1 sektor industri yang paling sesuai berdasarkan substansi KI — sektor produksi diprioritaskan di atas jalur perdagangan.</p>
+  <div class="ki-sector-section">
+<div class="ki-sector-summary">
+<div class="ki-sector-sum-row"><div class="ki-sector-sum-name" style="color:#4C1D95">Industri Kimia & Biokimia</div><div class="ki-sector-sum-bar-wrap"><div class="ki-sector-sum-bar" style="width:31%;background:#8B5CF6"></div></div><span class="ki-sector-sum-count" style="color:#4C1D95">15 KI</span></div>
+<div class="ki-sector-sum-row"><div class="ki-sector-sum-name" style="color:#881337">Industri Pangan & Minuman</div><div class="ki-sector-sum-bar-wrap"><div class="ki-sector-sum-bar" style="width:29%;background:#F43F5E"></div></div><span class="ki-sector-sum-count" style="color:#881337">14 KI</span></div>
+<div class="ki-sector-sum-row"><div class="ki-sector-sum-name" style="color:#1E3A8A">Industri Farmasi & Biotek</div><div class="ki-sector-sum-bar-wrap"><div class="ki-sector-sum-bar" style="width:29%;background:#3B82F6"></div></div><span class="ki-sector-sum-count" style="color:#1E3A8A">14 KI</span></div>
+<div class="ki-sector-sum-row"><div class="ki-sector-sum-name" style="color:#92400E">Pertanian & Perkebunan</div><div class="ki-sector-sum-bar-wrap"><div class="ki-sector-sum-bar" style="width:6%;background:#F59E0B"></div></div><span class="ki-sector-sum-count" style="color:#92400E">3 KI</span></div>
+<div class="ki-sector-sum-row"><div class="ki-sector-sum-name" style="color:#5B21B6">Industri Tekstil & Serat</div><div class="ki-sector-sum-bar-wrap"><div class="ki-sector-sum-bar" style="width:2%;background:#A78BFA"></div></div><span class="ki-sector-sum-count" style="color:#5B21B6">1 KI</span></div>
+<div class="ki-sector-sum-row"><div class="ki-sector-sum-name" style="color:#155E75">Industri Elektronik & Instrumen</div><div class="ki-sector-sum-bar-wrap"><div class="ki-sector-sum-bar" style="width:2%;background:#22D3EE"></div></div><span class="ki-sector-sum-count" style="color:#155E75">1 KI</span></div>
+</div>
+<div class="ki-sector-block">
+  <div class="ki-sector-head">
+    <div class="ki-sector-dot" style="background:#8B5CF6"></div>
+    <span class="ki-sector-name" style="color:#4C1D95">Industri Kimia & Biokimia</span>
+    <span class="ki-sector-cnt">15 KI</span>
+  </div>
+  <div class="ki-sector-list">
+    <div class="ki-sector-item">
+      <div class="ki-sector-item-left">
+        <span class="ki-trl-pill" style="background:#0D9488;color:#fff">TRL 7</span>
+        <span class="ki-jenis-pill" style="background:#EEF2FF;color:#6366F1">Paten</span>
+      </div>
+      <div class="ki-sector-item-body">
+        <div class="ki-sector-item-title">SEDIAAN PEWARNA NATURAL BERBASIS FIKOERITRIN DARI RUMPUT LAUT MERAH (Halymenia durvillei) BESERTA FORMULASI PRODUKNYA UN</div>
+        <div class="ki-sector-item-kbli" style="color:#8B5CF6">20232 › Industri Kosmetik untuk Manusia, Cairan Lensa Kont</div>
+        <div class="ki-sector-item-unit">MCE</div>
+      </div>
+    </div>
+    <div class="ki-sector-item">
+      <div class="ki-sector-item-left">
+        <span class="ki-trl-pill" style="background:#0D9488;color:#fff">TRL 7</span>
+        <span class="ki-jenis-pill" style="background:#EEF2FF;color:#6366F1">Paten</span>
+      </div>
+      <div class="ki-sector-item-body">
+        <div class="ki-sector-item-title">Pupuk Organik Hayati Cair Dan Proses Pembuatannya</div>
+        <div class="ki-sector-item-kbli" style="color:#8B5CF6">20127 › Industri Pupuk Pelengkap</div>
+        <div class="ki-sector-item-unit">Mikrobioma Nutrisi Tanaman</div>
+      </div>
+    </div>
+    <div class="ki-sector-item">
+      <div class="ki-sector-item-left">
+        <span class="ki-trl-pill" style="background:#0D9488;color:#fff">TRL 7</span>
+        <span class="ki-jenis-pill" style="background:#EEF2FF;color:#6366F1">Paten</span>
+      </div>
+      <div class="ki-sector-item-body">
+        <div class="ki-sector-item-title">Biofertizinc (Pupuk hayati peningkat kandungan Zn untuk padi/serealia)</div>
+        <div class="ki-sector-item-kbli" style="color:#8B5CF6">20127 › Industri Pupuk Pelengkap</div>
+        <div class="ki-sector-item-unit">Pengelolaan Lahan Pupuk & Pembenah Tanah</div>
+      </div>
+    </div>
+    <div class="ki-sector-item">
+      <div class="ki-sector-item-left">
+        <span class="ki-trl-pill" style="background:#16A34A;color:#fff">TRL 6</span>
+        <span class="ki-jenis-pill" style="background:#EEF2FF;color:#6366F1">Paten</span>
+      </div>
+      <div class="ki-sector-item-body">
+        <div class="ki-sector-item-title">MEDIUM LOKAL UNTUK ARKEA HALOFILIK BERBASIS  HIDROLISAT PROTEIN IKAN DAN GARAM KROSOK SERTA  METODA APLIKASINYA UNTUK OP</div>
+        <div class="ki-sector-item-kbli" style="color:#8B5CF6">20299 › Industri Barang Kimia Lainnya YTDL</div>
+        <div class="ki-sector-item-unit">PR Mikrobiologi Terapan, OR HL, BRIN</div>
+      </div>
+    </div>
+    <div class="ki-sector-item">
+      <div class="ki-sector-item-left">
+        <span class="ki-trl-pill" style="background:#16A34A;color:#fff">TRL 6</span>
+        <span class="ki-jenis-pill" style="background:#EEF2FF;color:#6366F1">Paten</span>
+      </div>
+      <div class="ki-sector-item-body">
+        <div class="ki-sector-item-title">FORMULASI BIO-SEED COATING MENGGUNAKAN JAMUR Trichoderma asperellum SEBAGAI PELAPIS BENIH CABAI MERAH (Capsicum annum L)</div>
+        <div class="ki-sector-item-kbli" style="color:#8B5CF6">20213 › Industri Zat Pengatur Tumbuh</div>
+        <div class="ki-sector-item-unit">Interaksi Serangga dan Agen Hayati</div>
+      </div>
+    </div>
+    <div class="ki-sector-item">
+      <div class="ki-sector-item-left">
+        <span class="ki-trl-pill" style="background:#16A34A;color:#fff">TRL 6</span>
+        <span class="ki-jenis-pill" style="background:#EEF2FF;color:#6366F1">Paten</span>
+      </div>
+      <div class="ki-sector-item-body">
+        <div class="ki-sector-item-title">FORMULASI DAN PROSES PEMBUATAN BIOAKTIVATOR UNTUK FERMENTASI LIMBAH ORGANIK PADAT (FLOP)</div>
+        <div class="ki-sector-item-kbli" style="color:#8B5CF6">20127 › Industri Pupuk Pelengkap</div>
+        <div class="ki-sector-item-unit">Mikrobioma Nutisi Tanaman</div>
+      </div>
+    </div>
+    <div class="ki-sector-item">
+      <div class="ki-sector-item-left">
+        <span class="ki-trl-pill" style="background:#16A34A;color:#fff">TRL 6</span>
+        <span class="ki-jenis-pill" style="background:#EEF2FF;color:#6366F1">Paten</span>
+      </div>
+      <div class="ki-sector-item-body">
+        <div class="ki-sector-item-title">Formulasi Biostimulan Berbasis Konsorsium Bakteri Pemacu Tumbuh Untuk Efisiensi Hara  Tanaman Bawang Merah Dan Proses Pe</div>
+        <div class="ki-sector-item-kbli" style="color:#8B5CF6">20213 › Industri Zat Pengatur Tumbuh</div>
+        <div class="ki-sector-item-unit">Mikrobioma Holobion Tanaman/Peningkat Holobion Tanaman</div>
+      </div>
+    </div>
+    <div class="ki-sector-item">
+      <div class="ki-sector-item-left">
+        <span class="ki-trl-pill" style="background:#16A34A;color:#fff">TRL 6</span>
+        <span class="ki-jenis-pill" style="background:#EEF2FF;color:#6366F1">Paten</span>
+      </div>
+      <div class="ki-sector-item-body">
+        <div class="ki-sector-item-title">PROSES PEMBUATAN BIOAGEN FOTOSINTESIS DENGAN BAHAN AKTIF KONSORSIUM BAKTERI DAN PRODUK YANG DIHASILKANNYA</div>
+        <div class="ki-sector-item-kbli" style="color:#8B5CF6">20213 › Industri Zat Pengatur Tumbuh</div>
+        <div class="ki-sector-item-unit">Kelompok Riset Metabolit Mikroba Tanaman</div>
+      </div>
+    </div>
+    <div class="ki-sector-item">
+      <div class="ki-sector-item-left">
+        <span class="ki-trl-pill" style="background:#16A34A;color:#fff">TRL 6</span>
+        <span class="ki-jenis-pill" style="background:#EEF2FF;color:#6366F1">Paten</span>
+      </div>
+      <div class="ki-sector-item-body">
+        <div class="ki-sector-item-title">Formulasi  Tepung Biostimulan Berbahan Aktif Bakteri Halotoleran Asal Pesisir  Pantai Utara Jawa Nitratireductor aquibio</div>
+        <div class="ki-sector-item-kbli" style="color:#8B5CF6">20213 › Industri Zat Pengatur Tumbuh</div>
+        <div class="ki-sector-item-unit">Peningkat Holobion Tanaman</div>
+      </div>
+    </div>
+    <div class="ki-sector-item">
+      <div class="ki-sector-item-left">
+        <span class="ki-trl-pill" style="background:#65A30D;color:#fff">TRL 5</span>
+        <span class="ki-jenis-pill" style="background:#EEF2FF;color:#6366F1">Paten</span>
+      </div>
+      <div class="ki-sector-item-body">
+        <div class="ki-sector-item-title">KOMPOSISI PUPUK HAYATI UNTUK MENINGKATKAN PRODUKTIVITAS PADI DI LAHAN SAWAH TERPAPAR KERING DAN PROSES PEMBUATANNYA</div>
+        <div class="ki-sector-item-kbli" style="color:#8B5CF6">20127 › Industri Pupuk Pelengkap</div>
+        <div class="ki-sector-item-unit">Kelris Mikroba untuk Energi Terbarukan, PR Mikrobiologi Tera</div>
+      </div>
+    </div>
+    <div class="ki-sector-item">
+      <div class="ki-sector-item-left">
+        <span class="ki-trl-pill" style="background:#65A30D;color:#fff">TRL 5</span>
+        <span class="ki-jenis-pill" style="background:#EEF2FF;color:#6366F1">Paten</span>
+      </div>
+      <div class="ki-sector-item-body">
+        <div class="ki-sector-item-title">Formulasi Pupuk Organik Hayati Cair berbasis Rizobakteri Multifungsi Untuk Meningkatkan Kesehatan Tanah dan Produktivita</div>
+        <div class="ki-sector-item-kbli" style="color:#8B5CF6">20127 › Industri Pupuk Pelengkap</div>
+        <div class="ki-sector-item-unit">Pusat Riset Mikrobiologi Terapan</div>
+      </div>
+    </div>
+    <div class="ki-sector-item">
+      <div class="ki-sector-item-left">
+        <span class="ki-trl-pill" style="background:#65A30D;color:#fff">TRL 5</span>
+        <span class="ki-jenis-pill" style="background:#EEF2FF;color:#6366F1">Paten</span>
+      </div>
+      <div class="ki-sector-item-body">
+        <div class="ki-sector-item-title">Komposisi dan Proses Penghilangan Gum Serat Rami Menggunakan Gas Ozon, Xilanase dan Pektinase</div>
+        <div class="ki-sector-item-kbli" style="color:#8B5CF6">20299 › Industri Barang Kimia Lainnya YTDL</div>
+        <div class="ki-sector-item-unit">Bioproses Enzim</div>
+      </div>
+    </div>
+    <div class="ki-sector-item">
+      <div class="ki-sector-item-left">
+        <span class="ki-trl-pill" style="background:#CA8A04;color:#fff">TRL 4</span>
+        <span class="ki-jenis-pill" style="background:#EEF2FF;color:#6366F1">Paten</span>
+      </div>
+      <div class="ki-sector-item-body">
+        <div class="ki-sector-item-title">Produksi Dan Imobilisasi Enzim Selulase Dari Pseudozyma rugulosa Inacc Y335 Sebagai Produk Biokatalis Untuk Sintesis Bio</div>
+        <div class="ki-sector-item-kbli" style="color:#8B5CF6">20299 › Industri Barang Kimia Lainnya YTDL</div>
+        <div class="ki-sector-item-unit">Bioenergi dan Biokonversi Biomassa</div>
+      </div>
+    </div>
+    <div class="ki-sector-item">
+      <div class="ki-sector-item-left">
+        <span class="ki-trl-pill" style="background:#CA8A04;color:#fff">TRL 4</span>
+        <span class="ki-jenis-pill" style="background:#EEF2FF;color:#6366F1">Paten</span>
+      </div>
+      <div class="ki-sector-item-body">
+        <div class="ki-sector-item-title">AGEN  PEMACU  PERTUMBUHAN  TANAMAN  JAGUNG  BERBASIS  FILTRAT  KULTUR Trichoderma asperellum AC.3, PROSES PEMBUATAN, DAN</div>
+        <div class="ki-sector-item-kbli" style="color:#8B5CF6">20213 › Industri Zat Pengatur Tumbuh</div>
+        <div class="ki-sector-item-unit">Pengelolaan Hama dan Penyakit tanaman Jagung dan serealia po</div>
+      </div>
+    </div>
+    <div class="ki-sector-item">
+      <div class="ki-sector-item-left">
+        <span class="ki-trl-pill" style="background:#CA8A04;color:#fff">TRL 4</span>
+        <span class="ki-jenis-pill" style="background:#EEF2FF;color:#6366F1">Paten</span>
+      </div>
+      <div class="ki-sector-item-body">
+        <div class="ki-sector-item-title">EDIBLE COATING BERBASIS EKSTRAK DAUN SIRIH CINA (Peperomia pellucida) DAN APLIKASINYA</div>
+        <div class="ki-sector-item-kbli" style="color:#8B5CF6">20115 › Industri Kimia Dasar Organik dari Sumber Daya Alam</div>
+        <div class="ki-sector-item-unit">Fitonutrien dan Nutrasetikal Pangan</div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="ki-sector-block">
+  <div class="ki-sector-head">
+    <div class="ki-sector-dot" style="background:#F43F5E"></div>
+    <span class="ki-sector-name" style="color:#881337">Industri Pangan & Minuman</span>
+    <span class="ki-sector-cnt">14 KI</span>
+  </div>
+  <div class="ki-sector-list">
+    <div class="ki-sector-item">
+      <div class="ki-sector-item-left">
+        <span class="ki-trl-pill" style="background:#4F46E5;color:#fff">TRL 9</span>
+        <span class="ki-jenis-pill" style="background:#EEF2FF;color:#6366F1">Paten</span>
+      </div>
+      <div class="ki-sector-item-body">
+        <div class="ki-sector-item-title">Metode pengemasan bahan makanan heterogen dalam satu wadah</div>
+        <div class="ki-sector-item-kbli" style="color:#F43F5E">10799 › Industri Produk Makanan Lainnya</div>
+        <div class="ki-sector-item-unit">Kelris Pengemasan Steril Komersial</div>
+      </div>
+    </div>
+    <div class="ki-sector-item">
+      <div class="ki-sector-item-left">
+        <span class="ki-trl-pill" style="background:#0369A1;color:#fff">TRL 8</span>
+        <span class="ki-jenis-pill" style="background:#ECFDF5;color:#10B981">PVT</span>
+      </div>
+      <div class="ki-sector-item-body">
+        <div class="ki-sector-item-title">Kacang Hijau Varietas Muri</div>
+        <div class="ki-sector-item-kbli" style="color:#F43F5E">10393 › Industri Pengolahan dan Pengawetan Kedelai dan Kac</div>
+        <div class="ki-sector-item-unit">Kelris 22 TERAPPAN PRTP ORPP BRIN</div>
+      </div>
+    </div>
+    <div class="ki-sector-item">
+      <div class="ki-sector-item-left">
+        <span class="ki-trl-pill" style="background:#0D9488;color:#fff">TRL 7</span>
+        <span class="ki-jenis-pill" style="background:#EEF2FF;color:#6366F1">Paten</span>
+      </div>
+      <div class="ki-sector-item-body">
+        <div class="ki-sector-item-title">Tepung ubi kayu termodifikasi dan proses yang dihasilkannya</div>
+        <div class="ki-sector-item-kbli" style="color:#F43F5E">10621 › Industri Pati Ubi Kayu</div>
+        <div class="ki-sector-item-unit">Pusat Riset Rekayasa Genetika</div>
+      </div>
+    </div>
+    <div class="ki-sector-item">
+      <div class="ki-sector-item-left">
+        <span class="ki-trl-pill" style="background:#0D9488;color:#fff">TRL 7</span>
+        <span class="ki-jenis-pill" style="background:#ECFDF5;color:#10B981">PVT</span>
+      </div>
+      <div class="ki-sector-item-body">
+        <div class="ki-sector-item-title">Varietas unggul kedelai BRINUSA</div>
+        <div class="ki-sector-item-kbli" style="color:#F43F5E">10393 › Industri Pengolahan dan Pengawetan Kedelai dan Kac</div>
+        <div class="ki-sector-item-unit">Kelompok Riset Perakitan Varietas Unggul Aneka Kacang</div>
+      </div>
+    </div>
+    <div class="ki-sector-item">
+      <div class="ki-sector-item-left">
+        <span class="ki-trl-pill" style="background:#0D9488;color:#fff">TRL 7</span>
+        <span class="ki-jenis-pill" style="background:#ECFDF5;color:#10B981">PVT</span>
+      </div>
+      <div class="ki-sector-item-body">
+        <div class="ki-sector-item-title">Varietas unggul kedelai BRINARA</div>
+        <div class="ki-sector-item-kbli" style="color:#F43F5E">10393 › Industri Pengolahan dan Pengawetan Kedelai dan Kac</div>
+        <div class="ki-sector-item-unit">Kelompok Riset Perakitan Varietas Unggul Aneka Kacang</div>
+      </div>
+    </div>
+    <div class="ki-sector-item">
+      <div class="ki-sector-item-left">
+        <span class="ki-trl-pill" style="background:#16A34A;color:#fff">TRL 6</span>
+        <span class="ki-jenis-pill" style="background:#EEF2FF;color:#6366F1">Paten</span>
+      </div>
+      <div class="ki-sector-item-body">
+        <div class="ki-sector-item-title">Komposisi Teh Celup Buah Kayu Ules (Helicteres Isora L.), Jahe (Zingiber Officinale), Dan Daun Stevia (Stevia Rebaundian</div>
+        <div class="ki-sector-item-kbli" style="color:#F43F5E">10797 › Industri Infusi Herbal/Herb Infusion</div>
+        <div class="ki-sector-item-unit">Kelompok Riset Pemuliaan Sumber Daya Penghasil Biodiesel, Pu</div>
+      </div>
+    </div>
+    <div class="ki-sector-item">
+      <div class="ki-sector-item-left">
+        <span class="ki-trl-pill" style="background:#16A34A;color:#fff">TRL 6</span>
+        <span class="ki-jenis-pill" style="background:#EEF2FF;color:#6366F1">Paten</span>
+      </div>
+      <div class="ki-sector-item-body">
+        <div class="ki-sector-item-title">Formula Teh Celup Ganoderma Terfermentasi dan Proses Pembuatannya</div>
+        <div class="ki-sector-item-kbli" style="color:#F43F5E">10797 › Industri Infusi Herbal/Herb Infusion</div>
+        <div class="ki-sector-item-unit">Pusat Riset Teknologi dan Proses Pangan</div>
+      </div>
+    </div>
+    <div class="ki-sector-item">
+      <div class="ki-sector-item-left">
+        <span class="ki-trl-pill" style="background:#16A34A;color:#fff">TRL 6</span>
+        <span class="ki-jenis-pill" style="background:#EEF2FF;color:#6366F1">Paten</span>
+      </div>
+      <div class="ki-sector-item-body">
+        <div class="ki-sector-item-title">Proses pembuatan sambal tabur kaya protein</div>
+        <div class="ki-sector-item-kbli" style="color:#F43F5E">10799 › Industri Produk Makanan Lainnya</div>
+        <div class="ki-sector-item-unit">Kelris Pengemasan Steril Komersial</div>
+      </div>
+    </div>
+    <div class="ki-sector-item">
+      <div class="ki-sector-item-left">
+        <span class="ki-trl-pill" style="background:#65A30D;color:#fff">TRL 5</span>
+        <span class="ki-jenis-pill" style="background:#EEF2FF;color:#6366F1">Paten</span>
+      </div>
+      <div class="ki-sector-item-body">
+        <div class="ki-sector-item-title">Formulasi dan Proses Pembuatan Kukis (Cookuker) untuk Burung Kakatua Koki (Cacatua galerita)</div>
+        <div class="ki-sector-item-kbli" style="color:#F43F5E">10801 › Industri Ransum Pakan Hewan</div>
+        <div class="ki-sector-item-unit">Fisiologi Biokimia dan Perilaku Hewan</div>
+      </div>
+    </div>
+    <div class="ki-sector-item">
+      <div class="ki-sector-item-left">
+        <span class="ki-trl-pill" style="background:#CA8A04;color:#fff">TRL 4</span>
+        <span class="ki-jenis-pill" style="background:#EEF2FF;color:#6366F1">Paten</span>
+      </div>
+      <div class="ki-sector-item-body">
+        <div class="ki-sector-item-title">Komposisi Pelapis Dan Metode Pelapisan Bioplastik Berbasis Pati Untuk Aplikasi Kemasan Aktif  Pangan Serta Produk Yang D</div>
+        <div class="ki-sector-item-kbli" style="color:#F43F5E">10799 › Industri Produk Makanan Lainnya</div>
+        <div class="ki-sector-item-unit">Keamanan Pangan</div>
+      </div>
+    </div>
+    <div class="ki-sector-item">
+      <div class="ki-sector-item-left">
+        <span class="ki-trl-pill" style="background:#CA8A04;color:#fff">TRL 4</span>
+        <span class="ki-jenis-pill" style="background:#EEF2FF;color:#6366F1">Paten</span>
+      </div>
+      <div class="ki-sector-item-body">
+        <div class="ki-sector-item-title">Formulasi Kukis Sorgum Dengan Campuran Ekstrak Kulit Manggis Dan Produk Yang Dihasilkannya</div>
+        <div class="ki-sector-item-kbli" style="color:#F43F5E">10710 › Industri Produk Bakeri</div>
+        <div class="ki-sector-item-unit">Fitonutrien dan nutrasetikal pangan</div>
+      </div>
+    </div>
+    <div class="ki-sector-item">
+      <div class="ki-sector-item-left">
+        <span class="ki-trl-pill" style="background:#CA8A04;color:#fff">TRL 4</span>
+        <span class="ki-jenis-pill" style="background:#EEF2FF;color:#6366F1">Paten</span>
+      </div>
+      <div class="ki-sector-item-body">
+        <div class="ki-sector-item-title">Formula dan Produk Minuman Fermentasi Sari Kacang Merah Dengan Penambahan ektrak Jahe sebagai Sumber antioksidan</div>
+        <div class="ki-sector-item-kbli" style="color:#F43F5E">10797 › Industri Infusi Herbal/Herb Infusion</div>
+        <div class="ki-sector-item-unit">Teknologi Makanan dan Minuman Fungsional, Pusat Riset Teknol</div>
+      </div>
+    </div>
+    <div class="ki-sector-item">
+      <div class="ki-sector-item-left">
+        <span class="ki-trl-pill" style="background:#D97706;color:#fff">TRL 3</span>
+        <span class="ki-jenis-pill" style="background:#EEF2FF;color:#6366F1">Paten</span>
+      </div>
+      <div class="ki-sector-item-body">
+        <div class="ki-sector-item-title">Metode Analisis Kandungan GABA (Gamma-Aminobutyric Acid) Pada Beras Berpigmen</div>
+        <div class="ki-sector-item-kbli" style="color:#F43F5E">10799 › Industri Produk Makanan Lainnya</div>
+        <div class="ki-sector-item-unit">Pemetaan Genetik dan Seleksi Berbasis Molekuler</div>
+      </div>
+    </div>
+    <div class="ki-sector-item">
+      <div class="ki-sector-item-left">
+        <span class="ki-trl-pill" style="background:#D97706;color:#fff">TRL 3</span>
+        <span class="ki-jenis-pill" style="background:#EEF2FF;color:#6366F1">Paten</span>
+      </div>
+      <div class="ki-sector-item-body">
+        <div class="ki-sector-item-title">Produk Hidrolisat Sorgum Merah Sebagai Pangan Fungsional</div>
+        <div class="ki-sector-item-kbli" style="color:#F43F5E">10613 › Industri Produk Gilingan Aneka Umbi, Tanaman Rimpa</div>
+        <div class="ki-sector-item-unit">Pemanfaatan sarang burung walet untuk pangan</div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="ki-sector-block">
+  <div class="ki-sector-head">
+    <div class="ki-sector-dot" style="background:#3B82F6"></div>
+    <span class="ki-sector-name" style="color:#1E3A8A">Industri Farmasi & Biotek</span>
+    <span class="ki-sector-cnt">14 KI</span>
+  </div>
+  <div class="ki-sector-list">
+    <div class="ki-sector-item">
+      <div class="ki-sector-item-left">
+        <span class="ki-trl-pill" style="background:#0D9488;color:#fff">TRL 7</span>
+        <span class="ki-jenis-pill" style="background:#EEF2FF;color:#6366F1">Paten</span>
+      </div>
+      <div class="ki-sector-item-body">
+        <div class="ki-sector-item-title">Kit Untuk Mendeteksi 25 Tipe Human Papiloma Virus (HPV)  Secara Tidak Invasif</div>
+        <div class="ki-sector-item-kbli" style="color:#3B82F6">21015 › Industri Alat Diagnosis Medis, Perban, Kasa, dan P</div>
+        <div class="ki-sector-item-unit">Pusat Riset Biomedis</div>
+      </div>
+    </div>
+    <div class="ki-sector-item">
+      <div class="ki-sector-item-left">
+        <span class="ki-trl-pill" style="background:#0D9488;color:#fff">TRL 7</span>
+        <span class="ki-jenis-pill" style="background:#EEF2FF;color:#6366F1">Paten</span>
+      </div>
+      <div class="ki-sector-item-body">
+        <div class="ki-sector-item-title">Metode Pembutan Nano Liposom dari Fosfolipid Kedelai dan Formulasi  Medium  Pengencer  Nano  Liposom  Sebagai  Krioprese</div>
+        <div class="ki-sector-item-kbli" style="color:#3B82F6">21012 › Industri Produk Farmasi untuk Manusia</div>
+        <div class="ki-sector-item-unit">Kelompok Riset Repronomik</div>
+      </div>
+    </div>
+    <div class="ki-sector-item">
+      <div class="ki-sector-item-left">
+        <span class="ki-trl-pill" style="background:#0D9488;color:#fff">TRL 7</span>
+        <span class="ki-jenis-pill" style="background:#EEF2FF;color:#6366F1">Paten</span>
+      </div>
+      <div class="ki-sector-item-body">
+        <div class="ki-sector-item-title">Komposisi Medium Pertumbuhan Bakteri Asam Laktat Untuk Probiotik Ternak Ruminansia</div>
+        <div class="ki-sector-item-kbli" style="color:#3B82F6">21022 › Industri Produk Obat Bahan Alam untuk Manusia</div>
+        <div class="ki-sector-item-unit">Pusat Riset Zoologi Terapan</div>
+      </div>
+    </div>
+    <div class="ki-sector-item">
+      <div class="ki-sector-item-left">
+        <span class="ki-trl-pill" style="background:#65A30D;color:#fff">TRL 5</span>
+        <span class="ki-jenis-pill" style="background:#EEF2FF;color:#6366F1">Paten</span>
+      </div>
+      <div class="ki-sector-item-body">
+        <div class="ki-sector-item-title">METODE PEROLEHAN KLON TUNGGAL SEL KANKER PAYUDARA TRIPEL NEGATIF YANG MENGEKSPRESIKAN PROTEIN FLUORESENS mCHERRY DENGAN </div>
+        <div class="ki-sector-item-kbli" style="color:#3B82F6">21012 › Industri Produk Farmasi untuk Manusia</div>
+        <div class="ki-sector-item-unit">Kelompok Riset Rekayasa Sel Mamalia</div>
+      </div>
+    </div>
+    <div class="ki-sector-item">
+      <div class="ki-sector-item-left">
+        <span class="ki-trl-pill" style="background:#65A30D;color:#fff">TRL 5</span>
+        <span class="ki-jenis-pill" style="background:#EEF2FF;color:#6366F1">Paten</span>
+      </div>
+      <div class="ki-sector-item-body">
+        <div class="ki-sector-item-title">Proses Pembuatan Partikel Mirip Virus L1 Virus Human Papilloma Tipe 52 Sebagai Bahan Baku Vaksin Profilaktik Menggunakan</div>
+        <div class="ki-sector-item-kbli" style="color:#3B82F6">21012 › Industri Produk Farmasi untuk Manusia</div>
+        <div class="ki-sector-item-unit">Protein Rekombinan Virus</div>
+      </div>
+    </div>
+    <div class="ki-sector-item">
+      <div class="ki-sector-item-left">
+        <span class="ki-trl-pill" style="background:#65A30D;color:#fff">TRL 5</span>
+        <span class="ki-jenis-pill" style="background:#EEF2FF;color:#6366F1">Paten</span>
+      </div>
+      <div class="ki-sector-item-body">
+        <div class="ki-sector-item-title">SEDIAAN EKTRAK JAMUR SHIITAKE DALAM BENTUK MIKROENKAPSULASI DAN PROSES PEMBUATANNYA</div>
+        <div class="ki-sector-item-kbli" style="color:#3B82F6">21022 › Industri Produk Obat Bahan Alam untuk Manusia</div>
+        <div class="ki-sector-item-unit">Fitonutrien dan Nutrasetikal Pangan</div>
+      </div>
+    </div>
+    <div class="ki-sector-item">
+      <div class="ki-sector-item-left">
+        <span class="ki-trl-pill" style="background:#CA8A04;color:#fff">TRL 4</span>
+        <span class="ki-jenis-pill" style="background:#EEF2FF;color:#6366F1">Paten</span>
+      </div>
+      <div class="ki-sector-item-body">
+        <div class="ki-sector-item-title">Kit Bioassay Untuk Uji In Vitro Inhibisi Protease Sarscov2 Sebagai Alat Skrining Obat Anti Covid19</div>
+        <div class="ki-sector-item-kbli" style="color:#3B82F6">21012 › Industri Produk Farmasi untuk Manusia</div>
+        <div class="ki-sector-item-unit">Rekayasa bakteri dan enzim</div>
+      </div>
+    </div>
+    <div class="ki-sector-item">
+      <div class="ki-sector-item-left">
+        <span class="ki-trl-pill" style="background:#CA8A04;color:#fff">TRL 4</span>
+        <span class="ki-jenis-pill" style="background:#EEF2FF;color:#6366F1">Paten</span>
+      </div>
+      <div class="ki-sector-item-body">
+        <div class="ki-sector-item-title">Kaset Ekspresi untuk Pustaka Plasmid Rekombinan yang Mengekspresikan Gen Penyandi Protein Reseptor PcLYM2-1 dari Tanaman</div>
+        <div class="ki-sector-item-kbli" style="color:#3B82F6">21012 › Industri Produk Farmasi untuk Manusia</div>
+        <div class="ki-sector-item-unit">Rekayasa Tanaman untuk Lingkungan Ekstrim</div>
+      </div>
+    </div>
+    <div class="ki-sector-item">
+      <div class="ki-sector-item-left">
+        <span class="ki-trl-pill" style="background:#CA8A04;color:#fff">TRL 4</span>
+        <span class="ki-jenis-pill" style="background:#EEF2FF;color:#6366F1">Paten</span>
+      </div>
+      <div class="ki-sector-item-body">
+        <div class="ki-sector-item-title">Kaset Ekspresi Gen Penyandi Kitinase dari Sorgum (Sorghum bicolor (L.) Moench) Indonesia Aksesi Kempul</div>
+        <div class="ki-sector-item-kbli" style="color:#3B82F6">21012 › Industri Produk Farmasi untuk Manusia</div>
+        <div class="ki-sector-item-unit">Kelompok Riset Rekayasa Tanaman untuk Lingkungan Ekstrim</div>
+      </div>
+    </div>
+    <div class="ki-sector-item">
+      <div class="ki-sector-item-left">
+        <span class="ki-trl-pill" style="background:#CA8A04;color:#fff">TRL 4</span>
+        <span class="ki-jenis-pill" style="background:#EEF2FF;color:#6366F1">Paten</span>
+      </div>
+      <div class="ki-sector-item-body">
+        <div class="ki-sector-item-title">Kaset Ekspresi untuk Pustaka Plasmid Rekombinan yang Mengekspresikan Gen Penyandi Kitinase dari Sorgum Manis (Sorghum bi</div>
+        <div class="ki-sector-item-kbli" style="color:#3B82F6">21012 › Industri Produk Farmasi untuk Manusia</div>
+        <div class="ki-sector-item-unit">Kelompok Riset Rekayasa Tanaman untuk Lingkungan Ekstrim</div>
+      </div>
+    </div>
+    <div class="ki-sector-item">
+      <div class="ki-sector-item-left">
+        <span class="ki-trl-pill" style="background:#D97706;color:#fff">TRL 3</span>
+        <span class="ki-jenis-pill" style="background:#EEF2FF;color:#6366F1">Paten</span>
+      </div>
+      <div class="ki-sector-item-body">
+        <div class="ki-sector-item-title">KIT UNTUK MENGANALISIS GENOM UTUH HUMAN PAPILLOMAVIRUS (HPV) TIPE 16</div>
+        <div class="ki-sector-item-kbli" style="color:#3B82F6">21015 › Industri Alat Diagnosis Medis, Perban, Kasa, dan P</div>
+        <div class="ki-sector-item-unit">Pusat Riset Biomedis</div>
+      </div>
+    </div>
+    <div class="ki-sector-item">
+      <div class="ki-sector-item-left">
+        <span class="ki-trl-pill" style="background:#D97706;color:#fff">TRL 3</span>
+        <span class="ki-jenis-pill" style="background:#EEF2FF;color:#6366F1">Paten</span>
+      </div>
+      <div class="ki-sector-item-body">
+        <div class="ki-sector-item-title">METODE PENYIMPANAN SAMPEL URIN MENGGUNAKAN KERTAS SARING</div>
+        <div class="ki-sector-item-kbli" style="color:#3B82F6">21015 › Industri Alat Diagnosis Medis, Perban, Kasa, dan P</div>
+        <div class="ki-sector-item-unit">Pusat Riset Biomedis</div>
+      </div>
+    </div>
+    <div class="ki-sector-item">
+      <div class="ki-sector-item-left">
+        <span class="ki-trl-pill" style="background:#D97706;color:#fff">TRL 3</span>
+        <span class="ki-jenis-pill" style="background:#EEF2FF;color:#6366F1">Paten</span>
+      </div>
+      <div class="ki-sector-item-body">
+        <div class="ki-sector-item-title">KIT DETEKSI DAN IDENTIFIKASI DNA BABI DAN SAPI PADA SATU TABUNG TUNGGAL BERBASIS SYBR GREEN I qPCR</div>
+        <div class="ki-sector-item-kbli" style="color:#3B82F6">21015 › Industri Alat Diagnosis Medis, Perban, Kasa, dan P</div>
+        <div class="ki-sector-item-unit">Kelompok Riset Rekayasa Biomolekul untuk Aplikasi Deteksi</div>
+      </div>
+    </div>
+    <div class="ki-sector-item">
+      <div class="ki-sector-item-left">
+        <span class="ki-trl-pill" style="background:#D97706;color:#fff">TRL 3</span>
+        <span class="ki-jenis-pill" style="background:#EEF2FF;color:#6366F1">Paten</span>
+      </div>
+      <div class="ki-sector-item-body">
+        <div class="ki-sector-item-title">Kit Deteksi Mutasi Δ69-Δ70 Virus Sars-Cov 2 Berbasis Sybr Green I qQPCR</div>
+        <div class="ki-sector-item-kbli" style="color:#3B82F6">21015 › Industri Alat Diagnosis Medis, Perban, Kasa, dan P</div>
+        <div class="ki-sector-item-unit">Kelompok Riset Rekayasa Biomolekul Untuk Aplikasi Deteksi</div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="ki-sector-block">
+  <div class="ki-sector-head">
+    <div class="ki-sector-dot" style="background:#F59E0B"></div>
+    <span class="ki-sector-name" style="color:#92400E">Pertanian & Perkebunan</span>
+    <span class="ki-sector-cnt">3 KI</span>
+  </div>
+  <div class="ki-sector-list">
+    <div class="ki-sector-item">
+      <div class="ki-sector-item-left">
+        <span class="ki-trl-pill" style="background:#0D9488;color:#fff">TRL 7</span>
+        <span class="ki-jenis-pill" style="background:#EEF2FF;color:#6366F1">Paten</span>
+      </div>
+      <div class="ki-sector-item-body">
+        <div class="ki-sector-item-title">METODE PERBANYAKAN TANAMAN ANDALIMAN (Zanthoxylum acanthopodium)</div>
+        <div class="ki-sector-item-kbli" style="color:#F59E0B">01309 › Pembiakan Tanaman Lainnya</div>
+        <div class="ki-sector-item-unit">Makropropagasi / ULTRASTRUKTUR</div>
+      </div>
+    </div>
+    <div class="ki-sector-item">
+      <div class="ki-sector-item-left">
+        <span class="ki-trl-pill" style="background:#16A34A;color:#fff">TRL 6</span>
+        <span class="ki-jenis-pill" style="background:#EEF2FF;color:#6366F1">Paten</span>
+      </div>
+      <div class="ki-sector-item-body">
+        <div class="ki-sector-item-title">METODE OPTIMASI PROTOKOL REGENERASI KALUS  SOMATIK EMBRIOGENIK TEBU (Saccharum officinarum L.)  DENGAN KOMBINASI SUMBER </div>
+        <div class="ki-sector-item-kbli" style="color:#F59E0B">01140 › Pertanian Tebu</div>
+        <div class="ki-sector-item-unit">Manipulasi Selular Cekaman Abiotik</div>
+      </div>
+    </div>
+    <div class="ki-sector-item">
+      <div class="ki-sector-item-left">
+        <span class="ki-trl-pill" style="background:#65A30D;color:#fff">TRL 5</span>
+        <span class="ki-jenis-pill" style="background:#EEF2FF;color:#6366F1">Paten</span>
+      </div>
+      <div class="ki-sector-item-body">
+        <div class="ki-sector-item-title">METODE OPTIMASI PROTOKOL REGENERASI KALUS SOMATIK EMBRYOGENIK TEBU (Saccharum officinarum L.) DENGAN KOMBINASI SUMBER KA</div>
+        <div class="ki-sector-item-kbli" style="color:#F59E0B">01140 › Pertanian Tebu</div>
+        <div class="ki-sector-item-unit">Pusat Riset Botani Terapan</div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="ki-sector-block">
+  <div class="ki-sector-head">
+    <div class="ki-sector-dot" style="background:#A78BFA"></div>
+    <span class="ki-sector-name" style="color:#5B21B6">Industri Tekstil & Serat</span>
+    <span class="ki-sector-cnt">1 KI</span>
+  </div>
+  <div class="ki-sector-list">
+    <div class="ki-sector-item">
+      <div class="ki-sector-item-left">
+        <span class="ki-trl-pill" style="background:#0D9488;color:#fff">TRL 7</span>
+        <span class="ki-jenis-pill" style="background:#EEF2FF;color:#6366F1">Paten</span>
+      </div>
+      <div class="ki-sector-item-body">
+        <div class="ki-sector-item-title">Metode Hibernasi Buatan Telur Ulat Sutra Bombyx mori L.</div>
+        <div class="ki-sector-item-kbli" style="color:#A78BFA">13111 › Persiapan Serat Tekstil</div>
+        <div class="ki-sector-item-unit">Domestikasi dan Pemuliaan Hewan Tropis</div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="ki-sector-block">
+  <div class="ki-sector-head">
+    <div class="ki-sector-dot" style="background:#22D3EE"></div>
+    <span class="ki-sector-name" style="color:#155E75">Industri Elektronik & Instrumen</span>
+    <span class="ki-sector-cnt">1 KI</span>
+  </div>
+  <div class="ki-sector-list">
+    <div class="ki-sector-item">
+      <div class="ki-sector-item-left">
+        <span class="ki-trl-pill" style="background:#16A34A;color:#fff">TRL 6</span>
+        <span class="ki-jenis-pill" style="background:#FEF9EE;color:#F59E0B">Desain Industri</span>
+      </div>
+      <div class="ki-sector-item-body">
+        <div class="ki-sector-item-title">Alat Sensor dan Monitoring Serangga</div>
+        <div class="ki-sector-item-kbli" style="color:#22D3EE">26513 › Industri Alat Ukur dan Alat Uji Elektronik</div>
+        <div class="ki-sector-item-unit">Interaksi Serangga</div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+</div>
+
